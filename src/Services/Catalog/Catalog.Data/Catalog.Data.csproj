@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\CommonData\CommonData.csproj" />
+    <ProjectReference Include="..\..\..\CommonData\Data.csproj" />
   </ItemGroup>
 
 </Project>

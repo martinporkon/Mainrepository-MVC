@@ -1,9 +1,8 @@
-﻿using Aids.Reflection;
-using CommonTests.BaseTests;
+﻿using CommonTests.BaseTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Order.Data.Orders;
 
-namespace Sooduskorv.Tests.Data.Orders
+namespace Order.Tests.Orders
 {
 
     [TestClass]

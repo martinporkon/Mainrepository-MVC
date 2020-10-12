@@ -1,4 +1,5 @@
 ﻿using CommonData;
+using Data.CommonData;
 
 namespace Catalog.Data.Products
 {

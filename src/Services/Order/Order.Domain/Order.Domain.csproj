@@ -5,10 +5,18 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Addresses\" />
-    <Folder Include="ShipMethodsOfParties\" />
-    <Folder Include="ShipMethods\" />
-    <Folder Include="Orders\" />
+    <Compile Remove="Addresses\**" />
+    <Compile Remove="Orders\**" />
+    <Compile Remove="ShipMethodsOfParties\**" />
+    <Compile Remove="ShipMethods\**" />
+    <EmbeddedResource Remove="Addresses\**" />
+    <EmbeddedResource Remove="Orders\**" />
+    <EmbeddedResource Remove="ShipMethodsOfParties\**" />
+    <EmbeddedResource Remove="ShipMethods\**" />
+    <None Remove="Addresses\**" />
+    <None Remove="Orders\**" />
+    <None Remove="ShipMethodsOfParties\**" />
+    <None Remove="ShipMethods\**" />
   </ItemGroup>
 
 </Project>

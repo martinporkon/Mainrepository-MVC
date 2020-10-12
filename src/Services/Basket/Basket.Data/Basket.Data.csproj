@@ -5,11 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Docs\" />
+    <ProjectReference Include="..\..\..\CommonData\Data.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\CommonData\CommonData.csproj" />
+    <Folder Include="Docs\" />
   </ItemGroup>
 
 </Project>

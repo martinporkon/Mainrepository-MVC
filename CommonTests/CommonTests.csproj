@@ -16,4 +16,8 @@
     <ProjectReference Include="..\Core\Aids.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="AidsTests\" />
+  </ItemGroup>
+
 </Project>

@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Basket.Infra;
+﻿using Basket.Infra;
 using Microsoft.EntityFrameworkCore;
 
 namespace Basket.API.Data

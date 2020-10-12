@@ -1,6 +1,5 @@
 using Basket.API.Data;
 using Basket.API.Middleware;
-using IdentityServer4.AccessTokenValidation;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;

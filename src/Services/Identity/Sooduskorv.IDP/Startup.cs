@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Sooduskorv.IDP.Data;
 
 namespace Sooduskorv.IDP
 {
@@ -24,7 +23,7 @@ namespace Sooduskorv.IDP
 
             services.AddDbContext<IdentityDbContext>(options =>
             {
-                options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=CustomerDB;Trusted_Connection=True;");
+                options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=CustomerDB;Trusted_Connection=True;", b => b.MigrationsAssembly("Sooduskorv.IDP"));
             });
 
             services.AddScoped<ILocalUserService, LocalUserService>();

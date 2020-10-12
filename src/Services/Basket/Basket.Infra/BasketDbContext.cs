@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Basket.Data.BasketOfProduct;
+﻿using Basket.Data.BasketOfProducts;
 using Basket.Data.Baskets;
 using Microsoft.EntityFrameworkCore;
 

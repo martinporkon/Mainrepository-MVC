@@ -15,7 +15,7 @@ namespace Catalog.API.Controllers
 
         [Route("allproducts")]
         [HttpGet]
-        public async Task<IActionResult> GetAllProducts()
+        public async  Task<IActionResult> GetAllProducts()
         {
             var products = new ProductData()
             {

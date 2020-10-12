@@ -1,5 +1,5 @@
 ﻿using System;
-using Order.Data.Common;
+using CommonData;
 
 namespace Order.Data.Orders
 {

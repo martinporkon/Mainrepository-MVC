@@ -1,4 +1,4 @@
-﻿using Catalog.Data.Common;
+﻿using CommonData;
 
 namespace Catalog.Data.Products
 {

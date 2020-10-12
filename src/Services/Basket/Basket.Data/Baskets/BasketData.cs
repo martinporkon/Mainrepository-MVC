@@ -1,4 +1,4 @@
-﻿using Basket.Data.Common;
+﻿using CommonData;
 
 namespace Basket.Data.Baskets
 {

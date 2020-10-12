@@ -9,38 +9,40 @@
             box-sizing: border-box;
         }
 
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
+        .column {
+            float: left;
+            padding: 10px;
         }
 
-        /* Style the side navigation */
-        .sidenav {
-            height: unset;
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        .menu {
             width: 25%;
             position: fixed;
-            z-index: 1;
-            top: 176px;
             left: 0;
-            background-color: #00b8e6;
-            overflow-x: hidden;
         }
 
+        .menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
 
-            /* Side navigation links */
-            .sidenav a {
-                color: white;
-                padding: 16px;
-                text-decoration: inherit;
-                text-align: center;
-                display: block;
+        .menu li {
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #33b5e5;
+            color: #ffffff;
+            text-align: center;
+        }
+
+            .menu li:hover {
+                background-color: #0099cc;
             }
-
-                /* Change color on hover */
-                .sidenav a:hover {
-                    background-color: white;
-                    color: black;
-                }
 
         .button {
             display: inline-block;
@@ -81,19 +83,23 @@
 </head>
 <body>
 
-    <div class="sidenav">
-        <a href="#">Puu- ja köögiviljad</a>
-        <a href="#">Liha- ja kalatooted</a>
-        <a href="#">Piimatooted, munad, võid</a>
-        <a href="#">Leivad, saiad,kondiitritooted</a>
-        <a href="#">Valmistoidud</a>
-        <a href="#">Kuivained, hommikusöögid, hoidised</a>
-        <a href="#">Maiustused, küpsised, snäkid</a>
-        <a href="#">Joogid</a>
-        <a href="#">Lastekaubad</a>
-        <a href="#">Lemmikloomakaubad</a>
-        <a href="#">Enesehooldustarbed</a>
-        <a href="#">Majapidamis- ja kodukaubad</a>
+    <div class="clearfix">
+        <div class="column menu">
+            <ul>
+                <li>Puu- ja köögiviljad</li>
+                <li>Liha- ja kalatooted</li>
+                <li>Piimatooted, munad, võid</li>
+                <li>Leivad, saiad,kondiitritooted</li>
+                <li>Valmistoidud</li>
+                <li>Kuivained, hommikusöögid, hoidised</li>
+                <li>Maiustused, küpsised, snäkid</li>
+                <li>Joogid</li>
+                <li>Lastekaubad</li>
+                <li>Lemmikloomakaubad</li>
+                <li>Enesehooldustarbed</li>
+                <li>Majapidamis- ja kodukaubad</li>             
+            </ul>
+        </div>
     </div>
     <div class="container">
         <div class="center">

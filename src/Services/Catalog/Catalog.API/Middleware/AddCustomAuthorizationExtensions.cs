@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Catalog.API.HttpHandlers;
-using IdentityServer4.AccessTokenValidation;
-using Microsoft.AspNetCore.Builder;
+﻿using Catalog.API.HttpHandlers;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 

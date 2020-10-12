@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Basket.Data.BasketOfProduct;
+﻿using Basket.Data.BasketOfProducts;
 using Basket.Data.Baskets;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,8 +6,8 @@ namespace Basket.Infra
 {
     public class BasketDbContext : DbContext
     {
-        public DbSet<BasketData> Baskets { get; set; }
         public DbSet<BasketOfProductsData> BasketOfProducts { get; set; }
+        public DbSet<BasketData> Baskets { get; set; }
         public BasketDbContext(DbContextOptions<BasketDbContext> options)
             : base(options) { }
 

@@ -1,10 +1,9 @@
-﻿using Order.Data.Common;
+﻿using CommonData;
 
 namespace Order.Data.AddressOfCustomer
 {
-    public sealed class AddressOfCustomerData :PeriodData
+    public sealed class AddressOfCustomerData :AddressedEntityData
     {
-        public string AddressId { get; set; }
         public string CustomerId { get; set; }
     }
 }

@@ -1,12 +1,4 @@
-﻿using System;
-using Catalog.Data.Categories;
-using Catalog.Data.Parties;
-using Catalog.Data.Prices;
-using Catalog.Data.ProductOfParty;
-using Catalog.Data.Products;
-using Catalog.Data.SubCategories;
-using Catalog.Data.UserProfiles;
-using Catalog.Infra.Quantity;
+﻿using Catalog.Infra.Quantity;
 using Microsoft.EntityFrameworkCore;
 
 namespace Catalog.API.Data

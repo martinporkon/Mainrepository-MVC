@@ -51,80 +51,80 @@ namespace Sooduskorv.IDP.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("e43d9f5d-5f4b-48c3-8ba8-a45c51243037"),
-                            ConcurrencyStamp = "bdca089d-bfef-4f69-a463-a6a63011472b",
+                            Id = new Guid("c45f5527-a4b9-4b7a-8bce-058eb6344a31"),
+                            ConcurrencyStamp = "fce21a3f-c8a9-4e74-894f-f41ebfc4549e",
                             Type = "given_name",
                             UserId = new Guid("13229d33-99e0-41b3-b18d-4f72127e3971"),
                             Value = "Hanna"
                         },
                         new
                         {
-                            Id = new Guid("c6be05c8-c577-4536-a8a9-50364c0a7675"),
-                            ConcurrencyStamp = "65e73c27-ea78-4bbb-89b4-de8785e7b175",
+                            Id = new Guid("4d501e25-c59a-4e14-999b-e4f7a8884af9"),
+                            ConcurrencyStamp = "8f7f1de6-32bb-40d2-95a0-99f787f83108",
                             Type = "family_name",
                             UserId = new Guid("13229d33-99e0-41b3-b18d-4f72127e3971"),
                             Value = "Forest"
                         },
                         new
                         {
-                            Id = new Guid("becf17df-c8fa-4632-8042-a8d335707c02"),
-                            ConcurrencyStamp = "b28c9ce3-8b56-43c1-b875-ee22ba2e4cee",
+                            Id = new Guid("886d3806-839a-4f32-b2ca-24cca6e402b9"),
+                            ConcurrencyStamp = "5920e04b-4582-4dcb-8dcd-824eee35ed1c",
                             Type = "email",
                             UserId = new Guid("13229d33-99e0-41b3-b18d-4f72127e3971"),
                             Value = "hanna@gmail.com"
                         },
                         new
                         {
-                            Id = new Guid("48b3bf4f-ef15-42a2-9171-bd094da9d292"),
-                            ConcurrencyStamp = "f03dc117-aa4e-4849-ae84-ca9a3d224372",
+                            Id = new Guid("c79b1001-8274-4ccd-b880-2511dadecdb8"),
+                            ConcurrencyStamp = "5d94d0ce-dafc-4b31-a48d-6282fc972c39",
                             Type = "address",
                             UserId = new Guid("13229d33-99e0-41b3-b18d-4f72127e3971"),
                             Value = "Tammsaare tee"
                         },
                         new
                         {
-                            Id = new Guid("3728a6f7-e7c3-4c8d-9a6b-7640231e859d"),
-                            ConcurrencyStamp = "2b57af27-6089-43d3-9802-48dfb48512e8",
+                            Id = new Guid("293f4309-441b-414e-af95-1be847af5ce3"),
+                            ConcurrencyStamp = "0621dc02-a17e-40c7-8e5e-daf6b5cdf21a",
                             Type = "country",
                             UserId = new Guid("13229d33-99e0-41b3-b18d-4f72127e3971"),
                             Value = "somevalue"
                         },
                         new
                         {
-                            Id = new Guid("daddc47e-10c2-404c-b700-b390eac82a90"),
-                            ConcurrencyStamp = "583e66a4-b73b-4e65-a006-cf1adfebfcf4",
+                            Id = new Guid("cfd9accb-32be-4ae5-a37b-13a1dc36ef27"),
+                            ConcurrencyStamp = "baa5dde6-b19d-479a-98e4-9e3f36679361",
                             Type = "given_name",
                             UserId = new Guid("96053525-f4a5-47ee-855e-0ea77fa6c55a"),
                             Value = "Bob"
                         },
                         new
                         {
-                            Id = new Guid("1f3dcc8f-3fe0-4c8c-a2c9-a19416a5e25b"),
-                            ConcurrencyStamp = "813f33fb-f38f-495c-83c4-9b35572ba58b",
+                            Id = new Guid("0a88fd07-089c-48d6-bcaf-263a6a11b2e4"),
+                            ConcurrencyStamp = "d49272e2-e622-4e35-818f-eb71edddd015",
                             Type = "family_name",
                             UserId = new Guid("96053525-f4a5-47ee-855e-0ea77fa6c55a"),
                             Value = "Oak"
                         },
                         new
                         {
-                            Id = new Guid("8508f92a-a41a-4693-92a4-9c3bed3a4c0d"),
-                            ConcurrencyStamp = "176fb608-2304-497a-85a9-37662d7f6523",
+                            Id = new Guid("76e680d5-561c-43dd-a408-da7f117bc044"),
+                            ConcurrencyStamp = "7f249742-4aa4-4ab2-a862-ad63139cac83",
                             Type = "email",
                             UserId = new Guid("96053525-f4a5-47ee-855e-0ea77fa6c55a"),
                             Value = "bob@gmail.com"
                         },
                         new
                         {
-                            Id = new Guid("90a94824-c0c1-458d-8aae-fb817446f09e"),
-                            ConcurrencyStamp = "309d953b-2438-42da-939a-3d000a3b46ee",
+                            Id = new Guid("2159666b-0223-435e-9429-0f568ba84d63"),
+                            ConcurrencyStamp = "80e78942-5894-4581-9bff-855b96cf0aaf",
                             Type = "address",
                             UserId = new Guid("96053525-f4a5-47ee-855e-0ea77fa6c55a"),
                             Value = "Ehitajate Tee"
                         },
                         new
                         {
-                            Id = new Guid("e272e5b5-4011-43f6-90db-42f7df361ff6"),
-                            ConcurrencyStamp = "567e0836-67f8-41de-89a7-6fa94beebe77",
+                            Id = new Guid("0703cb80-d683-4ce0-8526-8685a38c4357"),
+                            ConcurrencyStamp = "fe978ab2-99ad-4258-9a8a-0233bb59630f",
                             Type = "country",
                             UserId = new Guid("96053525-f4a5-47ee-855e-0ea77fa6c55a"),
                             Value = "somevalue"
@@ -184,7 +184,7 @@ namespace Sooduskorv.IDP.Migrations
                         {
                             Id = new Guid("13229d33-99e0-41b3-b18d-4f72127e3971"),
                             Active = true,
-                            ConcurrencyStamp = "fb659bc3-716c-40c1-806b-411c4f467b91",
+                            ConcurrencyStamp = "8e78d874-f10d-49e9-9c73-a243766ce8ec",
                             Password = "password",
                             SecurityCodeExpirationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Subject = "d860efca-22d9-47fd-8249-791ba61b07c7",
@@ -194,7 +194,7 @@ namespace Sooduskorv.IDP.Migrations
                         {
                             Id = new Guid("96053525-f4a5-47ee-855e-0ea77fa6c55a"),
                             Active = true,
-                            ConcurrencyStamp = "24e7b3cc-dcc0-403f-aa1b-a5746843531c",
+                            ConcurrencyStamp = "ac945bb2-0171-4919-8427-9f3d55db690b",
                             Password = "password",
                             SecurityCodeExpirationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Subject = "b7539694-97e7-4dfe-84da-b4256e1ff5c7",

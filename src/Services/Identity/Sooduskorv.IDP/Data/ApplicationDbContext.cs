@@ -1,9 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using Identity.Data.Entities;
-using Identity.Infra.DbContexts;
+﻿using Identity.Infra.DbContexts;
 using Microsoft.EntityFrameworkCore;
 
 namespace Sooduskorv.IDP.Data

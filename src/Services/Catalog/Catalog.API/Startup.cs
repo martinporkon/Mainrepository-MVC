@@ -1,4 +1,3 @@
-using Catalog.API.Data;
 using Catalog.API.HttpHandlers;
 using Catalog.API.Middleware;
 using Catalog.Domain.Repositories;

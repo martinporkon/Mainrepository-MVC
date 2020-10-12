@@ -4,17 +4,12 @@
 
 using System;
 using System.IO;
-using Identity.Infra.DbContexts;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Serilog;
 using Serilog.Events;
 using Serilog.Sinks.SystemConsole.Themes;
-using Sooduskorv.IDP.Data;
 
 namespace Sooduskorv.IDP
 {

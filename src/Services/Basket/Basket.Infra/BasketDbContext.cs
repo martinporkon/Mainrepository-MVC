@@ -6,8 +6,8 @@ namespace Basket.Infra
 {
     public class BasketDbContext : DbContext
     {
-        public DbSet<BasketData> Baskets { get; set; }
         public DbSet<BasketOfProductsData> BasketOfProducts { get; set; }
+        public DbSet<BasketData> Baskets { get; set; }
         public BasketDbContext(DbContextOptions<BasketDbContext> options)
             : base(options) { }
 

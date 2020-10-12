@@ -1,9 +1,8 @@
 ﻿using CommonData;
 using CommonTests.BaseTests;
-using Data.CommonData;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CommonTests.CommonEntityTests
+namespace CommonTests.DataTests.CommonDataTests
 {
 
     [TestClass]
@@ -26,12 +25,6 @@ namespace CommonTests.CommonEntityTests
         [TestMethod]
         public void ValidToTest()
             => isNullableProperty(() => obj.ValidTo, x => obj.ValidTo = x);
-
-
-
-        //[TestMethod] public void ValidFromTest() => isNullableProperty<DateTime?>();
-
-        //[TestMethod] public void ValidToTest() => isNullableProperty<DateTime?>();
 
     }
 }

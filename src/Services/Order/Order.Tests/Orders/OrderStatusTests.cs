@@ -1,4 +1,5 @@
-﻿using CommonTests.BaseTests;
+﻿using Aids.Reflection;
+using CommonTests.BaseTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Order.Data.Orders;
 

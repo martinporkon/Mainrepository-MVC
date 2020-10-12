@@ -9,9 +9,21 @@
 
   <ItemGroup>
     <Compile Remove="Views\Basket\**" />
+    <Compile Remove="Views\Manage\**" />
+    <Compile Remove="wwwroot\css\basket\**" />
+    <Compile Remove="wwwroot\css\catalog\**" />
     <Content Remove="Views\Basket\**" />
+    <Content Remove="Views\Manage\**" />
+    <Content Remove="wwwroot\css\basket\**" />
+    <Content Remove="wwwroot\css\catalog\**" />
     <EmbeddedResource Remove="Views\Basket\**" />
+    <EmbeddedResource Remove="Views\Manage\**" />
+    <EmbeddedResource Remove="wwwroot\css\basket\**" />
+    <EmbeddedResource Remove="wwwroot\css\catalog\**" />
     <None Remove="Views\Basket\**" />
+    <None Remove="Views\Manage\**" />
+    <None Remove="wwwroot\css\basket\**" />
+    <None Remove="wwwroot\css\catalog\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,12 +39,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\WebMVC.Domain\WebMVC.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Views\Manage\" />
-    <Folder Include="wwwroot\css\catalog\" />
-    <Folder Include="wwwroot\css\basket\" />
   </ItemGroup>
 
 </Project>

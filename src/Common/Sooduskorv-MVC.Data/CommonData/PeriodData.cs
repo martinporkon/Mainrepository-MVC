@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Data.CommonData
+namespace CommonData
 {
     public abstract class PeriodData : UniqueEntityData
     {

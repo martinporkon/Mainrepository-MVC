@@ -1,5 +1,4 @@
 ﻿using CommonData;
-using Data.CommonData;
 
 
 namespace Order.Data.ShipMethodOfParty

@@ -5,15 +5,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Docs\**" />
+    <EmbeddedResource Remove="Docs\**" />
+    <None Remove="Docs\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.DataAnnotations" Version="2.2.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\CommonData\Data.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Docs\" />
+    <ProjectReference Include="..\..\..\Common\Sooduskorv-MVC.Data\Sooduskorv-MVC.Data.csproj" />
   </ItemGroup>
 
 </Project>

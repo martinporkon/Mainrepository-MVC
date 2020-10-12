@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\CommonData\Data.csproj" />
+    <ProjectReference Include="..\..\..\Common\Sooduskorv-MVC.Data\Sooduskorv-MVC.Data.csproj" />
   </ItemGroup>
 
 </Project>

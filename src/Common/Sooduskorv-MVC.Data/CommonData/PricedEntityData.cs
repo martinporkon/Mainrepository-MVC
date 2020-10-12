@@ -1,4 +1,4 @@
-﻿namespace Data.CommonData
+﻿namespace CommonData
 {
     public abstract class PricedEntityData : PeriodData
     {

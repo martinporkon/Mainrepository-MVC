@@ -1,7 +1,6 @@
 ﻿using Basket.Data.Baskets;
 using CommonData;
 using CommonTests.BaseTests;
-using Data.CommonData;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Basket.Tests.Baskets

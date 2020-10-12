@@ -1,7 +1,6 @@
 ﻿using Catalog.Data.Parties;
 using CommonData;
 using CommonTests.BaseTests;
-using Data.CommonData;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace Catalog.Tests.Parties

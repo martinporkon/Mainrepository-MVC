@@ -5,11 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\CommonData\Data.csproj" />
+    <Folder Include="Docs\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Docs\" />
+    <ProjectReference Include="..\..\..\Common\Sooduskorv-MVC.Data\Sooduskorv-MVC.Data.csproj" />
   </ItemGroup>
 
 </Project>

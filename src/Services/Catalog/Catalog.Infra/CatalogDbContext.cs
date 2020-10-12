@@ -6,8 +6,6 @@ using Catalog.Data.Products;
 using Catalog.Data.SubCategories;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using Catalog.Data.UserProfiles;
 
 namespace Catalog.Infra

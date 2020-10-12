@@ -1,15 +1,15 @@
 ﻿using CommonData;
 using CommonTests.BaseTests;
-using Data.CommonData;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CommonTests.CommonEntityTests
+namespace CommonTests.DataTests.CommonDataTests
 {
+
     [TestClass]
-    public class NamedEntityDataTests : AbstractClassTests<NamedEntityData, PeriodData>
+    public class UniqueEntityDataTests : AbstractClassTests<UniqueEntityData, object>
     {
 
-        private class testClass : NamedEntityData { }
+        private class testClass : UniqueEntityData { }
 
         [TestInitialize]
         public override void TestInitialize()
@@ -19,10 +19,8 @@ namespace CommonTests.CommonEntityTests
         }
 
         [TestMethod]
-        public void NameTest()
-            => isNullableProperty(() => obj.Name, x => obj.Name = x);
-
-     
+        public void IdTest()
+            => isNullableProperty(() => obj.Id, x => obj.Id = x);
 
     }
 }

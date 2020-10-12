@@ -1,9 +1,8 @@
 ﻿using CommonData;
 using CommonTests.BaseTests;
-using Data.CommonData;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CommonTests.CommonEntityTests
+namespace CommonTests.DataTests.CommonDataTests
 {
     [TestClass]
     public class PricedEntityDataTests : AbstractClassTests<PricedEntityData, PeriodData>

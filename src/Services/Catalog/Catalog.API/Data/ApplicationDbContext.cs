@@ -1,4 +1,4 @@
-﻿using Catalog.Infra.Quantity;
+﻿using Catalog.Infra;
 using Microsoft.EntityFrameworkCore;
 
 namespace Catalog.API.Data
@@ -10,7 +10,7 @@ namespace Catalog.API.Data
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
-            QuantityDbContext.InitializeTables(builder);
+            CatalogDbContext.InitializeTables(builder);
         }
     }
 }

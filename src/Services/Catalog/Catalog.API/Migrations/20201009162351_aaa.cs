@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Catalog.API.Migrations
 {
-    public partial class initial : Migration
+    public partial class aaa : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -123,6 +123,16 @@ namespace Catalog.API.Migrations
                 {
                     table.PrimaryKey("PK_UserProfiles", x => x.Id);
                 });
+
+            migrationBuilder.InsertData(
+                table: "UserProfiles",
+                columns: new[] { "Id", "SelectedParty", "Subject", "SubscriptionLevel" },
+                values: new object[] { new Guid("6a14b494-dd7f-4bd5-83a8-5bb1f61559a5"), "Walmart", "d860efca-22d9-47fd-8249-791ba61b07c7", "Basic" });
+
+            migrationBuilder.InsertData(
+                table: "UserProfiles",
+                columns: new[] { "Id", "SelectedParty", "Subject", "SubscriptionLevel" },
+                values: new object[] { new Guid("6cab1c22-1eda-49e1-a2ad-4956103c49f4"), "Costco Wholesale", "b7539694-97e7-4dfe-84da-b4256e1ff5c7", "FreeUser" });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

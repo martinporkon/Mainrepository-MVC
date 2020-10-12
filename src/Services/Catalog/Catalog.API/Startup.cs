@@ -42,7 +42,7 @@ namespace Catalog.API
                 });
             services.AddDbContext<QuantityDbContext>(options =>
             {
-                options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=CatalogDB;Trusted_Connection=True;");
+                options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=CatalogDB;Trusted_Connection=True;", b => b.MigrationsAssembly("Catalog.API"));
             });
 
         }

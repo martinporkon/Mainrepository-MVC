@@ -10,16 +10,67 @@
     <base href="/" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel=" stylesheet" href`="~/css/components/header.css" />
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arimo, Helvetica, sans-serif;
+        }
+
+        /* Style the header */
+        header {
+            background-color: rgba(255, 255, 255, 0.71);
+            padding: 50px;
+            text-align: left;
+            font-size: 18px;
+            color: black;
+        }
+  
+
+        /* Clear floats after the columns */
+        section:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+
+        /* Style the footer */
+        footer {
+            background-color: linear-gradient(to right, rgb(35, 177, 221) 0%, rgb(35, 177, 221) 100%;
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+
+        .left {
+            grid-area: left;
+            background-color: linear-gradient(to right, rgb(35, 177, 221) 0%, rgb(35, 177, 221) 100%;
+            text-align: center;
+
+        }
+        .grid-container {
+            display: grid;
+            grid-template-areas: 'header header header header header header' 'left left middle middle right right' 'footer footer footer footer footer footer';
+            /* grid-column-gap: 10px; - if you want gap between the columns */
+            /* Responsive layout - makes the two columns/boxes stack on top of each other instead of next to each other, on small screens */
+        
+    </style>
+
 </head>
-<body>
+<body style="background: url(https://sun9-21.userapi.com/qrGDI9AQvznoM2vWMuxqKLJ5lcOsuhS7iSHJVQ/BCvg66-ARco.jpg); background-size: 100% 100%;">
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WebMVC</a>
+                
+                <a class="navbar-brand" style="text-align: right" asp-area="" asp-controller="Home" asp-action="Index">WebMVC</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+            </div>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
@@ -44,21 +95,29 @@
                         </li>
                         }
                     </ul>
-                </div>
-            </div>
+                </div> 
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+    <div class="left">
+        <div class="container">
             @RenderBody()
-        </main>
+        </div>
+
+        
+
+
     </div>
 
+
+
+
+
+
     <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2020 - WebMVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
+           &copy; 2020 - WebMVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+       
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

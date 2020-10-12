@@ -29,4 +29,10 @@
     <ProjectReference Include="..\WebMVC.Domain\WebMVC.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Views\Manage\" />
+    <Folder Include="wwwroot\css\catalog\" />
+    <Folder Include="wwwroot\css\basket\" />
+  </ItemGroup>
+
 </Project>

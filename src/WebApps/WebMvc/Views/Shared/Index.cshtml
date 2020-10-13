@@ -4,9 +4,11 @@
 @{
 
 }
-<head>
-    <meta charset="utf-8">
-</head>
+    <head>
+        <script src="_content/MatBlazor/dist/matBlazor.js"></script>
+        <link href="_content/MatBlazor/dist/matBlazor.css" rel="stylesheet" />
+        <meta charset="utf-8">
+    </head>
 @(await Html.RenderComponentAsync<Nav>(RenderMode.ServerPrerendered))
 
 <style>

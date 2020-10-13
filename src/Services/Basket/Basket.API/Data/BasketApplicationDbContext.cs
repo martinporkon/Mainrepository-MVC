@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Basket.API.Data
 {
-    public class ApplicationDbContext : DbContext
+    public class BasketApplicationDbContext : DbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        public BasketApplicationDbContext(DbContextOptions<BasketApplicationDbContext> options)
             : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder builder)

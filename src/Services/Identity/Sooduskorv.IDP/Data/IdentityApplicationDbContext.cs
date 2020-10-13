@@ -3,10 +3,10 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Sooduskorv.IDP.Data
 {
-    public class ApplicationDbContext : DbContext
+    public class IdentityApplicationDbContext : DbContext
     {
 
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        public IdentityApplicationDbContext(DbContextOptions<IdentityApplicationDbContext> options)
             : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder builder)

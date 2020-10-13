@@ -23,7 +23,7 @@ namespace Sooduskorv.IDP
 
             services.AddDbContext<IdentityDbContext>(options =>
             {
-                options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=CustomerDB;Trusted_Connection=True;", b => b.MigrationsAssembly("Sooduskorv.IDP"));
+                options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=CustomerDB;Trusted_Connection=True;");
             });
 
             services.AddScoped<ILocalUserService, LocalUserService>();

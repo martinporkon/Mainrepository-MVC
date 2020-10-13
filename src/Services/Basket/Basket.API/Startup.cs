@@ -24,7 +24,7 @@ namespace Basket.API
                 .AddJsonOptions(opts => opts.JsonSerializerOptions.PropertyNamingPolicy = null);
             services.AddSwagger(Configuration);
             services.AddCustomAuthentication(Configuration);
-            services.AddDbContext<ApplicationDbContext>(options =>
+            services.AddDbContext<BasketApplicationDbContext>(options =>
             {
                 options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=BasketDB;Trusted_Connection=True;");
             });

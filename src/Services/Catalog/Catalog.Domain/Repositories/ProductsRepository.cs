@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using Catalog.Data.Products;
 using Catalog.Data.UserProfiles;
-using Catalog.Infra.Quantity;
+using Catalog.Infra;
 
 namespace Catalog.Domain.Repositories
 {
     public class ProductsRepository : IProductsRepository
     {
-        private QuantityDbContext _context;
+        private CatalogDbContext _context;
 
-        public ProductsRepository(QuantityDbContext applicationDbContext)
+        public ProductsRepository(CatalogDbContext applicationDbContext)
         {
             _context = applicationDbContext ??
                        throw new ArgumentNullException(nameof(applicationDbContext));

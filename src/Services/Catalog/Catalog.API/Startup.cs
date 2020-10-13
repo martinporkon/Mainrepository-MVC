@@ -1,7 +1,7 @@
 using Catalog.API.HttpHandlers;
 using Catalog.API.Middleware;
 using Catalog.Domain.Repositories;
-using Catalog.Infra.Quantity;
+using Catalog.Infra;
 using IdentityServer4.AccessTokenValidation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
@@ -39,7 +39,7 @@ namespace Catalog.API
                     options.ApiName = "productsapi";
                     options.ApiSecret = "apisecret";
                 });
-            services.AddDbContext<QuantityDbContext>(options =>
+            services.AddDbContext<CatalogDbContext>(options =>
             {
                 options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=CatalogDB;Trusted_Connection=True;", b => b.MigrationsAssembly("Catalog.API"));
             });

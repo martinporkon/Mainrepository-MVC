@@ -171,6 +171,14 @@ namespace Catalog.Infra
             }
         }
 
+        private static bool initializeUserProfiles(CatalogDbContext db)
+        {
+            if (db.UserProfiles.Count() != 0) return false;
+            db.UserProfiles.AddRange(userProfiles);
+            db.SaveChanges();
+            return true;
+        }
+
         private static bool initializeCategories(CatalogDbContext db)
         {
             if (db.Categories.Count() != 0) return false;
@@ -226,6 +234,7 @@ namespace Catalog.Infra
         public static bool Initialize(CatalogDbContext db)
         {
             //order matters
+            initializeUserProfiles(db);
             initializeParties(db);
             initializeProducts(db);
             initializeSubcategories(db);

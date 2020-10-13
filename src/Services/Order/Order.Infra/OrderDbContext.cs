@@ -17,7 +17,7 @@ namespace Order.Infra
         }
         public static void InitializeTables(ModelBuilder builder)
         {
-            builder.ApplyConfiguration(new OrderDataEntityTypeConfiguration());
+            builder.Entity<OrderData>().ToTable(nameof(Orders));
         }
     }
 }

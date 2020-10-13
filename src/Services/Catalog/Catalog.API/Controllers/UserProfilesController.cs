@@ -31,7 +31,7 @@ namespace Catalog.API.Controllers
             {
                 var subjectFromToken = User.Claims.FirstOrDefault(c => c.Type == "sub")?.Value;
 
-                applicationUserProfileFromRepo = new UserProfile()
+                applicationUserProfileFromRepo = new UserProfileData()
                 {
                     Subject = subject,
                     SubscriptionLevel = "FreeUser"

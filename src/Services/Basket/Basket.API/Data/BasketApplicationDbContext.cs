@@ -1,11 +1,12 @@
 ﻿using Basket.Infra;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace Basket.API.Data
 {
-    public class ApplicationDbContext : DbContext
+    public class BasketApplicationDbContext : DbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
+        public BasketApplicationDbContext(DbContextOptions<BasketApplicationDbContext> options)
             : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder builder)
@@ -13,5 +14,6 @@ namespace Basket.API.Data
             base.OnModelCreating(builder);
             BasketDbContext.InitializeTables(builder);
         }
+        
     }
 }

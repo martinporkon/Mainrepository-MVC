@@ -3,9 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Catalog.API.Data
 {
-    public class ApplicationDbContext : DbContext
+    public class CatalogApplicationDbContext : DbContext
     {
-        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options) { }
+        public CatalogApplicationDbContext(DbContextOptions<CatalogApplicationDbContext> options) : base(options) { }
 
         protected override void OnModelCreating(ModelBuilder builder)
         {

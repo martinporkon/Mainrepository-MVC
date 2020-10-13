@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Catalog.API.Migrations
 {
     [DbContext(typeof(CatalogDbContext))]
-    [Migration("20201009162351_aaa")]
-    partial class aaa
+    [Migration("20201013073044_updatecatalog")]
+    partial class updatecatalog
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -80,7 +80,7 @@ namespace Catalog.API.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<decimal>("Price")
-                        .HasColumnType("decimal(16,4)");
+                        .HasColumnType("decimal(16,2)");
 
                     b.Property<DateTime?>("ValidFrom")
                         .HasColumnType("datetime2");
@@ -123,6 +123,9 @@ namespace Catalog.API.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("Amount")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Brand")
                         .HasColumnType("nvarchar(max)");
 
@@ -150,9 +153,6 @@ namespace Catalog.API.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PartyId")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("SubCategoryId")
                         .HasColumnType("nvarchar(max)");
 
@@ -178,6 +178,9 @@ namespace Catalog.API.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("CategoryId")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
@@ -192,7 +195,7 @@ namespace Catalog.API.Migrations
                     b.ToTable("SubCategories");
                 });
 
-            modelBuilder.Entity("Catalog.Data.UserProfiles.UserProfile", b =>
+            modelBuilder.Entity("Catalog.Data.UserProfiles.UserProfileData", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -215,22 +218,6 @@ namespace Catalog.API.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("UserProfiles");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("6a14b494-dd7f-4bd5-83a8-5bb1f61559a5"),
-                            SelectedParty = "Walmart",
-                            Subject = "d860efca-22d9-47fd-8249-791ba61b07c7",
-                            SubscriptionLevel = "Basic"
-                        },
-                        new
-                        {
-                            Id = new Guid("6cab1c22-1eda-49e1-a2ad-4956103c49f4"),
-                            SelectedParty = "Costco Wholesale",
-                            Subject = "b7539694-97e7-4dfe-84da-b4256e1ff5c7",
-                            SubscriptionLevel = "FreeUser"
-                        });
                 });
 #pragma warning restore 612, 618
         }

@@ -24,7 +24,7 @@ namespace Order.API
                 .AddJsonOptions(opts => opts.JsonSerializerOptions.PropertyNamingPolicy = null);
             services.AddSwagger(Configuration);
             services.AddCustomAuthentication(Configuration);
-            services.AddDbContext<ApplicationDbContext>(options =>
+            services.AddDbContext<OrderApplicationDbContext>(options =>
             {
                 options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=OrderDB;Trusted_Connection=True;");
             });

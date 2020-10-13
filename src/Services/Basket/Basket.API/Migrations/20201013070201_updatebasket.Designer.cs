@@ -9,9 +9,9 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Basket.API.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20201008031743_test")]
-    partial class test
+    [DbContext(typeof(BasketApplicationDbContext))]
+    [Migration("20201013070201_updatebasket")]
+    partial class updatebasket
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,7 +21,7 @@ namespace Basket.API.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Basket.Data.BasketOfProduct.BasketOfProductsData", b =>
+            modelBuilder.Entity("Basket.Data.BasketOfProducts.BasketOfProductsData", b =>
                 {
                     b.Property<string>("BasketId")
                         .HasColumnType("nvarchar(450)");

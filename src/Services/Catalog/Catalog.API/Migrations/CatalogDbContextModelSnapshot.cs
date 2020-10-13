@@ -4,11 +4,12 @@ using Catalog.Infra;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Catalog.API.Migrations
 {
     [DbContext(typeof(CatalogDbContext))]
-    partial class QuantityDbContextModelSnapshot : ModelSnapshot
+    partial class CatalogDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -77,7 +78,7 @@ namespace Catalog.API.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<decimal>("Price")
-                        .HasColumnType("decimal(16,4)");
+                        .HasColumnType("decimal(16,2)");
 
                     b.Property<DateTime?>("ValidFrom")
                         .HasColumnType("datetime2");
@@ -120,6 +121,9 @@ namespace Catalog.API.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("Amount")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Brand")
                         .HasColumnType("nvarchar(max)");
 
@@ -147,9 +151,6 @@ namespace Catalog.API.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("PartyId")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("SubCategoryId")
                         .HasColumnType("nvarchar(max)");
 
@@ -175,6 +176,9 @@ namespace Catalog.API.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("CategoryId")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
@@ -189,7 +193,7 @@ namespace Catalog.API.Migrations
                     b.ToTable("SubCategories");
                 });
 
-            modelBuilder.Entity("Catalog.Data.UserProfiles.UserProfile", b =>
+            modelBuilder.Entity("Catalog.Data.UserProfiles.UserProfileData", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -212,22 +216,6 @@ namespace Catalog.API.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("UserProfiles");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = new Guid("9471e2ed-7f28-4984-aba8-45ddb3bc7739"),
-                            SelectedParty = "Walmart",
-                            Subject = "d860efca-22d9-47fd-8249-791ba61b07c7",
-                            SubscriptionLevel = "Basic"
-                        },
-                        new
-                        {
-                            Id = new Guid("4ef47f9e-c881-4a10-933d-15adb175bc78"),
-                            SelectedParty = "Costco Wholesale",
-                            Subject = "b7539694-97e7-4dfe-84da-b4256e1ff5c7",
-                            SubscriptionLevel = "FreeUser"
-                        });
                 });
 #pragma warning restore 612, 618
         }

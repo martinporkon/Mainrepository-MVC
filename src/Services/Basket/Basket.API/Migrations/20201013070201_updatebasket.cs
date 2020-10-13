@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Basket.API.Migrations
 {
-    public partial class test : Migration
+    public partial class updatebasket : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

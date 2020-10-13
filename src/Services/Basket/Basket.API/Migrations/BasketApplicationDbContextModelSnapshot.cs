@@ -7,8 +7,8 @@ using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace Basket.API.Migrations
 {
-    [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [DbContext(typeof(BasketApplicationDbContext))]
+    partial class BasketApplicationDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
         {
@@ -18,7 +18,7 @@ namespace Basket.API.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Basket.Data.BasketOfProduct.BasketOfProductsData", b =>
+            modelBuilder.Entity("Basket.Data.BasketOfProducts.BasketOfProductsData", b =>
                 {
                     b.Property<string>("BasketId")
                         .HasColumnType("nvarchar(450)");

@@ -2,7 +2,5 @@
 
 namespace Catalog.Data.Prices
 {
-    public sealed class PriceData : PricedEntityData
-    {
-    }
+    public sealed class PriceData : PricedEntityData { }
 }

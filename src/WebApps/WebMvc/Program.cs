@@ -41,7 +41,6 @@ namespace SooduskorvWebMVC
                    
                     var logger = services.GetRequiredService<ILogger<Program>>();
                     logger.LogError(ex, "An error occurred creating the DB.");
-                    throw new Exception("initializer ei läinud läbi");
                 }
             }
             host.Run();

@@ -10,7 +10,6 @@ using Catalog.Data.UserProfiles;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Catalog.Infra
 {

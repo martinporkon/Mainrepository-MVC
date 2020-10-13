@@ -1,16 +1,9 @@
-﻿using Aids.Enums;
-using Aids.Random;
+﻿using Aids.Random;
 using Microsoft.EntityFrameworkCore;
-using Order.Data.Addresses;
-using Order.Data.AddressOfCustomer;
-using Order.Data.AddressOfParty;
 using Order.Data.Orders;
-using Order.Data.ShipMethodOfParty;
-using Order.Data.ShipMethods;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Order.Infra
 {

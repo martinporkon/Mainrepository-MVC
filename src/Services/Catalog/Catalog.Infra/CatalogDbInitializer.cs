@@ -6,6 +6,7 @@ using Catalog.Data.Prices;
 using Catalog.Data.ProductOfParty;
 using Catalog.Data.Products;
 using Catalog.Data.SubCategories;
+using Catalog.Data.UserProfiles;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,20 @@ namespace Catalog.Infra
 
         internal static int randomDataGenerationAmount = 10;
 
+        internal static List<UserProfileData> userProfiles => new List<UserProfileData> 
+        {
+        new UserProfileData{
+            Id = Guid.NewGuid(),
+            Subject = "d860efca-22d9-47fd-8249-791ba61b07c7",
+            SubscriptionLevel = "Basic",
+            SelectedParty = "Walmart"},
+
+        new UserProfileData(){
+            Id = Guid.NewGuid(),
+            Subject = "b7539694-97e7-4dfe-84da-b4256e1ff5c7",
+            SubscriptionLevel = "FreeUser",
+            SelectedParty = "Costco Wholesale"}
+        };
 
         internal static List<CategoryData> categories = new List<CategoryData> { };
         internal static void generateCategories()

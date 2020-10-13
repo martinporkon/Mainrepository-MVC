@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace Catalog.Data.UserProfiles
 {
-    public class UserProfile
+    public class UserProfileData
     {
         [Key]
         public Guid Id { get; set; }

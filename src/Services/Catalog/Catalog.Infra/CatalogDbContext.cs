@@ -4,6 +4,7 @@ using Catalog.Data.Prices;
 using Catalog.Data.ProductOfParty;
 using Catalog.Data.Products;
 using Catalog.Data.SubCategories;
+using Catalog.Data.UserProfiles;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -19,6 +20,7 @@ namespace Catalog.Infra
         public DbSet<ProductData> Products { get; set; }
         public DbSet<ProductsOfPartyData> ProductsOfParties { get; set; }
         public DbSet<SubCategoryData> SubCategories { get; set; }
+        public DbSet<UserProfileData> UserProfiles { get; set; }
 
         public CatalogDbContext(DbContextOptions<CatalogDbContext> options) : base(options) { }
 
@@ -29,6 +31,7 @@ namespace Catalog.Infra
         }
         public static void InitializeTables(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<UserProfileData>().ToTable(nameof(UserProfiles));
             modelBuilder.Entity<CategoryData>().ToTable(nameof(Categories));
             modelBuilder.Entity<PartyData>().ToTable(nameof(Parties));
             modelBuilder.Entity<PriceData>().ToTable(nameof(Prices)).Property(x => x.Price)

@@ -10,8 +10,8 @@ namespace Catalog.Domain.Repositories
         IEnumerable<ProductData> GetProducts();
         ProductData GetProduct(Guid id);
         bool Save();
-        UserProfile GetApplicationUserProfile(string subject);
-        void AddApplicationUserProfile(UserProfile applicationUserProfile);
+        UserProfileData GetApplicationUserProfile(string subject);
+        void AddApplicationUserProfile(UserProfileData applicationUserProfile);
         bool ApplicationUserProfileExists(string subject);
     }
 }

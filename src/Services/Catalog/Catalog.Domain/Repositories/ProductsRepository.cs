@@ -17,7 +17,7 @@ namespace Catalog.Domain.Repositories
                        throw new ArgumentNullException(nameof(applicationDbContext));
         }
 
-        public UserProfile GetApplicationUserProfile(string subject)
+        public UserProfileData GetApplicationUserProfile(string subject)
         {
             return _context.UserProfiles.FirstOrDefault(a => a.Subject == subject);
         }
@@ -27,7 +27,7 @@ namespace Catalog.Domain.Repositories
             return _context.UserProfiles.Any(a => a.Subject == subject);
         }
 
-        public void AddApplicationUserProfile(UserProfile applicationUserProfile)
+        public void AddApplicationUserProfile(UserProfileData applicationUserProfile)
         {
             _context.UserProfiles.Add(applicationUserProfile);
         }

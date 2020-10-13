@@ -1,112 +1,51 @@
-﻿
-@{ 
+﻿@using SooduskorvWebMVC.Components
+@using Microsoft.VisualBasic
+
+@{
 
 }
 <head>
     <meta charset="utf-8">
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        .column {
-            float: left;
-            padding: 10px;
-        }
-
-        .clearfix::after {
-            content: "";
-            clear: both;
-            display: table;
-        }
-
-        .menu {
-            width: 25%;
-            position: fixed;
-            left: 0;
-        }
-
-        .menu ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-        }
-
-        .menu li {
-            padding: 10px;
-            margin-bottom: 10px;
-            background-color: #33b5e5;
-            color: #ffffff;
-            text-align: center;
-        }
-
-            .menu li:hover {
-                background-color: #0099cc;
-            }
-
-        .button {
-            display: inline-block;
-            padding: 35px 45px;
-            font-size: 34px;
-            cursor: pointer;
-            text-align: center;
-            text-decoration: none;
-            outline: none;
-            color: #fff;
-            background-color: #00b8e6;
-            border: none;
-            border-radius: 15px;
-            box-shadow: 0 9px #999;
-           
-        }
-
-            .button:hover {
-                background-color: #008fb3
-            }
-
-            .button:active {
-                background-color: #00b8e6;
-                box-shadow: 0 5px #666;
-                transform: translateY(4px);
-            }
-        .container {
-            position: relative;
-        }
-
-        .center {
-            position: absolute;
-            padding-left: 60%;                   
-            padding-top: 25%;
-        }
-
-    </style>
 </head>
-<body>
+@(await Html.RenderComponentAsync<Nav>(RenderMode.ServerPrerendered))
 
-    <div class="clearfix">
-        <div class="column menu">
-            <ul>
-                <li>Puu- ja köögiviljad</li>
-                <li>Liha- ja kalatooted</li>
-                <li>Piimatooted, munad, võid</li>
-                <li>Leivad, saiad,kondiitritooted</li>
-                <li>Valmistoidud</li>
-                <li>Kuivained, hommikusöögid, hoidised</li>
-                <li>Maiustused, küpsised, snäkid</li>
-                <li>Joogid</li>
-                <li>Lastekaubad</li>
-                <li>Lemmikloomakaubad</li>
-                <li>Enesehooldustarbed</li>
-                <li>Majapidamis- ja kodukaubad</li>             
-            </ul>
-        </div>
+<style>
+    .button {
+        display: inline-block;
+        padding: 35px 45px;
+        font-size: 34px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        outline: none;
+        color: #fff;
+        background-color: #00b8e6;
+        border: none;
+        border-radius: 15px;
+        box-shadow: 0 9px #999;
+    }
+
+        .button:hover {
+            background-color: #008fb3
+        }
+
+        .button:active {
+            background-color: #00b8e6;
+            box-shadow: 0 5px #666;
+            transform: translateY(4px);
+        }
+
+    .container {
+        position: relative;
+    }
+</style>
+
+<div class="container">
+    <div class="center">
+        <button class="button">Koosta nimekiri</button>
     </div>
-    <div class="container">
-        <div class="center">
-            <button class="button">Koosta nimekiri</button>
-        </div>
+</div>
 
-    </div>
-    
-
-</body>
+@section Scripts {
+    <script src="_framework/blazor.server.js"></script>
+}

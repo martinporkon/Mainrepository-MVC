@@ -24,10 +24,10 @@ namespace SooduskorvWebMVC
 
                 try
                 {
-                    var dbBasket = services.GetRequiredService<BasketDbContext>();
-                    BasketDbInitializer.Initialize(dbBasket);
                     var dbCatalog = services.GetRequiredService<CatalogDbContext>();
                     CatalogDbInitializer.Initialize(dbCatalog);
+                    var dbBasket = services.GetRequiredService<BasketDbContext>();
+                    BasketDbInitializer.Initialize(dbBasket);
                     var dbOrder = services.GetRequiredService<OrderDbContext>();
                     OrderDbInitializer.Initialize(dbOrder);
                     var dbAddress = services.GetRequiredService<AddressDbContext>();
@@ -38,8 +38,10 @@ namespace SooduskorvWebMVC
                 }
                 catch (Exception ex)
                 {
+                   
                     var logger = services.GetRequiredService<ILogger<Program>>();
                     logger.LogError(ex, "An error occurred creating the DB.");
+                    throw new Exception("initializer ei läinud läbi");
                 }
             }
             host.Run();

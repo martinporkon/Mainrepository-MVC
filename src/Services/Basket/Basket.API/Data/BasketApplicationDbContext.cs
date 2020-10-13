@@ -1,5 +1,6 @@
 ﻿using Basket.Infra;
 using Microsoft.EntityFrameworkCore;
+using System;
 
 namespace Basket.API.Data
 {
@@ -13,5 +14,6 @@ namespace Basket.API.Data
             base.OnModelCreating(builder);
             BasketDbContext.InitializeTables(builder);
         }
+        
     }
 }

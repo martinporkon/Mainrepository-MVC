@@ -1,10 +1,12 @@
-﻿using Identity.Domain.Services;
+﻿using Catalog.Infra;
+using Identity.Domain.Services;
 using Identity.Infra.DbContexts;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Sooduskorv.IDP.Data;
 
 namespace Sooduskorv.IDP
 {
@@ -20,10 +22,13 @@ namespace Sooduskorv.IDP
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-
-            services.AddDbContext<IdentityDbContext>(options =>
+            services.AddDbContext<IdentityApplicationDbContext>(options =>
             {
-                options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=CustomerDB;Trusted_Connection=True;", b => b.MigrationsAssembly("Sooduskorv.IDP"));
+                options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=IdentityDB;Trusted_Connection=True;");
+            });
+            services.AddDbContext<CatalogDbContext>(options =>
+            {
+                options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=IdentityDB;Trusted_Connection=True;");
             });
 
             services.AddScoped<ILocalUserService, LocalUserService>();

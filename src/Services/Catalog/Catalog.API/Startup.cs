@@ -1,3 +1,4 @@
+using Catalog.API.Data;
 using Catalog.API.HttpHandlers;
 using Catalog.API.Middleware;
 using Catalog.Domain.Repositories;
@@ -38,12 +39,15 @@ namespace Catalog.API
                     options.Authority = "https://localhost:44318";
                     options.ApiName = "productsapi";
                     options.ApiSecret = "apisecret";
+                }); 
+            services.AddDbContext<CatalogApplicationDbContext>(options =>
+                {
+                    options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=CatalogDB;Trusted_Connection=True;");
                 });
             services.AddDbContext<CatalogDbContext>(options =>
             {
-                options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=CatalogDB;Trusted_Connection=True;", b => b.MigrationsAssembly("Catalog.API"));
-            });
-
+                options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=CatalogDB;Trusted_Connection=True;");
+            });       
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

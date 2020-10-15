@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Order.API.Data;
 using Order.API.Middleware;
+using Order.Infra;
 
 namespace Order.API
 {
@@ -25,6 +26,18 @@ namespace Order.API
             services.AddSwagger(Configuration);
             services.AddCustomAuthentication(Configuration);
             services.AddDbContext<OrderApplicationDbContext>(options =>
+            {
+                options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=OrderDB;Trusted_Connection=True;");
+            });
+            services.AddDbContext<OrderDbContext>(options =>
+            {
+                options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=OrderDB;Trusted_Connection=True;");
+            });
+            services.AddDbContext<AddressDbContext>(options =>
+            {
+                options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=OrderDB;Trusted_Connection=True;");
+            });
+            services.AddDbContext<ShippingDbContext>(options =>
             {
                 options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=OrderDB;Trusted_Connection=True;");
             });

@@ -1,5 +1,6 @@
 using Basket.API.Data;
 using Basket.API.Middleware;
+using Basket.Infra;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -25,6 +26,10 @@ namespace Basket.API
             services.AddSwagger(Configuration);
             services.AddCustomAuthentication(Configuration);
             services.AddDbContext<BasketApplicationDbContext>(options =>
+            {
+                options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=BasketDB;Trusted_Connection=True;");
+            });
+            services.AddDbContext<BasketDbContext>(options =>
             {
                 options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=BasketDB;Trusted_Connection=True;");
             });

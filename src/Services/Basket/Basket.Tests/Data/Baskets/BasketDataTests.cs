@@ -3,10 +3,10 @@ using CommonData;
 using CommonTests.BaseTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Basket.Tests.Baskets
+namespace Basket.Tests.Data.Baskets
 {
     [TestClass]
-    public class BasketDataTests: SealedClassTests<BasketData, NamedEntityData>
+    public class BasketDataTests : SealedClassTests<BasketData, NamedEntityData>
     {
         [TestMethod]
         public void CustomerIdTest() =>

@@ -3,7 +3,7 @@ using CommonData;
 using CommonTests.BaseTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Basket.Tests.BasketOfProducts
+namespace Basket.Tests.Data.BasketOfProducts
 {
     [TestClass]
     public class BasketOfProductsDataTests : SealedClassTests<BasketOfProductsData, PeriodData>

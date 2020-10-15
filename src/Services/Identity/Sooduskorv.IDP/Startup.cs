@@ -24,11 +24,11 @@ namespace Sooduskorv.IDP
             services.AddControllersWithViews();
             services.AddDbContext<IdentityApplicationDbContext>(options =>
             {
-                options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=IdentityDB;Trusted_Connection=True;");
+                options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=CustomerDB;Trusted_Connection=True;");
             });
-            services.AddDbContext<CatalogDbContext>(options =>
+            services.AddDbContext<IdentityDbContext>(options =>
             {
-                options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=IdentityDB;Trusted_Connection=True;");
+                options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=CustomerDB;Trusted_Connection=True;");
             });
 
             services.AddScoped<ILocalUserService, LocalUserService>();

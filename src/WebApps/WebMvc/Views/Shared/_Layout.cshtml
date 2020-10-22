@@ -13,8 +13,27 @@
     <link rel=" stylesheet" href`="~/css/components/header.css" />
     <link rel=" stylesheet" href`="~/css/custom/_layout.css" />
 
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <script src="_content/MatBlazor/dist/matBlazor.js"></script>
+
+    <style>
+        app {
+        }
+    </style>
+
+    <script type="text/javascript">
+    </script>
+
 </head>
 <body style="background: url(https://sun9-21.userapi.com/qrGDI9AQvznoM2vWMuxqKLJ5lcOsuhS7iSHJVQ/BCvg66-ARco.jpg); background-size: 100% 100%;">
+
+    <script src="_framework/blazor.webassembly.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+
     <style>
         * {
             box-sizing: border-box;
@@ -35,7 +54,8 @@
             color: black;
             background-size: 20px;
         }
-        .top_header{
+
+        .top_header {
             text-align: center;
             font-size: 15px;
             color: black;
@@ -56,7 +76,7 @@
             padding: 10px;
             text-align: center;
             position: fixed;
-            padding-top:0;
+            padding-top: 0;
             color: white;
         }
 
@@ -65,13 +85,13 @@
             background-color: linear-gradient(to right, rgb(35, 177, 221) 0%, rgb(35, 177, 221) 100%;
             text-align: center;
         }
+
         .container_box {
             position: fixed;
             top: 0;
             right: 0px;
             /*box-shadow: inherit;*/
         }
-
     </style>
     <header class="header" id="header">
         <div class="top_header">
@@ -82,56 +102,51 @@
         </div>
         <nav class="container_box navbar-expand-sm navbar-toggleable-sm navbar-light bg-white">
 
-            
-                <div class="container">
 
-                    <img src="~/css/images/logo.png" alt="Logo" style="width:150px; padding-left: 10px; float: left;">
+            <div class="container clearfix">
 
-                    <a class="navbar-brand" style="text-align: right; color: #00ccff; text-shadow: 2px 2px 4px #000000;font-size: 40px" asp-area="" asp-controller="Home" asp-action="Index">Sooduskorv </a>
-                    <p style="font-size: 20px; color: dimgray;">Osta soodsalt, osta Sooduskorviga!</p>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                </div>
+                <img src="~/css/images/logo.png" alt="Logo" style="width: 150px; padding-left: 10px; float: left; left:0px;">
+                <a class="navbar-brand" style="text-align: right; color: #00ccff; text-shadow: 2px 2px 4px #000000;font-size: 40px" asp-area="" asp-controller="Home" asp-action="Index">Sooduskorv </a>
+                <p style="font-size: 17px; color: dimgray;">Osta soodsalt, osta Sooduskorviga!</p>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
 
 
-          
+
 
         </nav>
-      
-         <div class="navbar navbar-expand-sm" >
-                <ul class="navbar-nav flex-grow-1">
+
+        <div class="navbar navbar-expand-sm">
+            <ul class="navbar-nav flex-grow-1">
+                <li class="nav-item">
+                    <a class="nav-link" style="color: green" asp-controller="Home" asp-action="Index">Avaleht</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                </li>
+                @*@if ((await AuthorizationService.AuthorizeAsync(User, "AllowToOrderProductPolicy")).Succeeded)
+        {*@
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Order" asp-action="OrderProduct">Order</a>
+                </li>
+                @*}*@
+                <li class="nav-item">
+                    <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Product">All items</a>
+                </li>
+                @if (User.Identity.IsAuthenticated)
+                {
                     <li class="nav-item">
-                        <a class="nav-link" style="color: green" asp-controller="Home" asp-action="Index">Avaleht</a>
+                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Logout">Logout</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                    </li>
-                    @if ((await AuthorizationService.AuthorizeAsync(User, "AllowToOrderProductPolicy")).Succeeded)
-                    {
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Order" asp-action="OrderProduct">Order</a>
-                        </li>
-                    }
-                    <li class="nav-item">
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Product" asp-action="Product">All items</a>
-                    </li>
-                    @if (User.Identity.IsAuthenticated)
-                    {
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Logout">Logout</a>
-                        </li>
-                    }
-                </ul>
-         </div>
-        
-    </header>
-    <div class="left">
-        <div class="container">
-            @RenderBody()
+                }
+            </ul>
         </div>
-    </div>
+
+    </header>
+            @RenderBody()    
     <footer class="border-top footer text-muted">
         &copy; @DateTime.Now.Year - WebMVC - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
     </footer>

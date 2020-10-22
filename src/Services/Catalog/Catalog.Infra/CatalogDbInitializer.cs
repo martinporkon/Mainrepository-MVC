@@ -26,18 +26,14 @@ namespace Catalog.Infra
         internal static List<UserProfileData> userProfiles => new List<UserProfileData> 
         {
         new UserProfileData{
-            Id = Guid.NewGuid().ToString(),
-            ValidFrom = GetRandom.DateTime(validFromMinimum, validFromMaximum),
-            ValidTo = GetRandom.DateTime(validToMinimum, validToMaximum),
+            Id=Guid.NewGuid().ToString(),
             Subject = "d860efca-22d9-47fd-8249-791ba61b07c7",
             SubscriptionLevel = "Basic",
             SelectedParty = "Walmart"},
 
         new UserProfileData(){
-            Id = Guid.NewGuid().ToString(),
+            Id=Guid.NewGuid().ToString(),
             Subject = "b7539694-97e7-4dfe-84da-b4256e1ff5c7",
-            ValidFrom = GetRandom.DateTime(validFromMinimum, validFromMaximum),
-            ValidTo = GetRandom.DateTime(validToMinimum, validToMaximum),
             SubscriptionLevel = "FreeUser",
             SelectedParty = "Costco Wholesale"}
         };

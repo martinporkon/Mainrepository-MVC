@@ -3,7 +3,7 @@ using CommonTests.OverallTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Order.Data.AddressOfCustomer;
 
-namespace Order.Tests.AddressOfCustomer
+namespace Order.Tests.Data.AddressOfCustomer
 {
 
     [TestClass]

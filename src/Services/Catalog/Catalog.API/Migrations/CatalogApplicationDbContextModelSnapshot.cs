@@ -207,12 +207,6 @@ namespace Catalog.API.Migrations
                     b.Property<string>("SubscriptionLevel")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime?>("ValidFrom")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("ValidTo")
-                        .HasColumnType("datetime2");
-
                     b.HasKey("Id");
 
                     b.ToTable("UserProfiles");

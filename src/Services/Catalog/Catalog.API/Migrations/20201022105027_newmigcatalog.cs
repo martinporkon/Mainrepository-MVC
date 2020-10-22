@@ -116,8 +116,6 @@ namespace Catalog.API.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(nullable: false),
-                    ValidFrom = table.Column<DateTime>(nullable: true),
-                    ValidTo = table.Column<DateTime>(nullable: true),
                     Subject = table.Column<string>(nullable: true),
                     SubscriptionLevel = table.Column<string>(nullable: true),
                     SelectedParty = table.Column<string>(nullable: true)

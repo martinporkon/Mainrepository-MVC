@@ -3,7 +3,7 @@ using CommonTests.OverallTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Order.Data.ShipMethodOfParty;
 
-namespace Order.Tests.ShipMethodsOfParties
+namespace Order.Tests.Data.ShipMethodsOfParties
 {
 
     [TestClass]

@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Catalog.API.Migrations
 {
     [DbContext(typeof(CatalogApplicationDbContext))]
-    [Migration("20201022091546_newmigcatalog")]
+    [Migration("20201022105027_newmigcatalog")]
     partial class newmigcatalog
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -208,12 +208,6 @@ namespace Catalog.API.Migrations
 
                     b.Property<string>("SubscriptionLevel")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("ValidFrom")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("ValidTo")
-                        .HasColumnType("datetime2");
 
                     b.HasKey("Id");
 

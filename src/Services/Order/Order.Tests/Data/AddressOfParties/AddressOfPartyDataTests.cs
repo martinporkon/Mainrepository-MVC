@@ -3,7 +3,7 @@ using CommonTests.OverallTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Order.Data.AddressOfParty;
 
-namespace Order.Tests.AddressOfParties
+namespace Order.Tests.Data.AddressOfParties
 {
     [TestClass]
     public class AddressOfPartyDataTests : SealedClassTests<AddressOfPartyData, AddressedEntityData>

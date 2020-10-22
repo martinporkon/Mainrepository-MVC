@@ -3,7 +3,7 @@ using CommonTests.OverallTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Order.Data.Orders;
 
-namespace Order.Tests.Orders
+namespace Order.Tests.Data.Orders
 {
 
     [TestClass]

@@ -14,16 +14,17 @@ namespace Basket.Tests.Infra
             base.TestInitialize();
             type = typeof(BasketDbInitializer);
             db = new BasketDbContext(options);
-            
-            removeAll(db.BasketOfProducts);
+
             removeAll(db.Baskets);
+            removeAll(db.BasketOfProducts);
+
         }
 
         [TestMethod]
         public void InitializeTest()
         {
             BasketDbInitializer.Initialize(db);
-            Assert.AreEqual(90, db.BasketOfProducts.Count());
+            Assert.AreEqual(100, db.BasketOfProducts.Count());
             Assert.AreEqual(10, db.Baskets.Count());
         }
     }

@@ -9,26 +9,20 @@
   <ItemGroup>
     <Compile Remove="Aids\**" />
     <Compile Remove="Core\**" />
-    <Compile Remove="Data\**" />
     <Compile Remove="Domain\**" />
     <Compile Remove="Facade\**" />
-    <Compile Remove="Infra\**" />
     <Compile Remove="Pages\**" />
     <Compile Remove="Soft\**" />
     <EmbeddedResource Remove="Aids\**" />
     <EmbeddedResource Remove="Core\**" />
-    <EmbeddedResource Remove="Data\**" />
     <EmbeddedResource Remove="Domain\**" />
     <EmbeddedResource Remove="Facade\**" />
-    <EmbeddedResource Remove="Infra\**" />
     <EmbeddedResource Remove="Pages\**" />
     <EmbeddedResource Remove="Soft\**" />
     <None Remove="Aids\**" />
     <None Remove="Core\**" />
-    <None Remove="Data\**" />
     <None Remove="Domain\**" />
     <None Remove="Facade\**" />
-    <None Remove="Infra\**" />
     <None Remove="Pages\**" />
     <None Remove="Soft\**" />
   </ItemGroup>

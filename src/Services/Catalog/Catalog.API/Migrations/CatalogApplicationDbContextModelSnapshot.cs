@@ -195,9 +195,8 @@ namespace Catalog.API.Migrations
 
             modelBuilder.Entity("Catalog.Data.UserProfiles.UserProfileData", b =>
                 {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("SelectedParty")
                         .HasColumnType("nvarchar(max)");

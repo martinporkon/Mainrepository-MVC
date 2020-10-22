@@ -15,6 +15,36 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\Common\Sooduskorv-MVC.Aids\Sooduskorv-MVC.Aids.csproj" />
     <ProjectReference Include="..\..\src\Common\Sooduskorv-MVC.Data\Sooduskorv-MVC.Data.csproj" />
+    <ProjectReference Include="..\..\src\Services\Basket\Basket.API\Basket.API.csproj" />
+    <ProjectReference Include="..\..\src\Services\Basket\Basket.Data\Basket.Data.csproj" />
+    <ProjectReference Include="..\..\src\Services\Basket\Basket.Domain\Basket.Domain.csproj" />
+    <ProjectReference Include="..\..\src\Services\Basket\Basket.Infra\Basket.Infra.csproj" />
+    <ProjectReference Include="..\..\src\Services\Catalog\Catalog.Aids\Catalog.Aids.csproj" />
+    <ProjectReference Include="..\..\src\Services\Catalog\Catalog.API\Catalog.API.csproj" />
+    <ProjectReference Include="..\..\src\Services\Catalog\Catalog.Core\Catalog.Core.csproj" />
+    <ProjectReference Include="..\..\src\Services\Catalog\Catalog.Data\Catalog.Data.csproj" />
+    <ProjectReference Include="..\..\src\Services\Catalog\Catalog.Domain\Catalog.Domain.csproj" />
+    <ProjectReference Include="..\..\src\Services\Catalog\Catalog.Facade\Catalog.Facade.csproj" />
+    <ProjectReference Include="..\..\src\Services\Catalog\Catalog.Infra\Catalog.Infra.csproj" />
+    <ProjectReference Include="..\..\src\Services\Catalog\Catalog.Pages\Catalog.Pages.csproj" />
+    <ProjectReference Include="..\..\src\Services\Identity\Identity.Aids\Identity.Aids.csproj" />
+    <ProjectReference Include="..\..\src\Services\Identity\Identity.Core\Identity.Core.csproj" />
+    <ProjectReference Include="..\..\src\Services\Identity\Identity.Data\Identity.Data.csproj" />
+    <ProjectReference Include="..\..\src\Services\Identity\Identity.Domain\Identity.Domain.csproj" />
+    <ProjectReference Include="..\..\src\Services\Identity\Identity.Facade\Identity.Facade.csproj" />
+    <ProjectReference Include="..\..\src\Services\Identity\Identity.Infra\Identity.Infra.csproj" />
+    <ProjectReference Include="..\..\src\Services\Identity\Identity.Tests\Identity.Tests.csproj" />
+    <ProjectReference Include="..\..\src\Services\Identity\Identity.Views\Identity.Views.csproj" />
+    <ProjectReference Include="..\..\src\Services\Identity\Sooduskorv.IDP\Sooduskorv.IDP.csproj" />
+    <ProjectReference Include="..\..\src\Services\Order\Order.API\Order.API.csproj" />
+    <ProjectReference Include="..\..\src\Services\Order\Order.Data\Order.Data.csproj" />
+    <ProjectReference Include="..\..\src\Services\Order\Order.Domain\Order.Domain.csproj" />
+    <ProjectReference Include="..\..\src\Services\Order\Order.Infra\Order.Infra.csproj" />
+    <ProjectReference Include="..\..\src\WebApps\WebMVC.Domain\WebMVC.Domain.csproj" />
+    <ProjectReference Include="..\..\src\WebApps\WebMVC.Facade\WebMVC.Facade.csproj" />
+    <ProjectReference Include="..\..\src\WebApps\WebMVC.Pages\WebMVC.Pages.csproj" />
+    <ProjectReference Include="..\..\src\WebApps\WebMVC.Tests\WebMVC.Tests.csproj" />
+    <ProjectReference Include="..\..\src\WebApps\WebMvc\SooduskorvWebMVC.csproj" />
   </ItemGroup>
 
 </Project>

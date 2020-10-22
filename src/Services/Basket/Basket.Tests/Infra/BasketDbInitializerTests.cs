@@ -17,7 +17,7 @@ namespace Basket.Tests.Infra
 
             removeAll(db.Baskets);
             removeAll(db.BasketOfProducts);
-            
+
         }
 
         [TestMethod]

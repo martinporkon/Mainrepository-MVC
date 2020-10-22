@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Catalog.API.Migrations
 {
-    public partial class updatecatalog : Migration
+    public partial class newmigcatalog : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -115,10 +115,12 @@ namespace Catalog.API.Migrations
                 name: "UserProfiles",
                 columns: table => new
                 {
-                    Id = table.Column<Guid>(nullable: false),
-                    Subject = table.Column<string>(maxLength: 50, nullable: false),
-                    SubscriptionLevel = table.Column<string>(maxLength: 250, nullable: false),
-                    SelectedParty = table.Column<string>(maxLength: 250, nullable: true)
+                    Id = table.Column<string>(nullable: false),
+                    ValidFrom = table.Column<DateTime>(nullable: true),
+                    ValidTo = table.Column<DateTime>(nullable: true),
+                    Subject = table.Column<string>(nullable: true),
+                    SubscriptionLevel = table.Column<string>(nullable: true),
+                    SelectedParty = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

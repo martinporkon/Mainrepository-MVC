@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Basket.API.Migrations
 {
     [DbContext(typeof(BasketApplicationDbContext))]
-    [Migration("20201013070201_updatebasket")]
-    partial class updatebasket
+    [Migration("20201022091256_newmig")]
+    partial class newmig
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

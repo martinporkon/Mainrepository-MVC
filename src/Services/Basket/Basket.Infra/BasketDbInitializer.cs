@@ -52,7 +52,7 @@ namespace Basket.Infra
             }
         }
 
-        private static bool initializeBasketOfProducts(BasketDbContext db)
+        internal static bool initializeBasketOfProducts(BasketDbContext db)
         {
             if (db.BasketOfProducts.Count() != 0) return false;
             generateBasketOfProducts();
@@ -61,7 +61,7 @@ namespace Basket.Infra
             return true;
         }
 
-        private static bool initializeBaskets(BasketDbContext db)
+        internal static bool initializeBaskets(BasketDbContext db)
         {
             if (db.Baskets.Count() != 0) return false;
             generateBaskets();

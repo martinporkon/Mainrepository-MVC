@@ -10,8 +10,8 @@ using Order.API.Data;
 namespace Order.API.Migrations
 {
     [DbContext(typeof(OrderApplicationDbContext))]
-    [Migration("20201013071440_updateorder")]
-    partial class updateorder
+    [Migration("20201022092053_newmigorder")]
+    partial class newmigorder
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -1,5 +1,4 @@
-﻿using Basket.Infra;
-using Catalog.Infra;
+﻿using Catalog.Infra;
 using CommonTests.InfraTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Linq;

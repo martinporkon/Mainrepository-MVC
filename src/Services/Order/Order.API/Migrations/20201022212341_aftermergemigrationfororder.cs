@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Order.API.Migrations
 {
-    public partial class newmigorder : Migration
+    public partial class aftermergemigrationfororder : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

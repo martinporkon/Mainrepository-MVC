@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Sooduskorv.IDP.Data;
 
 namespace Sooduskorv.IDP.Migrations
 {
     [DbContext(typeof(IdentityApplicationDbContext))]
-    partial class IdentityApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201022212414_aftermergemigrationforidentity")]
+    partial class aftermergemigrationforidentity
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

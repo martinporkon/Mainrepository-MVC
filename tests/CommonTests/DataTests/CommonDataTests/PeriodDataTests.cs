@@ -8,7 +8,6 @@ namespace CommonTests.DataTests.CommonDataTests
     [TestClass]
     public class PeriodDataTests : AbstractClassTests<PeriodData, UniqueEntityData>
     {
-
         private class testClass : PeriodData { }
 
         [TestInitialize]

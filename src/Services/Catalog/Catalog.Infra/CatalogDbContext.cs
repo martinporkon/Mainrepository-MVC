@@ -36,9 +36,7 @@ namespace Catalog.Infra
             modelBuilder.Entity<PriceData>().ToTable(nameof(Prices)).Property(x => x.Price)
                 .HasColumnType("decimal(16,2)");
             modelBuilder.Entity<ProductData>().ToTable(nameof(Products));
-            modelBuilder.Entity<ProductsOfPartyData>().ToTable(nameof(ProductsOfParties)).HasKey(x => new { x.ProductId, x.PartyId });
-            modelBuilder.Entity<UserProfileData>().ToTable(nameof(UserProfiles));
-               
+            modelBuilder.Entity<ProductsOfPartyData>().ToTable(nameof(ProductsOfParties)).HasKey(x => new { x.ProductId, x.PartyId });              
             modelBuilder.Entity<SubCategoryData>().ToTable(nameof(SubCategories));
         }
     }

@@ -18,6 +18,7 @@ namespace Identity.Infra.DbContexts
 
         public static void InitializeTables(ModelBuilder builder)
         {
+            builder.Entity<UserClaim>().ToTable(nameof(UserClaims));
             builder.Entity<UserData>().ToTable(nameof(Users))
                 .HasIndex(u => u.Subject)
                 .IsUnique();

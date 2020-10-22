@@ -10,14 +10,14 @@ namespace Order.Infra
         public OrderDbContext(DbContextOptions<OrderDbContext> options)
             : base(options) { }
 
-        protected override void OnModelCreating(ModelBuilder builder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(builder);
-            InitializeTables(builder);
+            base.OnModelCreating(modelBuilder);
+            InitializeTables(modelBuilder);
         }
-        public static void InitializeTables(ModelBuilder builder)
+        public static void InitializeTables(ModelBuilder modelBuilder)
         {
-            builder.Entity<OrderData>().ToTable(nameof(Orders));
+            modelBuilder.Entity<OrderData>().ToTable(nameof(Orders));
         }
     }
 }

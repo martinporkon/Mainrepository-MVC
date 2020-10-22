@@ -16,17 +16,17 @@ namespace Identity.Infra.DbContexts
         public IdentityDbContext(DbContextOptions<IdentityDbContext> options)
             : base(options) { }
 
-        public static void InitializeTables(ModelBuilder builder)
+        public static void InitializeTables(ModelBuilder modelBuilder)
         {
-            builder.Entity<UserData>().ToTable(nameof(Users))
+            modelBuilder.Entity<UserData>().ToTable(nameof(Users))
                 .HasIndex(u => u.Subject)
                 .IsUnique();
 
-            builder.Entity<UserData>()
+            modelBuilder.Entity<UserData>()
             .HasIndex(u => u.Username)
             .IsUnique();
 
-            builder.Entity<UserData>().HasData(
+            modelBuilder.Entity<UserData>().HasData(
                 new UserData()
                 {
                     Id = new Guid("13229d33-99e0-41b3-b18d-4f72127e3971"),
@@ -44,7 +44,7 @@ namespace Identity.Infra.DbContexts
                     Active = true
                 });
 
-            builder.Entity<UserClaim>().HasData(
+            modelBuilder.Entity<UserClaim>().HasData(
              new UserClaim()
              {
                  Id = Guid.NewGuid(),

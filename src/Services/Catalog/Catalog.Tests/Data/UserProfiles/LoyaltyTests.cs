@@ -1,12 +1,12 @@
 ﻿using Aids.Reflection;
 using Catalog.Data.UserProfiles;
-using CommonTests.BaseTests;
+using CommonTests.OverallTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Catalog.Tests.UserProfiles
+namespace Catalog.Tests.Data.UserProfiles
 {
     [TestClass]
     public class LoyaltyTests : BaseTests

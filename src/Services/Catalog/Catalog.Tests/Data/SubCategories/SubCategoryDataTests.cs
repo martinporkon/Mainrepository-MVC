@@ -1,9 +1,9 @@
 ﻿using Catalog.Data.SubCategories;
 using CommonData;
-using CommonTests.BaseTests;
+using CommonTests.OverallTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Catalog.Tests.SubCategories
+namespace Catalog.Tests.Data.SubCategories
 {
     [TestClass]
     public class SubCategoryDataTests : SealedClassTests<SubCategoryData, NamedEntityData>

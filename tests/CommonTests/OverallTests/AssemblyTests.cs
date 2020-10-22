@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CommonTests.BaseTests
+namespace CommonTests.OverallTests
 {
     public class AssemblyTests : BaseAssemblyTests
     {

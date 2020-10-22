@@ -6,22 +6,22 @@ namespace Basket.Infra
 {
     public class BasketDbContext : DbContext
     {
-        public DbSet<BasketOfProductsData> BasketOfProducts { get; set; }
         public DbSet<BasketData> Baskets { get; set; }
-        public BasketDbContext(DbContextOptions<BasketDbContext> options)
-            : base(options) { }
+        public DbSet<BasketOfProductsData> BasketOfProducts { get; set; }
+        
+        public BasketDbContext(DbContextOptions<BasketDbContext> options) : base(options) { }
 
-        public static void InitializeTables(ModelBuilder builder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            builder.Entity<BasketOfProductsData>().ToTable(nameof(BasketOfProducts))
-                .HasKey(x => new { x.BasketId, x.ProductOfPartyId });
-            builder.Entity<BasketData>().ToTable(nameof(Baskets));
+            base.OnModelCreating(modelBuilder);
+            InitializeTables(modelBuilder);
         }
-
-        protected override void OnModelCreating(ModelBuilder builder)
+        public static void InitializeTables(ModelBuilder modelBuilder)
         {
-            base.OnModelCreating(builder);
-            InitializeTables(builder);
+            if (modelBuilder is null) return;
+            modelBuilder.Entity<BasketData>().ToTable(nameof(Baskets));
+            modelBuilder.Entity<BasketOfProductsData>().ToTable(nameof(BasketOfProducts))
+               .HasKey(x => new { x.BasketId, x.ProductOfPartyId });
         }
     }
 }

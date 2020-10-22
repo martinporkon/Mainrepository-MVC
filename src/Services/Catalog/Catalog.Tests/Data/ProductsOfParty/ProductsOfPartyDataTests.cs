@@ -1,9 +1,9 @@
 ﻿using Catalog.Data.ProductOfParty;
 using CommonData;
-using CommonTests.BaseTests;
+using CommonTests.OverallTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Catalog.Tests.ProductsOfParty
+namespace Catalog.Tests.Data.ProductsOfParty
 {
 
     [TestClass]

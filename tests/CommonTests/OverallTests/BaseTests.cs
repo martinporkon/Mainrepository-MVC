@@ -8,7 +8,7 @@ using Aids.Classes;
 using Aids.Reflection;
 using Microsoft.EntityFrameworkCore;
 
-namespace CommonTests.BaseTests
+namespace CommonTests.OverallTests
 {
     public class BaseTests
     {

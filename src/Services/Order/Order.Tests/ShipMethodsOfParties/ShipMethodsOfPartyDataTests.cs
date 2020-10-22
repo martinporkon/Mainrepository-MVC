@@ -1,5 +1,5 @@
 ﻿using CommonData;
-using CommonTests.BaseTests;
+using CommonTests.OverallTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Order.Data.ShipMethodOfParty;
 

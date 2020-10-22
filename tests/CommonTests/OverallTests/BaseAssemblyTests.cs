@@ -4,7 +4,7 @@ using System.Linq;
 using Aids.Reflection;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CommonTests.BaseTests
+namespace CommonTests.OverallTests
 {
 
     public class BaseAssemblyTests

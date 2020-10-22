@@ -1,9 +1,9 @@
 ﻿using Catalog.Data.Prices;
 using CommonData;
-using CommonTests.BaseTests;
+using CommonTests.OverallTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Catalog.Tests.Prices
+namespace Catalog.Tests.Data.Prices
 {
     [TestClass]
     public class PriceDataTests : SealedClassTests<PriceData, PricedEntityData>

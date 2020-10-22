@@ -1,11 +1,12 @@
 ﻿
+using CommonTests.OverallTests;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace CommonTests.InfraTests
 {
 
-    public class DbInitializerTests<TDbContext> : BaseTests.BaseTests where TDbContext : DbContext
+    public class DbInitializerTests<TDbContext> : BaseTests where TDbContext : DbContext
     {
 
         protected TDbContext db;

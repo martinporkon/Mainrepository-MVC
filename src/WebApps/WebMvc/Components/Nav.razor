@@ -1,5 +1,10 @@
-﻿@using Microsoft.AspNetCore.Components.Web
-@page "/nav"
+﻿
+
+@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.AspNetCore.Components.Routing
+
+
+@*@page "/nav"
 <body>
     <style>
         * {
@@ -37,9 +42,31 @@
                 text-align: center;
             }
 
-                .menu li:hover {
-                    background-color: #0099cc;
+                .menu li a {
+                    color: white;
                 }
+
+        menu li a:active {
+            background-color: #0099cc;
+        }
+
+        .menu li:hover {
+            background-color: #0099cc;
+        }
+
+        .menu-sub-menu {
+            width: 25%;
+            position: fixed;
+            left: 0;
+        }
+
+            .menu-sub-menu li {
+                padding: 10px;
+                margin-bottom: 10px;
+                background-color: #ffffff;
+                color: black;
+                text-align: center;
+            }
 
         .center {
             position: absolute;
@@ -50,23 +77,41 @@
     <div class="clearfix">
         <div class="column menu">
             <ul>
-                <li>Puu- ja köögiviljad</li>
-                <li>Liha- ja kalatooted</li>
-                <li>Piimatooted, munad, võid</li>
-                <li>Leivad, saiad,kondiitritooted</li>
-                <li>Valmistoidud</li>
-                <li>Kuivained, hommikusöögid, hoidised</li>
-                <li>Maiustused, küpsised, snäkid</li>
-                <li>Joogid</li>
-                <li>Lastekaubad</li>
-                <li>Lemmikloomakaubad</li>
-                <li>Enesehooldustarbed</li>
-                <li>Majapidamis- ja kodukaubad</li>
+                <li><a href="#">Puu- ja juurviljad</a></li>
+                <i class="fa fa-caret-down"></i>
+
+
+                <div class="dropdown-container">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+
+
+
+
+
+
+
+                 <li><a href="#">Liha- ja kalatooted</a></li>
+                    <li><a href="#">Piimatooted, munad, võid</a></li>
+                    <li><a href="#">Leivad, saiad,kondiitritooted</a></li>
+                    <li><a href="#">Valmistoidud</a></li>
+                    <li><a href="#">Kuivained, hommikusöögid, hoidised</a></li>
+                    <li><a href="#">Maiustused, küpsised, snäkid</a></li>
+                    <li><a href="#">Joogid</a></li>
+                    <li><a href="#">Lastekaubad</a></li>
+                    <li><a href="#">Lemmikloomakaubad</a></li>
+                    <li><a href="#">Enesehooldustarbed</a></li>
+                    <li><a href="#">Majapidamis- ja kodukaubad</a></li>
             </ul>
         </div>
     </div>
 </body>
 
-@code {
 
+
+
+
+@code {*@
 }

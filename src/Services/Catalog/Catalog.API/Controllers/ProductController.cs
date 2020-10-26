@@ -8,7 +8,6 @@ namespace Catalog.API.Controllers
 {
     [Route("api/products")]
     [ApiController]
-    [Authorize]
     public class ProductController : ControllerBase
     {
         public ProductController() { }

@@ -22,8 +22,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Sooduskorv-MVC.Middleware\Sooduskorv_MVC.Middleware.csproj" />
     <ProjectReference Include="..\Catalog.Infra\Catalog.Infra.csproj" />
     <ProjectReference Include="..\Catalog.Pages\Catalog.Pages.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Proto\" />
   </ItemGroup>
 
 

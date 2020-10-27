@@ -46,7 +46,7 @@ namespace Order.Infra
                 addressesOfCustomers.Add(new AddressOfCustomerData
                 {
                     AddressId = i.ToString(),
-                    CustomerId = GetRandom.Int32(0, randomDataGenerationAmount).ToString(),
+                    BuyerId = GetRandom.Int32(0, randomDataGenerationAmount).ToString(),
                     Id = i.ToString(),
                     ValidFrom = GetRandom.DateTime(validFromMinimum, validFromMaximum),
                     ValidTo = GetRandom.DateTime(validToMinimum, validToMaximum)

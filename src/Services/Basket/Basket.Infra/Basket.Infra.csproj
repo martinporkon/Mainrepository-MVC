@@ -11,7 +11,7 @@
 
   <ItemGroup>
     
-    <ProjectReference Include="..\..\..\Common\Sooduskorv-MVC.Aids\Sooduskorv-MVC.Aids.csproj" />
+    <ProjectReference Include="..\..\..\Common\Sooduskorv-MVC.Aids\Sooduskorv_MVC.Aids.csproj" />
     
     <ProjectReference Include="..\Basket.Data\Basket.Data.csproj" />
   </ItemGroup>

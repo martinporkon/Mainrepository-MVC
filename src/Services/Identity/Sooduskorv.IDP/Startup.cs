@@ -1,5 +1,4 @@
-﻿using Catalog.Infra;
-using Identity.Domain.Services;
+﻿using Identity.Domain.Services;
 using Identity.Infra.DbContexts;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;

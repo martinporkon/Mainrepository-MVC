@@ -71,19 +71,13 @@ namespace Catalog.API
 
             app.UseStaticFiles();
 
-            app.UseSwagger();
-
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/V1/swagger.json", "Catalog V1");
-            });
+            app.UseSwaggerAPI(Configuration);
 
             app.UseHttpsRedirection();
 
             app.UseRouting();
 
             app.UseAuthentication();
-
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

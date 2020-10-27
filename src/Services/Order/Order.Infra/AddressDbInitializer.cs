@@ -1,11 +1,11 @@
-﻿using Aids.Enums;
-using Aids.Random;
-using Order.Data.Addresses;
+﻿using Order.Data.Addresses;
 using Order.Data.AddressOfCustomer;
 using Order.Data.AddressOfParty;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Sooduskorv_MVC.Aids.Enums;
+using Sooduskorv_MVC.Aids.Random;
 
 namespace Order.Infra
 {

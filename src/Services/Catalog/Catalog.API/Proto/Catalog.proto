@@ -1,0 +1,24 @@
+﻿syntax ="proto3";
+
+/*
+service CatalogService {
+	rpc GetItemsByIds (CatalogItemsRequest) returns (PaginatedItemsResponse) {} 
+}*/
+
+message ProductDetails {
+	string ID = 1;
+	string CategoryId = 2;
+	string SubCategoryId = 3;
+	string PartyId = 4;
+	string Type = 5;
+	string Brand = 6;
+	string Supplier = 7;
+	string CountryOfOrigin = 8;
+	string Measure = 9;
+	string Code = 10;
+	string Composition = 11;
+	string Image = 12;
+	string Name = 13;
+	/*Timestamp ValidFrom = 2;
+	Timestamp ValidTo = 2;*/
+}

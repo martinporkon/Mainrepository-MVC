@@ -1,10 +1,7 @@
-﻿using Aids.Reflection;
-using Catalog.Data.UserProfiles;
+﻿using Catalog.Data.UserProfiles;
 using CommonTests.OverallTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Sooduskorv_MVC.Aids.Reflection;
 
 namespace Catalog.Tests.Data.UserProfiles
 {

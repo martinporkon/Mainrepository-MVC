@@ -1,9 +1,9 @@
-﻿using Aids.Random;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Order.Data.Orders;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Sooduskorv_MVC.Aids.Random;
 
 namespace Order.Infra
 {

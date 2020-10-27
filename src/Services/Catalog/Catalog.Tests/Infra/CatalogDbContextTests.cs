@@ -1,5 +1,4 @@
-﻿
-using Catalog.Data.Categories;
+﻿using Catalog.Data.Categories;
 using Catalog.Data.Parties;
 using Catalog.Data.Prices;
 using Catalog.Data.ProductOfParty;
@@ -12,7 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Basket.Tests.Infra
+namespace Catalog.Tests.Infra
 {
     [TestClass]
     public class CatalogDbContextTests : DbContextTests<CatalogDbContext, DbContext>

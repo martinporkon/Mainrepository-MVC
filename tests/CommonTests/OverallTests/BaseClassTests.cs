@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Diagnostics;
-using Aids.Random;
+using Sooduskorv_MVC.Aids.Random;
 
 namespace CommonTests.OverallTests
 {

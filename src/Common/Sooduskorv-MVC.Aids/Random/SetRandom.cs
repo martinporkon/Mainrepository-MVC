@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections;
 using System.Linq;
-using Aids.Methods;
-using Aids.Reflection;
+using Sooduskorv_MVC.Aids.Methods;
+using Sooduskorv_MVC.Aids.Reflection;
 
-namespace Aids.Random
+namespace Sooduskorv_MVC.Aids.Random
 {
     public static class SetRandom {
         public static void Values(object o) {

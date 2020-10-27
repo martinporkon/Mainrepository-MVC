@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Aids.Logging
+namespace Sooduskorv_MVC.Aids.Logging
 {
 
     public interface ILogBook

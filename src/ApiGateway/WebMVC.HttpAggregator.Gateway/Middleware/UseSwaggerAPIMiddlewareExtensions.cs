@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 
-namespace Catalog.API.Middleware
+namespace WebMVC.HttpAggregator.Gateway.Middleware
 {
     public static class UseSwaggerAPIMiddlewareExtensions
     {

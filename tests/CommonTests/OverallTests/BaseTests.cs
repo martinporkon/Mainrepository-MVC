@@ -4,9 +4,9 @@ using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO;
 using System.Reflection;
-using Aids.Classes;
-using Aids.Reflection;
 using Microsoft.EntityFrameworkCore;
+using Sooduskorv_MVC.Aids.Classes;
+using Sooduskorv_MVC.Aids.Reflection;
 
 namespace CommonTests.OverallTests
 {

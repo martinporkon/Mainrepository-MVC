@@ -1,4 +1,4 @@
-﻿namespace Aids.Reflection {
+﻿namespace Sooduskorv_MVC.Aids.Reflection {
 
     public static class GetString {
         public static string Head(string s, char seperator = '.') {

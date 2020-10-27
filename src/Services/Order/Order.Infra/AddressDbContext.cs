@@ -2,7 +2,6 @@
 using Order.Data.Addresses;
 using Order.Data.AddressOfCustomer;
 using Order.Data.AddressOfParty;
-using Order.Infra.Configuration.Address;
 
 namespace Order.Infra
 {

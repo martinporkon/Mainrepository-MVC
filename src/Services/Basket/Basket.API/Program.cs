@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-using Basket.API.Data;
 using Basket.Infra;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;

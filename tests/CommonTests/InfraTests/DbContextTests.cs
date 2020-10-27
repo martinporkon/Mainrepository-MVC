@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Linq;
 using System.Linq.Expressions;
-using Aids.Reflection;
 using CommonTests.OverallTests;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Sooduskorv_MVC.Aids.Reflection;
 
 namespace CommonTests.InfraTests
 {

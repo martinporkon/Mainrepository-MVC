@@ -2,9 +2,9 @@
 using System.ComponentModel;
 using System.Linq;
 using System.Linq.Expressions;
-using Aids.Methods;
+using Sooduskorv_MVC.Aids.Methods;
 
-namespace Aids.Reflection {
+namespace Sooduskorv_MVC.Aids.Reflection {
     public class GetMember {
         public static string Name<T>(Expression<Func<T, object>> ex) {
             return Safe.Run(()=>name(ex.Body), string.Empty);

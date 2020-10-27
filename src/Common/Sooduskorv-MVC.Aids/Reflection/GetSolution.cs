@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using Aids.Methods;
+using Sooduskorv_MVC.Aids.Methods;
 
-namespace Aids.Reflection {
+namespace Sooduskorv_MVC.Aids.Reflection {
 
     public static class GetSolution {
 

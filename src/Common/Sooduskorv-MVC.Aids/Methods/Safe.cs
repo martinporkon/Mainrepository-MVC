@@ -1,7 +1,7 @@
 ﻿using System;
-using Aids.Logging;
+using Sooduskorv_MVC.Aids.Logging;
 
-namespace Aids.Methods
+namespace Sooduskorv_MVC.Aids.Methods
 {
     public static class Safe
     {

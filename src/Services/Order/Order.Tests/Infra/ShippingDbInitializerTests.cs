@@ -1,10 +1,9 @@
-﻿using Catalog.Infra;
+﻿using System.Linq;
 using CommonTests.InfraTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Order.Infra;
-using System.Linq;
 
-namespace Basket.Tests.Infra
+namespace Order.Tests.Infra
 {
     [TestClass]
     public class ShippingDbInitializerTests : DbInitializerTests<ShippingDbContext>

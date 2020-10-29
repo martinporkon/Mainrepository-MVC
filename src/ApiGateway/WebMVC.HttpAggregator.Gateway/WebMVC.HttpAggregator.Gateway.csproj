@@ -29,6 +29,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Sooduskorv_MVC.Middleware\Sooduskorv_MVC.Middleware.csproj" />
+    <ProjectReference Include="..\..\Services\Catalog\Catalog.Infra\Catalog.Infra.csproj" />
   </ItemGroup>
 
   <ItemGroup>

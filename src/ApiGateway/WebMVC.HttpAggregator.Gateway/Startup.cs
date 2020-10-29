@@ -1,3 +1,4 @@
+using Catalog.Infra.Services;
 using Catalog.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -54,7 +55,7 @@ namespace WebMVC.HttpAggregator.Gateway
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-                endpoints.MapGrpcService<CatalogService.CatalogServiceClient>();
+                /*endpoints.MapGrpcService<CatalogService.CatalogServiceClient>();*/
                 endpoints.MapGrpcService<OrderService.OrderServiceClient>();
                 endpoints.MapGrpcService<BasketService.BasketServiceClient>();
             });

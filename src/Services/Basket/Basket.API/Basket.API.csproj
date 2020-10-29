@@ -31,7 +31,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Sooduskorv_MVC.Middleware\Sooduskorv_MVC.Middleware.csproj" />
     <ProjectReference Include="..\Basket.Infra\Basket.Infra.csproj" />
   </ItemGroup>
 

@@ -43,7 +43,7 @@ namespace Basket.Infra
             {
                 baskets.Add(new BasketData
                 {
-                    CustomerId = GetRandom.Int32(0, randomDataGenerationAmount).ToString(),
+                    BuyerId = GetRandom.Int32(0, randomDataGenerationAmount).ToString(),
                     Id = i.ToString(),
                     Name = GetRandom.String(),
                     ValidFrom = GetRandom.DateTime(validFromMinimum, validFromMaximum),
@@ -71,8 +71,8 @@ namespace Basket.Infra
         }
 
         public static bool Initialize(BasketDbContext db)
-        {         
-            initializeBaskets(db);           
+        {
+            initializeBaskets(db);
             initializeBasketOfProducts(db);
             return true;
         }

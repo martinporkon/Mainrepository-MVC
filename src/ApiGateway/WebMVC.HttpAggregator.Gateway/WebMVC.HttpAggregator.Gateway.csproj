@@ -5,10 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Protos\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Google.Protobuf" Version="3.13.0" />
     <PackageReference Include="Grpc.AspNetCore" Version="2.23.2" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="5.6.3" />
@@ -16,8 +12,18 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Protobuf Include="..\..\Services\Catalog\Catalog.API\Proto\Catalog.proto" GrpcServices="Server">
+    <ProjectReference Include="..\..\..\Sooduskorv_MVC.Middleware\Sooduskorv_MVC.Middleware.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="..\..\Services\Basket\Basket.Infra\Proto\Basket.proto" GrpcServices="Client">
+      <Link>Protos\Basket.proto</Link>
+    </Protobuf>
+    <Protobuf Include="..\..\Services\Catalog\Catalog.Infra\Proto\Catalog.proto" GrpcServices="Client">
       <Link>Protos\Catalog.proto</Link>
+    </Protobuf>
+    <Protobuf Include="..\..\Services\Order\Order.Infra\Proto\Order.proto" GrpcServices="Client">
+      <Link>Protos\Order.proto</Link>
     </Protobuf>
   </ItemGroup>
 

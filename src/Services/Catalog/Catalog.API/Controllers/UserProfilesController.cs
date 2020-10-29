@@ -9,7 +9,7 @@ namespace Catalog.API.Controllers
 {
     [Route("api/applicationuserprofiles")]
     [ApiController]
-    [Authorize]
+    /*[Authorize]*/
     public class UserProfilesController : ControllerBase
     {
         private readonly IProductsRepository _productsRepository;

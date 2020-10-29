@@ -1,9 +1,10 @@
-﻿syntax ="proto3";
+﻿syntax = "proto3";
 
-/*
-service CatalogService {
-	rpc GetItemsByIds (CatalogItemsRequest) returns (PaginatedItemsResponse) {} 
-}*/
+option csharp_namespace = "Catalog.Services";
+
+package CatalogAPI;
+
+//import "google/protobuf/timestamp.proto";
 
 message ProductDetails {
 	string ID = 1;
@@ -17,8 +18,5 @@ message ProductDetails {
 	string Measure = 9;
 	string Code = 10;
 	string Composition = 11;
-	string Image = 12;
 	string Name = 13;
-	/*Timestamp ValidFrom = 2;
-	Timestamp ValidTo = 2;*/
 }

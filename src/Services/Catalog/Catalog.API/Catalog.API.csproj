@@ -10,6 +10,9 @@
 
   <ItemGroup>
     <PackageReference Include="Google.Protobuf" Version="3.13.0" />
+    <PackageReference Include="Grpc" Version="2.33.1" />
+    <PackageReference Include="Grpc.AspNetCore" Version="2.33.1" />
+    <PackageReference Include="Grpc.Core.Api" Version="2.33.1" />
     <PackageReference Include="IdentityServer4" Version="4.1.1" />
     <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="3.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Authorization" Version="3.1.8" />
@@ -23,9 +26,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Common\Sooduskorv-MVC.Middleware\Sooduskorv_MVC.Middleware.csproj" />
+    <ProjectReference Include="..\..\..\..\Sooduskorv_MVC.Middleware\Sooduskorv_MVC.Middleware.csproj" />
     <ProjectReference Include="..\Catalog.Infra\Catalog.Infra.csproj" />
     <ProjectReference Include="..\Catalog.Pages\Catalog.Pages.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Protobuf Include="..\Catalog.Infra\Proto\Catalog.proto" GrpcServices="Server">
+      <Link>Protos\Catalog.proto</Link>
+    </Protobuf>
   </ItemGroup>
 
 

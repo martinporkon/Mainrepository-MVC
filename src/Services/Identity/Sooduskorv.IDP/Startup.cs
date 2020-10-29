@@ -21,7 +21,7 @@ namespace Sooduskorv.IDP
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<IdentityApplicationDbContext>(options =>
+            services.AddDbContext<IdentityApplicationDbContext>(options => // TODO !!!
             {
                 options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=CustomerDB;Trusted_Connection=True;");
             });

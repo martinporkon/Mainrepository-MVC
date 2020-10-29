@@ -1,0 +1,31 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "Order.Services";
+
+service OrderService {
+	rpc GetOrderById (GetOrdersByIdRequest) returns (stream OrderDetailsResponse) {} 
+}
+
+message GetOrdersByIdRequest {
+	string orderId = 1;
+}
+
+enum OrderStatus {
+	Rejected = 0;
+	OnHold = 1;
+	Cancelled = 2;
+	Open = 3;
+	Closed = 4;
+	Initializing = 5;
+}
+
+message OrderDetailsResponse {
+	repeated OrderDetails orders = 1;
+}
+
+message OrderDetails {
+	string Id = 1;
+	string Name = 2;
+	string Description = 3;
+	OrderStatus isCompleted = 4;
+}

@@ -1,12 +1,14 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc;
+using Order.Infra.Order;
 
 namespace Order.API.Controllers
 {
-    [Route("[controller]")]
-    [ApiController]
-    public class OrderController : ControllerBase
+    public class OrderController : OrderRepository
     {
-        public OrderController() => throw new NotImplementedException(nameof(OrderController));
+        public OrderController()
+        {
+            
+        }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 
-namespace Catalog.API.Middleware
+namespace Sooduskorv_MVC.Middleware.SwaggerMiddleware
 {
     public static class UseSwaggerAPIMiddlewareExtensions
     {

@@ -1,12 +1,14 @@
 using Basket.API.Data;
 using Basket.API.Middleware;
 using Basket.Infra;
+using Basket.Infra.Basket;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Sooduskorv_MVC.Middleware.SwaggerMiddleware;
 
 namespace Basket.API
 {
@@ -23,9 +25,10 @@ namespace Basket.API
         {
             services.AddControllers()
                 .AddJsonOptions(opts => opts.JsonSerializerOptions.PropertyNamingPolicy = null);
-            services.AddSwagger(Configuration);
+            services.AddGrpc();
+            services.AddCustomSwagger(Configuration);
             services.AddCustomAuthentication(Configuration);
-            services.AddDbContext<BasketApplicationDbContext>(options =>
+            services.AddDbContext<BasketApplicationDbContext>(options => // TODO !!
             {
                 options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=BasketDB;Trusted_Connection=True;");
             });
@@ -42,22 +45,19 @@ namespace Basket.API
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseSwagger();
-
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/V1/swagger.json", "Catalog V1");
-            });
+            app.UseSwaggerAPI(Configuration);
 
             app.UseHttpsRedirection();
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapGrpcService<BasketRepository>();
             });
         }
     }

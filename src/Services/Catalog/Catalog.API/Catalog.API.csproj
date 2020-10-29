@@ -26,6 +26,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\EventBusRabbitMQ\EventBusRabbitMQ.csproj" />
+    <ProjectReference Include="..\..\..\..\EventBus\EventBus.csproj" />
     <ProjectReference Include="..\..\..\..\Sooduskorv_MVC.Middleware\Sooduskorv_MVC.Middleware.csproj" />
     <ProjectReference Include="..\Catalog.Infra\Catalog.Infra.csproj" />
     <ProjectReference Include="..\Catalog.Pages\Catalog.Pages.csproj" />

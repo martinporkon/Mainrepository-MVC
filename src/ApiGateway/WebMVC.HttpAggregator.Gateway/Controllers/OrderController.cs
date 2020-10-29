@@ -12,9 +12,6 @@ namespace WebMVC.HttpAggregator.Gateway.Controllers
     [AllowAnonymous]
     public class OrderController : ControllerBase
     {
-        public OrderController()
-        {
 
-        }
     }
 }

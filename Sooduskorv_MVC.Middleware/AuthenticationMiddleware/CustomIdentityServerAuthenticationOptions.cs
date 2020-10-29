@@ -1,9 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using IdentityServer4.AccessTokenValidation;
 
-namespace Sooduskorv_MVC.Middleware.AuthorizationMiddleware
+namespace Sooduskorv_MVC.Middleware.AuthenticationMiddleware
 {
     public class CustomIdentityServerAuthenticationOptions
     {

@@ -12,9 +12,6 @@ namespace WebMVC.HttpAggregator.Gateway.Controllers
     [AllowAnonymous]
     public class BasketController : ControllerBase
     {
-        public BasketController()
-        {
 
-        }
     }
 }

@@ -32,10 +32,10 @@ namespace Basket.API
             {
                 options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=BasketDB;Trusted_Connection=True;");
             });
-            services.AddDbContext<BasketDbContext>(options =>
+            /*services.AddDbContext<BasketDbContext>(options =>
             {
                 options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=BasketDB;Trusted_Connection=True;");
-            });
+            });*/
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

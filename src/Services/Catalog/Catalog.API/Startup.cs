@@ -6,6 +6,7 @@ using Catalog.API.Middleware;
 using Catalog.Domain.Repositories;
 using Catalog.Infra;
 using Catalog.Infra.Catalog;
+using EventBus.Abstractions;
 using IdentityServer4.AccessTokenValidation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
@@ -36,12 +37,20 @@ namespace Catalog.API
             services.AddControllers()
                 .AddJsonOptions(opts => opts.JsonSerializerOptions.PropertyNamingPolicy = null);
             services.AddGrpc();
+
             services.AddCustomSwagger(Configuration);
+
             services.AddHttpContextAccessor();
+
             services.AddScoped<IProductsRepository, ProductsRepository>();
             services.AddScoped<IAuthorizationHandler, SubjectMustMatchUserHandler>();
-            services.AddTransient<CatalogRepository>();// TODO
+
+            /*services.AddSingleton<IEventBus, EventBusRabbitMQ>();*/
+
+            /*services.AddTransient<CatalogRepository>();// TODO*/
+
             services.AddCustomAuthorization(Configuration);
+
             services.AddAuthentication(IdentityServerAuthenticationDefaults.AuthenticationScheme)
                 .AddIdentityServerAuthentication(options =>
                 {
@@ -89,7 +98,7 @@ namespace Catalog.API
             app.UseHttpsRedirection();
 
             app.UseRouting();
-            app.UseCors("CorsPolicy");
+
             app.UseAuthentication();
             app.UseAuthorization();
 

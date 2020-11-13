@@ -5,6 +5,7 @@ using Catalog.Data.Product;
 using Catalog.Data.UserProfiles;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Catalog.Infra
 {
@@ -33,7 +34,7 @@ namespace Catalog.Infra
             SelectedParty = "Costco Wholesale"}
         };
 
-        internal static List<CatalogData> Catalogs => new List<CatalogData>
+        internal static List<CatalogData> catalogs => new List<CatalogData>
         {
         new CatalogData{
             Id = "0",
@@ -127,7 +128,7 @@ namespace Catalog.Infra
         {
             for (int i = 0; i < randomDataGenerationAmount; i++)
             {
-                prices.Add(new PriceData { Id = i.ToString(), ValidFrom = GetRandom.DateTime(validFromMinimum, validFromMaximum), ValidTo = GetRandom.DateTime(validToMinimum, validToMaximum), Amount = GetRandom.Decimal(0, 30), CurrencyId = i.ToString(), ProductTypeId = "1" });
+                prices.Add(new PriceData { Id = i.ToString(), ValidFrom = GetRandom.DateTime(validFromMinimum, validFromMaximum), ValidTo = GetRandom.DateTime(validToMinimum, validToMaximum), Amount = GetRandom.Decimal(0, 30), CurrencyId = i.ToString(), ProductTypeId = GetRandom.Int8(0,8).ToString() });
             }
         }
 
@@ -222,49 +223,41 @@ namespace Catalog.Infra
         //    }
         //}
 
-        //private static bool initializeUserProfiles(CatalogDbContext db)
-        //{
-        //    if (db.UserProfiles.Count() != 0) return false;
-        //    db.UserProfiles.AddRange(userProfiles);
-        //    db.SaveChanges();
-        //    return true;
-        //}
+        private static bool initializeUserProfiles(CatalogDbContext db)
+        {
+            if (db.UserProfiles.Count() != 0) return false;
+            db.UserProfiles.AddRange(userProfiles);
+            db.SaveChanges();
+            return true;
+        }
+        private static bool initializeCatalogs(CatalogDbContext db)
+        {
+            if (db.Catalogs.Count() != 0) return false;
+            db.Catalogs.AddRange(catalogs);
+            db.SaveChanges();
+            return true;
+        }
 
-        //private static bool initializeCategories(CatalogDbContext db)
-        //{
-        //    if (db.Categories.Count() != 0) return false;
-        //    generateCategories();
-        //    db.Categories.AddRange(categories);
-        //    db.SaveChanges();
-        //    return true;
-        //}
+        private static bool initializeProductCategories(CatalogDbContext db)
+        {
+            if (db.ProductCategories.Count() != 0) return false;
+            db.ProductCategories.AddRange(productCategories);
+            db.SaveChanges();
+            return true;
+        }
 
-        //private static bool initializeParties(CatalogDbContext db)
-        //{
-        //    if (db.Parties.Count() != 0) return false;
-        //    db.Parties.AddRange(parties);
-        //    db.SaveChanges();
-        //    return true;
-        //}
 
-        //private static bool initializePrices(CatalogDbContext db)
-        //{
+        private static bool initializePrices(CatalogDbContext db)
+        {
 
-        //    if (db.Prices.Count() != 0) return false;
-        //    generatePrices();
-        //    db.Prices.AddRange(prices);
-        //    db.SaveChanges();
-        //    return true;
-        //}
+            if (db.Prices.Count() != 0) return false;
+            generatePrices();
+            db.Prices.AddRange(prices);
+            db.SaveChanges();
+            return true;
+        }
 
-        //private static bool initializeProductsOfParties(CatalogDbContext db)
-        //{
-        //    if (db.ProductsOfParties.Count() != 0) return false;
-        //    generateProductOfParties();
-        //    db.ProductsOfParties.AddRange(productsOfParties);
-        //    db.SaveChanges();
-        //    return true;
-        //}
+       
 
         //private static bool initializeProducts(CatalogDbContext db)
         //{
@@ -274,25 +267,19 @@ namespace Catalog.Infra
         //    return true;
         //}
 
-        //private static bool initializeSubcategories(CatalogDbContext db)
-        //{
-        //    if (db.SubCategories.Count() != 0) return false;
-        //    generateSubCategories();
-        //    db.SubCategories.AddRange(subcategories);
-        //    db.SaveChanges();
-        //    return true;
-        //}
+       
 
         public static bool Initialize(CatalogDbContext db)
         {
             //order matters
-            //initializeCatalogs(db);
+            initializeUserProfiles(db);
+            initializeCatalogs(db);
             //initializeParties(db);
             //initializeProducts(db);
             //initializeSubcategories(db);
-            //initializeCategories(db);
-            //initializePrices(db);
-            //initializeProductsOfParties(db);
+            initializeProductCategories(db);
+            initializePrices(db);
+           
             return true;
         }
 

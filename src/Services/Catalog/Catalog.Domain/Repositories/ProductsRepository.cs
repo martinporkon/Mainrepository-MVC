@@ -1,9 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Catalog.Data.Products;
+﻿using Catalog.Data.Product;
 using Catalog.Data.UserProfiles;
 using Catalog.Infra;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Catalog.Domain.Repositories
 {
@@ -32,14 +32,14 @@ namespace Catalog.Domain.Repositories
             _context.UserProfiles.Add(applicationUserProfile);
         }
 
-        public IEnumerable<ProductData> GetProducts()
+        public IEnumerable<ProductInstanceData> GetProducts()
         {
             throw new NotImplementedException("Not implemented");
         }
 
-        public ProductData GetProduct(Guid id)
+        public ProductInstanceData GetProduct(Guid id)
         {
-            return _context.Products.FirstOrDefault(i => i.Id == id.ToString());
+            return _context.ProductInstances.FirstOrDefault(i => i.Id == id.ToString());
         }
 
         public bool Save()

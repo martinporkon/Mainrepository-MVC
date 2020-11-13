@@ -1,4 +1,4 @@
-﻿using Catalog.Data.Categories;
+﻿using Catalog.Data.Product;
 using CommonData;
 using CommonTests.OverallTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -6,7 +6,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 namespace Catalog.Tests.Data.Categories
 {
     [TestClass]
-    public class CategoryDataTests : SealedClassTests<CategoryData, NamedEntityData>
+    public class CategoryDataTests : SealedClassTests<ProductCategoryData, NamedEntityData>
     {
     }
 }

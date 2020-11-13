@@ -1,4 +1,4 @@
-﻿using Catalog.Data.Prices;
+﻿using Catalog.Data.Price;
 using CommonData;
 using CommonTests.OverallTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

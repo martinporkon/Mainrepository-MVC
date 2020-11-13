@@ -1,8 +1,8 @@
-﻿using System;
-using System.Threading.Tasks;
-using Catalog.Data.Products;
+﻿using Catalog.Data.Product;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Threading.Tasks;
 
 namespace Catalog.API.Controllers
 {
@@ -17,20 +17,11 @@ namespace Catalog.API.Controllers
         [HttpGet]
         public async  Task<IActionResult> GetAllProducts()
         {
-            var products = new ProductData()
+            var products = new ProductInstanceData()
             {
                 Id = Guid.NewGuid().ToString(),
                 Name = "name",
-                Measure = "measure",
-                Type = "Food",
-                CategoryId = Guid.NewGuid().ToString(),
-                SubCategoryId = "SubCategoryId" + Guid.NewGuid().ToString(),              
-                Brand = "Brand: ",
-                Supplier = "Supplier: " + "Itaalia",
-                CountryOfOrigin = "Country : ",
-                Code = "Code: " + Guid.NewGuid().ToString(),
-                Composition = "Composition: ",
-                Description = "Description: "
+                Description = "Description: test"
             };
             return Ok(products);
         }

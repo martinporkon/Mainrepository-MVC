@@ -1,5 +1,7 @@
 ﻿using Aids.Random;
 using Catalog.Data.Catalog;
+using Catalog.Data.CatalogedProducts;
+using Catalog.Data.CatalogEntries;
 using Catalog.Data.Price;
 using Catalog.Data.Product;
 using Catalog.Data.UserProfiles;
@@ -57,6 +59,27 @@ namespace Catalog.Infra
             Description = "This catalog contains all products that are no longer on sale" },
         };
 
+        internal static List<CatalogedProductData> catalogedProducts => new List<CatalogedProductData>
+        {
+            new CatalogedProductData{
+                Id = "0",
+                CatalogEntryId= "0",
+                ProductTypeId= "0",
+                ValidFrom = GetRandom.DateTime(validFromMinimum, validFromMaximum),
+                ValidTo = GetRandom.DateTime(validToMinimum, validToMaximum)}
+        };
+        internal static List<CatalogEntryData> catalogEntries => new List<CatalogEntryData>
+        {
+            new CatalogEntryData{
+                Id= "0",
+                CatalogId="0",
+                CategoryId="0",
+                Description= "Lisatud Yrgeni poolt",
+                Name = "MIngi nimi",
+                ValidFrom = GetRandom.DateTime(validFromMinimum, validFromMaximum),
+                ValidTo = GetRandom.DateTime(validToMinimum, validToMaximum)}
+        };
+
         internal static List<ProductCategoryData> productCategories => new List<ProductCategoryData>
         {
         new ProductCategoryData{
@@ -106,6 +129,7 @@ namespace Catalog.Infra
             Description = "Sealiha on lihatoodete alamkategooria",
             BaseCategoryId = "1" },
         };
+        
 
 
         //internal static List<PartyData> parties => new List<PartyData>{
@@ -128,7 +152,7 @@ namespace Catalog.Infra
         {
             for (int i = 0; i < randomDataGenerationAmount; i++)
             {
-                prices.Add(new PriceData { Id = i.ToString(), ValidFrom = GetRandom.DateTime(validFromMinimum, validFromMaximum), ValidTo = GetRandom.DateTime(validToMinimum, validToMaximum), Amount = GetRandom.Decimal(0, 30), CurrencyId = i.ToString(), ProductTypeId = GetRandom.Int8(0,8).ToString() });
+                prices.Add(new PriceData { Id = i.ToString(), ValidFrom = GetRandom.DateTime(validFromMinimum, validFromMaximum), ValidTo = GetRandom.DateTime(validToMinimum, validToMaximum), Amount = GetRandom.Decimal(0, 30), CurrencyId = i.ToString(), ProductInstanceId = GetRandom.Int8(0,8).ToString() });
             }
         }
 
@@ -153,57 +177,143 @@ namespace Catalog.Infra
 
         //    }
         //}
+        internal static List<CountryOfOriginData> countriesOfOrigin => new List<CountryOfOriginData>
+        {
+            new CountryOfOriginData{
+                Id = "EST",
+                Description = "EE",
+                Name = "Eesti",
+                OfficialName= "Estonia",
+                NativeName="Eesti",
+                IsIsoCOuntry = true,
+                NumericCode = "70",
+                ValidFrom=  GetRandom.DateTime(validFromMinimum, validFromMaximum),
+                ValidTo =  GetRandom.DateTime(validToMinimum, validToMaximum),
 
+            },
+        };
         internal static List<ProductTypeData> productTypes => new List<ProductTypeData>
         {
-            new ProductTypeData{ Id ="0", BrandId = "0", ProductKind = ProductKind.Product,
-                CountryOfOriginId = "0", Description= "Hea eestimaine piim",
-                Name = "Piim 2,5% ",  ValidFrom=  GetRandom.DateTime(validFromMinimum, validFromMaximum),
-                ValidTo =  GetRandom.DateTime(validToMinimum, validToMaximum), Amount=400  },
-
-            //new ProductData{ Id =Guid.NewGuid().ToString(), Brand = "Tere", CategoryId = Categories.Piimatooted.ToString(),
-            //    Code= "4740036000013",CountryOfOrigin = "Eesti", Composition = "1", Description= "-vitamiiniga rikastatud piimad on sündinud soovist pakkuda meie tarbijatele aastaringselt päikest.",
-            //    Name = "Piim 2,5 %", Image = "", Measure = "L", SubCategoryId= SubCategories.Piimad.ToString(),
-            //    Supplier = "Tere AS", Type= "Piimatoode", ValidFrom=  GetRandom.DateTime(validFromMinimum, validFromMaximum),
-            //    ValidTo =  GetRandom.DateTime(validToMinimum, validToMaximum), Amount="500"  },
-
-            //new ProductData{ Id =Guid.NewGuid().ToString(), Brand = "Tere", CategoryId = Categories.Piimatooted.ToString(),
-            //    Code= "	4740036009122",CountryOfOrigin = "Eesti", Composition = "1", Description= "Eestlastele kõige harjumuspärasema rasvaprotsendiga kõrgkuumutatud piim. ",
-            //    Name = "Latte piim 2,5%", Image = "", Measure = "L", SubCategoryId= SubCategories.Piimad.ToString(),
-            //    Supplier = "Tere AS", Type= "Piimatoode", ValidFrom=  GetRandom.DateTime(validFromMinimum, validFromMaximum),
-            //    ValidTo =  GetRandom.DateTime(validToMinimum, validToMaximum),  Amount="400"  },
-
-            //new ProductData{ Id =Guid.NewGuid().ToString(), Brand = "Rakvere", CategoryId = Categories.Lihatooted.ToString(),
-            //    Code= "4740003003771", CountryOfOrigin = "Eesti", Composition = "500",
-            //    Description= "Säilitamine: +0…+2 °C. Enne tarvitamist kuumutada sisetemperatuurini vähemalt 71 °C.",
-            //    Name = "Kodune hakkliha", Image = "", Measure = "g", SubCategoryId= SubCategories.Hakkliha.ToString(),
-            //    Supplier = "HKSCAN ESTONIA AS", Type= "Lihatoode", ValidFrom=  GetRandom.DateTime(validFromMinimum, validFromMaximum),
-            //    ValidTo =  GetRandom.DateTime(validToMinimum, validToMaximum)  },
-
-            //new ProductData{ Id =Guid.NewGuid().ToString(), Brand = "Eesti Juust", CategoryId = Categories.Piimatooted.ToString(),
-            //    Code= "4740572003165", CountryOfOrigin = "Eesti", Composition = "400", Description= "Silindriline hollandi tüüpi laabijuust.",
-            //    Name = "Traditsiooniline Eesti juust", Image = "", Measure = "g", SubCategoryId= SubCategories.kodujuustud.ToString(),
-            //    Supplier = "ESTOVER PIIMATÖÖSTUS OÜ", Type= "Piimatoode", ValidFrom=  GetRandom.DateTime(validFromMinimum, validFromMaximum),
-            //    ValidTo =  GetRandom.DateTime(validToMinimum, validToMaximum)  },
-
-            //new ProductData{ Id =Guid.NewGuid().ToString(), Brand = "Rannarootsi", CategoryId = Categories.Lihatooted.ToString(),
-            //    Code= "4740215800304", CountryOfOrigin = "Eesti", Composition = "900", Description= "Madalal temperatuuril eelküpsetatud ribi, mis on mahedas marinaadis.",
-            //    Name = "Kuldne grillribi eelküpsetatud", Image = "", Measure = "g", SubCategoryId= SubCategories.Sealiha.ToString(),
-            //    Supplier = "MAAG KONSERVITÖÖSTUS AS", Type= "Lihatoode", ValidFrom=  GetRandom.DateTime(validFromMinimum, validFromMaximum),
-            //    ValidTo =  GetRandom.DateTime(validToMinimum, validToMaximum)  },
-
-            // new ProductData{ Id =Guid.NewGuid().ToString(), Brand = "Rakvere", CategoryId = Categories.Lihatooted.ToString(),
-            //    Code= "4740003006741", CountryOfOrigin = "Eesti", Composition = "500", Description= "Kodumaine seakaelakarbonaad ja kergelt suitsune mustikamarinaad.",
-            //    Name = "Mustika grill-liha", Image = "", Measure = "g", SubCategoryId= SubCategories.Sealiha.ToString(),
-            //    Supplier = "HKSCAN ESTONIA AS", Type= "Lihatoode", ValidFrom=  GetRandom.DateTime(validFromMinimum, validFromMaximum),
-            //    ValidTo =  GetRandom.DateTime(validToMinimum, validToMaximum)  },
-
-            // new ProductData{ Id =Guid.NewGuid().ToString(), Brand = "Maks&Moorits", CategoryId = Categories.Lihatooted.ToString(),
-            //    Code= "4740171081625", CountryOfOrigin = "Eesti", Composition = "600", Description= "Vana-hea klassikaline äädikamarinaadis sealihast šašlõkk (liha 90%).",
-            //    Name = "Šašlõkk klassikalises marinaadis", Image = "", Measure = "g", SubCategoryId= SubCategories.Sealiha.ToString(),
-            //    Supplier = "ATRIA EESTI AS", Type= "Lihatoode", ValidFrom=  GetRandom.DateTime(validFromMinimum, validFromMaximum),
-            //    ValidTo =  GetRandom.DateTime(validToMinimum, validToMaximum)  },
-
+            new ProductTypeData{ 
+                Id = "0",
+                ProductKind = ProductKind.Product,
+                Name = "Piim 2,5%",
+                BrandId = "0",
+                Amount = 1,
+                UnitId= "0",
+                CountryOfOriginId = "EST",
+                BarCode = "4740125000108",
+                Description = "Hea Eestimaine piim",
+                ValidFrom=  GetRandom.DateTime(validFromMinimum, validFromMaximum),
+                ValidTo =  GetRandom.DateTime(validToMinimum, validToMaximum),            
+            },
+             new ProductTypeData{
+                Id = "1",
+                ProductKind = ProductKind.Product,
+                Name = "Piim 2,5%",
+                BrandId = "1",
+                Amount = 1,
+                UnitId= "0",
+                CountryOfOriginId = "EST",
+                BarCode = "4740036000013",
+                Description = "D-vitamiiniga rikastatud piim",
+                ValidFrom=  GetRandom.DateTime(validFromMinimum, validFromMaximum),
+                ValidTo =  GetRandom.DateTime(validToMinimum, validToMaximum),
+            },
+             new ProductTypeData{
+                Id = "2",
+                ProductKind = ProductKind.Product,
+                Name = "Latte Piim 2,5%",
+                BrandId = "1",
+                Amount = 1,
+                UnitId= "0",
+                CountryOfOriginId = "EST",
+                BarCode = "4740036009122",
+                Description = "Piim parimate latte-de valmistamiseks",
+                ValidFrom=  GetRandom.DateTime(validFromMinimum, validFromMaximum),
+                ValidTo =  GetRandom.DateTime(validToMinimum, validToMaximum),
+            },
+              new ProductTypeData{
+                Id = "3",
+                ProductKind = ProductKind.Product,
+                Name = "Kodune hakkliha",
+                BrandId = "2",
+                Amount = 500,
+                UnitId= "1",
+                CountryOfOriginId = "EST",
+                BarCode = "4740003003771",
+                Description = "Säilitamine: +0…+2 °C. Enne tarvitamist kuumutada sisetemperatuurini vähemalt 71 °C.",
+                ValidFrom=  GetRandom.DateTime(validFromMinimum, validFromMaximum),
+                ValidTo =  GetRandom.DateTime(validToMinimum, validToMaximum),
+            },
+              new ProductTypeData{
+                Id = "4",
+                ProductKind = ProductKind.Product,
+                Name = "Kodune hakkliha",
+                BrandId = "2",
+                Amount = 450,
+                UnitId= "1",
+                CountryOfOriginId = "EST",
+                BarCode = "	4740003002446",
+                Description = "Mahlakas hakkliha eestimaisest sea- ja veiselihast. ",
+                ValidFrom=  GetRandom.DateTime(validFromMinimum, validFromMaximum),
+                ValidTo =  GetRandom.DateTime(validToMinimum, validToMaximum),
+            },
+              new ProductTypeData{
+                Id = "5",
+                ProductKind = ProductKind.Product,
+                Name = "Kodune hakkliha",
+                BrandId = "3",
+                Amount = 500,
+                UnitId= "1",
+                CountryOfOriginId = "EST",
+                BarCode = "4740171075518",
+                Description = "Säilitamine: +0…+2 °C. Enne tarvitamist kuumtöödelda.",
+                ValidFrom=  GetRandom.DateTime(validFromMinimum, validFromMaximum),
+                ValidTo =  GetRandom.DateTime(validToMinimum, validToMaximum),
+            },
+              new ProductTypeData{
+                Id = "6",
+                ProductKind = ProductKind.Service,
+                Name = "Kulleriga kohaletoimetamine",
+                BrandId = "4",
+                Amount = 1,
+                UnitId= "2",
+                CountryOfOriginId = "",
+                BarCode = "",
+                Description = "Kuller toimetab tellimuse teie aadressile",
+                ValidFrom=  GetRandom.DateTime(validFromMinimum, validFromMaximum),
+                ValidTo =  GetRandom.DateTime(validToMinimum, validToMaximum),
+                
+            },
+        };
+        internal static List<ProductInstanceData> productInstances => new List<ProductInstanceData>{
+            new ProductInstanceData { 
+                Id="0",
+                ProductTypeId= "5",
+                Amount = 1,
+                UnitId = "2",
+                ValidFrom=  GetRandom.DateTime(validFromMinimum, validFromMaximum),
+                ValidTo =  GetRandom.DateTime(validToMinimum, validToMaximum)},
+             new ProductInstanceData {
+                Id="1",
+                ProductTypeId= "4",
+                Amount = 3,
+                UnitId = "2",
+                ValidFrom=  GetRandom.DateTime(validFromMinimum, validFromMaximum),
+                ValidTo =  GetRandom.DateTime(validToMinimum, validToMaximum)},
+              new ProductInstanceData {
+                Id="2",
+                ProductTypeId= "6",
+                Amount = 1,
+                UnitId = "2",
+                DeliveredFrom=GetRandom.DateTime(validFromMinimum, validFromMaximum),
+                DeliveredTo=  GetRandom.DateTime(validFromMinimum, validFromMaximum),
+                ScheduledFrom= GetRandom.DateTime(validFromMinimum, validFromMaximum),
+                ScheduledTo = GetRandom.DateTime(validFromMinimum, validFromMaximum),
+                DeliveryStatus= Data.Services.DeliveryStatus.Scheduled,
+                ValidFrom=  GetRandom.DateTime(validFromMinimum, validFromMaximum),
+                ValidTo =  GetRandom.DateTime(validToMinimum, validToMaximum)},
         };
 
         //internal static List<SubCategoryData> subcategories = new List<SubCategoryData> { };
@@ -222,6 +332,34 @@ namespace Catalog.Infra
         //        });
         //    }
         //}
+        internal static List<BrandData> brands => new List<BrandData>{
+            new BrandData {
+                Id="0",
+                Name = "Alma",
+                Description= "Kirjeldus Alma kohta",
+                ValidFrom = GetRandom.DateTime(validFromMinimum, validFromMaximum),
+                ValidTo = GetRandom.DateTime(validToMinimum, validToMaximum)},
+             new BrandData {
+                Id="1",
+                Name = "Tere",
+                Description= "Kirjeldus Tere kohta",
+                ValidFrom = GetRandom.DateTime(validFromMinimum, validFromMaximum),
+                ValidTo = GetRandom.DateTime(validToMinimum, validToMaximum)},
+             new BrandData {
+                Id="2",
+                Name = "Rakvere LK",
+                Description= "Kirjeldus Rakvere LK kohta",
+                ValidFrom = GetRandom.DateTime(validFromMinimum, validFromMaximum),
+                ValidTo = GetRandom.DateTime(validToMinimum, validToMaximum)},
+             new BrandData {
+                Id="3",
+                Name = "Maks ja Moorits",
+                Description= "Kirjeldus Maks ja Moorits kohta",
+                ValidFrom = GetRandom.DateTime(validFromMinimum, validFromMaximum),
+                ValidTo = GetRandom.DateTime(validToMinimum, validToMaximum)},
+            };
+
+
 
         private static bool initializeUserProfiles(CatalogDbContext db)
         {
@@ -234,6 +372,20 @@ namespace Catalog.Infra
         {
             if (db.Catalogs.Count() != 0) return false;
             db.Catalogs.AddRange(catalogs);
+            db.SaveChanges();
+            return true;
+        }
+        private static bool initializeCatalogedProducts(CatalogDbContext db)
+        {
+            if (db.CatalogedProducts.Count() != 0) return false;
+            db.CatalogedProducts.AddRange(catalogedProducts);
+            db.SaveChanges();
+            return true;
+        }
+        private static bool initializeCatalogEntries(CatalogDbContext db)
+        {
+            if (db.CatalogEntries.Count() != 0) return false;
+            db.CatalogEntries.AddRange(catalogEntries);
             db.SaveChanges();
             return true;
         }
@@ -256,8 +408,37 @@ namespace Catalog.Infra
             db.SaveChanges();
             return true;
         }
+        private static bool initializeProductTypes(CatalogDbContext db)
+        {
 
-       
+            if (db.ProductTypes.Count() != 0) return false;
+            db.ProductTypes.AddRange(productTypes);
+            db.SaveChanges();
+            return true;
+        }
+        private static bool initializeProductInstances(CatalogDbContext db)
+        {
+
+            if (db.ProductInstances.Count() != 0) return false;
+            db.ProductInstances.AddRange(productInstances);
+            db.SaveChanges();
+            return true;
+        }
+
+        private static bool initializeCountriesOfOrigin(CatalogDbContext db)
+        {
+            if (db.CountriesOfOrigin.Count() != 0) return false;
+            db.CountriesOfOrigin.AddRange(countriesOfOrigin);
+            db.SaveChanges();
+            return true;
+        }
+        private static bool initializeBrands(CatalogDbContext db)
+        {
+            if (db.Brands.Count() != 0) return false;
+            db.Brands.AddRange(brands);
+            db.SaveChanges();
+            return true;
+        }
 
         //private static bool initializeProducts(CatalogDbContext db)
         //{
@@ -267,16 +448,19 @@ namespace Catalog.Infra
         //    return true;
         //}
 
-       
+
 
         public static bool Initialize(CatalogDbContext db)
         {
             //order matters
             initializeUserProfiles(db);
             initializeCatalogs(db);
-            //initializeParties(db);
-            //initializeProducts(db);
-            //initializeSubcategories(db);
+            initializeCatalogedProducts(db);
+            initializeCatalogEntries(db);
+            initializeProductTypes(db);
+            initializeProductInstances(db);
+            initializeCountriesOfOrigin(db);
+            initializeBrands(db);
             initializeProductCategories(db);
             initializePrices(db);
            

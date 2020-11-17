@@ -7,7 +7,7 @@
         Scheduled = 1,
         Executing = 2,
         Completed = 3,
-        Cancelled = 9
+        Cancelled = 4
 
     }
 

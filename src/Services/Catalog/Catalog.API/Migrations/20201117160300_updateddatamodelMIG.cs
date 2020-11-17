@@ -3,10 +3,25 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Catalog.API.Migrations
 {
-    public partial class productpatternmig : Migration
+    public partial class updateddatamodelMIG : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Brands",
+                columns: table => new
+                {
+                    Id = table.Column<string>(nullable: false),
+                    ValidFrom = table.Column<DateTime>(nullable: true),
+                    ValidTo = table.Column<DateTime>(nullable: true),
+                    Name = table.Column<string>(nullable: true),
+                    Description = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Brands", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "CatalogedProducts",
                 columns: table => new
@@ -52,6 +67,25 @@ namespace Catalog.API.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Catalogs", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CountriesOfOrigin",
+                columns: table => new
+                {
+                    Id = table.Column<string>(nullable: false),
+                    ValidFrom = table.Column<DateTime>(nullable: true),
+                    ValidTo = table.Column<DateTime>(nullable: true),
+                    Name = table.Column<string>(nullable: true),
+                    Description = table.Column<string>(nullable: true),
+                    OfficialName = table.Column<string>(nullable: true),
+                    NativeName = table.Column<string>(nullable: true),
+                    NumericCode = table.Column<string>(nullable: true),
+                    IsIsoCOuntry = table.Column<bool>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CountriesOfOrigin", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -114,7 +148,7 @@ namespace Catalog.API.Migrations
                     ValidTo = table.Column<DateTime>(nullable: true),
                     Amount = table.Column<decimal>(type: "decimal(16,4)", nullable: false),
                     CurrencyId = table.Column<string>(nullable: true),
-                    ProductTypeId = table.Column<string>(nullable: true)
+                    ProductInstanceId = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -144,11 +178,7 @@ namespace Catalog.API.Migrations
                     Id = table.Column<string>(nullable: false),
                     ValidFrom = table.Column<DateTime>(nullable: true),
                     ValidTo = table.Column<DateTime>(nullable: true),
-                    Name = table.Column<string>(nullable: true),
-                    Description = table.Column<string>(nullable: true),
                     ProductTypeId = table.Column<string>(nullable: true),
-                    SerialNumber = table.Column<string>(nullable: true),
-                    ProductKind = table.Column<int>(nullable: false),
                     Amount = table.Column<double>(nullable: false),
                     UnitId = table.Column<string>(nullable: true),
                     ScheduledFrom = table.Column<DateTime>(nullable: false),
@@ -174,8 +204,6 @@ namespace Catalog.API.Migrations
                     ProductKind = table.Column<int>(nullable: false),
                     Amount = table.Column<double>(nullable: false),
                     UnitId = table.Column<string>(nullable: true),
-                    PeriodOfOperationFrom = table.Column<DateTime>(nullable: true),
-                    PeriodOfOperationTo = table.Column<DateTime>(nullable: true),
                     BrandId = table.Column<string>(nullable: true),
                     CountryOfOriginId = table.Column<string>(nullable: true),
                     BarCode = table.Column<string>(nullable: true),
@@ -204,6 +232,9 @@ namespace Catalog.API.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "Brands");
+
+            migrationBuilder.DropTable(
                 name: "CatalogedProducts");
 
             migrationBuilder.DropTable(
@@ -211,6 +242,9 @@ namespace Catalog.API.Migrations
 
             migrationBuilder.DropTable(
                 name: "Catalogs");
+
+            migrationBuilder.DropTable(
+                name: "CountriesOfOrigin");
 
             migrationBuilder.DropTable(
                 name: "FeatureInstances");

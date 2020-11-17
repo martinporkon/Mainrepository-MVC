@@ -5,11 +5,10 @@ using System;
 
 namespace Catalog.Data.Product
 {
-    public sealed class ProductInstanceData : DescribedEntityData
+    public sealed class ProductInstanceData : PeriodData
     {
         public string ProductTypeId { get; set; }
-        public string SerialNumber { get; set; }
-        public ProductKind ProductKind { get; set; }
+
         public double Amount { get; set; }
         public string UnitId { get; set; }
 

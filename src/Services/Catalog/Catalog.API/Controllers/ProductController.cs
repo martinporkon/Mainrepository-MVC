@@ -19,9 +19,8 @@ namespace Catalog.API.Controllers
         {
             var products = new ProductInstanceData()
             {
-                Id = Guid.NewGuid().ToString(),
-                Name = "name",
-                Description = "Description: test"
+                Id = Guid.NewGuid().ToString(), 
+                
             };
             return Ok(products);
         }

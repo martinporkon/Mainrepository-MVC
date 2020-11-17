@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Catalog.API.Migrations
 {
     [DbContext(typeof(CatalogApplicationDbContext))]
-    [Migration("20201113154556_productpatternmig")]
-    partial class productpatternmig
+    [Migration("20201117160300_updateddatamodelMIG")]
+    partial class updateddatamodelMIG
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -104,7 +104,7 @@ namespace Catalog.API.Migrations
                     b.Property<string>("CurrencyId")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("ProductTypeId")
+                    b.Property<string>("ProductInstanceId")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime?>("ValidFrom")
@@ -116,6 +116,62 @@ namespace Catalog.API.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Prices");
+                });
+
+            modelBuilder.Entity("Catalog.Data.Product.BrandData", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("ValidFrom")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("ValidTo")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Brands");
+                });
+
+            modelBuilder.Entity("Catalog.Data.Product.CountryOfOriginData", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsIsoCOuntry")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NativeName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("NumericCode")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("OfficialName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("ValidFrom")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("ValidTo")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CountriesOfOrigin");
                 });
 
             modelBuilder.Entity("Catalog.Data.Product.ProductCategoryData", b =>
@@ -160,15 +216,6 @@ namespace Catalog.API.Migrations
                     b.Property<int>("DeliveryStatus")
                         .HasColumnType("int");
 
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int>("ProductKind")
-                        .HasColumnType("int");
-
                     b.Property<string>("ProductTypeId")
                         .HasColumnType("nvarchar(max)");
 
@@ -177,9 +224,6 @@ namespace Catalog.API.Migrations
 
                     b.Property<DateTime>("ScheduledTo")
                         .HasColumnType("datetime2");
-
-                    b.Property<string>("SerialNumber")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("UnitId")
                         .HasColumnType("nvarchar(max)");
@@ -220,12 +264,6 @@ namespace Catalog.API.Migrations
 
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("PeriodOfOperationFrom")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("PeriodOfOperationTo")
-                        .HasColumnType("datetime2");
 
                     b.Property<int>("ProductKind")
                         .HasColumnType("int");

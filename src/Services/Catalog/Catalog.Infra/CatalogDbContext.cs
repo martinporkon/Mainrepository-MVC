@@ -12,6 +12,8 @@ namespace Catalog.Infra
 {
     public class CatalogDbContext : DbContext
     {
+        public DbSet<CountryOfOriginData> CountriesOfOrigin { get; set; }
+        public DbSet<BrandData> Brands { get; set; }
         public DbSet<ProductInstanceData> ProductInstances { get; set; }
         public DbSet<ProductTypeData> ProductTypes { get; set; }
         public DbSet<FeatureInstanceData> FeatureInstances { get; set; }
@@ -36,6 +38,8 @@ namespace Catalog.Infra
         public static void InitializeTables(ModelBuilder builder)
         {
             if (builder is null) return;
+            builder.Entity<CountryOfOriginData>().ToTable(nameof(CountriesOfOrigin));
+            builder.Entity<BrandData>().ToTable(nameof(Brands));
             builder.Entity<UserProfileData>().ToTable(nameof(UserProfiles));
             builder.Entity<ProductInstanceData>().ToTable(nameof(ProductInstances));
             builder.Entity<ProductTypeData>().ToTable(nameof(ProductTypes));

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Sooduskorv_MVC.Facade
 {
-    public abstract class NamedEntityView:PeriodView
+    public abstract class NamedEntityView:DescribedEntityView
     {
         public string Name { get; set; }
     }

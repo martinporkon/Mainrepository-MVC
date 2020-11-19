@@ -13,9 +13,4 @@
     <ProjectReference Include="..\Catalog.Infra\Catalog.Infra.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Service\" />
-    <Folder Include="Price\" />
-  </ItemGroup>
-
 </Project>

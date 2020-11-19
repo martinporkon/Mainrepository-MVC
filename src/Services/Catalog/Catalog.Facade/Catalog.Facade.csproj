@@ -5,10 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Catalog\" />
+    <ProjectReference Include="..\..\..\..\Sooduskorv-MVC.Facade\Sooduskorv-MVC.Facade.csproj" />
+    <ProjectReference Include="..\..\..\Common\Sooduskorv-MVC.Aids\Sooduskorv-MVC.Aids.csproj" />
+    <ProjectReference Include="..\Catalog.Data\Catalog.Data.csproj" />
+    <ProjectReference Include="..\Catalog.Domain\Catalog.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="ProductFeature\" />
-    <Folder Include="Product\" />
-    <Folder Include="Price\" />
   </ItemGroup>
 
 </Project>

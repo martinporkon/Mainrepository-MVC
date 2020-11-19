@@ -1,28 +1,52 @@
-﻿@using SooduskorvWebMVC.Components
+﻿@* All item nupp*@
+
+@using SooduskorvWebMVC.Components
 @model SooduskorvWebMVC.Models.ProductViewModel
-<div>
-    <h1>Information about the requested product:</h1>
-    @foreach (var product in Model.Products)
-    {
-        <p>@product.Id</p>
-        <p>@product.Name</p>
-        <p>@product.Measure</p>
 
-        <p>@product.Brand</p>
-        <p>@product.CategoryId</p>
-        <p>@product.Code</p>
-        <p>@product.Composition</p>
-        <p>@product.Description</p>
-        <p>@product.SubCategoryId</p>
-        <p>@product.PartyId</p>
-        <p>@product.Name</p>
-        <p>@product.CountryOfOrigin</p>
-    }
-</div>
-<hr />
-
-@(await Html.RenderComponentAsync<Counter>(RenderMode.ServerPrerendered))
-
-@section Scripts {
-    <script src="_framework/blazor.server.js"></script>
+@{
+    ViewData["Title"] = "Order";
 }
+
+<h1>My order</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Products)
+            </th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model.Products)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => product.Id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => product.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => product.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => product.Id)
+                </td>
+
+                <td>
+                    <a asp-action="Details" asp-route-id="@product.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@product.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+

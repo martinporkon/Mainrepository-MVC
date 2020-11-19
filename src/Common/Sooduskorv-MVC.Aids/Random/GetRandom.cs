@@ -3,10 +3,10 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Text;
-using Aids.Methods;
-using Aids.Reflection;
+using Sooduskorv_MVC.Aids.Methods;
+using Sooduskorv_MVC.Aids.Reflection;
 
-namespace Aids.Random
+namespace Sooduskorv_MVC.Aids.Random
 {
 
     public static class GetRandom

@@ -1,0 +1,8 @@
+﻿syntax = "proto3";
+
+message Basket {
+	string BuyerId = 1;
+	string Name = 2;
+	string Description = 3;
+	string Product = 4;
+}

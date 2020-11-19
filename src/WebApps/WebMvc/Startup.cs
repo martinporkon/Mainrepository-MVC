@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Polly;
 using Polly.Extensions.Http;
@@ -51,10 +52,6 @@ namespace SooduskorvWebMVC
             services.AddServerSideBlazor();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
         }
-
-        private static IAsyncPolicy<HttpResponseMessage> GetCircuitBreakerPolicy() => HttpPolicyExtensions
-                .HandleTransientHttpError()
-                .CircuitBreakerAsync(5, TimeSpan.FromSeconds(30));
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {

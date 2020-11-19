@@ -1,10 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Reflection;
-using Aids.Methods;
-using Aids.Random;
+using Sooduskorv_MVC.Aids.Methods;
+using Sooduskorv_MVC.Aids.Random;
 
-namespace Aids.Reflection
+namespace Sooduskorv_MVC.Aids.Reflection
 {
     public static class CreateNew
     {

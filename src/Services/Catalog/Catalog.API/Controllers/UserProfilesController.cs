@@ -7,9 +7,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace Catalog.API.Controllers
 {
-    [Route("api/applicationuserprofiles")]
+    [Route("api/catalog/applicationuserprofiles")]// TODO
     [ApiController]
-    [Authorize]
+    /*[Authorize]*/
     public class UserProfilesController : ControllerBase
     {
         private readonly IProductsRepository _productsRepository;

@@ -1,5 +1,4 @@
-﻿using CommonData;
-using System;
+﻿using System;
 using System.ComponentModel.DataAnnotations;
 
 namespace Catalog.Data.UserProfiles

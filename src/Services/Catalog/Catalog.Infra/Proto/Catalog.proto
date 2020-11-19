@@ -1,0 +1,21 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "Catalog.Services";
+
+import "ProductDetails.proto";
+
+package CatalogAPI;
+
+/*import ""*/
+
+service Catalogs {
+	rpc GetItemDetailsById (GetProductDetailsByIdRequest) returns (stream ProductDetailsResponse) {} 
+}
+
+message GetProductDetailsByIdRequest {
+	string productGuid = 1;
+}
+
+message ProductDetailsResponse {
+	repeated ProductDetails details = 1;
+}

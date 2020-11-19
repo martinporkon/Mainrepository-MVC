@@ -1,6 +1,5 @@
 ﻿using Basket.Infra;
 using Microsoft.EntityFrameworkCore;
-using System;
 
 namespace Basket.API.Data
 {

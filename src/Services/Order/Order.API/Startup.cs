@@ -7,6 +7,8 @@ using Microsoft.Extensions.Hosting;
 using Order.API.Data;
 using Order.API.Middleware;
 using Order.Infra;
+using Order.Infra.Order;
+using Sooduskorv_MVC.Middleware.SwaggerMiddleware;
 
 namespace Order.API
 {
@@ -23,9 +25,10 @@ namespace Order.API
         {
             services.AddControllers()
                 .AddJsonOptions(opts => opts.JsonSerializerOptions.PropertyNamingPolicy = null);
-            services.AddSwagger(Configuration);
+            services.AddGrpc();
+            services.AddCustomSwagger(Configuration);
             services.AddCustomAuthentication(Configuration);
-            services.AddDbContext<OrderApplicationDbContext>(options =>
+            services.AddDbContext<OrderApplicationDbContext>(options =>  // TODO ???
             {
                 options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=OrderDB;Trusted_Connection=True;");
             });
@@ -55,21 +58,18 @@ namespace Order.API
                 app.UseExceptionHandler("/Home/Error");
             }
 
-            app.UseSwagger();
-
-            app.UseSwaggerUI(c =>
-            {
-                c.SwaggerEndpoint("/swagger/V1/swagger.json", "Order.API V1");
-            });
+            app.UseSwaggerAPI(Configuration);
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseRouting();
+
             app.UseAuthentication();
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
+                endpoints.MapGrpcService<OrderRepository>();
             });
         }
     }

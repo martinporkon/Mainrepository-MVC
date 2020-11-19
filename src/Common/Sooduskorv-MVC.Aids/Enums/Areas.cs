@@ -1,4 +1,4 @@
-﻿namespace Aids.Enums
+﻿namespace Sooduskorv_MVC.Aids.Enums
 {
     public enum Areas
     {

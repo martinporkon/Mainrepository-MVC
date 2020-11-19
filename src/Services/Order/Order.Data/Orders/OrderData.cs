@@ -1,5 +1,5 @@
 ﻿using System;
-using CommonData;
+using Sooduskorv_MVC.Data.CommonData;
 
 namespace Order.Data.Orders
 {

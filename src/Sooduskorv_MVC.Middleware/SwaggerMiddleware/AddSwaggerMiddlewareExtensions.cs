@@ -2,18 +2,18 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 
-namespace Catalog.API.Middleware
+namespace Sooduskorv_MVC.Middleware.SwaggerMiddleware
 {
-    public static class AddDocumentationMiddlewareExtensions
+    public static class AddSwaggerMiddlewareExtensions
     {
-        public static IServiceCollection AddSwagger(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddCustomSwagger(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddSwaggerGen(options =>
             {
                 options.SwaggerDoc("V1", new OpenApiInfo
                 {
                     Title = "Sooduskorv Catalog API",
-                    Description = "Catalog API documentation"
+                    Description = "konfiguratsioon not implemented"
                 });
             });
             return services;

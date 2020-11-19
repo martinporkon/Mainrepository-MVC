@@ -5,7 +5,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MatBlazor" Version="2.7.0" />
+    <Folder Include="Services\Basket\" />
+    <Folder Include="Services\Catalog\" />
+    <Folder Include="Services\Order\" />
   </ItemGroup>
 
 </Project>

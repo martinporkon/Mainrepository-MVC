@@ -14,8 +14,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Common\Sooduskorv-MVC.Aids\Sooduskorv-MVC.Aids.csproj" />
-    <ProjectReference Include="..\..\src\Common\Sooduskorv-MVC.Data\Sooduskorv-MVC.Data.csproj" />
+    <ProjectReference Include="..\..\src\Common\Sooduskorv-MVC.Aids\Sooduskorv_MVC.Aids.csproj" />
+    <ProjectReference Include="..\..\src\Common\Sooduskorv-MVC.Data\Sooduskorv_MVC.Data.csproj" />
     <ProjectReference Include="..\..\src\Services\Basket\Basket.API\Basket.API.csproj" />
     <ProjectReference Include="..\..\src\Services\Basket\Basket.Data\Basket.Data.csproj" />
     <ProjectReference Include="..\..\src\Services\Basket\Basket.Domain\Basket.Domain.csproj" />

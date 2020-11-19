@@ -1,13 +1,4 @@
-﻿
-using Catalog.Data.Categories;
-using Catalog.Data.Parties;
-using Catalog.Data.Prices;
-using Catalog.Data.ProductOfParty;
-using Catalog.Data.Products;
-using Catalog.Data.SubCategories;
-using Catalog.Data.UserProfiles;
-using Catalog.Infra;
-using CommonTests.InfraTests;
+﻿using CommonTests.InfraTests;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -15,7 +6,7 @@ using Order.Data.ShipMethodOfParty;
 using Order.Data.ShipMethods;
 using Order.Infra;
 
-namespace Basket.Tests.Infra
+namespace Order.Tests.Infra
 {
     [TestClass]
     public class ShippingDbContextTests : DbContextTests<ShippingDbContext, DbContext>

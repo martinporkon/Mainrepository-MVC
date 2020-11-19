@@ -1,17 +1,13 @@
-﻿using Basket.Data.BasketOfProducts;
-using Basket.Data.Baskets;
-using Basket.Infra;
-using CommonTests.InfraTests;
+﻿using CommonTests.InfraTests;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Order.Data.Addresses;
 using Order.Data.AddressOfCustomer;
 using Order.Data.AddressOfParty;
-using Order.Data.Orders;
 using Order.Infra;
 
-namespace Basket.Tests.Infra
+namespace Order.Tests.Infra
 {
     [TestClass]
     public class AddressDbContextTests : DbContextTests<AddressDbContext, DbContext>

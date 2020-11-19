@@ -1,9 +1,9 @@
-﻿using CommonData;
+﻿using Sooduskorv_MVC.Data.CommonData;
 
 namespace Order.Data.AddressOfCustomer
 {
     public sealed class AddressOfCustomerData :AddressedEntityData
     {
-        public string CustomerId { get; set; }
+        public string BuyerId { get; set; }
     }
 }

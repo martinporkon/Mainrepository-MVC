@@ -1,5 +1,4 @@
-﻿using CommonData;
-
+﻿using Sooduskorv_MVC.Data.CommonData;
 
 namespace Order.Data.ShipMethodOfParty
 {

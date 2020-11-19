@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace Aids.Classes {
+namespace Sooduskorv_MVC.Aids.Classes {
     public static class PublicBindingFlagsFor {
         private const BindingFlags p = BindingFlags.Public;
         private const BindingFlags i = BindingFlags.Instance;

@@ -1,4 +1,4 @@
-﻿using CommonData;
+﻿using Sooduskorv_MVC.Data.CommonData;
 
 namespace Catalog.Data.SubCategories
 {

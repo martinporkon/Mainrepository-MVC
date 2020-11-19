@@ -1,37 +1,26 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Catalog.Data.Products;
+using Catalog.Infra.Catalog;
+using Grpc.Core;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Catalog.API.Controllers
 {
-    [Route("api/products")]
-    [ApiController]
-    public class ProductController : ControllerBase
+    /*[Authorize]*/
+    public class ProductController : CatalogRepository
     {
-        public ProductController() { }
-
-        [Route("allproducts")]
-        [HttpGet]
-        public async  Task<IActionResult> GetAllProducts()
+        public ProductController()
         {
-            var products = new ProductData()
-            {
-                Id = Guid.NewGuid().ToString(),
-                Name = "name",
-                Measure = "measure",
-                Type = "Food",
-                CategoryId = Guid.NewGuid().ToString(),
-                SubCategoryId = "SubCategoryId" + Guid.NewGuid().ToString(),              
-                Brand = "Brand: ",
-                Supplier = "Supplier: " + "Itaalia",
-                CountryOfOrigin = "Country : ",
-                Code = "Code: " + Guid.NewGuid().ToString(),
-                Composition = "Composition: ",
-                Description = "Description: "
-            };
-            return Ok(products);
+
         }
+
+        // TODO
+
+        /*public async Task<ProductDetailsResponse> GetItemDetailsById(GetProductDetailsByIdRequest request, ServerCallContext context)
+        {
+            throw new NotImplementedException();
+        }*/
     }
 }

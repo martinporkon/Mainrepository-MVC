@@ -1,4 +1,4 @@
-﻿namespace Aids.Methods
+﻿namespace Sooduskorv_MVC.Aids.Methods
 {
     public static class Compose
     {

@@ -1,6 +1,4 @@
-﻿using Aids.Enums;
-using Aids.Random;
-using Catalog.Data.Categories;
+﻿using Catalog.Data.Categories;
 using Catalog.Data.Parties;
 using Catalog.Data.Prices;
 using Catalog.Data.ProductOfParty;
@@ -10,6 +8,8 @@ using Catalog.Data.UserProfiles;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Sooduskorv_MVC.Aids.Enums;
+using Sooduskorv_MVC.Aids.Random;
 
 namespace Catalog.Infra
 {

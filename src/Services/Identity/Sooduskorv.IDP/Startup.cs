@@ -1,5 +1,4 @@
-﻿using Catalog.Infra;
-using Identity.Domain.Services;
+﻿using Identity.Domain.Services;
 using Identity.Infra.DbContexts;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -22,7 +21,7 @@ namespace Sooduskorv.IDP
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<IdentityApplicationDbContext>(options =>
+            services.AddDbContext<IdentityApplicationDbContext>(options => // TODO !!!
             {
                 options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=CustomerDB;Trusted_Connection=True;");
             });

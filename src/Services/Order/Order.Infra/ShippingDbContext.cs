@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Order.Data.ShipMethodOfParty;
 using Order.Data.ShipMethods;
-using Order.Infra.Configuration.Shipping;
 
 namespace Order.Infra
 {

@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using Aids.Classes;
-using Aids.Methods;
+using Sooduskorv_MVC.Aids.Classes;
+using Sooduskorv_MVC.Aids.Methods;
 
-namespace Aids.Reflection {
+namespace Sooduskorv_MVC.Aids.Reflection {
     public static class GetClass {
         private const string g = "get_";
         private const string s = "set_";

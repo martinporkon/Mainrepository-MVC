@@ -1,9 +1,9 @@
-﻿using Aids.Random;
-using Order.Data.ShipMethodOfParty;
+﻿using Order.Data.ShipMethodOfParty;
 using Order.Data.ShipMethods;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Sooduskorv_MVC.Aids.Random;
 
 namespace Order.Infra
 {

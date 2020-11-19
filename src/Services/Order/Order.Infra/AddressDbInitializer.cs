@@ -1,11 +1,11 @@
-﻿using Aids.Enums;
-using Aids.Random;
-using Order.Data.Addresses;
+﻿using Order.Data.Addresses;
 using Order.Data.AddressOfCustomer;
 using Order.Data.AddressOfParty;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Sooduskorv_MVC.Aids.Enums;
+using Sooduskorv_MVC.Aids.Random;
 
 namespace Order.Infra
 {
@@ -46,7 +46,7 @@ namespace Order.Infra
                 addressesOfCustomers.Add(new AddressOfCustomerData
                 {
                     AddressId = i.ToString(),
-                    CustomerId = GetRandom.Int32(0, randomDataGenerationAmount).ToString(),
+                    BuyerId = GetRandom.Int32(0, randomDataGenerationAmount).ToString(),
                     Id = i.ToString(),
                     ValidFrom = GetRandom.DateTime(validFromMinimum, validFromMaximum),
                     ValidTo = GetRandom.DateTime(validToMinimum, validToMaximum)

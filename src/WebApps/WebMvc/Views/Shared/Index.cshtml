@@ -4,10 +4,11 @@
 @{
 
 }
-<head>
-    <meta charset="utf-8">
-</head>
-@(await Html.RenderComponentAsync<Nav>(RenderMode.ServerPrerendered))
+    <head>
+        <meta charset="utf-8">
+      
+    </head>
+@*@(await Html.RenderComponentAsync<Nav>(RenderMode.ServerPrerendered))*@
 
 <body>
     <style>
@@ -74,14 +75,15 @@
             }
 
 
-            .dropdown-btn:hover {
-                color: #f1f1f1;
-                text-shadow: 2px 2px 4px #000000
-            }
-            .menu a:hover {
-                color: #0099cc;
-                text-shadow: 2px 2px 4px #000000
-            }
+        .dropdown-btn:hover {
+            color: #f1f1f1;
+            text-shadow: 2px 2px 4px #000000
+        }
+
+        .menu a:hover {
+            color: #0099cc;
+            text-shadow: 2px 2px 4px #000000
+        }
         /* Style the sidenav links and the dropdown button */
         .menu a, .dropdown-btn {
             padding: 8px;
@@ -102,7 +104,7 @@
             background-color: #0099cc;
             text-shadow: 2px 2px 4px #000000
         }
-       
+
 
         .center {
             position: absolute;
@@ -115,15 +117,13 @@
             display: none;
             background-color: rgba(255, 255, 255, 0.6);
         }
-
-           
     </style>
 
-   
-        <div class="center">
-            <button class="button">Koosta nimekiri</button>
-        </div>
-    
+
+    <div class="center">
+        <button class="button">Koosta nimekiri</button>
+    </div>
+
 
 
 
@@ -131,7 +131,8 @@
         <div class="column menu">
 
 
-            <li class="dropdown-btn">Puu- ja juurviljad             
+            <li class="dropdown-btn">
+                Puu- ja juurviljad
             </li>
             <div class="dropdown-container">
                 <a href="#">Link 1</a>
@@ -140,7 +141,8 @@
             </div>
 
 
-            <li class="dropdown-btn">Liha- ja kalatooted
+            <li class="dropdown-btn">
+                Liha- ja kalatooted
             </li>
             <div class="dropdown-container">
                 <a href="#">Link 1</a>
@@ -148,7 +150,8 @@
                 <a href="#">Link 3</a>
             </div>
 
-            <li class="dropdown-btn">Piimatooted, munad, võid
+            <li class="dropdown-btn">
+                Piimatooted, munad, võid
             </li>
             <div class="dropdown-container">
                 <a href="#">Link 1</a>
@@ -156,7 +159,8 @@
                 <a href="#">Link 3</a>
             </div>
 
-            <li class="dropdown-btn">Leivad, saiad,kondiitritooted
+            <li class="dropdown-btn">
+                Leivad, saiad,kondiitritooted
             </li>
             <div class="dropdown-container">
                 <a href="#">Link 1</a>
@@ -164,7 +168,8 @@
                 <a href="#">Link 3</a>
             </div>
 
-            <li class="dropdown-btn"> Valmistoidud
+            <li class="dropdown-btn">
+                Valmistoidud
             </li>
             <div class="dropdown-container">
                 <a href="#">Link 1</a>
@@ -172,7 +177,8 @@
                 <a href="#">Link 3</a>
             </div>
 
-            <li class="dropdown-btn">Kuivained, hommikusöögid, hoidised
+            <li class="dropdown-btn">
+                Kuivained, hommikusöögid, hoidised
             </li>
             <div class="dropdown-container">
                 <a href="#">Link 1</a>
@@ -180,7 +186,8 @@
                 <a href="#">Link 3</a>
             </div>
 
-            <li class="dropdown-btn"> Maiustused, küpsised, snäkid
+            <li class="dropdown-btn">
+                Maiustused, küpsised, snäkid
             </li>
             <div class="dropdown-container">
                 <a href="#">Link 1</a>
@@ -188,7 +195,8 @@
                 <a href="#">Link 3</a>
             </div>
 
-            <li class="dropdown-btn"> Joogid
+            <li class="dropdown-btn">
+                Joogid
             </li>
             <div class="dropdown-container">
                 <a href="#">Link 1</a>
@@ -196,7 +204,8 @@
                 <a href="#">Link 3</a>
             </div>
 
-            <li class="dropdown-btn">Lastekaubad
+            <li class="dropdown-btn">
+                Lastekaubad
             </li>
             <div class="dropdown-container">
                 <a href="#">Link 1</a>
@@ -204,7 +213,8 @@
                 <a href="#">Link 3</a>
             </div>
 
-            <li class="dropdown-btn"> Lemmikloomakaubad
+            <li class="dropdown-btn">
+                Lemmikloomakaubad
             </li>
             <div class="dropdown-container">
                 <a href="#">Link 1</a>
@@ -212,7 +222,8 @@
                 <a href="#">Link 3</a>
             </div>
 
-            <li class="dropdown-btn"> Enesehooldustarbed
+            <li class="dropdown-btn">
+                Enesehooldustarbed
             </li>
             <div class="dropdown-container">
                 <a href="#">Link 1</a>
@@ -220,7 +231,8 @@
                 <a href="#">Link 3</a>
             </div>
 
-            <li class="dropdown-btn"> Majapidamis- ja kodukaubad
+            <li class="dropdown-btn">
+                Majapidamis- ja kodukaubad
             </li>
             <div class="dropdown-container">
                 <a href="#">Link 1</a>

@@ -1,15 +1,45 @@
 ﻿
 @page "/catalog"
 
-    <div class="mat-layout-grid mat-layout-grid-align-right" style="max-width: 800px;">
-        <div class="mat-layout-grid-inner">
-            <div class="mat-layout-grid-cell"></div>
-            <div class="mat-layout-grid-cell"></div>
-            <div class="mat-layout-grid-cell"></div>
+@code {
+
+
+}
+
+<html>
+
+
+<head>
+    <link rel="stylesheet" href="~/css/components/catalog.components.css" />
+</head>
+<body>
+
+    <div class="esh-catalog-item">
+        ::before
+        <div class="esh-catalog-item col-md-4">
+            <form method="post" action="/Basket">
+                <img class="esh-catalog-thumbnail" src="~/images/productCategories/PuuJaJuurviljad/1.jpg">
+                <input class="esh-catalog-button" type="submit" value="[ ADD TO BASKET ]">
+                <div class="esh-catalog-name">
+                    <span>Roslyn Red Sheet</span>
+                </div>
+                <div class="esh-catalog-price">
+
+                    <span>8.50</span>
+                </div>
+                <input type="hidden" name="id" data-val="true" data-val-required="The Id field is required." id="catalogItem_Id" value="5">
+                <input type="hidden" name="name" id="catalogItem_Name" value="Roslyn Red Sheet">
+                <input type="hidden" name="pictureUri" id="catalogItem_PictureUri" value="/images/products/5.png">
+                <input type="hidden" name="price" data-val="true" data-val-number="The field Price must be a number." data-val-required="The Price field is required." id="catalogItem_Price" value="8.5">
+                <input name="__RequestVerificationToken" type="hidden" value="CfDJ8Kg7O17TQ-xCsts02JExMo4jDzxWVB3tpZGE4hoA-iI9TF8PRarfmA3Z93txpPOPmXycwO0ekCSWLJWiSaMc2mce3YO5UjJOf_nQ0RJ50BCYb8g_YN9uBUkuGYQfF12zW0A-C-iVx7qYTTIG4CIDxbQ">
+            </form>
+
         </div>
+
+
+
+
     </div>
+</body>
+</html>
 
-    @code {
-
-
-    }

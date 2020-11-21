@@ -4,8 +4,8 @@ namespace SooduskorvWebMVC.Models
 {
     public class ProductViewModel
     {
-        public IEnumerable<ProductDto> Products { get; private set; }
-        public ProductViewModel(IEnumerable<ProductDto> products)
+        public IEnumerable<CatalogDto> Products { get; private set; }
+        public ProductViewModel(IEnumerable<CatalogDto> products)
         {
             Products = products;
         }

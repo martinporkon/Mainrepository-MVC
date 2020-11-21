@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
@@ -40,6 +40,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Services\Basket\Basket.Infra\Basket.Infra.csproj" />
     <ProjectReference Include="..\..\Services\Catalog\Catalog.Infra\Catalog.Infra.csproj" />
+    <ProjectReference Include="..\..\Services\Catalog\Catalog.Pages\Catalog.Pages.csproj" />
     <ProjectReference Include="..\..\Services\Identity\Identity.Infra\Identity.Infra.csproj" />
     <ProjectReference Include="..\..\Services\Order\Order.Infra\Order.Infra.csproj" />
     <ProjectReference Include="..\WebMVC.Domain\WebMVC.Domain.csproj" />

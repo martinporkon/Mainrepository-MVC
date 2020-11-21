@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Catalog.Facade.Catalog
 {
-    public sealed class CatalogEntryView:DescribedEnityView
+    public sealed class CatalogEntryView:PeriodView
     {
         [DisplayName("Catalog")]
         public string CatalogId { get; set; }

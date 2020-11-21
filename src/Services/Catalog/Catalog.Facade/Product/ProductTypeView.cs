@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Catalog.Facade.Product
 {
-    public sealed class ProductTypeView:DescribedEnityView
+    public sealed class ProductTypeView:PeriodView
     {
         public ProductKind ProductKind { get; set; }
         public double Amount { get; set; }

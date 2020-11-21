@@ -8,7 +8,7 @@ using System.Text;
 
 namespace Catalog.Facade.Product
 {
-    public sealed class ProductInstanceView:DescribedEntityView
+    public sealed class ProductInstanceView:PeriodView
     {
         [DisplayName("Product Type")]
         public string ProductTypeId { get; set; }

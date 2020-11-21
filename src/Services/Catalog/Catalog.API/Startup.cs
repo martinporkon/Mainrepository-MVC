@@ -3,6 +3,7 @@ using Catalog.API.HttpHandlers;
 using Catalog.API.Middleware;
 using Catalog.Domain.Repositories;
 using Catalog.Infra;
+using Catalog.Infra.Catalog;
 using IdentityServer4.AccessTokenValidation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
@@ -47,7 +48,12 @@ namespace Catalog.API
             services.AddDbContext<CatalogDbContext>(options =>
             {
                 options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=CatalogDB;Trusted_Connection=True;");
-            });       
+            });
+            registerRepositories(services);
+        }
+        private void registerRepositories(IServiceCollection services)
+        {
+            CatalogRepositories.Register(services);
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

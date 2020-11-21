@@ -20,6 +20,14 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\Common\Sooduskorv-MVC.Aids\Sooduskorv-MVC.Aids.csproj" />
     <ProjectReference Include="..\Catalog.Data\Catalog.Data.csproj" />
+    <ProjectReference Include="..\Catalog.Domain\Catalog.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Service\" />
+    <Folder Include="Price\" />
+    <Folder Include="ProductFeature\" />
+    <Folder Include="Product\" />
   </ItemGroup>
 
 </Project>

@@ -16,7 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-
+    <ProjectReference Include="..\..\Services\Catalog\Catalog.Domain\Catalog.Domain.csproj" />
+    <ProjectReference Include="..\..\Services\Catalog\Catalog.Facade\Catalog.Facade.csproj" />
   </ItemGroup>
 
 </Project>

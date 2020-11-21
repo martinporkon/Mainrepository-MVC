@@ -24,20 +24,11 @@ namespace SooduskorvWebMVC.Controllers
 
             /*var a = response.Result;*/
 
-            var list = new List<ProductDto>();
-            var test = new ProductDto
+            var list = new List<CatalogDto>();
+            var test = new CatalogDto
             {
                 Id = a.Id,
-                Measure = a.Measure,
-                Name = a.Name,
-                Description = a.DescriptionDetails,
-                CategoryId = a.CategoryId,
-                Supplier = a.Supplier,
-                Code = a.Code,
-                Composition = a.Composition,
-                PartyId = a.PartyId,
-                Brand = a.Brand,
-                CountryOfOrigin = a.CountryOfOrigin,
+                
             };
             list.Add(test);
 

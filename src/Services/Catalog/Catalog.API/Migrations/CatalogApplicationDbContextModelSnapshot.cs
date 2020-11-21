@@ -214,6 +214,15 @@ namespace Catalog.API.Migrations
                     b.Property<int>("DeliveryStatus")
                         .HasColumnType("int");
 
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("ProductKind")
+                        .HasColumnType("int");
+
                     b.Property<string>("ProductTypeId")
                         .HasColumnType("nvarchar(max)");
 

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Sooduskorv_MVC.Facade
 {
-    public abstract class DescribedEntityView:UniqueEntityView
+    public abstract class PeriodView : UniqueEntityView
     {
         [DataType(DataType.Date)]
         [DisplayName("Valid From")]

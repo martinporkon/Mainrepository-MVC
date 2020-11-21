@@ -1,6 +1,9 @@
 using System;
 using System.IO;
+using Catalog.Domain.Common;
 using Catalog.Infra;
+using Catalog.Infra.Catalog;
+using Catalog.Pages.Catalog;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -23,16 +26,18 @@ namespace Catalog.API
                 {
                     var dbCatalog = services.GetRequiredService<CatalogDbContext>();
                     CatalogDbInitializer.Initialize(dbCatalog);
-
+                   
                 }
                 catch (Exception ex)
                 {
 
                     var logger = services.GetRequiredService<ILogger<Program>>();
                     logger.LogError(ex, "An error occurred creating the DB.");
-                    throw new Exception("initializer ei läinud läbi");
+                    
                 }
             }
+            GetRepository.SetServiceProvider(host.Services);
+            
             host.Run();
         }
 

@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Catalog.Facade.Product
 {
-    class CountryOfOriginView:DescribedEnityView
+    class CountryOfOriginView:PeriodView
     {
         [DisplayName("Official name")]
         public string OfficialName { get; set; }

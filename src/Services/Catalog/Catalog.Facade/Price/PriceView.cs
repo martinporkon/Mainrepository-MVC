@@ -6,7 +6,7 @@ using System.Text;
 
 namespace Catalog.Facade.Price
 {
-    public sealed class PriceView:DescribedEntityView
+    public sealed class PriceView:PeriodView
     {
         public decimal Amount { get; set; }
         [DisplayName("Currency")]

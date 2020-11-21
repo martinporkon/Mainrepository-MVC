@@ -1,24 +1,43 @@
 ﻿@using SooduskorvWebMVC.Components
-@model SooduskorvWebMVC.Models.ProductViewModel
-<div>
-    <h1>Information about the requested product:</h1>
-    @foreach (var product in Model.Products)
-    {
-        <p>@product.Id</p>
-        <p>@product.Name</p>
-        <p>@product.Measure</p>
+@using Catalog.Pages
+@model Catalog.Pages.Catalog.CatalogPage
 
-        <p>@product.Brand</p>
-        <p>@product.CategoryId</p>
-        <p>@product.Code</p>
-        <p>@product.Composition</p>
-        <p>@product.Description</p>
-        <p>@product.SubCategoryId</p>
-        <p>@product.PartyId</p>
-        <p>@product.Name</p>
-        <p>@product.CountryOfOrigin</p>
-    }
-</div>
+@{       
+    var page = Model.PageUrl; }
+
+<table class="table">
+    <thead>
+        
+            Html.DisplayNameFor(m => m.Item.Name), Model.GetSortString(m => m.Name, page),
+            Html.DisplayNameFor(m => m.Item.Description), Model.GetSortString(m => m.Description, page)
+            Html.DisplayNameFor(m => m.Item.ValidFrom), Model.GetSortString(m => m.ValidFrom, page)
+           Html.DisplayNameFor(m => m.Item.ValidTo), Model.GetSortString(m => m.ValidTo, page)
+            )
+
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Items)
+        {
+            const string selectedRow = "";
+            <tr class=@selectedRow>
+               
+                    false,
+                    page,
+                    item.GetId(),
+                    Model.SortOrder,
+                    Model.SearchString,
+                    Model.PageIndex,
+                    Model.FixedFilter,
+                    Model.FixedValue,
+                    Html.DisplayFor(modelItem => item.Name),
+                    Html.DisplayFor(modelItem => item.Description),
+                    Html.DisplayFor(modelItem => item.ValidFrom),
+                    Html.DisplayFor(modelItem => item.ValidTo)
+                    )
+            </tr>
+        }
+    </tbody>
+</table>
 <hr />
 
 @(await Html.RenderComponentAsync<Counter>(RenderMode.ServerPrerendered))

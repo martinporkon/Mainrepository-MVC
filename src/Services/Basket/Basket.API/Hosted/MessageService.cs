@@ -11,7 +11,7 @@ namespace Basket.API.Hosted
         public IEventBus _messageBus;
         public MessageService(IEventBus messageBus)
         {
-            this._messageBus = messageBus;
+            _messageBus = messageBus;
         }
 
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -19,9 +19,7 @@ namespace Basket.API.Hosted
 
             stoppingToken.Register(() =>
             {
-                // log everything.
-                // fire an event when the application is shutting down.
-                // external event that we can subscribe to for automated alerting and metrics.
+
             });
 
 

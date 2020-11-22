@@ -21,7 +21,7 @@ namespace Basket.API.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("Basket.Data.BasketOfProducts.BasketOfProductsData", b =>
+            modelBuilder.Entity("Basket.Data.BasketOfProducts.BasketOfProductData", b =>
                 {
                     b.Property<string>("BasketId")
                         .HasColumnType("nvarchar(450)");

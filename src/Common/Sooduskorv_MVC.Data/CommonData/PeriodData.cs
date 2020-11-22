@@ -2,7 +2,7 @@
 
 namespace Sooduskorv_MVC.Data.CommonData
 {
-    public abstract class PeriodData : UniqueEntityData
+    public abstract class PeriodData/* : UniqueEntityData*/
     {
         /*public Maybe<DateTime> ValidFrom { get; set; }
         public Maybe<DateTime> ValidTo { get; set; }*/

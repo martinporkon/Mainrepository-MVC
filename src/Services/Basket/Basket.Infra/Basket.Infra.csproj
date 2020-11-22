@@ -18,11 +18,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Basket.Domain\Basket.Domain.csproj" />
+    <Protobuf Include="Proto\Basket.proto" GrpcServices="Server" />
   </ItemGroup>
 
   <ItemGroup>
-    <Protobuf Include="Proto\Basket.proto" GrpcServices="Server" />
+    <Folder Include="Common\Docs\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Basket.Facade\Basket.Facade.csproj" />
   </ItemGroup>
 
 </Project>

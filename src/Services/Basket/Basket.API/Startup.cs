@@ -22,7 +22,7 @@ namespace Basket.API
         {
             services.AddControllers()
                 .AddJsonOptions(opts => opts.JsonSerializerOptions.PropertyNamingPolicy = null);
-            /*services.AddGrpc();*/
+            services.AddGrpc();
             services.AddHttpContextAccessor();
             services.AddOptions();
             services.AddCustomSwagger(Configuration);

@@ -5,15 +5,19 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Protos\Proto\**" />
+    <EmbeddedResource Remove="Protos\Proto\**" />
+    <None Remove="Protos\Proto\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Basket.Data\Basket.Data.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Protos\Proto\" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.4.4" />
     <PackageReference Include="FluentValidation" Version="9.3.0" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
   </ItemGroup>
 
 </Project>

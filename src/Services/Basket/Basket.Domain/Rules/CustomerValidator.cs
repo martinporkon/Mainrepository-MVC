@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Basket.Facade;
+﻿using Basket.Facade;
 using FluentValidation;
 
 namespace Basket.Domain.Rules
@@ -19,7 +16,7 @@ namespace Basket.Domain.Rules
 
         private static bool BeAValidPostcode(string postcode)
         {
-            // custom postcode validating logic goes here
+            // BeAValidPostCode
             return false;
         }
     }

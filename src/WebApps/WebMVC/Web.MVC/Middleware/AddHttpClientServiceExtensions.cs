@@ -10,10 +10,6 @@ namespace SooduskorvWebMVC.Middleware
 {
     public static class AddHttpClientServiceExtensions
     {
-        static AddHttpClientServiceExtensions()
-        {
-
-        }
         public static IServiceCollection AddHttpClientServices(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddHttpClient("APIClient", client =>
@@ -22,7 +18,7 @@ namespace SooduskorvWebMVC.Middleware
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Add(HeaderNames.Accept, "application/json");
             }).ConfigurePrimaryHttpMessageHandler(handler =>
-                new HttpClientHandler()// TODO valida parem väärtus ning võimalus või tee enda oma. Hetkel on see .NET 2. and earlier.
+                new HttpClientHandler()// valida parem väärtus ning võimalus või tee enda oma. Hetkel on see .NET 2. and earlier.
                 {
                     AutomaticDecompression = DecompressionMethods.Brotli// Configure to Brotli;
                 });

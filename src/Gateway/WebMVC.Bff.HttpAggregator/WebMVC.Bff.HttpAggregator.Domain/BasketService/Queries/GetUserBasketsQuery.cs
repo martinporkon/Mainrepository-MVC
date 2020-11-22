@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
-using WebMVC.Bff.HttpAggregator.Infra.Repositories;
 using WebMVC.HttpAggregator.Facade.DTO;
 
 namespace WebMVC.HttpAggregator.Infra.Basket.Queries

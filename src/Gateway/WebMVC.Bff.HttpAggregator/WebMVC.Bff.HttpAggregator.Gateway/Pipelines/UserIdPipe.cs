@@ -19,7 +19,7 @@ namespace WebMVC.HttpAggregator.Gateway.Infrastructure
         public async Task<T2> Handle(T1 request, CancellationToken cancellationToken, RequestHandlerDelegate<T2> next)
         {
             var userClaims = _httpContext.User.Claims
-                .FirstOrDefault(x => x.Type.Equals(ClaimTypes.NameIdentifier))
+                .FirstOrDefault(x => x.Type.Equals(ClaimTypes.NameIdentifier))// TODO change for later.
                 ?.Value;
 
             // TODO add token

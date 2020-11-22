@@ -35,6 +35,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Common\Sooduskorv_MVC.Middleware\Sooduskorv_MVC.Middleware.csproj" />
+    <ProjectReference Include="..\..\..\Services\Basket\Basket.Domain\Basket.Domain.csproj" />
     <ProjectReference Include="..\..\..\WebApps\WebMVC\WebMVC.Domain\WebMVC.Domain.csproj" />
     <ProjectReference Include="..\WebMVC.Bff.HttpAggregator.Domain\WebMVC.Bff.HttpAggregator.Domain.csproj" />
     <ProjectReference Include="..\WebMVC.Bff.HttpAggregator.Infra\WebMVC.Bff.HttpAggregator.Infra.csproj" />

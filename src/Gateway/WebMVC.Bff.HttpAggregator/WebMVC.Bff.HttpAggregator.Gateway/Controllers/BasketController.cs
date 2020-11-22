@@ -25,11 +25,7 @@ namespace WebMVC.HttpAggregator.Gateway.Controllers
         [HttpHead]
         public async Task<ActionResult<IEnumerable<BasketView>>> GetBasket([FromRoute] string basketId) // + userId
         {
-            // Kasutada mingisuguseid Delegaate Selles API pooles. Mis suudavad edasi enda terve
-            // päringu repositooriumist.
             var result = await _mediator.Send(new GetUserBasketsQuery("id"));
-
-            // RequestDelegate kasutada.
             return result != null ? (ActionResult<IEnumerable<BasketView>>)Ok(new BasketView()) : NotFound();
         }
 
@@ -37,36 +33,8 @@ namespace WebMVC.HttpAggregator.Gateway.Controllers
         [HttpHead]
         public async Task<ActionResult<IEnumerable<BasketView>>> GetBaskets()// + userId
         {
-            // Kasutada mingisuguseid Delegaate Selles API pooles. Mis suudavad edasi enda terve
-            // päringu repositooriumist.
             var result = await _mediator.Send(new GetUserBasketsQuery("id"));
-
-            // RequestDelegate kasutada.
             return result != null ? (ActionResult<IEnumerable<BasketView>>)Ok(new BasketView()) : NotFound();
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
-
-
-
-
-
-
-
-
-
-
 }

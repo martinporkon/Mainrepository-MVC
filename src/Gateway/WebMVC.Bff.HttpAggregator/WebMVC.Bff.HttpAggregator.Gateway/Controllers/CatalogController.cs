@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Basket.Domain.Common;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -16,10 +16,12 @@ namespace WebMVC.HttpAggregator.Gateway.Controllers
     public class CatalogController : ControllerBase
     {
         private readonly IMediator _mediator;
+        private readonly IUnitOfWork _unitOfWork;// TODO for this.
 
-        public CatalogController(IMediator mediator)
+        public CatalogController(IMediator mediator, IUnitOfWork foo)
         {
             _mediator = mediator;
+            _unitOfWork = foo;
         }
 
         [Route("/all")]

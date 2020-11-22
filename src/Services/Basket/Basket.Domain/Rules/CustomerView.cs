@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Basket.Facade
+﻿namespace Basket.Facade
 {
     public class CustomerView
     {

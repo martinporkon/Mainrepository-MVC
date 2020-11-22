@@ -1,9 +1,9 @@
-﻿namespace Sooduskorv_MVC.Data.CommonData
+﻿using System;
+
+namespace Sooduskorv_MVC.Data.CommonData
 {
-    public abstract class UniqueEntityData
+    public abstract class UniqueEntityData : PeriodData
     {
-        public string Id { get; set; }/* = GuidCombGenerator*/
-
-
+        public string Id { get; set; } = Guid.NewGuid().ToString(); /* = GuidCombGenerator*/
     }
 }

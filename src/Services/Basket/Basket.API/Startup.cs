@@ -20,23 +20,24 @@ namespace Basket.API
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers()
-                .AddJsonOptions(opts => opts.JsonSerializerOptions.PropertyNamingPolicy = null);
+            /*services.AddControllers()
+                .AddJsonOptions(opts => opts.JsonSerializerOptions.PropertyNamingPolicy = null);*/
             services.AddGrpc();
             services.AddHttpContextAccessor();
             services.AddOptions();
             services.AddCustomSwagger(Configuration);
             services.AddCustomAuthentication(Configuration);
-            services.AddDbContext<BasketApplicationDbContext>(options => // TODO !!
+            services.AddDbContext<BasketApplicationDbContext>(options =>
             {
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
-                    builder => builder.EnableRetryOnFailure(2));
-                // https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-resiliency
+                options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"));
             });
             /*services.AddDbContext<BasketDbContext>(options =>
             {
                 options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=BasketDB;Trusted_Connection=True;");
             });*/
+
+            /*services.AddHealthChecks()
+                    .AddDbContextCheck<IdentityDbContext>();*/
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -44,6 +45,10 @@ namespace Basket.API
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+            }
+            else
+            {
+                app.UseHsts();
             }
 
 
@@ -58,6 +63,7 @@ namespace Basket.API
 
             app.UseEndpoints(endpoints =>
             {
+                /*endpoints.MapDefaultHealthChecks();*/
                 endpoints.MapControllers();
                 endpoints.MapDistributedServices(Configuration);
             });

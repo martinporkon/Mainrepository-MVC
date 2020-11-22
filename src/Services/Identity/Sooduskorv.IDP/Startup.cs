@@ -43,7 +43,7 @@ namespace Sooduskorv.IDP
 
             builder.AddProfileService<LocalUserProfileService>();
 
-            builder.AddDeveloperSigningCredential();
+            builder.AddDeveloperSigningCredential();//
         }
 
         public void Configure(IApplicationBuilder app)

@@ -9,6 +9,7 @@ using Microsoft.Extensions.Hosting;
 using WebMVC.Bff.HttpAggregator.Gateway.Data;
 using WebMVC.Bff.HttpAggregator.Gateway.Middleware;
 using WebMVC.Bff.HttpAggregator.Gateway.Middleware.HttpMiddleware;
+using WebMVC.HttpAggregator.Gateway.Infrastructure;
 using WebMVC.HttpAggregator.Gateway.Middleware;
 
 namespace WebMVC.HttpAggregator.Gateway
@@ -29,7 +30,7 @@ namespace WebMVC.HttpAggregator.Gateway
             services.AddHttpContextAccessor();
             services.AddCustomGrpcClientFactoryMiddleware(Configuration);
             services.AddCustomSwagger(Configuration);
-            services.AddMediatR(Assembly.GetExecutingAssembly());
+            services.AddCustomAssemblies();
             services.AddDbContext<ApplicationDbContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));// TODO arvan, et muutub ümber aga pean veel vaatama

@@ -31,7 +31,6 @@
 
   <ItemGroup>
     <Folder Include="Middleware\CustomAuthenticationMiddleware\" />
-    <Folder Include="Middleware\Modules\" />
   </ItemGroup>
 
   <ItemGroup>

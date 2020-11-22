@@ -6,14 +6,33 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Serilog;
 
 namespace Catalog.API
 {
     public class Program
     {
+        private static IConfiguration Configuration { get; } = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                .AddEnvironmentVariables()
+            .Build();
+
+
         public static void Main(string[] args)
         {
-            var host = CreateHostBuilder(args).Build();
+
+            Log.Logger = new LoggerConfiguration()
+                .WriteTo.Seq("http://localhost:5341")
+                .CreateLogger();
+
+            var host = CreateHostBuilder(args).ConfigureAppConfiguration((hostContext, builder) =>
+            {
+                if (hostContext.HostingEnvironment.IsDevelopment())
+                {
+                    builder.AddUserSecrets<Program>();
+                }
+            }).Build();
 
             using (var scope = host.Services.CreateScope())
             {
@@ -27,7 +46,6 @@ namespace Catalog.API
                 }
                 catch (Exception ex)
                 {
-
                     var logger = services.GetRequiredService<ILogger<Program>>();
                     logger.LogError(ex, "An error occurred creating the DB.");
                     throw new Exception("initializer ei läinud läbi");

@@ -1,0 +1,1 @@
+﻿Proovida lisada siia teenusesse domain level validationi Facade kihi jaoks Rules Archetype pattern alusel.

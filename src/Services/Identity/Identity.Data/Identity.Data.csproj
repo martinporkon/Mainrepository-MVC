@@ -10,6 +10,13 @@
 
   <ItemGroup>
     <Folder Include="Docs\" />
+    <Folder Include="PartyRelationships\" />
+    <Folder Include="Parties\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Sooduskorv_MVC.Data\Sooduskorv_MVC.Data.csproj" />
+    <ProjectReference Include="..\Identity.Core\Identity.Core.csproj" />
   </ItemGroup>
 
 </Project>

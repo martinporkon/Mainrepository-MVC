@@ -19,4 +19,13 @@
     <None Remove="ShipMethods\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Order.Data\Order.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Rules\" />
+    <Folder Include="Protos\" />
+  </ItemGroup>
+
 </Project>

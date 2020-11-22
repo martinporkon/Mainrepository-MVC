@@ -13,28 +13,34 @@ namespace Basket.API
     {
         public static void Main(string[] args)
         {
-                var host = CreateHostBuilder(args).Build();
-
-                using (var scope = host.Services.CreateScope())
+            var host = CreateHostBuilder(args).ConfigureAppConfiguration((hostContext, builder) =>
+            {
+                if (hostContext.HostingEnvironment.IsDevelopment())
                 {
-                    var services = scope.ServiceProvider;
-
-                    try
-                    {   
-                        var dbBasket = services.GetRequiredService<BasketDbContext>();
-                        BasketDbInitializer.Initialize(dbBasket);
-                       
-                    }
-                    catch (Exception ex)
-                    {
-
-                        var logger = services.GetRequiredService<ILogger<Program>>();
-                        logger.LogError(ex, "An error occurred creating the DB.");
-                        throw new Exception("initializer ei läinud läbi");
-                    }
+                    builder.AddUserSecrets<Program>();
                 }
-                host.Run();
-            
+            }).Build();
+
+            using (var scope = host.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+
+                try
+                {
+                    var dbBasket = services.GetRequiredService<BasketDbContext>();
+                    BasketDbInitializer.Initialize(dbBasket);
+
+                }
+                catch (Exception ex)
+                {
+
+                    var logger = services.GetRequiredService<ILogger<Program>>();
+                    logger.LogError(ex, "An error occurred creating the DB.");
+                    throw new Exception("initializer ei läinud läbi");
+                }
+            }
+            host.Run();
+
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

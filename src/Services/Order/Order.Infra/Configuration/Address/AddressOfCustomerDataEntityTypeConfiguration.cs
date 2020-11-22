@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿/*using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Order.Data.AddressOfCustomer;
 
@@ -8,8 +8,8 @@ namespace Order.Infra.Configuration.Address
     {
         public void Configure(EntityTypeBuilder<AddressOfCustomerData> builder)
         {
-            builder.ToTable("AddressOfCustomers")
-                .HasKey(x => new { x.AddressId, x.BuyerId });
+            /*builder.ToTable("AddressOfCustomers")
+                .HasKey(x => new { x.AddressId, x.BuyerId });#1#
         }
     }
-}
+}*/

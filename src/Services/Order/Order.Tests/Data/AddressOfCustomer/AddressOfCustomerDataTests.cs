@@ -11,6 +11,6 @@ namespace Order.Tests.Data.AddressOfCustomer
     {
         [TestMethod]
         public void CustomerIdTest() =>
-           isNullableProperty(() => obj.CustomerId, x => obj.CustomerId = x);
+           isNullableProperty(() => obj.BuyerId, x => obj.BuyerId = x);
     }
 }

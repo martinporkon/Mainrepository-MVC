@@ -23,8 +23,8 @@ namespace Order.Infra
         {
             if (modelBuilder is null) return;
             modelBuilder.Entity<AddressData>().ToTable(nameof(Addresses));
-            modelBuilder.Entity<AddressOfCustomerData>().ToTable(nameof(AddressOfCustomers)).HasKey(x => new { x.AddressId, x.BuyerId });
-            modelBuilder.Entity<AddressOfPartyData>().ToTable(nameof(AddressOfParties)).HasKey(x => new { x.AddressId, x.PartyId });
+            /*modelBuilder.Entity<AddressOfCustomerData>().ToTable(nameof(AddressOfCustomers)).HasKey(x => new { x.AddressId, x.BuyerId });
+            modelBuilder.Entity<AddressOfPartyData>().ToTable(nameof(AddressOfParties)).HasKey(x => new { x.AddressId, x.PartyId });*/
         }
     }
 }

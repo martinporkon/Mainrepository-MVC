@@ -6,7 +6,7 @@ namespace Catalog.Data.Parties
     [ProtoContract]
     public sealed class PartyData : NamedEntityData
     {
-        [ProtoMember(1)]
+        [ProtoMember(1)]// TODO !
         public string AddressId { get; set; }
         [ProtoMember(2)]
         public string Latitude { get; set; }

@@ -1,20 +1,12 @@
-﻿using System;
-using System.Threading.Tasks;
-using Catalog.Data.Products;
-using Catalog.Infra.Catalog;
-using Grpc.Core;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Catalog.API.Controllers
 {
     /*[Authorize]*/
-    public class ProductController : CatalogRepository
+    [Authorize]
+    public class ProductController : ControllerBase
     {
-        public ProductController()
-        {
-
-        }
 
         // TODO
 

@@ -3,6 +3,7 @@ using Identity.Infra.DbContexts;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Sooduskorv.IDP.Data;
@@ -12,10 +13,12 @@ namespace Sooduskorv.IDP
     public class Startup
     {
         public IWebHostEnvironment Environment { get; }
+        public IConfiguration Configuration { get; }
 
-        public Startup(IWebHostEnvironment environment)
+        public Startup(IWebHostEnvironment environment, IConfiguration configuration)
         {
             Environment = environment;
+            Configuration = configuration;
         }
 
         public void ConfigureServices(IServiceCollection services)
@@ -27,10 +30,10 @@ namespace Sooduskorv.IDP
             });
             services.AddDbContext<IdentityDbContext>(options =>
             {
-                options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=CustomerDB;Trusted_Connection=True;");
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
 
-            services.AddScoped<ILocalUserService, LocalUserService>();
+            /*services.AddScoped<ILocalUserService, LocalUserService>();*/
 
             var builder = services.AddIdentityServer()
                 .AddInMemoryIdentityResources(Config.IdentityResources)
@@ -51,6 +54,7 @@ namespace Sooduskorv.IDP
             }
 
             app.UseStaticFiles();
+            app.UseHttpsRedirection();
             app.UseRouting();
 
             app.UseIdentityServer();

@@ -1,12 +1,10 @@
 using System;
-using Catalog.API.Controllers;
+using System.Net;
 using Catalog.API.Data;
 using Catalog.API.HttpHandlers;
 using Catalog.API.Middleware;
-using Catalog.Domain.Repositories;
 using Catalog.Infra;
 using Catalog.Infra.Catalog;
-using EventBus.Abstractions;
 using IdentityServer4.AccessTokenValidation;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
@@ -18,8 +16,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Sooduskorv_MVC.Middleware.DbContextMiddleware;
-using Sooduskorv_MVC.Middleware.SwaggerMiddleware;
 
 namespace Catalog.API
 {
@@ -41,13 +37,13 @@ namespace Catalog.API
             services.AddCustomSwagger(Configuration);
 
             services.AddHttpContextAccessor();
-
-            services.AddScoped<IProductsRepository, ProductsRepository>();
+            services.AddOptions();
+            services.AddScoped<ICatalogRepository, CatalogRepository>();// TODO
             services.AddScoped<IAuthorizationHandler, SubjectMustMatchUserHandler>();
 
             /*services.AddSingleton<IEventBus, EventBusRabbitMQ>();*/
-
-            /*services.AddTransient<CatalogRepository>();// TODO*/
+            /*services.AddTransient<ApiExceptionMiddleware>();// TODO check if good*/
+            /*services.AddTransient<CatalogRepository>();// TODO check if good*/
 
             services.AddCustomAuthorization(Configuration);
 
@@ -58,14 +54,16 @@ namespace Catalog.API
                     options.ApiName = "productsapi";
                     options.ApiSecret = "apisecret";
                 });
-            services.AddDbContext<CatalogApplicationDbContext>(options => // TODO !!!!
-                {
-                    options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=CatalogDB;Trusted_Connection=True;");
-                });
-            /*services.AddDbContext<CatalogDbContext>(options =>
+            services.AddDbContext<CatalogApplicationDbContext>(options =>// TODO !!!!
             {
-                options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=CatalogDB;Trusted_Connection=True;");
-            });*/
+                options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"));
+            });
+            services.AddDbContext<CatalogDbContext>(options =>
+            {
+                options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"));
+            });
+            /*services.AddHealthChecks()
+                .AddDbContextCheck<IdentityDbContext>();*/
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -78,22 +76,20 @@ namespace Catalog.API
             {
                 app.UseExceptionHandler(appBuilder =>
                 {
-                    appBuilder.Run(async context =>
+                    appBuilder.Run(async context =>// TODO
                     {
-                        context.Response.StatusCode = StatusCodes.Status500InternalServerError; ;
+                        context.Response.StatusCode = StatusCodes.Status500InternalServerError;
                         await context.Response.WriteAsync("An unexpected fault happened. Try again later.");
                     });
                 });
                 app.UseHsts();
             }
-            app.UseApiExceptionHandler(options =>
+
+            /*app.UseApiExceptionHandler(options => //uncomment if the app is functional
             {
                 options.AddResponseDetails = UpdateApiErrorResponse;
                 options.DetermineLogLevel = DetermineLogLevel;
-            });
-            app.UseStaticFiles();
-
-            app.UseSwaggerAPI(Configuration);
+            });*/
 
             app.UseHttpsRedirection();
 
@@ -102,10 +98,13 @@ namespace Catalog.API
             app.UseAuthentication();
             app.UseAuthorization();
 
+            app.UseSwaggerAPI(Configuration);
+
             app.UseEndpoints(endpoints =>
             {
+                /*endpoints.MapDefaultHealthChecks();*/
                 endpoints.MapControllers();
-                endpoints.MapGrpcService<CatalogRepository>();
+                /*endpoints.MapGrpcService<ProductsRepository>();*/
             });
         }
         private static LogLevel DetermineLogLevel(Exception ex)
@@ -125,6 +124,7 @@ namespace Catalog.API
             {
                 error.Detail = "Exception was a database exception!";
                 error.Links = "https://andmebaas.com/andmebaasi.exception";
+                error.StatusCode = HttpStatusCode.InternalServerError.ToString();// TODO
             }
         }
     }

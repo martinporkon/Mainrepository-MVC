@@ -1,11 +1,8 @@
-﻿using System;
+﻿/*using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
 using Identity.Data.Entities;
-using Identity.Infra.DbContexts;
-using Microsoft.EntityFrameworkCore;
 
 namespace Identity.Domain.Services
 {
@@ -13,7 +10,7 @@ namespace Identity.Domain.Services
     {
         private readonly IdentityDbContext _context;
 
-        public LocalUserService(IdentityDbContext context)
+        public LocalUserService(IdentityDbContext context)// tuleb panna õigesse kihti ning teise loogikad.
         {
             _context = context ??
                        throw new ArgumentNullException(nameof(context));
@@ -62,7 +59,7 @@ namespace Identity.Domain.Services
                  .FirstOrDefaultAsync(u => u.Username == userName);
         }
 
-        public async Task<IEnumerable<UserClaim>> GetUserClaimsBySubjectAsync(string subject)
+        public async Task<IEnumerable<UserClaimData>> GetUserClaimsBySubjectAsync(string subject)
         {
             if (string.IsNullOrWhiteSpace(subject)) throw new ArgumentNullException(nameof(subject));
 
@@ -163,4 +160,4 @@ namespace Identity.Domain.Services
             return true;
         }
     }
-}
+}*/

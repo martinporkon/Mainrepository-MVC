@@ -11,9 +11,16 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Identity.Aids\Identity.Aids.csproj" />
-    <ProjectReference Include="..\Identity.Data\Identity.Data.csproj" />
     <ProjectReference Include="..\Identity.Domain\Identity.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Addresses\" />
+    <Folder Include="Common\" />
+    <Folder Include="AddressOfCustomers\" />
+    <Folder Include="Docs\" />
+    <Folder Include="PartyRelationships\" />
+    <Folder Include="Parties\" />
   </ItemGroup>
 
 </Project>

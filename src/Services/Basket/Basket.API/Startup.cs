@@ -1,14 +1,11 @@
 using Basket.API.Data;
 using Basket.API.Middleware;
-using Basket.Infra;
-using Basket.Infra.Basket;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Sooduskorv_MVC.Middleware.SwaggerMiddleware;
 
 namespace Basket.API
 {
@@ -25,12 +22,16 @@ namespace Basket.API
         {
             services.AddControllers()
                 .AddJsonOptions(opts => opts.JsonSerializerOptions.PropertyNamingPolicy = null);
-            services.AddGrpc();
+            /*services.AddGrpc();*/
+            services.AddHttpContextAccessor();
+            services.AddOptions();
             services.AddCustomSwagger(Configuration);
             services.AddCustomAuthentication(Configuration);
             services.AddDbContext<BasketApplicationDbContext>(options => // TODO !!
             {
-                options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=BasketDB;Trusted_Connection=True;");
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
+                    builder => builder.EnableRetryOnFailure(2));
+                // https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-resiliency
             });
             /*services.AddDbContext<BasketDbContext>(options =>
             {
@@ -45,7 +46,6 @@ namespace Basket.API
                 app.UseDeveloperExceptionPage();
             }
 
-            app.UseSwaggerAPI(Configuration);
 
             app.UseHttpsRedirection();
 
@@ -54,10 +54,12 @@ namespace Basket.API
             app.UseAuthentication();
             app.UseAuthorization();
 
+            app.UseSwaggerAPI(Configuration);
+
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();
-                endpoints.MapGrpcService<BasketRepository>();
+                endpoints.MapDistributedServices(Configuration);
             });
         }
     }

@@ -2,7 +2,7 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 
-namespace Sooduskorv_MVC.Middleware.SwaggerMiddleware
+namespace Microsoft.AspNetCore.Builder
 {
     public static class AddSwaggerMiddlewareExtensions
     {

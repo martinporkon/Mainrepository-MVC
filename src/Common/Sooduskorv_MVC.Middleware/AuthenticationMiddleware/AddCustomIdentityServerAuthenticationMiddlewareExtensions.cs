@@ -1,10 +1,9 @@
 ﻿using System;
 using IdentityServer4.AccessTokenValidation;
-using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Sooduskorv_MVC.Middleware.AuthenticationMiddleware
+namespace Microsoft.AspNetCore.Builder
 {
     public static class AddCustomIdentityServerAuthenticationMiddlewareExtensions
     {

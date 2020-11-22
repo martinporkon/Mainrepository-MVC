@@ -1,15 +1,12 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.Configuration;
+﻿using Microsoft.Extensions.Configuration;
 
-namespace Sooduskorv_MVC.Middleware.SwaggerMiddleware
+namespace Microsoft.AspNetCore.Builder
 {
     public static class UseSwaggerAPIMiddlewareExtensions
     {
         public static IApplicationBuilder UseSwaggerAPI(this IApplicationBuilder app, IConfiguration configuration)
         {
-            app.UseSwagger();
-
-            app.UseSwaggerUI(c =>
+            app.UseSwagger().UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/V1/swagger.json", "Catalog V1");
             });

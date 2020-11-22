@@ -23,7 +23,7 @@ namespace Catalog.Infra
 
         internal static int randomDataGenerationAmount = 10;
 
-        internal static List<UserProfileData> userProfiles => new List<UserProfileData> 
+        internal static List<UserProfileData> userProfiles => new List<UserProfileData>
         {
         new UserProfileData{
             Id = Guid.NewGuid(),

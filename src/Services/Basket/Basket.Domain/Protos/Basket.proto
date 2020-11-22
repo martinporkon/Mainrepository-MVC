@@ -1,0 +1,19 @@
+﻿/*
+syntax = "proto3";
+
+import "BasketDetails.proto";
+
+service BasketService {
+	rpc GetBaskets (GetBasketsByIdRequest) returns (stream GetBasketsResponse) {}
+}
+
+message GetBasketsByIdRequest {
+	string Id = 1;
+}
+
+message GetBasketsResponse {
+	+1+repeated Basket basket = 1;#1#
+}
+*/
+
+

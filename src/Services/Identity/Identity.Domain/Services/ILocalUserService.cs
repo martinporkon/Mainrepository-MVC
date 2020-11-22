@@ -9,7 +9,7 @@ namespace Identity.Domain.Services
         Task<bool> ValidateCredentialsAsync(
             string userName,
             string password);
-        Task<IEnumerable<UserClaim>> GetUserClaimsBySubjectAsync(
+        Task<IEnumerable<UserClaimData>> GetUserClaimsBySubjectAsync(
             string subject);
         Task<UserData> GetUserByUserNameAsync(
             string userName);

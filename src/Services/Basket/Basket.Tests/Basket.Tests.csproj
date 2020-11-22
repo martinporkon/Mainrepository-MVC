@@ -16,9 +16,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\tests\CommonTests\CommonTests.csproj" />
-    <ProjectReference Include="..\Basket.Data\Basket.Data.csproj" />
-    <ProjectReference Include="..\Basket.Infra\Basket.Infra.csproj" />
+    <ProjectReference Include="..\..\..\Common\Sooduskorv_MVC.CommonTests\Sooduskorv-MVC.CommonTests.csproj" />
+    <ProjectReference Include="..\Basket.API\Basket.API.csproj" />
   </ItemGroup>
 
 </Project>

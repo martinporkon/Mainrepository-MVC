@@ -5,11 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Common\Sooduskorv-MVC.Data\Sooduskorv_MVC.Data.csproj" />
+    <Folder Include="Docs\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Docs\" />
+    <ProjectReference Include="..\..\..\Common\Sooduskorv_MVC.Data\Sooduskorv_MVC.Data.csproj" />
+    <ProjectReference Include="..\Basket.Core\Basket.Core.csproj" />
   </ItemGroup>
 
 </Project>

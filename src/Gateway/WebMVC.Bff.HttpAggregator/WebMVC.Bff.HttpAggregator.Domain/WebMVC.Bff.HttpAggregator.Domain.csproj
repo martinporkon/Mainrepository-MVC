@@ -5,14 +5,22 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="CatalogService\CommandHandlers\" />
-    <Folder Include="CatalogService\CommandRequest\" />
-    <Folder Include="OrderService\" />
+    <PackageReference Include="MediatR" Version="9.0.0" />
+    <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="BasketService\CommandHandlers\" />
+    <Folder Include="OrderService\CommandRequests\" />
+    <Folder Include="OrderService\CommandHandlers\" />
+    <Folder Include="OrderService\QueryHandlers\" />
+    <Folder Include="OrderService\QueryRequests\" />
     <Folder Include="Rules\" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="MediatR" Version="9.0.0" />
+    <ProjectReference Include="..\..\..\Services\Basket\Basket.Facade\Basket.Facade.csproj" />
+    <ProjectReference Include="..\WebMVC.Bff.HttpAggregator.Data\WebMVC.Bff.HttpAggregator.Data.csproj" />
   </ItemGroup>
 
 </Project>

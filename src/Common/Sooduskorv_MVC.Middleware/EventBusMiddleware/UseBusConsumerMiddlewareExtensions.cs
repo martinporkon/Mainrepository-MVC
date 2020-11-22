@@ -8,8 +8,6 @@ namespace Microsoft.AspNetCore.Builder
     public static class UseBusConsumerMiddlewareExtensions
     {
         public static IBusConsumer BusConsumer { get; set; }
-        private static void ApplicationStarted() => BusConsumer.StartProcess();
-        private static void ApplicationStopping() => BusConsumer.EndProcess();
         /// <summary>
         /// Registers the consumer during server start.
         /// </summary>
@@ -20,8 +18,8 @@ namespace Microsoft.AspNetCore.Builder
         {
             BusConsumer = app.ApplicationServices.GetService<T>();
             var application = app.ApplicationServices.GetService<IHostApplicationLifetime>();
-            application.ApplicationStarted.Register(ApplicationStarted);
-            application.ApplicationStopping.Register(ApplicationStopping);
+            application.ApplicationStarted.Register(BusConsumer.StartProcess);
+            application.ApplicationStopping.Register(BusConsumer.EndProcess);
             return app;
         }
     }

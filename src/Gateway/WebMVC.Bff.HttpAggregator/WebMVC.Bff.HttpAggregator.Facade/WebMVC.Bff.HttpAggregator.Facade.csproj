@@ -8,8 +8,4 @@
     <ProjectReference Include="..\WebMVC.Bff.HttpAggregator.Domain\WebMVC.Bff.HttpAggregator.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
-
 </Project>

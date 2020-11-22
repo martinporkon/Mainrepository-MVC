@@ -5,7 +5,7 @@ using Sooduskorv_MVC.Aids.Logging;
 
 namespace Sooduskorv_MVC.Aids.HTTP
 {
-    public static class StatusCodes
+    public static class StatusCodes// Visitor pattern instead?
     {
         private static bool DoSomething(HttpStatusCode code)
         {

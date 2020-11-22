@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Basket.Facade.Baskets;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using WebMVC.HttpAggregator.Facade.DTO;
-using WebMVC.HttpAggregator.Infra.Basket.Queries;
+using WebMVC.HttpAggregator.Domain.BasketService.QueryHandlers;
 
 namespace WebMVC.HttpAggregator.Gateway.Controllers
 {
@@ -23,17 +23,22 @@ namespace WebMVC.HttpAggregator.Gateway.Controllers
         [Route("{basketId}")]
         [HttpGet]
         [HttpHead]
-        public async Task<ActionResult<IEnumerable<BasketView>>> GetBasket([FromRoute] string basketId) // + userId
+        public async Task<ActionResult<IEnumerable<BasketView>>> GetBasket([FromRoute] GetUSer) // + userId
         {
-            var result = await _mediator.Send(new GetUserBasketsQuery("id"));
-            return result != null ? (ActionResult<IEnumerable<BasketView>>)Ok(new BasketView()) : NotFound();
+            var result = await _mediator.Send(new GetUserBasketByIdQueryHandler(basketId));
+            if (result is null)
+            {
+                return NotFound();
+            }
+
+            return Ok(new BasketView());
         }
 
         [HttpGet]
         [HttpHead]
         public async Task<ActionResult<IEnumerable<BasketView>>> GetBaskets()// + userId
         {
-            var result = await _mediator.Send(new GetUserBasketsQuery("id"));
+            var result = await _mediator.Send(new GetUserBasketByIdQueryHandler("id"));
             return result != null ? (ActionResult<IEnumerable<BasketView>>)Ok(new BasketView()) : NotFound();
         }
     }

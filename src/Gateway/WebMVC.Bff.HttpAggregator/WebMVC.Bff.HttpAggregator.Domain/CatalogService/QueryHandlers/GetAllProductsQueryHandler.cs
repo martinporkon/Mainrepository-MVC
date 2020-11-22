@@ -1,28 +1,31 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
+using Microsoft.AspNetCore.Mvc;
+using WebMVC.Bff.HttpAggregator.Domain.CurrentService.CurrentServiceQuery;
+using WebMVC.Bff.HttpAggregator.Domain.CurrentService.Entities;
 using WebMVC.Bff.HttpAggregator.Domain.DTO;
 using WebMVC.Bff.HttpAggregator.Infra.CatalogService.QueryRequest;
+using WebMVC.Bff.HttpAggregator.Infra.Common;
 
 namespace WebMVC.HttpAggregator.Infra.Catalog.Queries
 {
-    public class GetAllProductsQueryHandler : IRequestHandler<GetAllProductsQuery, IEnumerable<ProductDto>>
+    public class GetAllProductsQueryHandler<T> : IRequestHandler<T, ActionResult<IEnumerable<ProductDto>>> where T : GetAllProductsQuery, IRequest<ActionResult<IEnumerable<ProductDto>>>
     {
-        private readonly ICatalogServiceRepository _catalogServiceRepository;
+        /*private readonly IQueryHandler<PictureQuery, Resource> _resourceQueryHandler;*/
 
-        public GetAllProductsQueryHandler(ICatalogServiceRepository catalogServiceRepository)
+        // TODO kas sobiks ka ActionResult??
+        /*public GetAllProductsQueryHandler(/*IQueryHandler<PictureQuery, Resource> resourceQueryHandler#1#)
         {
-            _catalogServiceRepository = catalogServiceRepository;
-        }
-        public async Task<IEnumerable<ProductDto>> Handle(GetAllProductsQuery request, CancellationToken cancellationToken)
+            /*_resourceQueryHandler = resourceQueryHandler;#1#
+        }*/
+
+
+        public Task<ActionResult<IEnumerable<ProductDto>>> Handle(T request, CancellationToken cancellationToken)
         {
-
-            // TODO Get all products from the Catalog Service
-
-            var baz = _catalogServiceRepository.GetAll().Result;
-
-            return baz;
+            throw new NotImplementedException();
         }
     }
 }

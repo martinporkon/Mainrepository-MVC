@@ -6,7 +6,7 @@ namespace WebMVC.Bff.HttpAggregator.Gateway.Middleware.HttpMiddleware
 {
     public static class HttpMiddlewareExtensions
     {
-        public static IServiceCollection AddHttpMiddleware(this IServiceCollection services, IConfiguration configuration)
+        public static IServiceCollection AddHttpMiddleware(this IServiceCollection services, IConfiguration configuration = null)
         {
             services.AddControllers(configure =>
             {

@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WebMVC.Bff.HttpAggregator.Domain\WebMVC.Bff.HttpAggregator.Domain.csproj" />
+    <ProjectReference Include="..\WebMVC.Bff.HttpAggregator.Infra\WebMVC.Bff.HttpAggregator.Infra.csproj" />
   </ItemGroup>
 
 </Project>

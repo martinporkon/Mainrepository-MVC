@@ -10,6 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Common\Sooduskorv_MVC.Data\Sooduskorv_MVC.Data.csproj" />
+    <ProjectReference Include="..\WebMVC.Bff.HttpAggregator.Core\WebMVC.Bff.HttpAggregator.Core.csproj" />
   </ItemGroup>
 
 </Project>

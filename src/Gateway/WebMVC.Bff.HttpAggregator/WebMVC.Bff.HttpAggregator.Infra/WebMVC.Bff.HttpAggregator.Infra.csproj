@@ -17,9 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WebMVC.Bff.HttpAggregator.Data\WebMVC.Bff.HttpAggregator.Data.csproj" />
-    <ProjectReference Include="..\WebMVC.Bff.HttpAggregator.Domain\WebMVC.Bff.HttpAggregator.Domain.csproj" />
-    <ProjectReference Include="..\WebMVC.Bff.HttpAggregator.Pages\WebMVC.Bff.HttpAggregator.Pages.csproj" />
+    <ProjectReference Include="..\WebMVC.Bff.HttpAggregator.Facade\WebMVC.Bff.HttpAggregator.Facade.csproj" />
   </ItemGroup>
 
 </Project>

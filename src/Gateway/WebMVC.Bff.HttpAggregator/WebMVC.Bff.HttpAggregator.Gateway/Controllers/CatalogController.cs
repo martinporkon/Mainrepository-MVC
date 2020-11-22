@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using SooduskorvWebMVC.Models;
 using WebMVC.Bff.HttpAggregator.Gateway.Controllers;
 using WebMVC.Bff.HttpAggregator.Infra.CatalogService.QueryRequest;
+using WebMVC.HttpAggregator.Infra.BasketService.Commands;
 
 namespace WebMVC.HttpAggregator.Gateway.Controllers
 {
@@ -28,7 +29,8 @@ namespace WebMVC.HttpAggregator.Gateway.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ProductDto>>> GetAllProducts([FromQuery] Filters filters)
         {
-            return Ok(await _mediator.Send(new GetAllProductsQuery()) as IEnumerable<ProductDto>);
+            var result = await _mediator.Send(new GetAllProductsQuery());// TODO fix needed
+            return Ok(result);
         }
 
         [HttpGet("{manyIds}", Name = "GetProducts")]
@@ -39,24 +41,27 @@ namespace WebMVC.HttpAggregator.Gateway.Controllers
             {
                 return BadRequest();
             }
-
             return Ok();
         }
 
         [Route("{productId}", Name = "GetProduct")]
         [HttpGet]
-        public async Task<ActionResult<ProductDto>> GetProduct(string productId)
+        public async Task<ActionResult<ProductDto>> GetProduct([FromBody] GetProductByIdQuery query)
         {
-            return Ok(await _mediator.Send(new GetAllProductsQuery()));
+            if (query is null)
+            {
+                return NotFound();
+            }
+            return Ok(await _mediator.Send(query));
         }
 
 
         [Route("/basket/{productId}")]
         [HttpPost]
-        public async Task<ActionResult> AddToBasket(string productId)
+        public async Task<ActionResult> AddToBasket([FromBody] CreateBasketCommand command)// + userId
         {
 
-            if (productId is null)
+            if (command is null)
             {
                 return BadRequest();
             }

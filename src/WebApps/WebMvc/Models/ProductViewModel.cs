@@ -8,6 +8,7 @@ namespace SooduskorvWebMVC.Models
         public ProductViewModel(IEnumerable<ProductDto> products)
         {
             Products = products;
+
         }
     }
 }

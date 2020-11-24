@@ -1,0 +1,46 @@
+﻿@page
+@using Catalog.Data.Product
+@using Catalog.Pages.Common.Aids
+@using Catalog.Pages.Common.Consts
+@using Catalog.Pages.Common.Extensions
+@model Catalog.Pages.Products.ProductTypesPage
+
+@{
+    Layout = "_Index";
+    var page = Model.PageUrl;
+}
+
+@section Create {
+    <div class="dropdown">
+        <button class="btn btn-link" id="dropdownMenuButton" data-toggle="dropdown">@Captions.Create</button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <a class="dropdown-item" href="@Model.CreateUri(ProductKind.Product)">@Enum.GetName(typeof(ProductKind), ProductKind.Product)</a>
+            <a class="dropdown-item" href="@Model.CreateUri(ProductKind.Service)">@Enum.GetName(typeof(ProductKind), ProductKind.Service)</a>
+            <a class="dropdown-item" href="@Model.CreateUri(ProductKind.MeasuredProduct)">@Enum.GetName(typeof(ProductKind), ProductKind.MeasuredProduct)</a>
+        </div>
+    </div>
+}
+
+<body>
+    
+            @foreach (var item in Model.Items)
+            {
+                <div class="esh-catalog-item col-md-4">
+                    <form asp-page="/Basket/Index" method="post">
+                        <img class="esh-catalog-thumbnail" src="@item.Image" />
+                        <div class="esh-catalog-name">
+                            <span>@item.Name</span> <span>@item.BrandId</span> <span>@item.Amount</span><span>@item.UnitId</span>
+                        </div>
+                        <div class="esh-catalog-price">
+                            <span>@item.Amount.ToString("N2")</span>
+                        </div>
+                        <input class="esh-catalog-button" type="submit" value="Lisa ostukorvi" />
+                        <input type="hidden" asp-for="@item.Id" name="id" />
+                        <input type="hidden" asp-for="@item.Name" name="name" />
+                        <input type="hidden" asp-for="@item.Image" name="pictureUri" />
+                        <input type="hidden" asp-for="@item.Amount" name="price" />
+                    </form>
+                </div>
+             }
+            
+</body>

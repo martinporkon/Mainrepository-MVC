@@ -1,4 +1,6 @@
 ﻿using Catalog.Domain.Catalog;
+using Catalog.Domain.Product;
+using Catalog.Infra.Product;
 using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
@@ -16,6 +18,7 @@ namespace Catalog.Infra.Catalog
             services.AddScoped<ICatalogEntriesRepository, CatalogEntriesRepository>();
             services.AddScoped<ICatalogedProductsRepository, CatalogedProductsRepository>();
             services.AddScoped<IProductCategoriesRepository, ProductCategoriesRepository>();
+            services.AddScoped<IProductTypesRepository, ProductTypesRepository>();
       
         }
     }

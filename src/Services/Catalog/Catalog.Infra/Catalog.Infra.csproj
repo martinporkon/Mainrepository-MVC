@@ -27,7 +27,6 @@
     <Folder Include="Service\" />
     <Folder Include="Price\" />
     <Folder Include="ProductFeature\" />
-    <Folder Include="Product\" />
   </ItemGroup>
 
 </Project>

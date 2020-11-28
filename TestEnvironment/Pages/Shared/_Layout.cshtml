@@ -26,7 +26,9 @@
                         @Html.DropMenu("Products",
                             new Link(ProductPagesNames.Catalogs, ProductPagesUrls.Catalogs),
                             new Link(ProductPagesNames.CatalogEntries, ProductPagesUrls.CatalogEntries),
+                            new Link(ProductPagesNames.ProductInstances, ProductPagesUrls.ProductInstances),
                             new Link(ProductPagesNames.ProductTypes, ProductPagesUrls.ProductTypes))
+
 
                         @Html.DropMenu("Help",
                             new Link("About", new Uri("/Index", UriKind.Relative)),

@@ -25,7 +25,7 @@ namespace Catalog.Domain.Product
 
         protected internal IProductType type => new GetFrom<IProductTypesRepository, IProductType>().ById(TypeId);
 
-        public ProductKind ProductKind => throw new NotImplementedException();
+        public ProductKind ProductKind { get; }
 
 
         //public virtual IReadOnlyList<FeatureInstance> Features =>

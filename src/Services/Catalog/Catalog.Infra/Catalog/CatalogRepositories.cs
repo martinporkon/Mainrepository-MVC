@@ -19,7 +19,9 @@ namespace Catalog.Infra.Catalog
             services.AddScoped<ICatalogedProductsRepository, CatalogedProductsRepository>();
             services.AddScoped<IProductCategoriesRepository, ProductCategoriesRepository>();
             services.AddScoped<IProductTypesRepository, ProductTypesRepository>();
-      
+            services.AddScoped<IProductInstancesRepository, ProductInstancesRepository>();
+
+
         }
     }
 }

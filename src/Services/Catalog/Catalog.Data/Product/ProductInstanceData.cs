@@ -12,6 +12,7 @@ namespace Catalog.Data.Product
 
         public double Amount { get; set; }
         public string UnitId { get; set; }
+        public string PartyId { get; set; }
 
         public DateTime ScheduledFrom { get; set; }
         public DateTime ScheduledTo { get; set; }

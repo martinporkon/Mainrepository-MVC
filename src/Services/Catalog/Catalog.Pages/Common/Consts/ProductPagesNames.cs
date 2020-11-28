@@ -10,7 +10,7 @@
         public static string Inventory => "Inventory";
         public static string Features => "Features";
         public static string FeatureTypes => "Feature Types";
-        public static string Products => "Products";
+        public static string ProductInstances => "Product Instances";
         public static string ProductTypes => "Product Types";
         public static string PossibleFeatureValues => "Possible Feature Values";
         public static string ProductCategories => "Product Categories";

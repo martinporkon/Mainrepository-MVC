@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Catalog.API.Migrations
 {
     [DbContext(typeof(CatalogApplicationDbContext))]
-    [Migration("20201119114450_some_data_changes_mig")]
-    partial class some_data_changes_mig
+    [Migration("20201126074349_addedPartyId")]
+    partial class addedPartyId
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -220,6 +220,9 @@ namespace Catalog.API.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PartyId")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("ProductKind")

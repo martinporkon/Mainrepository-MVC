@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Catalog.API.Migrations
 {
-    public partial class some_data_changes_mig : Migration
+    public partial class addedPartyId : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -184,6 +184,7 @@ namespace Catalog.API.Migrations
                     ProductKind = table.Column<int>(nullable: false),
                     Amount = table.Column<double>(nullable: false),
                     UnitId = table.Column<string>(nullable: true),
+                    PartyId = table.Column<string>(nullable: true),
                     ScheduledFrom = table.Column<DateTime>(nullable: false),
                     ScheduledTo = table.Column<DateTime>(nullable: false),
                     DeliveredFrom = table.Column<DateTime>(nullable: false),

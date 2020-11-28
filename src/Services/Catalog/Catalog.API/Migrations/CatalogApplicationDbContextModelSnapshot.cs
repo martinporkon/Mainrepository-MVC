@@ -220,6 +220,9 @@ namespace Catalog.API.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("PartyId")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("ProductKind")
                         .HasColumnType("int");
 

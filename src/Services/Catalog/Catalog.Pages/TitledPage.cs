@@ -45,7 +45,7 @@ namespace Catalog.Pages
 
         protected internal Uri indexUrl() =>
             new Uri($"{PageUrl}/Index?handler=Index&fixedFilter={FixedFilter}&fixedValue={FixedValue}", UriKind.Relative);
-
+        //TODO kole asi välja vahetada
         protected internal static IEnumerable<SelectListItem> newItemsList<TTDomain, TTData>(IRepository<TTDomain> r,
             Func<TTDomain, bool> condition = null)
             where TTDomain : IEntity<TTData>

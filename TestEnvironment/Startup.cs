@@ -37,6 +37,7 @@ namespace TestEnvironment
                 options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=CatalogDB;Trusted_Connection=True;");
             });
             registerRepositories(services);
+
         }
         private void registerRepositories(IServiceCollection services)
         {

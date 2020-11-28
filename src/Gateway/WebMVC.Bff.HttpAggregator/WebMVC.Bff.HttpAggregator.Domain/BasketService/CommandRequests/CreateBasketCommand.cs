@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace WebMVC.HttpAggregator.Infra.BasketService.Commands
+namespace WebMVC.Bff.HttpAggregator.Domain.BasketService.CommandRequests
 {
     public class CreateBasketCommand : IRequest<object>
     {

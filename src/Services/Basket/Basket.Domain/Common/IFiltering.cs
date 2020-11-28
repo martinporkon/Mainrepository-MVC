@@ -1,4 +1,4 @@
-﻿namespace Catalog.Domain
+﻿namespace Basket.Domain.Common
 {
     public interface IFiltering
     {

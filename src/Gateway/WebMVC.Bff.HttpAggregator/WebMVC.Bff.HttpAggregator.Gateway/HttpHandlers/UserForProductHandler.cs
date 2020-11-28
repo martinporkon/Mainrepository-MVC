@@ -20,14 +20,7 @@ namespace WebMVC.Bff.HttpAggregator.Gateway.HttpHandlers
         protected override Task HandleRequirementAsync(AuthorizationHandlerContext context,
             UserForProductRequirement requirement)
         {
-            // save all user baskets to this database?
-            // teisel juhul basket not found
-            // sama asi POST.
-            // UserProfiles? Duplikaatandmed...
-            // Eventid?
-
-            // Viia authentication teenuste sisse? Authorization Gatewaysse?
-            // Mitu korda Autentimist?
+            // TODO but not here.
             var basketId = _httpContextAccessor.HttpContext.GetRouteValue("Id").ToString();// TODO
             var buyerId = context.User.Claims.FirstOrDefault(c => c.Type == "sub")?.Value;
             context.Succeed(requirement);

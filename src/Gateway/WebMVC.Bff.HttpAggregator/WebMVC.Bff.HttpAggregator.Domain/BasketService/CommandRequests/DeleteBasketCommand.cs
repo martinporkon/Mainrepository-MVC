@@ -2,9 +2,9 @@
 using System.Threading;
 using System.Threading.Tasks;
 using Basket.Facade.Baskets;
-using WebMVC.HttpAggregator.Infra.Common;
+using WebMVC.Bff.HttpAggregator.Domain.Common;
 
-namespace WebMVC.HttpAggregator.Infra.Basket.Commands
+namespace WebMVC.Bff.HttpAggregator.Domain.BasketService.CommandRequests
 {
     public class DeleteBasketCommand : IRequestWrapper<BasketView> { }
 

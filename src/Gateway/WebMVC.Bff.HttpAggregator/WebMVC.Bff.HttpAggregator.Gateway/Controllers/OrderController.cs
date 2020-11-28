@@ -2,7 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
-namespace WebMVC.HttpAggregator.Gateway.Controllers
+namespace WebMVC.Bff.HttpAggregator.Gateway.Controllers
 {
     [ApiController]
     [Route("api/mvc-bff/orders")]

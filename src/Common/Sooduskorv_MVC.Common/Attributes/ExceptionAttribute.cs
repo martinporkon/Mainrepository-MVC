@@ -1,7 +1,4 @@
-﻿using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc.Filters;
-
-namespace Sooduskorv_MVC.Middleware.Stuff
+﻿/*namespace Sooduskorv_MVC.Middleware.Stuff
 {
     public class ExceptionAttribute : ActionFilterAttribute// .Exception. Logging. api. vms.
     {
@@ -35,4 +32,4 @@ namespace Sooduskorv_MVC.Middleware.Stuff
             return base.OnResultExecutionAsync(context, next);
         }
     }
-}
+}*/

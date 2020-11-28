@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
+using WebMVC.Bff.HttpAggregator.Domain.Common;
 using WebMVC.Bff.HttpAggregator.Domain.CurrentService.Entities;
-using WebMVC.Bff.HttpAggregator.Infra.Common;
 
 namespace WebMVC.Bff.HttpAggregator.Domain.CurrentService.CurrentServiceQuery
 {

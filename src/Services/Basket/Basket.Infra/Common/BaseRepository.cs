@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Basket.Domain.Common;
-using Catalog.Domain;
 using Microsoft.EntityFrameworkCore;
 using Sooduskorv_MVC.Data.CommonData;
 

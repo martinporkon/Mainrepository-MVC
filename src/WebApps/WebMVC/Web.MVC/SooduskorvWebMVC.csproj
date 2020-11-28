@@ -8,20 +8,20 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Views\Basket\**" />
-    <Compile Remove="Views\Manage\**" />
+    <Compile Remove="Areas\Basket\**" />
+    <Compile Remove="Areas\Manage\**" />
     <Compile Remove="wwwroot\css\basket\**" />
     <Compile Remove="wwwroot\css\catalog\**" />
-    <Content Remove="Views\Basket\**" />
-    <Content Remove="Views\Manage\**" />
+    <Content Remove="Areas\Basket\**" />
+    <Content Remove="Areas\Manage\**" />
     <Content Remove="wwwroot\css\basket\**" />
     <Content Remove="wwwroot\css\catalog\**" />
-    <EmbeddedResource Remove="Views\Basket\**" />
-    <EmbeddedResource Remove="Views\Manage\**" />
+    <EmbeddedResource Remove="Areas\Basket\**" />
+    <EmbeddedResource Remove="Areas\Manage\**" />
     <EmbeddedResource Remove="wwwroot\css\basket\**" />
     <EmbeddedResource Remove="wwwroot\css\catalog\**" />
-    <None Remove="Views\Basket\**" />
-    <None Remove="Views\Manage\**" />
+    <None Remove="Areas\Basket\**" />
+    <None Remove="Areas\Manage\**" />
     <None Remove="wwwroot\css\basket\**" />
     <None Remove="wwwroot\css\catalog\**" />
   </ItemGroup>
@@ -41,6 +41,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Sooduskorv_MVC.Aids\Sooduskorv_MVC.Aids.csproj" />
     <ProjectReference Include="..\WebMVC.Domain\WebMVC.Domain.csproj" />
     <ProjectReference Include="..\WebMVC.Facade\WebMVC.Facade.csproj" />
     <ProjectReference Include="..\WebMVC.Pages\WebMVC.Pages.csproj" />

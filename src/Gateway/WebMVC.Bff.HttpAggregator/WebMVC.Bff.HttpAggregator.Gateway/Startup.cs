@@ -1,18 +1,15 @@
-using System.Reflection;
-using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Sooduskorv_MVC.Middleware.SecurityMiddleware;
 using WebMVC.Bff.HttpAggregator.Gateway.Data;
 using WebMVC.Bff.HttpAggregator.Gateway.Middleware;
 using WebMVC.Bff.HttpAggregator.Gateway.Middleware.HttpMiddleware;
-using WebMVC.HttpAggregator.Gateway.Infrastructure;
-using WebMVC.HttpAggregator.Gateway.Middleware;
 
-namespace WebMVC.HttpAggregator.Gateway
+namespace WebMVC.Bff.HttpAggregator.Gateway
 {
     public class Startup
     {
@@ -25,6 +22,7 @@ namespace WebMVC.HttpAggregator.Gateway
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCustomCors(Configuration);
             services.AddResponseCaching();
             services.AddHttpMiddleware(Configuration);
             services.AddHttpContextAccessor();
@@ -51,6 +49,7 @@ namespace WebMVC.HttpAggregator.Gateway
                 app.UseHsts();
             }
 
+            app.UseCors("MyAllowSpecificOrigins");
             app.UseResponseCaching();
             app.UseHttpsRedirection();
             app.UseStaticFiles();//

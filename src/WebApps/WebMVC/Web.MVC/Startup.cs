@@ -24,22 +24,16 @@ namespace SooduskorvWebMVC
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews()
-                .AddJsonOptions(opts => opts.JsonSerializerOptions.PropertyNamingPolicy = null)
-                .AddRazorRuntimeCompilation();
+            services.AddMemoryCache();
+            services.AddCustomControllersWithViews();
             services.AddServerSideBlazor();
-
             services.AddCustomAuthorization(Configuration);
             services.AddHttpContextAccessor();
-
             /*services.AddHttpClient<IProductsService, ProductsService>();
             services.AddScoped<IProductsService, ProductsService>();*/
-
             services.AddTransient<BearerTokenHandler>();
-
             services.AddHttpClientServices(Configuration);
             services.AddCustomAuthentication(Configuration);
-
             services.AddSingleton<IPostConfigureOptions<OpenIdConnectOptions>, OpenIdConnectOptionsPostConfigurationOptions>();
         }
 
@@ -56,7 +50,7 @@ namespace SooduskorvWebMVC
             }
 
             /*app.UseStatusCodePages();*/
-            /*var supportedCultures = new string[] { "en-GB", "en-US" };
+            /*var supportedCultures = new string[] { "en-GB", "en-US" };// TODO !!
             app.UseRequestLocalization(options =>
                 options
                     .AddSupportedCultures(supportedCultures)
@@ -88,6 +82,7 @@ namespace SooduskorvWebMVC
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                /*endpoints.MapRazorPages();*/
                 endpoints.MapBlazorHub();
             });
         }

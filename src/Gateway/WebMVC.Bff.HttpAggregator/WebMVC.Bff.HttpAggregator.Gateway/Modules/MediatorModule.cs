@@ -1,8 +1,8 @@
 ﻿using Autofac;
 using MediatR;
-using WebMVC.HttpAggregator.Gateway.Infrastructure;
+using WebMVC.Bff.HttpAggregator.Gateway.Infrastructure;
 
-namespace WebMVC.HttpAggregator.Gateway.Modules
+namespace WebMVC.Bff.HttpAggregator.Gateway.Modules
 {
     public class MediatorModule : Module
     {

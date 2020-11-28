@@ -17,4 +17,8 @@
     <ProjectReference Include="..\WebMVC.Bff.HttpAggregator.Facade\WebMVC.Bff.HttpAggregator.Facade.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Docs\" />
+  </ItemGroup>
+
 </Project>

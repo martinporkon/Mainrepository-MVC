@@ -4,9 +4,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using Basket.Facade.Baskets;
 using MediatR;
-using WebMVC.Bff.HttpAggregator.Core.Errors;
 using WebMVC.Bff.HttpAggregator.Domain.BasketService;
 using WebMVC.Bff.HttpAggregator.Domain.DTO;
+using WebMVC.HttpAggregator.Domain.BasketService.QueryRequests;
 
 namespace WebMVC.HttpAggregator.Domain.BasketService.QueryHandlers
 {

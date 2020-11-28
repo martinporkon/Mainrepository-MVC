@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Basket.API.Middleware
+namespace Basket.API.Middleware.Authorization
 {
     public static class AddCustomAuthorizationMiddlewareExtensions
     {

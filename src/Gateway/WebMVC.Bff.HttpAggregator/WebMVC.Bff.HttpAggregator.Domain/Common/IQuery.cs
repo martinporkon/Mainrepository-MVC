@@ -1,4 +1,4 @@
-﻿namespace WebMVC.Bff.HttpAggregator.Infra.Common
+﻿namespace WebMVC.Bff.HttpAggregator.Domain.Common
 {
     public interface IQuery<out TResult>
     {

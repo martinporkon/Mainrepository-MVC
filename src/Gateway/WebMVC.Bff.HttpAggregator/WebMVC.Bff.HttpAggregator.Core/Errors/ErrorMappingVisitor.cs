@@ -8,7 +8,6 @@ namespace WebMVC.Bff.HttpAggregator.Core.Errors
         public ActionResult<TModel> Visit(NotFound result)
             => new NotFoundObjectResult(result.Message);
 
-
         public ActionResult<TModel> Visit(Invalid result)
             => new BadRequestObjectResult(result.Message);
 

@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc.Formatters;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -11,9 +11,12 @@ namespace WebMVC.Bff.HttpAggregator.Gateway.Middleware.HttpMiddleware
             services.AddControllers(configure =>
             {
                 configure.ReturnHttpNotAcceptable = true;
-                configure.OutputFormatters.Add(new XmlDataContractSerializerOutputFormatter());
-            });
-
+                configure.CacheProfiles.Add("SetCacheFor120",
+                    new CacheProfile
+                    {
+                        Duration = 120,
+                    });
+            }).AddXmlDataContractSerializerFormatters();
             return services;
         }
     }

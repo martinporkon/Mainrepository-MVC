@@ -1,15 +1,15 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Basket.Domain.Common;
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Sooduskorv_MVC.Aids.HTTP;
 using SooduskorvWebMVC.Models;
-using WebMVC.Bff.HttpAggregator.Gateway.Controllers;
+using WebMVC.Bff.HttpAggregator.Domain.BasketService.CommandRequests;
+using WebMVC.Bff.HttpAggregator.Domain.CatalogService.QueryRequest;
 using WebMVC.Bff.HttpAggregator.Infra.CatalogService.QueryRequest;
-using WebMVC.HttpAggregator.Infra.BasketService.Commands;
 
-namespace WebMVC.HttpAggregator.Gateway.Controllers
+namespace WebMVC.Bff.HttpAggregator.Gateway.Controllers
 {
     [ApiController]
     [Route("api/mvc-bff/products")]
@@ -17,12 +17,11 @@ namespace WebMVC.HttpAggregator.Gateway.Controllers
     public class CatalogController : ControllerBase
     {
         private readonly IMediator _mediator;
-        private readonly IUnitOfWork _unitOfWork;// TODO for this.
+        /*private readonly IUnitOfWork _unitOfWork;*/
 
-        public CatalogController(IMediator mediator, IUnitOfWork foo)
+        public CatalogController(IMediator mediator)
         {
             _mediator = mediator;
-            _unitOfWork = foo;
         }
 
         [Route("/all")]

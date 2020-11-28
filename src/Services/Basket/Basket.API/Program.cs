@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Serilog;
 
 namespace Basket.API
 {
@@ -21,12 +22,18 @@ namespace Basket.API
                 }
             }).Build();
 
+
+            Log.Logger = new LoggerConfiguration()
+                .WriteTo.Seq("http://localhost:5412")
+                .CreateLogger();
+
             using (var scope = host.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
 
                 try
                 {
+                    Log.Information($"The Basket Application is starting up: {DateTime.UtcNow}");
                     var dbBasket = services.GetRequiredService<BasketDbContext>();
                     BasketDbInitializer.Initialize(dbBasket);
 
@@ -36,7 +43,12 @@ namespace Basket.API
 
                     var logger = services.GetRequiredService<ILogger<Program>>();
                     logger.LogError(ex, "An error occurred creating the DB.");
+                    Log.Fatal(ex, "An error occurred creating the DB.");
                     throw new Exception("initializer ei läinud läbi");
+                }
+                finally
+                {
+                    Log.CloseAndFlush();
                 }
             }
             host.Run();

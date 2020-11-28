@@ -3,7 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using WebMVC.Bff.HttpAggregator.Gateway.HttpHandlers;
 
-namespace SooduskorvWebMVC.Middleware
+namespace Microsoft.AspNetCore.Builder
 {
     public static class AddCustomAuthorizationExtension
     {

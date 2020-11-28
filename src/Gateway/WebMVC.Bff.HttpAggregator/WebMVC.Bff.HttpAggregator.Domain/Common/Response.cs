@@ -1,4 +1,4 @@
-﻿namespace WebMVC.HttpAggregator.Infra.Common
+﻿namespace WebMVC.Bff.HttpAggregator.Domain.Common
 {
     public class Response<T>
     {

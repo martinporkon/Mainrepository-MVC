@@ -13,7 +13,7 @@ namespace Microsoft.AspNetCore.Builder
                 options.SwaggerDoc("V1", new OpenApiInfo
                 {
                     Title = "Sooduskorv Catalog API",
-                    Description = "konfiguratsioon not implemented"
+                    Description = "konfiguratsioon not implemented!"
                 });
             });
             return services;

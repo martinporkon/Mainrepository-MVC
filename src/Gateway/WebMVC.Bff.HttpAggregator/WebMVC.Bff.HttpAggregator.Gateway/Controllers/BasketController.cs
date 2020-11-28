@@ -6,26 +6,27 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using WebMVC.Bff.HttpAggregator.Domain.BasketService.CommandRequests;
+using WebMVC.Bff.HttpAggregator.Domain.Common;
 using WebMVC.Bff.HttpAggregator.Domain.CurrentService.CurrentServiceQuery;
 using WebMVC.Bff.HttpAggregator.Domain.CurrentService.Entities;
-using WebMVC.Bff.HttpAggregator.Infra.Common;
+using WebMVC.Bff.HttpAggregator.Pages.BasketService;
 using WebMVC.HttpAggregator.Domain.BasketService.QueryHandlers;
 using WebMVC.HttpAggregator.Domain.BasketService.QueryRequests;
 
-namespace WebMVC.HttpAggregator.Gateway.Controllers
+namespace WebMVC.Bff.HttpAggregator.Gateway.Controllers
 {
     [ApiController]
     [Route("api/mvc-bff/baskets")]
     [Authorize]
-    public class BasketController : ControllerBase
+    public class BasketController : BasketPage
     {
-        private readonly IMediator _mediator;
-        private readonly IQueryHandler<PictureQuery, Resource> _queryHandler;
+        private readonly IMediator m;
+        private readonly IQueryHandler<PictureQuery, Resource> q;
 
-        public BasketController(IMediator mediator, IQueryHandler<PictureQuery, Resource> queryHandler)
+        public BasketController(IMediator m, IQueryHandler<PictureQuery, Resource> q)
         {
-            _mediator = mediator;
-            _queryHandler = queryHandler;
+            this.m = m;
+            this.q = q;
         }
 
         [Route("{basketId}")]
@@ -33,7 +34,7 @@ namespace WebMVC.HttpAggregator.Gateway.Controllers
         [HttpHead]
         public async Task<ActionResult<IEnumerable<BasketView>>> GetBasket([FromRoute] GetUserBasketByIdQuery query) // + userId
         {
-            var result = await _mediator.Send(new GetUserBasketByIdQueryHandler(_queryHandler));
+            var result = await m.Send(new GetUserBasketByIdQueryHandler(q));
             if (result is null)
             {
                 return NotFound();
@@ -46,7 +47,7 @@ namespace WebMVC.HttpAggregator.Gateway.Controllers
         [HttpHead]
         public async Task<ActionResult<IEnumerable<BasketView>>> GetBaskets()// + userId
         {
-            var result = await _mediator.Send(new GetUserBasketsQueryHandler());
+            var result = await m.Send(new GetUserBasketsQueryHandler());
             if (result is null)
             {
                 return NotFound();

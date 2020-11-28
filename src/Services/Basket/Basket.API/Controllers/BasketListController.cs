@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Basket.Pages.Common;
 
 namespace Basket.API.Controllers
 {
-    public class BasketListController
+    public class BasketListController : UnifiedPage
     {
     }
 }

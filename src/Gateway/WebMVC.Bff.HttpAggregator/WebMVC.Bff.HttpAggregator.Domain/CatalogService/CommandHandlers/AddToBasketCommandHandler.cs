@@ -1,10 +1,9 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
-using WebMVC.Bff.HttpAggregator.Domain.CatalogService.CommandRequest;
+using WebMVC.Bff.HttpAggregator.Domain.CatalogService.CommandRequests;
+using WebMVC.Bff.HttpAggregator.Domain.Common;
 using WebMVC.Bff.HttpAggregator.Domain.DTO;
-using WebMVC.Bff.HttpAggregator.Infra.Common;
-using WebMVC.HttpAggregator.Infra.Common;
 
 namespace WebMVC.Bff.HttpAggregator.Domain.CatalogService.CommandHandlers
 {

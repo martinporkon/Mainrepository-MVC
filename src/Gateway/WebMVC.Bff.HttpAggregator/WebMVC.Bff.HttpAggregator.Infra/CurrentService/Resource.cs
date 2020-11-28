@@ -1,10 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace WebMVC.Bff.HttpAggregator.Infra.CurrentService
+﻿namespace WebMVC.Bff.HttpAggregator.Infra.CurrentService
 {
-    class Resource
+    public class Resource
     {
+        public Resource()
+        {
+            
+        }
+
+
+
+
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 
-namespace WebMVC.Bff.HttpAggregator.Infra.Common
+namespace WebMVC.Bff.HttpAggregator.Domain.Common
 {
     public interface IRepository<T>
     {

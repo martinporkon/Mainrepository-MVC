@@ -14,7 +14,6 @@ namespace Microsoft.AspNetCore.Builder
         /// <param name="configuration"></param>
         /// <param name="connectionString"></param>
         /// <returns></returns>
-        /// TODO vajab optione relational andmebaaside registreerimiseks. Ehk tuleb ümber teha.
         public static IServiceCollection AddCustomDbContext<T>(this IServiceCollection services, IConfiguration configuration, string connectionString)
             where T : DbContext
         {

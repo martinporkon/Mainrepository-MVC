@@ -11,11 +11,11 @@
 
   <ItemGroup>
     <Folder Include="BasketService\CommandHandlers\" />
+    <Folder Include="Docs\" />
     <Folder Include="OrderService\CommandRequests\" />
     <Folder Include="OrderService\CommandHandlers\" />
     <Folder Include="OrderService\QueryHandlers\" />
     <Folder Include="OrderService\QueryRequests\" />
-    <Folder Include="Rules\" />
   </ItemGroup>
 
   <ItemGroup>

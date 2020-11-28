@@ -23,7 +23,7 @@ namespace Catalog.API
         {
 
             Log.Logger = new LoggerConfiguration()
-                .WriteTo.Seq("http://localhost:5341")
+                .WriteTo.Seq("http://localhost:5412")
                 .CreateLogger();
 
             var host = CreateHostBuilder(args).ConfigureAppConfiguration((hostContext, builder) =>
@@ -40,15 +40,20 @@ namespace Catalog.API
 
                 try
                 {
+                    Log.Information($"The Basket Application is starting up: {DateTime.UtcNow}");
                     var dbCatalog = services.GetRequiredService<CatalogDbContext>();
                     CatalogDbInitializer.Initialize(dbCatalog);
-
                 }
                 catch (Exception ex)
                 {
                     var logger = services.GetRequiredService<ILogger<Program>>();
                     logger.LogError(ex, "An error occurred creating the DB.");
+                    Log.Fatal(ex, "An error occurred creating the DB.");
                     throw new Exception("initializer ei läinud läbi");
+                }
+                finally
+                {
+                    Log.CloseAndFlush();
                 }
             }
             host.Run();

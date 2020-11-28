@@ -1,8 +1,7 @@
 ﻿using System.Reflection;
 using MediatR;
-using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.Extensions.DependencyInjection;
-using WebMVC.HttpAggregator.Gateway.Infrastructure;
+using WebMVC.Bff.HttpAggregator.Gateway.Infrastructure;
 
 namespace Microsoft.AspNetCore.Builder
 {

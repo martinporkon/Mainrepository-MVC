@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Routing;
 
-namespace Catalog.API.HttpHandlers
+namespace WebMVC.Bff.HttpAggregator.Gateway.HttpHandlers
 {
     public class SubjectMustMatchUserHandler : AuthorizationHandler<SubjectMustMatchUserRequirement>
     {

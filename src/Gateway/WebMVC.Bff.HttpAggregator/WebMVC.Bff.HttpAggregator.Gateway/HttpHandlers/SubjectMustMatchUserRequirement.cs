@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 
-namespace Catalog.API.HttpHandlers
+namespace WebMVC.Bff.HttpAggregator.Gateway.HttpHandlers
 {   
     public class SubjectMustMatchUserRequirement : IAuthorizationRequirement
     {

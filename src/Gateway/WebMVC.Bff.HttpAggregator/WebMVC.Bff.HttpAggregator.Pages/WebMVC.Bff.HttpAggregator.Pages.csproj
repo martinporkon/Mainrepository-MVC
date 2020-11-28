@@ -8,4 +8,11 @@
     <ProjectReference Include="..\WebMVC.Bff.HttpAggregator.Infra\WebMVC.Bff.HttpAggregator.Infra.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="BffService\" />
+    <Folder Include="CatalogService\" />
+    <Folder Include="Docs\" />
+    <Folder Include="OrderService\" />
+  </ItemGroup>
+
 </Project>

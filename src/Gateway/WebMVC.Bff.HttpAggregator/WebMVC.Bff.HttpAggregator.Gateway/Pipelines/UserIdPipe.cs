@@ -1,13 +1,11 @@
-﻿using System.Linq;
-using System.Security.Claims;
-using System.Threading;
+﻿using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
 using Microsoft.AspNetCore.Http;
 using WebMVC.Bff.HttpAggregator.Core.User;
-using WebMVC.HttpAggregator.Infra.Common;
+using WebMVC.Bff.HttpAggregator.Domain.Common;
 
-namespace WebMVC.HttpAggregator.Gateway.Infrastructure
+namespace WebMVC.Bff.HttpAggregator.Gateway.Infrastructure
 {
     public class UserIdPipe<T1, T2> : IPipelineBehavior<T1, T2>
     {

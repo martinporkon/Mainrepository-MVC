@@ -1,5 +1,7 @@
 using Basket.API.Data;
 using Basket.API.Middleware;
+using Basket.API.Middleware.Authentication;
+using Basket.API.Middleware.CustomHttpMiddleware;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;

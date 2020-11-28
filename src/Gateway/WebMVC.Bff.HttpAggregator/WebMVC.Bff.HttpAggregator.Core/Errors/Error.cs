@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace WebMVC.Bff.HttpAggregator.Core.Errors
+﻿namespace WebMVC.Bff.HttpAggregator.Core.Errors
 {
     public abstract class Error
     {

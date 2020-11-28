@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using WebMVC.Bff.HttpAggregator.Domain.DTO;
 
-namespace WebMVC.Bff.HttpAggregator.Domain.CatalogService.CommandRequest
+namespace WebMVC.Bff.HttpAggregator.Domain.CatalogService.CommandRequests
 {
     public sealed class AddToBasketCommand : IRequest<object>, IRequest<BasketDto>
     {

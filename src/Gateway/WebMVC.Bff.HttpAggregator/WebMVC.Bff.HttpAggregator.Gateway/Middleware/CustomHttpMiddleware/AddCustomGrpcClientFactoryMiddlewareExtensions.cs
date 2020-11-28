@@ -1,7 +1,7 @@
 ﻿using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace WebMVC.HttpAggregator.Gateway.Middleware
+namespace WebMVC.Bff.HttpAggregator.Gateway.Middleware
 {
     public static class AddCustomGrpcClientFactoryMiddlewareExtensions
     {

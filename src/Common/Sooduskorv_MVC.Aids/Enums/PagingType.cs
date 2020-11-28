@@ -4,6 +4,7 @@
     {
         NextPage = 1,
         CurrentPage = 2,
-        PreviousPage = 3
+        PreviousPage = 3,
+        LastPage = 4
     }
 }

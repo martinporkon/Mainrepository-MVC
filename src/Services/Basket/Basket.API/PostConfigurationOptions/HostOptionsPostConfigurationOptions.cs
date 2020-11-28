@@ -8,7 +8,7 @@ namespace Basket.API.PostConfigurationOptions
     {
         public void PostConfigure(string name, HostOptions options)
         {
-            options.ShutdownTimeout = TimeSpan.FromSeconds(60);
+            options.ShutdownTimeout = TimeSpan.FromSeconds(60);// TODO exceptions
         }
     }
 }

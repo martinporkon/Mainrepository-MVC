@@ -8,4 +8,12 @@
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="CatalogView\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WebMVC.Domain\WebMVC.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

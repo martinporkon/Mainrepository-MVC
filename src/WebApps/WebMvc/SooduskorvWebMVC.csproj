@@ -42,11 +42,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Basket.Pages\Basket.Pages.csproj" />
+    <ProjectReference Include="..\..\Common\Sooduskorv-MVC.Aids\Sooduskorv-MVC.Aids.csproj" />
     <ProjectReference Include="..\..\Services\Basket\Basket.Infra\Basket.Infra.csproj" />
     <ProjectReference Include="..\..\Services\Catalog\Catalog.Infra\Catalog.Infra.csproj" />
     <ProjectReference Include="..\..\Services\Identity\Identity.Infra\Identity.Infra.csproj" />
     <ProjectReference Include="..\..\Services\Order\Order.Infra\Order.Infra.csproj" />
     <ProjectReference Include="..\WebMVC.Domain\WebMVC.Domain.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Components\BasketComponent\" />
   </ItemGroup>
 
 </Project>

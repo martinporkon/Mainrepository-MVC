@@ -9,8 +9,8 @@ namespace Microsoft.AspNetCore.Builder
     {
         public static IServiceCollection AddCustomAssemblies(this IServiceCollection services)
         {
-            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(UserIdPipe<,>));
             services.AddMediatR(Assembly.GetExecutingAssembly());
+            services.AddScoped(typeof(IPipelineBehavior<,>), typeof(UserIdPipe<,>));
             return services;
         }
     }

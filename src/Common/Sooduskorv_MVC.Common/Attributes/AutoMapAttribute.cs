@@ -1,4 +1,7 @@
-﻿/*namespace Sooduskorv_MVC.Middleware.Stuff
+﻿using System;
+using Microsoft.AspNetCore.Mvc.Filters;
+
+namespace Sooduskorv_MVC.Middleware.Stuff
 {
     [AttributeUsage(AttributeTargets.Method)]
     public class AutoMapAttribute : ActionFilterAttribute
@@ -15,4 +18,4 @@
 
         public Type DestType { get; }
     }
-}*/
+}

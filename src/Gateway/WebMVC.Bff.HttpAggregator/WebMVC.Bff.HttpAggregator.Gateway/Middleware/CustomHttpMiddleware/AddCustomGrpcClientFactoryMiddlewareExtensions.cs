@@ -21,18 +21,5 @@ namespace WebMVC.Bff.HttpAggregator.Gateway.Middleware
             });*/
             return services;
         }
-
-        /*private static IAsyncPolicy<HttpResponseMessage> GetRetryPolicy() => HttpPolicyExtensions
-            .HandleTransientHttpError()
-            .WaitAndRetryAsync(5,
-                retryAttempt => TimeSpan.FromMilliseconds(Math.Pow(1.5, retryAttempt) * 1000),
-                (_, waitingTime) =>
-                {
-                    Console.WriteLine($"Error");
-                });
-
-        private static IAsyncPolicy<HttpResponseMessage> GetCircuitBreakerPolicy() => HttpPolicyExtensions
-            .HandleTransientHttpError()
-            .CircuitBreakerAsync(3, TimeSpan.FromSeconds(30));*/
     }
 }

@@ -24,6 +24,7 @@ namespace SooduskorvWebMVC
 
         public void ConfigureServices(IServiceCollection services)
         {
+            /*RateLimit.ConfigureServices(services, Configuration);*/
             services.AddMemoryCache();
             services.AddCustomControllersWithViews();
             services.AddServerSideBlazor();
@@ -63,6 +64,7 @@ namespace SooduskorvWebMVC
             );*/
 
             app.UseHttpsRedirection();
+            /*app.UseIpRateLimiting();*/
             app.UseStaticFiles();
             /*app.UseStaticFiles(new StaticFileOptions()
             {
@@ -79,11 +81,10 @@ namespace SooduskorvWebMVC
             app.UseAuthorization();
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapCustomEndpointRouteBuilder(Configuration);// TODO
                 /*endpoints.MapRazorPages();*/
                 endpoints.MapBlazorHub();
+                /*endpoints.MapFallbackToPage("/.....");*/
             });
         }
     }

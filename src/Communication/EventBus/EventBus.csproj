@@ -6,6 +6,9 @@
 
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="RabbitMQ.Client" Version="6.2.1" />
   </ItemGroup>
+
+  <Import Project="..\..\Common\Sooduskorv_MVC.Shared\Sooduskorv_MVC.Shared.projitems" Label="Shared" />
 
 </Project>

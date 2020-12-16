@@ -9,7 +9,7 @@ namespace WebMVC.Bff.HttpAggregator.Core.User
     {
         private readonly HttpContext _httpContext;
         public string UserId
-            => _httpContext.User.Claims.Single(c => c.Type == ClaimTypes.NameIdentifier).Value;
+            => _httpContext.User.Claims.Single(c => c.Type == ClaimTypes.NameIdentifier).Value;// throw
 
         public CurrentUserAccessor(IHttpContextAccessor httpContextAccessor)
         {

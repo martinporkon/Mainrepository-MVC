@@ -89,6 +89,27 @@ namespace Sooduskorv.IDP
                     {
                         new Secret("secret".Sha256())
                     }
-                } };
+                },
+                /*new Client
+                {
+                    ClientId = "basket-downstream",
+                    ClientName = "Event:Basket",
+                    AccessTokenType = AccessTokenType.Reference,
+                    AllowedGrantTypes = new[] { "    " },
+                    ClientSecrets = { new Secret("a23asd23sd".Sha256()) },
+                    AllowedScopes = {
+                        "openid", "profile", "ordering.access" }
+                },
+                new Client
+                {
+                    ClientName = "M2M",
+                    AccessTokenType = AccessTokenType.Reference,
+                    /*AccessTokenLifetime = 1234,
+                    ClientId = "services:m2m",
+                    AllowedScopes = { "" },
+                    ClientSecrets = { new Secret("aaa143eas34e5".Sha256()) },
+                    AllowedGrantTypes = GrantTypes.ClientCredentials,
+                },*/
+            };
     }
 }

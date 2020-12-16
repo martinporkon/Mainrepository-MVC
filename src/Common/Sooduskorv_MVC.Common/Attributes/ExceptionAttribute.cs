@@ -1,6 +1,9 @@
-﻿/*namespace Sooduskorv_MVC.Middleware.Stuff
+﻿using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc.Filters;
+
+namespace Sooduskorv_MVC.Middleware.Stuff
 {
-    public class ExceptionAttribute : ActionFilterAttribute// .Exception. Logging. api. vms.
+    public class ExceptionAttribute : ActionFilterAttribute//For .Exceptions. Logging. apis. vms.
     {
         public override void OnActionExecuted(ActionExecutedContext context)
         {
@@ -32,4 +35,4 @@
             return base.OnResultExecutionAsync(context, next);
         }
     }
-}*/
+}

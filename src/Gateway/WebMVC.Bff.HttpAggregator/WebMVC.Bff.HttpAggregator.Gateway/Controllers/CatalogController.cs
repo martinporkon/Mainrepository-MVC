@@ -57,6 +57,7 @@ namespace WebMVC.Bff.HttpAggregator.Gateway.Controllers
 
         [Route("/basket/{productId}")]
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public async Task<ActionResult> AddToBasket([FromBody] CreateBasketCommand command)// + userId
         {
 

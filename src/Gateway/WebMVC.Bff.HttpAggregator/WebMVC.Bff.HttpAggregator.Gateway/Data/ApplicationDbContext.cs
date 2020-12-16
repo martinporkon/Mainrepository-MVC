@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using WebMVC.Bff.HttpAggregator.Infra;
+using WebMVC.Bff.HttpAggregator.Infra.DbContexts;
 
 namespace WebMVC.Bff.HttpAggregator.Gateway.Data
 {
@@ -11,6 +12,7 @@ namespace WebMVC.Bff.HttpAggregator.Gateway.Data
         {
             base.OnModelCreating(builder);
             BffDbContext.InitializeTables(builder);
+            FileDbContext.InitializeTables(builder);
         }
     }
 }

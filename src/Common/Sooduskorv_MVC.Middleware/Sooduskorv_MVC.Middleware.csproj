@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="AuthorizationMiddleware\" />
+    <Folder Include="Authorization\" />
   </ItemGroup>
 
   <ItemGroup>

@@ -11,9 +11,9 @@ namespace WebMVC.Bff.HttpAggregator.Gateway.Infrastructure
     {
         private readonly IHttpContextAccessor _httpContext;
 
-        public UserIdPipe(IHttpContextAccessor httpContextAccessor)
+        public UserIdPipe(IHttpContextAccessor httpC)
         {
-            _httpContext = httpContextAccessor;
+            _httpContext = httpC;
         }
 
         public async Task<T2> Handle(T1 request, CancellationToken cancellationToken, RequestHandlerDelegate<T2> next)

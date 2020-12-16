@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
 using Catalog.Data.Products;
+using EventBus.Events;
 
-namespace Catalog.API.Dtos
+namespace Catalog.API.DTOs
 {
     public class CreateBasketMessage : IntegrationEvent
     {

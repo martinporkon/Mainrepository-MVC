@@ -12,6 +12,7 @@ namespace Microsoft.AspNetCore.Builder
     {
         public static IServiceCollection AddCustomAuthentication(this IServiceCollection services, IConfiguration c)
         {
+            services.AddAccessTokenManagement();
             services.AddAuthentication(options =>
                 {
                     options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;

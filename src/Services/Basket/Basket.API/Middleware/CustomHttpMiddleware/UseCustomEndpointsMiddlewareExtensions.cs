@@ -5,7 +5,7 @@ namespace Basket.API.Middleware.CustomHttpMiddleware
 {
     public static class UseCustomEndpointsMiddlewareExtensions
     {
-        public static IEndpointRouteBuilder MapDistributedServices(this IEndpointRouteBuilder builder,
+        public static IEndpointRouteBuilder MapServices(this IEndpointRouteBuilder builder,
             IConfiguration configuration = null)
         {
             /*endpoints.MapGrpcService<BasketRepository>();*/

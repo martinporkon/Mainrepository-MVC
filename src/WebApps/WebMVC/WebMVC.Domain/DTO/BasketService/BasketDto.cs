@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace WebMVC.Domain.DTO.BasketService
+﻿namespace WebMVC.Domain.DTO.BasketService
 {
     public class BasketDto
     {

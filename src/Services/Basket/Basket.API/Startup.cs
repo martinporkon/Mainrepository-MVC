@@ -1,5 +1,4 @@
 using Basket.API.Data;
-using Basket.API.Middleware;
 using Basket.API.Middleware.Authentication;
 using Basket.API.Middleware.CustomHttpMiddleware;
 using Microsoft.AspNetCore.Builder;
@@ -67,7 +66,7 @@ namespace Basket.API
             {
                 /*endpoints.MapDefaultHealthChecks();*/
                 endpoints.MapControllers();
-                endpoints.MapDistributedServices(Configuration);
+                endpoints.MapServices(Configuration);
             });
         }
     }

@@ -56,7 +56,8 @@ namespace WebMVC.Bff.HttpAggregator.Gateway.Controllers
             return Ok(result);
         }
 
-        [HttpPatch]
+        [HttpPatch] // https://stackoverflow.com/questions/58543583/how-to-bypass-antiforgery-token-validation-on-form-post-in-integration-tests
+        [ValidateAntiForgeryToken]
         public async Task<ActionResult> UpdateBasket([FromBody] UpdateBasketCommand command)
         {
             throw new NotImplementedException();
@@ -65,7 +66,7 @@ namespace WebMVC.Bff.HttpAggregator.Gateway.Controllers
         [HttpOptions]
         public ActionResult GetBasketOptions()
         {
-            Response.Headers.Add("Allowed-Methods", "GET, OPTIONS, PATCH");
+            Response.Headers.Add("Allowed-Methods", "GET, OPTIONS, PATCH, HEAD");
             return Ok();
         }
     }

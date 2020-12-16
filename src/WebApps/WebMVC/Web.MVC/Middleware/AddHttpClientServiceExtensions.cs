@@ -16,19 +16,25 @@ namespace SooduskorvWebMVC.Middleware
                 client.BaseAddress = new Uri("https://localhost:44366/");
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Add(HeaderNames.Accept, "application/json");
-            }).ConfigureForAll();
+            }).ConfigureForAll().AddUserAccessTokenHandler();// TODO the Token Handler.
             services.AddHttpClient("TokenAPIClient", client =>
             {
                 client.BaseAddress = new Uri("https://localhost:44366/");
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Add(HeaderNames.Accept, "application/json");
-            }).AddHttpMessageHandler<BearerTokenHandler>();
+            }).AddHttpMessageHandler<BearerTokenHandler>().AddUserAccessTokenHandler();
             services.AddHttpClient("IDPClient", client =>
             {
                 client.BaseAddress = new Uri("https://localhost:44318/");
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Add(HeaderNames.Accept, "application/json");
-            });
+            }).AddUserAccessTokenHandler();
+
+            /*services.AddHttpClient<IInterface, Service>(client =>
+            {
+                  client.BaseAddress = new Uri("https://localhost:44340/");
+            });*/
+
             return services;
         }
     }

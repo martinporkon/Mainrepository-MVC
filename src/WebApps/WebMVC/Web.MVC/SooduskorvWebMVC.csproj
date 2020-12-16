@@ -8,27 +8,25 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Areas\Basket\**" />
     <Compile Remove="Areas\Manage\**" />
     <Compile Remove="wwwroot\css\basket\**" />
     <Compile Remove="wwwroot\css\catalog\**" />
-    <Content Remove="Areas\Basket\**" />
     <Content Remove="Areas\Manage\**" />
     <Content Remove="wwwroot\css\basket\**" />
     <Content Remove="wwwroot\css\catalog\**" />
-    <EmbeddedResource Remove="Areas\Basket\**" />
     <EmbeddedResource Remove="Areas\Manage\**" />
     <EmbeddedResource Remove="wwwroot\css\basket\**" />
     <EmbeddedResource Remove="wwwroot\css\catalog\**" />
-    <None Remove="Areas\Basket\**" />
     <None Remove="Areas\Manage\**" />
     <None Remove="wwwroot\css\basket\**" />
     <None Remove="wwwroot\css\catalog\**" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AspNetCoreRateLimit" Version="3.2.2" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.0" />
-    <PackageReference Include="IdentityModel" Version="4.4.0" />
+    <PackageReference Include="IdentityModel" Version="4.5.0" />
+    <PackageReference Include="IdentityModel.AspNetCore" Version="3.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="3.1.8" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.8" />
     <PackageReference Include="Microsoft.AspNetCore.HttpsPolicy" Version="2.2.0" />

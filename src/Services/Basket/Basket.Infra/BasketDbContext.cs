@@ -1,15 +1,27 @@
 ﻿using Basket.Data.BasketOfProducts;
 using Basket.Data.Baskets;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace Basket.Infra
 {
+    /// <summary>
+    /// https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-resiliency
+    /// </summary>
     public class BasketDbContext : DbContext
     {
         public DbSet<BasketData> Baskets { get; set; }
         public DbSet<BasketOfProductData> BasketOfProducts { get; set; }
-        
+
         public BasketDbContext(DbContextOptions<BasketDbContext> options) : base(options) { }
+
+        public static readonly ILoggerFactory Logger =
+            LoggerFactory.Create(builder =>
+            {
+                builder.AddFilter((category, level) =>
+                    category == DbLoggerCategory.Database.Command.Name
+                    && level == LogLevel.Information);
+            });
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

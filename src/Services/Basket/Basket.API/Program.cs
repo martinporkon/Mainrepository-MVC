@@ -61,6 +61,7 @@ namespace Basket.API
                 {
                     webBuilder.UseStartup<Startup>();
                     webBuilder.UseConfiguration(GetConfiguration());
+                    /*webBuilder.UseSerilog();*/
                 });
 
         private static IConfiguration GetConfiguration()

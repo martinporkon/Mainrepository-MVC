@@ -16,7 +16,7 @@ namespace WebMVC.Bff.HttpAggregator.Gateway.Middleware.HttpMiddleware
                     {
                         Duration = 120,
                     });
-            }).AddXmlDataContractSerializerFormatters();
+            }).AddXmlDataContractSerializerFormatters()/*.AddCacheTagHelperLimits(new Action<CacheTagHelperOptions>())*/;
             return services;
         }
     }

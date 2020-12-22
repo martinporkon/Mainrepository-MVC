@@ -72,9 +72,9 @@ namespace Catalog.Pages.Products
 
         public string UnitName(string id) => itemName(Units, id);
         public string BrandName(string id) => itemName(Brands, id);
+        
 
-       
-       
+
 
     }
 

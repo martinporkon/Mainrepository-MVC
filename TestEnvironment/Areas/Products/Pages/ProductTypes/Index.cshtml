@@ -32,7 +32,7 @@
                             <span>@item.Name</span> <span>@Model.BrandName(item.BrandId)</span> <span>@item.Amount</span> <span>@Model.UnitName(item.UnitId)</span>
                         </div>
                         <div class="esh-catalog-price">
-                            <span>@item.Amount.ToString("N2")</span>
+                            <partial name="~/ProductInstances/_PartialPriceView.cshtml" />
                         </div>
                         <input class="esh-catalog-button" type="submit" value="Lisa ostukorvi" />
                         <input type="hidden" asp-for="@item.Id" name="id" />

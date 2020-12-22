@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Catalog.API.Migrations
 {
     [DbContext(typeof(CatalogApplicationDbContext))]
-    [Migration("20201126074349_addedPartyId")]
-    partial class addedPartyId
+    [Migration("20201222123904_newmig")]
+    partial class newmig
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -102,6 +102,9 @@ namespace Catalog.API.Migrations
                         .HasColumnType("decimal(16,4)");
 
                     b.Property<string>("CurrencyId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("ProductInstanceId")

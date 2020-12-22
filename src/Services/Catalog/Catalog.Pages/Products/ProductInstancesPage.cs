@@ -1,4 +1,5 @@
 ﻿using Aids.Methods;
+using Aids.Reflection;
 using Catalog.Data.Price;
 using Catalog.Data.Product;
 using Catalog.Domain.Prices;
@@ -23,7 +24,7 @@ namespace Catalog.Pages.Products
         {
             productTypesRepository = t;
            
-            Prices = newItemsList<Price, PriceData>(p);
+            Prices = newPricesList<Price, PriceData>(p);
             //Parties = newItemsList<Party, PartyData>(p);
 
             //Units = newItemsList<Unit, UnitData>(u);
@@ -90,15 +91,21 @@ namespace Catalog.Pages.Products
 
         private static string removeId(string idField) => idField?.Replace("Id", string.Empty) ?? string.Empty;
 
-        public string priceAmount(string productInstanceId) => itemPrice(Prices, productInstanceId).ToString();
+        public string priceAmount(string productInstanceId) {
+            return itemPrice(Prices, productInstanceId).ToString();
+        }
+        
 
         public decimal itemPrice(IEnumerable<SelectListItem> list, string productInstanceId)
         {
             if (list is null) return 0;
 
             foreach (var m in list)
+            {
                 if (m.Value == productInstanceId)
-                    return decimal.Round(Convert.ToDecimal(m), 2, MidpointRounding.AwayFromZero);
+                    return decimal.Round(Convert.ToDecimal(m.Text), 2, MidpointRounding.AwayFromZero);
+            }
+               
 
             return 0;
         }

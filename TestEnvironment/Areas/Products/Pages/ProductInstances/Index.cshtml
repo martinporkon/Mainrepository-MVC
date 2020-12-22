@@ -54,7 +54,7 @@
                         Html.DisplayFor(modelItem => item.ProductTypeId),
                         Html.DisplayFor(modelItem => item.Amount),
                         Html.DisplayFor(modelItem => item.UnitId),
-                        Html.Raw(Model.priceAmount(item.ProductTypeId)),
+                        Html.Raw(Model.priceAmount(item.Id)),
                         Html.DisplayFor(modelItem => item.PartyId),
                         Html.DisplayFor(modelItem => item.ValidFrom),
                         Html.DisplayFor(modelItem => item.ValidTo)

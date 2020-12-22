@@ -1,6 +1,7 @@
 ﻿using Aids.Constants;
 using Catalog.Domain;
 using Catalog.Domain.Common;
+using Catalog.Domain.Prices;
 using CommonData;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Sooduskorv_MVC.Facade;
@@ -65,6 +66,24 @@ namespace Catalog.Pages
             l.Insert(0, new SelectListItem(Word.UnSpecified, null));
             return l;
         }
+        protected internal static IEnumerable<SelectListItem> newPricesList<Price, PriceData>(IPricesRepository r,
+            Func<Price, bool> condition = null)
+            where Price : IEntity<PriceData>
+            where PriceData : NamedEntityData, new()
+        {
+            var items = r?.Get().GetAwaiter().GetResult();
+            var l = items is null
+                ? new List<SelectListItem>()
+                : condition is null ?
+                    items
+                    .Select(m => new SelectListItem(m.Data.Amount.ToString(), m.Data.ProductInstanceId))
+                    .ToList() :
+                     new List<SelectListItem>();
+            l.Insert(0, new SelectListItem(Word.UnSpecified, null));
+            return l;
+        }
+
+
 
         protected internal static string itemName(IEnumerable<SelectListItem> list, string id)
         {
@@ -76,6 +95,7 @@ namespace Catalog.Pages
 
             return Word.UnSpecified;
         }
+
 
         public virtual bool IsMasterDetail() => PageSubTitle != string.Empty;
 

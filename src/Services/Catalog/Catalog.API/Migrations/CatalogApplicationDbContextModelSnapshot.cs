@@ -102,6 +102,9 @@ namespace Catalog.API.Migrations
                     b.Property<string>("CurrencyId")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("ProductInstanceId")
                         .HasColumnType("nvarchar(max)");
 

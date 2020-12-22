@@ -32,7 +32,8 @@
                             <span>@item.Name</span> <span>@Model.BrandName(item.BrandId)</span> <span>@item.Amount</span> <span>@Model.UnitName(item.UnitId)</span>
                         </div>
                         <div class="esh-catalog-price">
-                            <partial name="~/ProductInstances/_PartialPriceView.cshtml" />
+                            @await Html.PartialAsync("_PartialPriceView", item.parties)
+                            
                         </div>
                         <input class="esh-catalog-button" type="submit" value="Lisa ostukorvi" />
                         <input type="hidden" asp-for="@item.Id" name="id" />

@@ -19,6 +19,7 @@ namespace Catalog.Facade.Product
         public string CountryOfOriginId { get; set; }
         public string BarCode { get; set; }
         public string Image { get; set; }
-
+        public List<PartyInstanceView> parties { get; set; } = new List<PartyInstanceView> { new PartyInstanceView() };
+        
     }
 }

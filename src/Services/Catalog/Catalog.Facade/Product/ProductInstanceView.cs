@@ -42,5 +42,6 @@ namespace Catalog.Facade.Product
         public DateTime DeliveredTo { get; set; }
 
         public DeliveryStatus DeliveryStatus { get; set; }
+       
     }
 }

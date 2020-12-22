@@ -3,7 +3,7 @@ using Catalog.Data.Product;
 using Catalog.Data.ProductFeature;
 using Catalog.Domain.Catalog;
 using Catalog.Domain.Common;
-using Catalog.Domain.Price;
+using Catalog.Domain.Prices;
 using Catalog.Domain.ProductFeature;
 using System;
 using System.Collections.Generic;
@@ -19,13 +19,14 @@ namespace Catalog.Domain.Product
 
         protected BaseProductInstance(ProductInstanceData d = null) : base(d) { }
 
-        public string TypeId => Data?.ProductTypeId ?? Unspecified;
+        public string TypeId => Data?.ProductKind.ToString() ?? Unspecified;
 
         public abstract TType Type { get; }
 
         protected internal IProductType type => new GetFrom<IProductTypesRepository, IProductType>().ById(TypeId);
 
         public ProductKind ProductKind { get; }
+        public string ProductTypeId { get; }
 
 
         //public virtual IReadOnlyList<FeatureInstance> Features =>

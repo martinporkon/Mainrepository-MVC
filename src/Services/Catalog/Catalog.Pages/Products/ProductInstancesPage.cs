@@ -1,5 +1,7 @@
 ﻿using Aids.Methods;
+using Catalog.Data.Price;
 using Catalog.Data.Product;
+using Catalog.Domain.Prices;
 using Catalog.Domain.Product;
 using Catalog.Facade.Product;
 using Catalog.Pages.Common.Consts;
@@ -14,22 +16,28 @@ namespace Catalog.Pages.Products
 {
     public sealed class ProductInstancesPage : ViewsPage<IProductInstancesRepository, IProductInstance, ProductInstanceView, ProductInstanceData>
     {
-
-        private readonly IProductTypesRepository productTypesRepository;
-
-        public IEnumerable<SelectListItem> ProductTypes { get; private set; }
-        //public IEnumerable<SelectListItem> Units { get; }
-        public ProductKind ProductKind { get; internal set; }
-
         public ProductInstancesPage(IProductInstancesRepository r,
-            //IUnitsRepository u,
-            IProductTypesRepository t)
-            : base(r, ProductPagesNames.ProductInstances)
+           //IUnitsRepository u,
+           IProductTypesRepository t,IPricesRepository p/* IPartyRepository p*/)
+           : base(r, ProductPagesNames.ProductInstances)
         {
             productTypesRepository = t;
            
+            Prices = newItemsList<Price, PriceData>(p);
+            //Parties = newItemsList<Party, PartyData>(p);
+
             //Units = newItemsList<Unit, UnitData>(u);
         }
+        // public IEnumerable<SelectListItem> Parties { get; }
+
+        public IEnumerable<SelectListItem> Prices;
+        private readonly IProductTypesRepository productTypesRepository;
+
+        public string ProductTypeId { get; set; }
+        //public IEnumerable<SelectListItem> Units { get; }
+        public ProductKind ProductKind { get; internal set; }
+
+       
 
         public override IActionResult OnGetCreate(
             string sortOrder, string searchString, int? pageIndex,
@@ -50,12 +58,12 @@ namespace Catalog.Pages.Products
                 ProductKind = ProductKind,
                 Id = Guid.NewGuid().ToString(),
             };
-            updateProductTypes();
+            //updateProductTypes();
         }
 
-        internal void updateProductTypes()
-            => ProductTypes =
-                newItemsList<IProductType, ProductTypeData>(productTypesRepository, d => d.ProductKind == ProductKind);
+        //internal void updateProductTypes()
+        //    => ProductTypes =
+        //        newItemsList<IProductType, ProductTypeData>(productTypesRepository, d => d.ProductKind == ProductKind  );
 
         protected internal override Uri pageUrl() => new Uri(ProductPagesUrls.ProductInstances, UriKind.Relative);
 
@@ -64,13 +72,15 @@ namespace Catalog.Pages.Products
         protected internal override ProductInstanceView toView(IProductInstance obj)
         {
             ProductKind = obj.ProductKind;
-            updateProductTypes();
+            ProductTypeId = obj.ProductTypeId;
+            
+            //updateProductTypes();
             return ProductInstanceViewFactory.Create(obj);
         }
 
-        public string ProductTypeName(string id) => itemName(ProductTypes, id);
+       // public string ProductTypeName(string id) => itemName(ProductTypes, id);
 
-      //  public string UnitName(string id) => itemName(Units, id);
+        //public string UnitName(string id) => itemName(Units, id);
 
         public Uri CreateUri(ProductKind k) => createUri((int)k);
 
@@ -79,5 +89,18 @@ namespace Catalog.Pages.Products
         private static string subTitle(string item, string name) => $"For {item} ({name})";
 
         private static string removeId(string idField) => idField?.Replace("Id", string.Empty) ?? string.Empty;
+
+        public string priceAmount(string productInstanceId) => itemPrice(Prices, productInstanceId).ToString();
+
+        public decimal itemPrice(IEnumerable<SelectListItem> list, string productInstanceId)
+        {
+            if (list is null) return 0;
+
+            foreach (var m in list)
+                if (m.Value == productInstanceId)
+                    return decimal.Round(Convert.ToDecimal(m), 2, MidpointRounding.AwayFromZero);
+
+            return 0;
+        }
     }
 }

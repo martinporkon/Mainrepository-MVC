@@ -16,11 +16,12 @@ namespace Catalog.Pages.Products
         ProductTypesPage : ViewsPage<IProductTypesRepository, IProductType, ProductTypeView, ProductTypeData>
     {
 
-        public ProductTypesPage(IProductTypesRepository r)
+        public ProductTypesPage(IProductTypesRepository r, IBrandsRepository b)
             : base(r, ProductPagesNames.ProductTypes)
         {
             //Units = newItemsList<Unit, UnitData>(u);
             ProductTypes = newItemsList<IProductType, ProductTypeData>(db);
+            Brands = newItemsList<Brand, BrandData>(b);
         }
 
         protected internal override Uri pageUrl() => new Uri(ProductPagesUrls.ProductTypes, UriKind.Relative);
@@ -36,6 +37,7 @@ namespace Catalog.Pages.Products
         public ProductKind ProductKind { get; internal set; }
 
         public IEnumerable<SelectListItem> Units { get; }
+        public IEnumerable<SelectListItem> Brands { get; }
 
         public Uri CreateUri(ProductKind k) => createUri((int)k);
 
@@ -69,6 +71,10 @@ namespace Catalog.Pages.Products
         public string BaseTypeName(string id) => itemName(ProductTypes, id);
 
         public string UnitName(string id) => itemName(Units, id);
+        public string BrandName(string id) => itemName(Brands, id);
+
+       
+       
 
     }
 

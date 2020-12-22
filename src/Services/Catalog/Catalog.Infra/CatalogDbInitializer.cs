@@ -205,7 +205,8 @@ namespace Catalog.Infra
                 BarCode = "4740125000108",
                 Description = "Hea Eestimaine piim",
                 ValidFrom=  GetRandom.DateTime(validFromMinimum, validFromMaximum),
-                ValidTo =  GetRandom.DateTime(validToMinimum, validToMaximum),            
+                ValidTo =  GetRandom.DateTime(validToMinimum, validToMaximum), 
+                Image = "no-image.png"
             },
              new ProductTypeData{
                 Id = "1",
@@ -219,6 +220,7 @@ namespace Catalog.Infra
                 Description = "D-vitamiiniga rikastatud piim",
                 ValidFrom=  GetRandom.DateTime(validFromMinimum, validFromMaximum),
                 ValidTo =  GetRandom.DateTime(validToMinimum, validToMaximum),
+                Image = "no-image.png"
             },
              new ProductTypeData{
                 Id = "2",
@@ -232,6 +234,7 @@ namespace Catalog.Infra
                 Description = "Piim parimate latte-de valmistamiseks",
                 ValidFrom=  GetRandom.DateTime(validFromMinimum, validFromMaximum),
                 ValidTo =  GetRandom.DateTime(validToMinimum, validToMaximum),
+                Image = "no-image.png"
             },
               new ProductTypeData{
                 Id = "3",
@@ -245,6 +248,7 @@ namespace Catalog.Infra
                 Description = "Säilitamine: +0…+2 °C. Enne tarvitamist kuumutada sisetemperatuurini vähemalt 71 °C.",
                 ValidFrom=  GetRandom.DateTime(validFromMinimum, validFromMaximum),
                 ValidTo =  GetRandom.DateTime(validToMinimum, validToMaximum),
+                Image = "no-image.png"
             },
               new ProductTypeData{
                 Id = "4",
@@ -258,6 +262,7 @@ namespace Catalog.Infra
                 Description = "Mahlakas hakkliha eestimaisest sea- ja veiselihast. ",
                 ValidFrom=  GetRandom.DateTime(validFromMinimum, validFromMaximum),
                 ValidTo =  GetRandom.DateTime(validToMinimum, validToMaximum),
+                Image = "no-image.png"
             },
               new ProductTypeData{
                 Id = "5",
@@ -271,6 +276,7 @@ namespace Catalog.Infra
                 Description = "Säilitamine: +0…+2 °C. Enne tarvitamist kuumtöödelda.",
                 ValidFrom=  GetRandom.DateTime(validFromMinimum, validFromMaximum),
                 ValidTo =  GetRandom.DateTime(validToMinimum, validToMaximum),
+                Image = "no-image.png"
             },
               new ProductTypeData{
                 Id = "6",
@@ -284,7 +290,8 @@ namespace Catalog.Infra
                 Description = "Kuller toimetab tellimuse teie aadressile",
                 ValidFrom=  GetRandom.DateTime(validFromMinimum, validFromMaximum),
                 ValidTo =  GetRandom.DateTime(validToMinimum, validToMaximum),
-                
+                Image = "images/products/no-image.png"
+
             },
         };
         internal static List<ProductInstanceData> productInstances => new List<ProductInstanceData>{

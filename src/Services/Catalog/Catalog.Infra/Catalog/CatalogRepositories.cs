@@ -1,10 +1,9 @@
 ﻿using Catalog.Domain.Catalog;
+using Catalog.Domain.Prices;
 using Catalog.Domain.Product;
+using Catalog.Infra.Prices;
 using Catalog.Infra.Product;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Catalog.Infra.Catalog
 {
@@ -20,6 +19,8 @@ namespace Catalog.Infra.Catalog
             services.AddScoped<IProductCategoriesRepository, ProductCategoriesRepository>();
             services.AddScoped<IProductTypesRepository, ProductTypesRepository>();
             services.AddScoped<IProductInstancesRepository, ProductInstancesRepository>();
+            services.AddScoped<IBrandsRepository, BrandsRepository>();
+            services.AddScoped<IPricesRepository, PricesRepository>();
 
 
         }

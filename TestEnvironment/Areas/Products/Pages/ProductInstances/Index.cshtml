@@ -30,6 +30,7 @@
                 new Link(Html.DisplayNameFor(m => m.Item.ProductTypeId), Model.GetSortString(m => m.ProductTypeId, page)),
                 new Link(Html.DisplayNameFor(m => m.Item.Amount), Model.GetSortString(m => m.Amount, page)),
                 new Link(Html.DisplayNameFor(m => m.Item.UnitId), Model.GetSortString(m => m.UnitId, page)),
+                new Link(Html.DisplayName("Price"), Model.GetSortString(m => m.UnitId, page)),
                 new Link(Html.DisplayNameFor(m => m.Item.PartyId), Model.GetSortString(m => m.PartyId, page)),
                 new Link(Html.DisplayNameFor(m => m.Item.ValidFrom), Model.GetSortString(m => m.ValidFrom, page)),
                 new Link(Html.DisplayNameFor(m => m.Item.ValidTo), Model.GetSortString(m => m.ValidTo, page))
@@ -50,9 +51,10 @@
                         Model.FixedFilter,
                         Model.FixedValue,
                         Html.DisplayFor(modelItem => item.ProductKind),
-                        Html.Raw(Model.ProductTypeName(item.ProductTypeId)),
+                        Html.DisplayFor(modelItem => item.ProductTypeId),
                         Html.DisplayFor(modelItem => item.Amount),
                         Html.DisplayFor(modelItem => item.UnitId),
+                        Html.Raw(Model.priceAmount(item.ProductTypeId)),
                         Html.DisplayFor(modelItem => item.PartyId),
                         Html.DisplayFor(modelItem => item.ValidFrom),
                         Html.DisplayFor(modelItem => item.ValidTo)

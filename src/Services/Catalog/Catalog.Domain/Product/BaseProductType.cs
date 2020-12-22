@@ -3,7 +3,7 @@ using Catalog.Data.Product;
 using Catalog.Data.ProductFeature;
 using Catalog.Domain.Catalog;
 using Catalog.Domain.Common;
-using Catalog.Domain.Price;
+using Catalog.Domain.Prices;
 using Catalog.Domain.ProductFeature;
 using System;
 using System.Collections.Generic;

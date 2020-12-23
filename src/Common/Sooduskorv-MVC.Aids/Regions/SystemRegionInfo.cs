@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using Abc.Aids.Extensions;
+using Aids.Extensions;
 using Aids.Methods;
 
 namespace Aids.Regions {

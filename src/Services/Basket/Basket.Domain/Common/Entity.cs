@@ -4,7 +4,7 @@ using Sooduskorv_MVC.Data.CommonData;
 
 namespace Catalog.Domain.Common
 {
-    public abstract class Entity<TData> : ValueObject<TData>, IEntity<TData> where TData : PeriodData/*, IAggregateRoot*/, new()
+    public abstract class Entity<TData> : ValueObject<TData>, IEntity<TData> where TData : PeriodData, IAggregateRoot, new()
     {
         protected internal Entity(TData d = null) : base(d) { }
 

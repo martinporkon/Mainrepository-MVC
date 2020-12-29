@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace WebMVC.Bff.HttpAggregator.Domain.Exceptions
+namespace Basket.Core.Exceptions
 {
     [Serializable()]
     public class BasketNotFoundException : Exception

@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
+using Sooduskorv_MVC.Aids.Constants;
 
 namespace Microsoft.AspNetCore.Builder
 {
@@ -20,7 +21,7 @@ namespace Microsoft.AspNetCore.Builder
                 })
                 .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options =>
                 {
-                    options.AccessDeniedPath = "/Authorization/AccessDenied";
+                    options.AccessDeniedPath = Url.accessDeniedPath;
                 })
                 .AddOpenIdConnect(OpenIdConnectDefaults.AuthenticationScheme, options =>
                 {

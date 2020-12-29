@@ -5,9 +5,7 @@ using Microsoft.Extensions.Logging;
 
 namespace Basket.Infra
 {
-    /// <summary>
-    /// https://docs.microsoft.com/en-us/ef/core/miscellaneous/connection-resiliency
-    /// </summary>
+    // TODO soddy
     public class BasketDbContext : DbContext
     {
         public DbSet<BasketData> Baskets { get; set; }

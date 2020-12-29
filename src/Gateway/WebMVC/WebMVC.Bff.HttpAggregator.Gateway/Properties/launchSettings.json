@@ -1,0 +1,30 @@
+{
+  "iisSettings": {
+    "windowsAuthentication": false,
+    "anonymousAuthentication": true,
+    "iisExpress": {
+      "applicationUrl": "https://localhost:63955/",
+      "sslPort": 63956
+    }
+  },
+  "profiles": {
+    "IIS Express": {
+      "commandName": "Project",
+      "launchUrl": "webmvc-bff",
+      "environmentVariables": {
+        "DOTNET_USE_POLLING_FILE_WATCHER": "true",
+        "ASPNETCORE_hostingStartupAssemblies": "WebMVC.Bff.HttpAggregator.Gateway.Configuration",
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "https://localhost:63955/"
+    },
+    "Catalog.API": {
+      "commandName": "Project",
+      "launchUrl": "webmvc-bff",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      },
+      "applicationUrl": "http://localhost:62000"
+    }
+  }
+}

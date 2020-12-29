@@ -10,8 +10,7 @@ namespace Basket.Infra
     public class ResilientTransactionContext
     {
         private readonly DbContext _context;
-        public static ResilientTransactionContext New(DbContext context)
-            => new ResilientTransactionContext(context);
+        public static ResilientTransactionContext New(DbContext context) => new ResilientTransactionContext(context);
         private ResilientTransactionContext(DbContext context)
         {
             _context = context

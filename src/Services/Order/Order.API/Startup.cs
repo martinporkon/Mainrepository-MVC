@@ -12,10 +12,7 @@ namespace Order.API
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
+        public Startup(IConfiguration c) => Configuration = c;
 
         public IConfiguration Configuration { get; }
 

@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option csharp_namespace="Sooduskorv.Proto";
+
+package Http;
+
+message RequestResponse {
+	Status code = 1;
+	string text = 2;
+}
+
+enum Status {
+	EMPTY = 0;
+	OK = 200;
+	CREATED = 201;
+	ACCEPTED = 202;
+	NOCONTENT = 204;
+	NOTMODIFIED = 304;
+	BADREQUEST = 400;
+	UNAUTHORIZED = 401;
+	FORBIDDEN = 403;
+	NOTFOUND = 404;
+	NOTACCEPTABLE = 406;
+	CONFLICT = 409;
+	UNSUPPORTEDMEDIATYPE = 415;
+	UNPROCESSABLEENTITY = 422;
+	LOCKED = 423;
+	TOOMANYREQUESTS = 429;
+	SERVICEUNAVAILABLE = 503;
+}

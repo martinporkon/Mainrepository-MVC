@@ -8,7 +8,6 @@ namespace Sooduskorv_MVC.Common.Validation
     {
         protected AbstractValidator()
         {
-            // TODO for some microservices
         }
 
         public virtual IEnumerable<ValidationResult> Validate(ValidationContext validationContext)

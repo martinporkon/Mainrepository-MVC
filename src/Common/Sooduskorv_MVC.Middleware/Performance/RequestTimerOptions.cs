@@ -7,7 +7,7 @@ namespace Sooduskorv_MVC.Middleware.RequestMiddleware
     {
         public RequestTimerOptions()
         {
-            Format = (ctx, elapsed) => $"Request to  {ctx.Request.Path} took {elapsed} ms";
+            Format = (ctx, elapsed) => $"Request to {ctx.Request.Path} took {elapsed} ms";
         }
         public Func<HttpContext, long, string> Format { get; set; }
     }

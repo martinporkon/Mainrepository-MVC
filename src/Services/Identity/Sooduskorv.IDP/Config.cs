@@ -17,11 +17,15 @@ namespace Sooduskorv.IDP
                 new IdentityResources.Profile(),
                 new IdentityResources.Address(),
                 new IdentityResource("roles",
-                    "Your roles(s)",
-                    new List<string>() {"role"}),
+                    "Your role(s)",
+                    new List<string>() { "role" }),
+                new IdentityResource(
+                    "subscription",
+                    "Your subscription at Sooduskorv",
+                    new List<string>() { "subscription" }),
             };
 
-        public static IEnumerable<ApiResource> Apis =>
+        public static IEnumerable<ApiResource> ApiResources =>
             new ApiResource[]
             {
                 new ApiResource("productsapi","Catalog.API", new List<string>() {"role"} )
@@ -85,31 +89,16 @@ namespace Sooduskorv.IDP
                         "orderapi",
                         "basketapi",
                     },
-                    ClientSecrets =
-                    {
-                        new Secret("secret".Sha256())
-                    }
-                },
-                /*new Client
-                {
-                    ClientId = "basket-downstream",
-                    ClientName = "Event:Basket",
-                    AccessTokenType = AccessTokenType.Reference,
-                    AllowedGrantTypes = new[] { "    " },
-                    ClientSecrets = { new Secret("a23asd23sd".Sha256()) },
-                    AllowedScopes = {
-                        "openid", "profile", "ordering.access" }
+                    ClientSecrets = {new Secret("secret".Sha256())}
                 },
                 new Client
                 {
-                    ClientName = "M2M",
-                    AccessTokenType = AccessTokenType.Reference,
-                    /*AccessTokenLifetime = 1234,
-                    ClientId = "services:m2m",
-                    AllowedScopes = { "" },
-                    ClientSecrets = { new Secret("aaa143eas34e5".Sha256()) },
+                    ClientName = "name",
+                    ClientId = "sooduskorv-name",
+                    ClientSecrets = {new Secret("a378wefyasugvcbaduio".Sha256())},
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
-                },*/
+                    AllowedScopes = { "productsapi" }
+                }
             };
     }
 }

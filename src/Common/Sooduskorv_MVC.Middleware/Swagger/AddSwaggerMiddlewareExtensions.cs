@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using System;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.OpenApi.Models;
 
@@ -12,8 +13,19 @@ namespace Microsoft.AspNetCore.Builder
             {
                 options.SwaggerDoc("V1", new OpenApiInfo
                 {
-                    Title = "Sooduskorv Catalog API",
-                    Description = "konfiguratsioon not implemented!"
+                    Title = "Sooduskorv.API",
+                    Version = "V1",
+                    Description = "Sooduskorv Project",
+                    License = new OpenApiLicense
+                    {
+                        Name = "",
+                        Url = new Uri("https://example.com/license"),
+                    },
+                    Contact = new OpenApiContact
+                    {
+                        Name = "",
+                        Email = "",
+                    }
                 });
             });
             return services;

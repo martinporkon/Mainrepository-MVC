@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option csharp_namespace="Sooduskorv.Proto";
+
+package Http.Error;
+
+
+//...

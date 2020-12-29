@@ -25,7 +25,7 @@ namespace Catalog.Infra
 
         internal static List<UserProfileData> userProfiles => new List<UserProfileData>
         {
-        new UserProfileData{
+        new UserProfileData {
             Id = Guid.NewGuid(),
             Subject = "d860efca-22d9-47fd-8249-791ba61b07c7",
             SubscriptionLevel = "Basic",

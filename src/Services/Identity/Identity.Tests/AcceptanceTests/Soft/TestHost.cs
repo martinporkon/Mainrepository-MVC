@@ -1,8 +1,10 @@
-﻿using System;
+﻿
+using System;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+
 
 namespace Sooduskorv.IDP.Tests.AcceptanceTests.Soft
 {
@@ -25,8 +27,8 @@ namespace Sooduskorv.IDP.Tests.AcceptanceTests.Soft
                 throw new ApplicationException($"DBContext {t} not found");
             db.Database.EnsureCreated();
 
-            if (!db.Database.IsInMemory())
-                throw new ApplicationException($"DBContext {t} is not in memory");
+            /*if (!db.Database.IsInMemory()))// TODO disambiguation error
+                throw new ApplicationException($"DBContext {t} is not in memory");*/
         }
 
         private static void addInMemoryDb<T>(IServiceCollection s) where T : DbContext

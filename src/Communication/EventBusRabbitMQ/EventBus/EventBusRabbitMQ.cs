@@ -23,7 +23,7 @@ namespace EventBusRabbitMQ.EventBus
             using (var connection = ConnectionFactory.CreateConnection())
             using (var channel = connection.CreateModel())
             {
-                channel.ExchangeDeclare(exchange: "", type: ExchangeType.Fanout);
+                channel.ExchangeDeclare(exchange: "", type: ExchangeType.Topic);
 
                 var json = JsonConvert.SerializeObject(@event);
                 var body = Encoding.UTF8.GetBytes(json);

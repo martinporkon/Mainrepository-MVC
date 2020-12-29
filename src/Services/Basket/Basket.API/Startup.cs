@@ -1,21 +1,23 @@
+using System.Diagnostics;
 using Basket.API.Data;
 using Basket.API.Middleware.Authentication;
 using Basket.API.Middleware.CustomHttpMiddleware;
+using Basket.Core.Diagnostics;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Sooduskorv_MVC.Middleware.Diagnostics;
+using Sooduskorv_MVC.Middleware.SystemDiagnostics;
+using WebMVC.Bff.HttpAggregator.Gateway.Middleware.HealthChecks;
 
 namespace Basket.API
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
+        public Startup(IConfiguration c) => Configuration = c;
 
         public IConfiguration Configuration { get; }
 
@@ -36,13 +38,14 @@ namespace Basket.API
             {
                 options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=BasketDB;Trusted_Connection=True;");
             });*/
-
-            /*services.AddHealthChecks()
-                    .AddDbContextCheck<IdentityDbContext>();*/
+            services.AddCustomHealthChecks<BasketApplicationDbContext>();
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, DiagnosticListener listener)
         {
+            listener.SubscribeWithAdapter(new BasketSystemDiagnosticsListener(),
+                new BasketListener());
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -64,7 +67,7 @@ namespace Basket.API
 
             app.UseEndpoints(endpoints =>
             {
-                /*endpoints.MapDefaultHealthChecks();*/
+                // TODO for this service.
                 endpoints.MapControllers();
                 endpoints.MapServices(Configuration);
             });

@@ -2,50 +2,33 @@
 @using Microsoft.VisualBasic
 
 @{
-
+   
 }
 <head>
     <meta charset="utf-8">
 </head>
 @(await Html.RenderComponentAsync<Nav>(RenderMode.ServerPrerendered))
 
-<style>
-    .button {
-        display: inline-block;
-        padding: 35px 45px;
-        font-size: 34px;
-        cursor: pointer;
-        text-align: center;
-        text-decoration: none;
-        outline: none;
-        color: #fff;
-        background-color: #00b8e6;
-        border: none;
-        border-radius: 15px;
-        box-shadow: 0 9px #999;
-    }
-
-        .button:hover {
-            background-color: #008fb3
-        }
-
-        .button:active {
-            background-color: #00b8e6;
-            box-shadow: 0 5px #666;
-            transform: translateY(4px);
-        }
-
-    .container {
-        position: relative;
-    }
-</style>
-
-<div class="container">
-    <div class="center">
-        <button class="button">Koosta nimekiri</button>
-    </div>
-</div>
 
 @section Scripts {
     <script src="_framework/blazor.server.js"></script>
+
+    <script>
+        /* Loop through all dropdown buttons to toggle between hiding and showing its dropdown content - This allows the user to have multiple dropdowns without any conflict */
+        var dropdown = document.getElementsByClassName("dropdown-btn");
+        var i;
+
+        for (i = 0; i < dropdown.length; i++) {
+            dropdown[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var dropdownContent = this.nextElementSibling;
+                if (dropdownContent.style.display === "block") {
+                    dropdownContent.style.display = "none";
+                } else {
+                    dropdownContent.style.display = "block";
+                }
+            });
+        }
+    </script>
+
 }

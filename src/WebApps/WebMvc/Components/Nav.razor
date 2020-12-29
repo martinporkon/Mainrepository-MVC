@@ -1,14 +1,49 @@
-﻿@using Microsoft.AspNetCore.Components.Web
-@page "/nav"
+﻿
+
+@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.AspNetCore.Components.Routing
+
+
 <body>
+
     <style>
+        .button {
+            display: inline-block;
+            padding: 35px 45px;
+            font-size: 34px;
+            cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            outline: none;
+            color: #fff;
+            background-color: #00b8e6;
+            border: none;
+            border-radius: 15px;
+            box-shadow: 0 9px #999;
+        }
+
+            .button:hover {
+                background-color: #008fb3
+            }
+
+            .button:active {
+                background-color: #00b8e6;
+                box-shadow: 0 5px #666;
+                transform: translateY(4px);
+            }
+
+        .container {
+            position: relative;
+        }
+
+
         * {
             box-sizing: border-box;
         }
 
         .column {
             float: left;
-            padding: 10px;
+            padding: 3px;
         }
 
         .clearfix::after {
@@ -21,13 +56,10 @@
             width: 25%;
             position: fixed;
             left: 0;
+            top: 220px;
+            overflow-x: hidden;
+            z-index: 1;
         }
-
-            .menu ul {
-                list-style-type: none;
-                margin: 0;
-                padding: 0;
-            }
 
             .menu li {
                 padding: 10px;
@@ -37,36 +69,175 @@
                 text-align: center;
             }
 
-                .menu li:hover {
-                    background-color: #0099cc;
-                }
+
+        .dropdown-btn:hover {
+            color: #f1f1f1;
+            text-shadow: 2px 2px 4px #000000
+        }
+
+        .menu a:hover {
+            color: #0099cc;
+            text-shadow: 2px 2px 4px #000000
+        }
+        /* Style the sidenav links and the dropdown button */
+        .menu a, .dropdown-btn {
+            padding: 8px;
+            text-decoration: none;
+            font-size: 18px;
+            color: black;
+            display: block;
+            border: none;
+            background: none;
+            width: 100%;
+            text-align: center;
+            cursor: pointer;
+            outline: none;
+        }
+
+
+        menu li a:active {
+            background-color: #0099cc;
+            text-shadow: 2px 2px 4px #000000
+        }
+
 
         .center {
             position: absolute;
             padding-left: 60%;
             padding-top: 25%;
         }
+
+        /* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+        .dropdown-container {
+            display: none;
+            background-color: rgba(255, 255, 255, 0.6);
+        }
     </style>
+
+
+    <div class="center">
+        <button class="button">Koosta nimekiri</button>
+    </div>
+
+
+
+
     <div class="clearfix">
         <div class="column menu">
-            <ul>
-                <li>Puu- ja köögiviljad</li>
-                <li>Liha- ja kalatooted</li>
-                <li>Piimatooted, munad, võid</li>
-                <li>Leivad, saiad,kondiitritooted</li>
-                <li>Valmistoidud</li>
-                <li>Kuivained, hommikusöögid, hoidised</li>
-                <li>Maiustused, küpsised, snäkid</li>
-                <li>Joogid</li>
-                <li>Lastekaubad</li>
-                <li>Lemmikloomakaubad</li>
-                <li>Enesehooldustarbed</li>
-                <li>Majapidamis- ja kodukaubad</li>
-            </ul>
+
+
+            <li class="dropdown-btn">
+                Puu- ja juurviljad
+            </li>
+            <div class="dropdown-container">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+
+
+            <li class="dropdown-btn">
+                Liha- ja kalatooted
+            </li>
+            <div class="dropdown-container">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+
+            <li class="dropdown-btn">
+                Piimatooted, munad, võid
+            </li>
+            <div class="dropdown-container">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+
+            <li class="dropdown-btn">
+                Leivad, saiad,kondiitritooted
+            </li>
+            <div class="dropdown-container">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+
+            <li class="dropdown-btn">
+                Valmistoidud
+            </li>
+            <div class="dropdown-container">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+
+            <li class="dropdown-btn">
+                Kuivained, hommikusöögid, hoidised
+            </li>
+            <div class="dropdown-container">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+
+            <li class="dropdown-btn">
+                Maiustused, küpsised, snäkid
+            </li>
+            <div class="dropdown-container">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+
+            <li class="dropdown-btn">
+                Joogid
+            </li>
+            <div class="dropdown-container">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+
+            <li class="dropdown-btn">
+                Lastekaubad
+            </li>
+            <div class="dropdown-container">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+
+            <li class="dropdown-btn">
+                Lemmikloomakaubad
+            </li>
+            <div class="dropdown-container">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+
+            <li class="dropdown-btn">
+                Enesehooldustarbed
+            </li>
+            <div class="dropdown-container">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
+
+            <li class="dropdown-btn">
+                Majapidamis- ja kodukaubad
+            </li>
+            <div class="dropdown-container">
+                <a href="#">Link 1</a>
+                <a href="#">Link 2</a>
+                <a href="#">Link 3</a>
+            </div>
         </div>
     </div>
+
+
+
 </body>
 
-@code {
-
-}

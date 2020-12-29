@@ -48,7 +48,7 @@ namespace Catalog.API
                 {
                     var logger = services.GetRequiredService<ILogger<Program>>();
                     logger.LogError(ex, "An error occurred creating the DB.");
-                    throw new Exception("initializer ei läinud läbi");
+                    //throw new Exception("initializer ei läinud läbi");
                 }
             }
             host.Run();

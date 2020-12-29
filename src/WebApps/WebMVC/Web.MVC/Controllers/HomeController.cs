@@ -11,7 +11,6 @@ using SooduskorvWebMVC.Models;
 
 namespace SooduskorvWebMVC.Controllers
 {
-    [Authorize]
     public class HomeController : Controller
     {
         private readonly IHttpClientFactory _httpClientFactory;

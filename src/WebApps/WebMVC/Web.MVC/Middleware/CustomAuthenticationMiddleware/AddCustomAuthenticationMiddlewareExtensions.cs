@@ -21,7 +21,7 @@ namespace Microsoft.AspNetCore.Builder
                 })
                 .AddCookie(CookieAuthenticationDefaults.AuthenticationScheme, options =>
                 {
-                    options.AccessDeniedPath = Url.accessDeniedPath;
+                    options.AccessDeniedPath = Url.AccessDeniedPath;
                 })
                 .AddOpenIdConnect(OpenIdConnectDefaults.AuthenticationScheme, options =>
                 {

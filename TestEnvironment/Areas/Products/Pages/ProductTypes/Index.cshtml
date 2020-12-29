@@ -10,30 +10,24 @@
     var page = Model.PageUrl;
 }
 
-@section Create {
-    <div class="dropdown">
-        <button class="btn btn-link" id="dropdownMenuButton" data-toggle="dropdown">@Captions.Create</button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="@Model.CreateUri(ProductKind.Product)">@Enum.GetName(typeof(ProductKind), ProductKind.Product)</a>
-            <a class="dropdown-item" href="@Model.CreateUri(ProductKind.Service)">@Enum.GetName(typeof(ProductKind), ProductKind.Service)</a>
-            <a class="dropdown-item" href="@Model.CreateUri(ProductKind.MeasuredProduct)">@Enum.GetName(typeof(ProductKind), ProductKind.MeasuredProduct)</a>
-        </div>
-    </div>
-}
+
+<link rel="stylesheet" href="~/css/catalog/catalog.component.css" />
+
 
 <body>
-    
+    <div class="container">
+        <div class="esh-catalog-items row">
             @foreach (var item in Model.Items)
             {
                 <div class="esh-catalog-item col-md-4">
                     <form asp-page="/Basket/Index" method="post">
-                        <img class="esh-catalog-thumbnail" src="@item.Image" width="300" height="300" />
+                        <img class="esh-catalog-thumbnail" src="https://m1.selver.ee/media/catalog/product/cache/1/image/409x/9df78eab33525d08d6e5fb8d27136e95/4/7/4740125000108_2.jpg" />
                         <div class="esh-catalog-name">
-                            <span>@item.Name</span> <span>@Model.BrandName(item.BrandId)</span> <span>@item.Amount</span> <span>@Model.UnitName(item.UnitId)</span>
+                            <span>@item.Name @Model.BrandName(item.BrandId) @item.Amount @Model.UnitName(item.UnitId)</span>
                         </div>
                         <div class="esh-catalog-price">
                             @await Html.PartialAsync("_PartialPriceView", item.parties)
-                            
+
                         </div>
                         <input class="esh-catalog-button" type="submit" value="Lisa ostukorvi" />
                         <input type="hidden" asp-for="@item.Id" name="id" />
@@ -42,6 +36,7 @@
                         <input type="hidden" asp-for="@item.Amount" name="price" />
                     </form>
                 </div>
-             }
-            
+            }
+        </div>
+    </div>
 </body>

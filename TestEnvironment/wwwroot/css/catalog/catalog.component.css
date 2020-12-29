@@ -69,18 +69,18 @@
 .esh-catalog-item {
   margin-bottom: 1.5rem;
   text-align: center;
-  width: 33%;
+  width: 20%;
   display: inline-block;
   float: none !important; }
   @media screen and (max-width: 1024px) {
     .esh-catalog-item {
-      width: 50%; } }
+      width: 30%; } }
   @media screen and (max-width: 768px) {
     .esh-catalog-item {
       width: 100%; } }
 
 .esh-catalog-thumbnail {
-  max-width: 370px;
+  max-width: 200px;
   width: 100%; }
 
 .esh-catalog-button {
@@ -108,8 +108,9 @@
   text-transform: uppercase; }
 
 .esh-catalog-price {
-  font-size: 28px;
-  font-weight: 900;
+  font-size: 16px;
+  font-weight: 200;
   text-align: center; }
-  .esh-catalog-price::before {
-    content: '$'; }
+    .esh-catalog-price::after {
+        content: '€';
+    }

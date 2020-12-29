@@ -9,17 +9,6 @@
     Layout = "_Index";
     var page = Model.PageUrl;
 }
-@section Create {
-    <div class="dropdown">
-        <button class="btn btn-link" id="dropdownMenuButton" data-toggle="dropdown">@Captions.Create</button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <a class="dropdown-item" href="@Model.CreateUri(ProductKind.Product)">@Enum.GetName(typeof(ProductKind), ProductKind.Product)</a>
-            <a class="dropdown-item" href="@Model.CreateUri(ProductKind.Service)">@Enum.GetName(typeof(ProductKind), ProductKind.Service)</a>
-            <a class="dropdown-item" href="@Model.CreateUri(ProductKind.MeasuredProduct)">@Enum.GetName(typeof(ProductKind), ProductKind.MeasuredProduct)</a>
-        </div>
-    </div>
-}
-
 
 <body>
     <table class="table">

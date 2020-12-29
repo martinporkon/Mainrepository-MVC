@@ -4,7 +4,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SooduskorvWebMVC.Models;
 using WebMVC.Domain.Services;
-using WebMVC.Domain.Services.Catalog;
 
 namespace SooduskorvWebMVC.Controllers
 {
@@ -25,10 +24,11 @@ namespace SooduskorvWebMVC.Controllers
 
             /*var a = response.Result;*/
 
-            var list = new List<ProductDto>();
-            var test = new ProductDto
+            var list = new List<CatalogDto>();
+            var test = new CatalogDto
             {
                 Id = a.Id,
+<<<<<<< HEAD:src/WebApps/WebMVC/Web.MVC/Controllers/ProductController.cs
                 Measure = a.Measure,
                 Name = a.Name,
                 Description = a.Description,
@@ -39,6 +39,9 @@ namespace SooduskorvWebMVC.Controllers
                 PartyId = a.PartyId,
                 Brand = a.Brand,
                 CountryOfOrigin = a.CountryOfOrigin,
+=======
+                
+>>>>>>> main:src/WebApps/WebMvc/Controllers/ProductController.cs
             };
             list.Add(test);
 

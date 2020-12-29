@@ -1,4 +1,4 @@
-﻿using Catalog.Domain;
+﻿using Basket.Domain.Common;
 
 namespace Basket.Domain.Baskets
 {

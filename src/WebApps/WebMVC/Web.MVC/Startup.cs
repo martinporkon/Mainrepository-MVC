@@ -2,11 +2,14 @@ using System.IdentityModel.Tokens.Jwt;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
+using Sooduskorv_MVC.Aids.Constants;
+using Sooduskorv_MVC.Middleware.Culture;
+using Sooduskorv_MVC.Middleware.Session;
 using SooduskorvWebMVC.HttpHandlers;
 using SooduskorvWebMVC.Middleware;
 using SooduskorvWebMVC.PostConfigurationOptions;
@@ -25,34 +28,39 @@ namespace SooduskorvWebMVC
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews()
-                .AddJsonOptions(opts => opts.JsonSerializerOptions.PropertyNamingPolicy = null)
-                .AddRazorRuntimeCompilation();
+            /*RateLimit.ConfigureServices(services, Configuration);*/
+            /*services.AddMemoryCache();*/
+            services.AddLocalization(options => options.ResourcesPath = Localization.DefaultPath);
+            services.ConfigureRequestLocalization(Configuration);
+            services.Configure<CookiePolicyOptions>(options =>
+            {
+                // This lambda determines whether user consent for non-essential 
+                // cookies is needed for a given request.
+                options.CheckConsentNeeded = context => true;
+                options.MinimumSameSitePolicy = SameSiteMode.None;
+            });
+            services.AddRazorPages()
+                .AddViewLocalization().AddSessionStateTempDataProvider();
+            services.AddCustomControllersWithViews();
             services.AddServerSideBlazor();
-
             services.AddCustomAuthorization(Configuration);
-            services.AddHttpContextAccessor();
-
+            services.AddHttpContextAccessor();// vist saab eemaldada. Juba olemas.
             /*services.AddHttpClient<IProductsService, ProductsService>();
             services.AddScoped<IProductsService, ProductsService>();*/
-
             services.AddTransient<BearerTokenHandler>();
-
             services.AddHttpClientServices(Configuration);
             services.AddCustomAuthentication(Configuration);
-
             services.AddSingleton<IPostConfigureOptions<OpenIdConnectOptions>, OpenIdConnectOptionsPostConfigurationOptions>();
-
-            services.AddServerSideBlazor();
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_3_0);
+            /*services.AddCustomSessions(Configuration);*/
+            services.AddScoped<RequestLocalizationMiddleware>();
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IOptions<RequestLocalizationOptions>
+            rlo)
         {
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseBrowserLink();
             }
             else
             {
@@ -60,21 +68,12 @@ namespace SooduskorvWebMVC
                 app.UseHsts();
             }
 
-            /*app.UseStatusCodePages();*/
-            /*var supportedCultures = new string[] { "en-GB", "en-US" };
-            app.UseRequestLocalization(options =>
-                options
-                    .AddSupportedCultures(supportedCultures)
-                    .AddSupportedUICultures(supportedCultures)
-                    .SetDefaultCulture("en-GB")
-                    .RequestCultureProviders.Insert(0, new CustomRequestCultureProvider(context =>
-                    {
-                        return Task.FromResult(new ProviderCultureResult("en-GB"));
-                    }))
-            );*/
-
+            /*app.UseStatusCodePages("text/plain", "Status Code; {0}. Contact support.");*/
             app.UseHttpsRedirection();
+            /*app.UseIpRateLimiting();*/
             app.UseStaticFiles();
+            app.UseRequestLocalization().WithCookies();
+            app.UseCookiePolicy();
             /*app.UseStaticFiles(new StaticFileOptions()
             {
                 OnPrepareResponse = ctx =>
@@ -88,12 +87,13 @@ namespace SooduskorvWebMVC
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
+            app.UseSession();
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapCustomEndpointRouteBuilder(Configuration, rlo);// TODO
+                endpoints.MapRazorPages();
                 endpoints.MapBlazorHub();
+                /*endpoints.MapFallbackToPage("/.....");*/
             });
         }
     }

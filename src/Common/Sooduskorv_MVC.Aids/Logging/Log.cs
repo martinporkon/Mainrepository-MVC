@@ -10,6 +10,8 @@ namespace Sooduskorv_MVC.Aids.Logging
         public static void Message(string message)
         {
             logBook?.WriteEntry(message);
+
+            var a = LogKeys.OrderEventForAmended;
         }
 
         public static void Exception(Exception e)// TODO

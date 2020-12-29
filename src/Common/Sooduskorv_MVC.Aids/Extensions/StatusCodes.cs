@@ -134,7 +134,7 @@ namespace Sooduskorv_MVC.Aids.HTTP
                 case HttpStatusCode.NetworkAuthenticationRequired:
                     break;
                 default:
-                    Log.Message(DataEvents.Exception.ToString());
+                    Log.Message(ExceptionEvents.Exception.ToString());
                     return false;
             }
             return true;

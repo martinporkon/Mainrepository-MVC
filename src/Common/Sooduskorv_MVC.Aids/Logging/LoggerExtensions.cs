@@ -32,7 +32,7 @@ namespace Sooduskorv_MVC.Aids.Logging
             RepoCallGetManyRepo(logger, repo, null);
         }
 
-        public static IDisposable ApiGetAllBasketsScope(this ILogger logger, string userId)// repositoorium kuhu injectitakse peaks selle juba ise ära disposima
+        public static IDisposable ApiGetAllBasketsScope(this ILogger logger, string userId)
         {
             return _apiGetAllBasketsScope(logger, userId);
         }

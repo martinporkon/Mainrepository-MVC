@@ -12,10 +12,7 @@ namespace Order.API
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
+        public Startup(IConfiguration c) => Configuration = c;
 
         public IConfiguration Configuration { get; }
 
@@ -23,7 +20,7 @@ namespace Order.API
         {
             services.AddControllers()
                 .AddJsonOptions(opts => opts.JsonSerializerOptions.PropertyNamingPolicy = null);
-            /*services.AddGrpc();*/
+            services.AddGrpc();
             services.AddHttpContextAccessor();
             services.AddOptions();
             services.AddCustomSwagger(Configuration);
@@ -59,6 +56,18 @@ namespace Order.API
                 app.UseExceptionHandler("/Home/Error");
             }
 
+            /*app.Use(async (context, next) =>
+            {
+                context.Response.OnStarting(() =>
+                {
+                    // do something
+                    /*return Task.CompletedTask;
+                });
+
+                await next.Invoke();
+            });*/
+
+
             app.UseHttpsRedirection();
             app.UseRouting();
 
@@ -71,7 +80,6 @@ namespace Order.API
             {
                 endpoints.MapHealthChecks("/health/live");
                 endpoints.MapControllers();
-                /*endpoints.MapGrpcService<OrderRepository>();*/
             });
         }
     }

@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Basket.API.Middleware
+namespace Basket.API.Middleware.Authentication
 {
     public static class AddCustomAuthenticationMiddlewareExtensions
     {

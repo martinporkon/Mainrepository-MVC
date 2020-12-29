@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Mvc.Filters;
 
 namespace Sooduskorv_MVC.Middleware.Stuff
 {
-    public class ExceptionAttribute : ActionFilterAttribute// .Exception. Logging. api. vms.
+    public class ExceptionAttribute : ActionFilterAttribute//For .Exceptions. Logging. apis. vms.
     {
         public override void OnActionExecuted(ActionExecutedContext context)
         {

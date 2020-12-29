@@ -1,11 +1,18 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="MatBlazor" Version="2.7.0" />
+    <Folder Include="Catalog\" />
+    <Folder Include="Basket\" />
+    <Folder Include="Common\Docs\" />
+    <Folder Include="Order\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WebMVC.Domain\WebMVC.Domain.csproj" />
   </ItemGroup>
 
 </Project>

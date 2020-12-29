@@ -1,0 +1,13 @@
+﻿using System.Threading.Tasks;
+using Microsoft.JSInterop;
+
+namespace Sooduskorv_MVC.Common.Extensions
+{
+    public static class JsRuntimeExtensions
+    {
+        public static ValueTask<bool> Confirm(this IJSRuntime jsRuntime, string message)
+        {
+            return jsRuntime.InvokeAsync<bool>("confirm", message);// javascript required.
+        }
+    }
+}

@@ -1,6 +1,6 @@
 ﻿namespace Sooduskorv_MVC.Aids.Enums
 {
-    public enum SubCategories
+    public enum SubCategories// Refactor
     {
         Õunad = 0,
         Eksootilised = 1,

@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.AspNetCore.Mvc.Testing;
+using Sooduskorv_MVC.Aids.Logging;
 
 namespace WebMVC.Tests.AcceptanceTests
 {

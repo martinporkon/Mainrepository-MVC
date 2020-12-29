@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace Catalog.Domain.Common
+namespace Basket.Domain.Common
 {
     public class GetRepository
     {

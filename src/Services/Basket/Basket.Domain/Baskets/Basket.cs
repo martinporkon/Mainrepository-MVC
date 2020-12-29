@@ -3,7 +3,7 @@ using Basket.Data.Baskets;
 
 namespace Basket.Domain.Baskets
 {
-    public abstract class Basket2 : DefinedEntity<BasketData>
+    public abstract class Basket2 : DefinedEntity<BasketData>, IAggregateRoot// TODO
     {
         protected Basket2() : this(null) { }
 

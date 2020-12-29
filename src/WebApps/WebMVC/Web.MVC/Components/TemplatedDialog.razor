@@ -1,0 +1,23 @@
+﻿
+<style type="text/css">
+    .dialog-container {
+    }
+
+    .dialog {
+    }
+</style>
+@if (Show)
+{
+    <div class="dialog-container">
+        <div class="dialog">
+            @ChildContent
+        </div>
+    </div>
+}
+
+@code {
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+    [Parameter]
+    public bool Show { get; set; }
+}

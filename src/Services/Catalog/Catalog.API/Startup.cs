@@ -21,29 +21,20 @@ namespace Catalog.API
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
+        public Startup(IConfiguration c) => Configuration = c;
 
         public IConfiguration Configuration { get; }
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllers()
-                .AddJsonOptions(opts => opts.JsonSerializerOptions.PropertyNamingPolicy = null);
+            /*services.AddControllers()
+                .AddJsonOptions(opts => opts.JsonSerializerOptions.PropertyNamingPolicy = null);*/
             services.AddGrpc();
-
             services.AddCustomSwagger(Configuration);
-
             services.AddHttpContextAccessor();
             services.AddOptions();
             services.AddScoped<ICatalogRepository, CatalogRepository>();// TODO
             services.AddScoped<IAuthorizationHandler, SubjectMustMatchUserHandler>();
-
-            /*services.AddSingleton<IEventBus, EventBusRabbitMQ>();*/
-            /*services.AddTransient<ApiExceptionMiddleware>();// TODO check if good*/
-            /*services.AddTransient<CatalogRepository>();// TODO check if good*/
 
             services.AddCustomAuthorization(Configuration);
 
@@ -56,14 +47,12 @@ namespace Catalog.API
                 });
             services.AddDbContext<CatalogApplicationDbContext>(options =>// TODO !!!!
             {
-                options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"));
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
             services.AddDbContext<CatalogDbContext>(options =>
             {
-                options.UseNpgsql(Configuration.GetConnectionString("DefaultConnection"));
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
-            /*services.AddHealthChecks()
-                .AddDbContextCheck<IdentityDbContext>();*/
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -102,9 +91,7 @@ namespace Catalog.API
 
             app.UseEndpoints(endpoints =>
             {
-                /*endpoints.MapDefaultHealthChecks();*/
                 endpoints.MapControllers();
-                /*endpoints.MapGrpcService<ProductsRepository>();*/
             });
         }
         private static LogLevel DetermineLogLevel(Exception ex)

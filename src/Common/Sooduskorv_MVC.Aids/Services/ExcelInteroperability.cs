@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Reflection;
 using Sooduskorv_MVC.Aids.Extensions;
 using Excel = Microsoft.Office.Interop.Excel;
@@ -58,6 +59,12 @@ namespace Sooduskorv_MVC.Aids.Services
             xlApp?.Quit();
 
             return l;
+        }
+
+
+        public List<T> Write<T>(List<ExcelRowClassMapper> mapper) where T : class, new()
+        {
+            throw new NotImplementedException();
         }
 
         private string getPropertyName(List<ExcelRowClassMapper> mapper, int columnIndex)

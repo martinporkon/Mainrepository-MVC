@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option csharp_namespace="Sooduskorv.Proto";
+
+package CustomTypes;
+
+// Example: 12345.6789 -> { units = 12345, nanos = 678900000 }
+message DecimalValue {
+
+    // Whole units part of the amount
+    int64 units = 1;
+
+    // Nano units of the amount (10^-9)
+    // Must be same sign as units
+    sfixed32 nanos = 2;
+}
+
+/*The nanos field represents values from 0.999_999_999 
+to -0.999_999_999. For example, the decimal value 1.5m 
+would be represented as { units = 1, nanos = 500_000_000 }. 
+This is why the nanos field in this example uses the 
+sfixed32 type, which encodes more efficiently than 
+int32 for larger values. If the units field is 
+negative, the nanos field should also be negative.*/

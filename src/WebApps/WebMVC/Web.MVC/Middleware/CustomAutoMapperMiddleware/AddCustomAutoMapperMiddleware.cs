@@ -1,16 +1,15 @@
 ﻿using System;
-using AutoMapper;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace SooduskorvWebMVC.Middleware.CustomizedAutoMapperMiddleware
+namespace Microsoft.AspNetCore.Builder
 {
     public static class AddCustomAutoMapperMiddleware
     {
         public static IServiceCollection AddAutoMapperSetup(this IServiceCollection services)
         {
-            if (services == null) throw new ArgumentNullException(nameof(services));
+            if (services is null) throw new ArgumentNullException(nameof(services));
 
-            services.AddAutoMapper(AutoMapperConfiguration.RegisterMappings());
+            /*services.AddAutoMapper(AutoMapperConfiguration.RegisterMappings());*/
             return services;
         }
     }

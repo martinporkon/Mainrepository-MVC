@@ -1,6 +1,5 @@
 ﻿using System;
-using System.Net;
-using System.Net.Http;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Net.Http.Headers;
@@ -17,41 +16,26 @@ namespace SooduskorvWebMVC.Middleware
                 client.BaseAddress = new Uri("https://localhost:44366/");
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Add(HeaderNames.Accept, "application/json");
-            }).ConfigurePrimaryHttpMessageHandler(handler =>
-                new HttpClientHandler()// valida parem väärtus ning võimalus või tee enda oma. Hetkel on see .NET 2. and earlier.
-                {
-                    AutomaticDecompression = DecompressionMethods.Brotli// Configure to Brotli;
-                });
-            /*.AddPolicyHandler(GetRetryPolicy())
-            .AddPolicyHandler(GetCircuitBreakerPolicy())*/
-            ;
+            }).ConfigureForAll().AddUserAccessTokenHandler();// TODO the Token Handler.
             services.AddHttpClient("TokenAPIClient", client =>
             {
                 client.BaseAddress = new Uri("https://localhost:44366/");
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Add(HeaderNames.Accept, "application/json");
-            }).AddHttpMessageHandler<BearerTokenHandler>();
+            }).AddHttpMessageHandler<BearerTokenHandler>().AddUserAccessTokenHandler();
             services.AddHttpClient("IDPClient", client =>
             {
                 client.BaseAddress = new Uri("https://localhost:44318/");
                 client.DefaultRequestHeaders.Clear();
                 client.DefaultRequestHeaders.Add(HeaderNames.Accept, "application/json");
-            });
+            }).AddUserAccessTokenHandler();
+
+            /*services.AddHttpClient<IInterface, Service>(client =>
+            {
+                  client.BaseAddress = new Uri("https://localhost:44340/");
+            });*/
+
             return services;
         }
-
-        // uncomment if everything else done. But should already work.
-        /*private static IAsyncPolicy<HttpResponseMessage> GetRetryPolicy() => HttpPolicyExtensions
-            .HandleTransientHttpError()
-            .WaitAndRetryAsync(5,
-                retryAttempt => TimeSpan.FromMilliseconds(Math.Pow(1.5, retryAttempt) * 1000),
-                (_, waitingTime) =>
-                {
-                    Console.WriteLine($"Error");
-                });
-
-        private static IAsyncPolicy<HttpResponseMessage> GetCircuitBreakerPolicy() => HttpPolicyExtensions
-            .HandleTransientHttpError()
-            .CircuitBreakerAsync(3, TimeSpan.FromSeconds(30));*/
     }
 }

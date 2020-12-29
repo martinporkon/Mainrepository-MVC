@@ -16,7 +16,6 @@ namespace Basket.Domain.Rules
 
         private static bool BeAValidPostcode(string postcode)
         {
-            // BeAValidPostCode
             return false;
         }
     }

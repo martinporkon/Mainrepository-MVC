@@ -6,7 +6,7 @@ namespace Sooduskorv_MVC.Middleware.BackgroundServiceMiddleware
     {
         public static IServiceCollection AddHostedServices(this IServiceCollection services)
         {
-            /*services.AddHostedService(MessageService);*/
+            /*services.AddHostedService<MessageService>();*/
             return services;
         }
     }

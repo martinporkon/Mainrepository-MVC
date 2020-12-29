@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Docs\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Sooduskorv_MVC.Data\Sooduskorv_MVC.Data.csproj" />
+    <ProjectReference Include="..\WebMVC.Bff.HttpAggregator.Core\WebMVC.Bff.HttpAggregator.Core.csproj" />
+  </ItemGroup>
+
+</Project>

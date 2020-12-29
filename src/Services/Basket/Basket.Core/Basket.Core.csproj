@@ -1,11 +1,20 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="9.3.0" />
+    <PackageReference Include="Microsoft.Extensions.DiagnosticAdapter" Version="3.1.10" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\..\Common\Sooduskorv_MVC.Aids\Sooduskorv_MVC.Aids.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Rules\" />
   </ItemGroup>
 
 </Project>

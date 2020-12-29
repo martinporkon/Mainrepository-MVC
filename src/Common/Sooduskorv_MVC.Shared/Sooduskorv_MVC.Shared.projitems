@@ -8,4 +8,9 @@
   <PropertyGroup Label="Configuration">
     <Import_RootNamespace>Sooduskorv_MVC.Shared</Import_RootNamespace>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Geographical\Location.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Geographical\Point.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Values\SecurityTokenContext.cs" />
+  </ItemGroup>
 </Project>

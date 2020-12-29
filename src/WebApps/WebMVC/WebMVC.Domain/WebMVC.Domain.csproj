@@ -1,13 +1,23 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="MatBlazor" Version="2.7.0" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Extensions" Version="2.2.0" />
-    <PackageReference Include="Microsoft.Extensions.Http" Version="3.1.8" />
+    <PackageReference Include="Microsoft.Extensions.Http" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Common\Docs\" />
+    <Folder Include="DTO\CatalogService\" />
+    <Folder Include="DTO\Docs\" />
+    <Folder Include="DTO\OrderService\" />
+    <Folder Include="Services\Basket\" />
+    <Folder Include="Services\Docs\" />
+    <Folder Include="Services\Order\" />
   </ItemGroup>
 
 </Project>

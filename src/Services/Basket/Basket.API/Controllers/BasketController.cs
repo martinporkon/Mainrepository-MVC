@@ -1,10 +1,9 @@
-﻿namespace Basket.API.Controllers
-{
-    public class BasketController/* : BasketService.BasketBase*/
-    {
-        /*public BasketController()
-        {
+﻿using Basket.Pages.Common;
 
-        }*/
+namespace Basket.API.Controllers
+{
+    public class BasketController : UnifiedPage
+    {
+
     }
 }

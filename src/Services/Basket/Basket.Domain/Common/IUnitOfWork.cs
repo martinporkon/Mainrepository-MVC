@@ -9,7 +9,7 @@ namespace Basket.Domain.Common
     /*where TContext : DbContext, new()*/
     {
         /*TContext Context { get; }*/
-        //https://dotnettutorials.net/lesson/unit-of-work-csharp-mvc/
+
         IBasketRepository BasketRepository { get; }
         IBasketOfProductRepository BasketOfProductRepository { get; }
 

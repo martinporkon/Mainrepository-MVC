@@ -7,5 +7,6 @@ namespace Catalog.Data.ProductOfParty
         public string ProductId { get; set; }
         public string PartyId { get; set; }
         public string PriceId { get; set; }
+        public string Id { get; set; }
     }
 }

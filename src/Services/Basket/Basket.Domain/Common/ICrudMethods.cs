@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Catalog.Domain
+namespace Basket.Domain.Common
 {
-    public interface ICrudMethods<T>
+    public interface ICrudMethods<T> : IAggregateRoot// TODO
     {
         Task<List<T>> Get();
         Task<T> Get(string id);

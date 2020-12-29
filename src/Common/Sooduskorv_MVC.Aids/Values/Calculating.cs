@@ -19,6 +19,11 @@ namespace Sooduskorv_MVC.Aids.Values
             return null;
         }
 
+        public static object Modulus(object x, object y)
+        {
+            throw new NotImplementedException();
+        }
+
         public static object Subtract(object x, object y)
         {
             if (AreTypes.DateTime(x, y)) return ((DateTime)x).SubtractSafe((DateTime)y);

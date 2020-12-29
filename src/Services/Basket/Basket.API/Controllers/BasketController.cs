@@ -1,14 +1,9 @@
-﻿using System;
-using Basket.Infra.Basket;
-using Microsoft.AspNetCore.Mvc;
+﻿using Basket.Pages.Common;
 
 namespace Basket.API.Controllers
 {
-    public class BasketController : ControllerBase
+    public class BasketController : UnifiedPage
     {
-        /*public BasketController()
-        {
 
-        }*/
     }
 }

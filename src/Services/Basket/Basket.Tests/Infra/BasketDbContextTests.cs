@@ -44,7 +44,7 @@ namespace Basket.Tests.Infra
             BasketDbContext.InitializeTables(modelBuilder);
 
         }
-        [TestMethod] public void BasketOfProductsTest() => testHasDbSet<BasketOfProductsData>(modelBuilder, x => x.BasketId, x => x.ProductOfPartyId);
+        [TestMethod] public void BasketOfProductsTest() => testHasDbSet<BasketOfProductData>(modelBuilder, x => x.BasketId, x => x.ProductOfPartyId);
 
         [TestMethod] public void BasketsTest() => testHasDbSet<BasketData>(modelBuilder);
     }

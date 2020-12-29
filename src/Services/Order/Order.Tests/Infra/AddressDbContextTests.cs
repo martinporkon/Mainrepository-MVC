@@ -47,7 +47,7 @@ namespace Order.Tests.Infra
         }
 
         [TestMethod] public void AddressesTest() => testHasDbSet<AddressData>(modelBuilder);
-        [TestMethod] public void AddressesOfCustomerTest() => testHasDbSet<AddressOfCustomerData>(modelBuilder, x => x.AddressId, x => x.CustomerId);
+        [TestMethod] public void AddressesOfCustomerTest() => testHasDbSet<AddressOfCustomerData>(modelBuilder, x => x.AddressId, x => x.BuyerId);
         [TestMethod] public void AddressesOfPartyTest() => testHasDbSet<AddressOfPartyData>(modelBuilder, x => x.AddressId, x => x.PartyId);
     }
 }

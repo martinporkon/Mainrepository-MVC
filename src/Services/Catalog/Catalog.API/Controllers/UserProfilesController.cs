@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Linq;
 using Catalog.Data.UserProfiles;
-using Catalog.Domain.Repositories;
+using Catalog.Infra.Catalog;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,20 +12,20 @@ namespace Catalog.API.Controllers
     /*[Authorize]*/
     public class UserProfilesController : ControllerBase
     {
-        private readonly IProductsRepository _productsRepository;
+        private readonly ICatalogRepository _catalogRepository;
 
         public UserProfilesController(
-            IProductsRepository productsRepository)
+            ICatalogRepository catalogRepository)
         {
-            _productsRepository = productsRepository ??
-                                  throw new ArgumentNullException(nameof(productsRepository));
+            _catalogRepository = catalogRepository ??
+                                 throw new ArgumentNullException(nameof(catalogRepository));
         }
 
         [HttpGet("{subject}")]
         [Authorize(Policy = "SubjectMustMatchUser")]
         public IActionResult GetApplicationUserProfile(string subject)
         {
-            var applicationUserProfileFromRepo = _productsRepository.GetApplicationUserProfile(subject);
+            var applicationUserProfileFromRepo = _catalogRepository.GetApplicationUserProfile(subject);
 
             if (applicationUserProfileFromRepo == null)
             {
@@ -37,8 +37,8 @@ namespace Catalog.API.Controllers
                     SubscriptionLevel = "FreeUser"
                 };
 
-                _productsRepository.AddApplicationUserProfile(applicationUserProfileFromRepo);
-                _productsRepository.Save();
+                _catalogRepository.AddApplicationUserProfile(applicationUserProfileFromRepo);
+                _catalogRepository.Save();
             }
             return Ok(applicationUserProfileFromRepo);
         }

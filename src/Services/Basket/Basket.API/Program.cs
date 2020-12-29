@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Serilog;
 
 namespace Basket.API
 {
@@ -13,28 +14,45 @@ namespace Basket.API
     {
         public static void Main(string[] args)
         {
-                var host = CreateHostBuilder(args).Build();
-
-                using (var scope = host.Services.CreateScope())
+            var host = CreateHostBuilder(args).ConfigureAppConfiguration((hostContext, builder) =>
+            {
+                if (hostContext.HostingEnvironment.IsDevelopment())
                 {
-                    var services = scope.ServiceProvider;
-
-                    try
-                    {   
-                        var dbBasket = services.GetRequiredService<BasketDbContext>();
-                        BasketDbInitializer.Initialize(dbBasket);
-                       
-                    }
-                    catch (Exception ex)
-                    {
-
-                        var logger = services.GetRequiredService<ILogger<Program>>();
-                        logger.LogError(ex, "An error occurred creating the DB.");
-                        throw new Exception("initializer ei läinud läbi");
-                    }
+                    builder.AddUserSecrets<Program>();
                 }
-                host.Run();
-            
+            }).Build();
+
+
+            Log.Logger = new LoggerConfiguration()
+                .WriteTo.Seq("http://localhost:5412")
+                .CreateLogger();
+
+            using (var scope = host.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
+
+                try
+                {
+                    Log.Information($"The Basket Application is starting up: {DateTime.UtcNow}");
+                    var dbBasket = services.GetRequiredService<BasketDbContext>();
+                    BasketDbInitializer.Initialize(dbBasket);
+
+                }
+                catch (Exception ex)
+                {
+
+                    var logger = services.GetRequiredService<ILogger<Program>>();
+                    logger.LogError(ex, "An error occurred creating the DB.");
+                    Log.Fatal(ex, "An error occurred creating the DB.");
+                    throw new Exception("initializer ei läinud läbi");
+                }
+                finally
+                {
+                    Log.CloseAndFlush();
+                }
+            }
+            host.Run();
+
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -43,6 +61,7 @@ namespace Basket.API
                 {
                     webBuilder.UseStartup<Startup>();
                     webBuilder.UseConfiguration(GetConfiguration());
+                    /*webBuilder.UseSerilog();*/
                 });
 
         private static IConfiguration GetConfiguration()

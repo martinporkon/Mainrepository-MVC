@@ -29,7 +29,13 @@ namespace Sooduskorv.IDP
             try
             {
                 Log.Information("Starting host...");
-                CreateHostBuilder(args).Build().Run();
+                CreateHostBuilder(args).ConfigureAppConfiguration((hostContext, builder) =>
+                {
+                    if (hostContext.HostingEnvironment.IsDevelopment())
+                    {
+                        builder.AddUserSecrets<Program>();
+                    }
+                }).Build().Run();
                 return 0;
             }
             catch (Exception ex)

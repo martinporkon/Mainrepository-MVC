@@ -9,5 +9,6 @@ namespace Order.Data.Orders
         public string Description { get; set; }
         public DateTime ConfirmationDate { get; set; }
         public OrderStatus OrderStatus { get; set; }
+        public string Id { get; set; }
     }
 }

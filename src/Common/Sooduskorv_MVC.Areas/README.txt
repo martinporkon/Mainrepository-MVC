@@ -1,0 +1,1 @@
+﻿This library contains code from blazor and from C# JSInterop into JavaScript.

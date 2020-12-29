@@ -11,14 +11,14 @@ namespace Identity.Infra.DbContexts
     {
         public DbSet<UserData> Users { get; set; }
 
-        public DbSet<UserClaim> UserClaims { get; set; }
+        public DbSet<UserClaimData> UserClaims { get; set; }
 
         public IdentityDbContext(DbContextOptions<IdentityDbContext> options)
             : base(options) { }
 
         public static void InitializeTables(ModelBuilder builder)
         {
-            builder.Entity<UserClaim>().ToTable(nameof(UserClaims));
+            builder.Entity<UserClaimData>().ToTable(nameof(UserClaims));
             builder.Entity<UserData>().ToTable(nameof(Users))
                 .HasIndex(u => u.Subject)
                 .IsUnique();
@@ -45,71 +45,71 @@ namespace Identity.Infra.DbContexts
                     Active = true
                 });
 
-            builder.Entity<UserClaim>().HasData(
-             new UserClaim()
+            builder.Entity<UserClaimData>().HasData(
+             new UserClaimData()
              {
                  Id = Guid.NewGuid(),
                  UserId = new Guid("13229d33-99e0-41b3-b18d-4f72127e3971"),
                  Type = "given_name",
                  Value = "Hanna"
              },
-             new UserClaim()
+             new UserClaimData()
              {
                  Id = Guid.NewGuid(),
                  UserId = new Guid("13229d33-99e0-41b3-b18d-4f72127e3971"),
                  Type = "family_name",
                  Value = "Forest"
              },
-             new UserClaim()
+             new UserClaimData()
              {
                  Id = Guid.NewGuid(),
                  UserId = new Guid("13229d33-99e0-41b3-b18d-4f72127e3971"),
                  Type = "email",
                  Value = "hanna@gmail.com"
              },
-             new UserClaim()
+             new UserClaimData()
              {
                  Id = Guid.NewGuid(),
                  UserId = new Guid("13229d33-99e0-41b3-b18d-4f72127e3971"),
                  Type = "address",
                  Value = "Tammsaare tee"
              },
-             new UserClaim()
+             new UserClaimData()
              {
                  Id = Guid.NewGuid(),
                  UserId = new Guid("13229d33-99e0-41b3-b18d-4f72127e3971"),
                  Type = "country",
                  Value = "somevalue"
              },
-             new UserClaim()
+             new UserClaimData()
              {
                  Id = Guid.NewGuid(),
                  UserId = new Guid("96053525-f4a5-47ee-855e-0ea77fa6c55a"),
                  Type = "given_name",
                  Value = "Bob"
              },
-             new UserClaim()
+             new UserClaimData()
              {
                  Id = Guid.NewGuid(),
                  UserId = new Guid("96053525-f4a5-47ee-855e-0ea77fa6c55a"),
                  Type = "family_name",
                  Value = "Oak"
              },
-             new UserClaim()
+             new UserClaimData()
              {
                  Id = Guid.NewGuid(),
                  UserId = new Guid("96053525-f4a5-47ee-855e-0ea77fa6c55a"),
                  Type = "email",
                  Value = "bob@gmail.com"
              },
-             new UserClaim()
+             new UserClaimData()
              {
                  Id = Guid.NewGuid(),
                  UserId = new Guid("96053525-f4a5-47ee-855e-0ea77fa6c55a"),
                  Type = "address",
                  Value = "Ehitajate Tee"
              },
-             new UserClaim()
+             new UserClaimData()
              {
                  Id = Guid.NewGuid(),
                  UserId = new Guid("96053525-f4a5-47ee-855e-0ea77fa6c55a"),

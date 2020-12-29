@@ -1,7 +1,5 @@
-﻿
-
-using System;
-using Identity.Aids.Methods;
+﻿using System;
+using Sooduskorv_MVC.Aids.Methods;
 
 namespace Identity.Domain.Common
 {

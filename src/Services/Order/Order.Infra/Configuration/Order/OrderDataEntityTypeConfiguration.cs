@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿/*using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Order.Data.Orders;
 
@@ -11,4 +11,4 @@ namespace Order.Infra.Configuration.Order
             builder.ToTable("Orders");
         }
     }
-}
+}*/

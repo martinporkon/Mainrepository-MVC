@@ -17,14 +17,14 @@ namespace Basket.Infra
 
         internal static int randomDataGenerationAmount = 10;
 
-        internal static List<BasketOfProductsData> basketOfProducts = new List<BasketOfProductsData> { };
+        internal static List<BasketOfProductData> basketOfProducts = new List<BasketOfProductData> { };
         internal static void generateBasketOfProducts()
         {
             for (int i = 0; i < baskets.Count(); i++)
             {
                 for (int k = 0; k < randomDataGenerationAmount; k++)
                 {
-                    basketOfProducts.Add(new BasketOfProductsData
+                    basketOfProducts.Add(new BasketOfProductData
                     {
                         Id = Guid.NewGuid().ToString(),
                         ValidFrom = GetRandom.DateTime(validFromMinimum, validFromMaximum),

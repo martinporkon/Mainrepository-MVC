@@ -1,22 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Docs\**" />
-    <EmbeddedResource Remove="Docs\**" />
-    <None Remove="Docs\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="MatBlazor" Version="2.7.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.DataAnnotations" Version="2.2.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Common\Sooduskorv-MVC.Data\Sooduskorv_MVC.Data.csproj" />
+    <ProjectReference Include="..\..\..\Common\Sooduskorv_MVC.Data\Sooduskorv_MVC.Data.csproj" />
+    <ProjectReference Include="..\Order.Core\Order.Core.csproj" />
   </ItemGroup>
 
 </Project>

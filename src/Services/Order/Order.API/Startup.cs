@@ -7,17 +7,12 @@ using Microsoft.Extensions.Hosting;
 using Order.API.Data;
 using Order.API.Middleware;
 using Order.Infra;
-using Order.Infra.Order;
-using Sooduskorv_MVC.Middleware.SwaggerMiddleware;
 
 namespace Order.API
 {
     public class Startup
     {
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
+        public Startup(IConfiguration c) => Configuration = c;
 
         public IConfiguration Configuration { get; }
 
@@ -26,11 +21,13 @@ namespace Order.API
             services.AddControllers()
                 .AddJsonOptions(opts => opts.JsonSerializerOptions.PropertyNamingPolicy = null);
             services.AddGrpc();
+            services.AddHttpContextAccessor();
+            services.AddOptions();
             services.AddCustomSwagger(Configuration);
             services.AddCustomAuthentication(Configuration);
             services.AddDbContext<OrderApplicationDbContext>(options =>  // TODO ???
             {
-                options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=OrderDB;Trusted_Connection=True;");
+                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
             services.AddDbContext<OrderDbContext>(options =>
             {
@@ -44,6 +41,7 @@ namespace Order.API
             {
                 options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=OrderDB;Trusted_Connection=True;");
             });
+            services.AddHealthChecks();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -58,18 +56,30 @@ namespace Order.API
                 app.UseExceptionHandler("/Home/Error");
             }
 
-            app.UseSwaggerAPI(Configuration);
+            /*app.Use(async (context, next) =>
+            {
+                context.Response.OnStarting(() =>
+                {
+                    // do something
+                    /*return Task.CompletedTask;
+                });
+
+                await next.Invoke();
+            });*/
+
 
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
             app.UseRouting();
 
             app.UseAuthentication();
             app.UseAuthorization();
+
+            app.UseSwaggerAPI(Configuration);
+
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapHealthChecks("/health/live");
                 endpoints.MapControllers();
-                endpoints.MapGrpcService<OrderRepository>();
             });
         }
     }

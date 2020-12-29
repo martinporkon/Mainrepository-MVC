@@ -1,4 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿/*using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Order.Data.ShipMethodOfParty;
 
@@ -8,9 +8,9 @@ namespace Order.Infra.Configuration.Shipping
     {
         public void Configure(EntityTypeBuilder<ShipMethodsOfPartyData> builder)
         {
-            builder.ToTable("ShipMethodOfParties")
+            /*builder.ToTable("ShipMethodOfParties")
                 .Property(x => new { x.MinimalOrderPrice, x.Price })
-                .HasColumnType("decimal(16,4)");
+                .HasColumnType("decimal(16,4)");#1#
         }
     }
-}
+}*/

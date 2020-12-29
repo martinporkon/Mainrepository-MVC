@@ -37,17 +37,17 @@ namespace Sooduskorv.IDP.Areas.UserRegistration
                 Active = false
             };
 
-            userToCreate.Claims.Add(new UserClaim()
+            userToCreate.Claims.Add(new UserClaimData()
             {
                 Type = JwtClaimTypes.Address,
                 Value = model.Address
             });
-            userToCreate.Claims.Add(new UserClaim()
+            userToCreate.Claims.Add(new UserClaimData()
             {
                 Type = JwtClaimTypes.GivenName,
                 Value = model.GivenName
             });
-            userToCreate.Claims.Add(new UserClaim()
+            userToCreate.Claims.Add(new UserClaimData()
             {
                 Type = JwtClaimTypes.FamilyName,
                 Value = model.FamilyName

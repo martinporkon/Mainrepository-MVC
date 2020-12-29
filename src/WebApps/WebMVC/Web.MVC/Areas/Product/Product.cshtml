@@ -1,0 +1,40 @@
+﻿@using SooduskorvWebMVC.Components
+@model SooduskorvWebMVC.Models.ProductViewModel
+<div>
+    <h1>Information about the requested product:</h1>
+    @foreach (var product in Model.Products)
+    {
+        <p>@product.Id</p>
+        <p>@product.Name</p>
+        <p>@product.Measure</p>
+        <p>@product.Brand</p>
+        <p>@product.CategoryId</p>
+        <p>@product.Code</p>
+        <p>@product.Composition</p>
+        <p>@product.Description</p>
+        <p>@product.SubCategoryId</p>
+        <p>@product.PartyId</p>
+        <p>@product.Name</p>
+        <p>@product.CountryOfOrigin</p>
+
+
+        <div class="col-md-6">
+            <img src="@("https://i.postimg.cc/t4nHfyDk/index.jpg")" alt="no-food-image-salad" />
+        </div>
+
+        <!--TODO catalog grid view-->
+    }
+</div>
+<hr />
+@* Counter = ICommonRender<T> => Ienum<ICommon> *@
+@(await Html.RenderComponentAsync<Counter>(RenderMode.ServerPrerendered))
+@*@(await Html.RenderComponentAsync<Counter>(RenderMode.ServerPrerendered))
+    @(await Html.RenderComponentAsync<Counter>(RenderMode.ServerPrerendered))
+    @(await Html.RenderComponentAsync<Counter>(RenderMode.ServerPrerendered))
+    @(await Html.RenderComponentAsync<Counter>(RenderMode.ServerPrerendered))
+    @(await Html.RenderComponentAsync<Counter>(RenderMode.ServerPrerendered))
+    @(await Html.RenderComponentAsync<Counter>(RenderMode.ServerPrerendered))*@
+
+@section Scripts {
+    <script src="_framework/blazor.server.js"></script>
+}

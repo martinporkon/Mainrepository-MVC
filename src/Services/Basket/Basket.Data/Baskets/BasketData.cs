@@ -2,7 +2,7 @@
 
 namespace Basket.Data.Baskets
 {
-    public sealed class BasketData : NamedEntityData
+    public sealed class BasketData : DescribedEntityData
     {
         public string BuyerId { get; set; }
     }

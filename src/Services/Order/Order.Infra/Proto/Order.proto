@@ -1,4 +1,4 @@
-﻿syntax = "proto3";
+﻿/*syntax = "proto3";
 
 option csharp_namespace = "Order.Services";
 
@@ -28,4 +28,4 @@ message OrderDetails {
 	string Name = 2;
 	string Description = 3;
 	OrderStatus isCompleted = 4;
-}
+}*/

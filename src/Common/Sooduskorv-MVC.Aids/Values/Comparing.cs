@@ -2,7 +2,7 @@
 using System;
 using Aids.Methods;
 
-namespace Abc.Aids.Values {
+namespace Aids.Values {
 
     public static class Comparing {
 

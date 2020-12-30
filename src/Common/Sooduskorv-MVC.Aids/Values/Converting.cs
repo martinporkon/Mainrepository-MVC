@@ -3,7 +3,7 @@ using System.Globalization;
 using Abc.Aids.Constants;
 using Aids.Regions;
 
-namespace Abc.Aids.Values {
+namespace Aids.Values {
 
     public static class Converting {
 

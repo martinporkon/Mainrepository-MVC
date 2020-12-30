@@ -2,7 +2,7 @@
 using System;
 using System.Linq;
 
-namespace Abc.Aids.Values {
+namespace Aids.Values {
 
     public static class AreTypes {
 

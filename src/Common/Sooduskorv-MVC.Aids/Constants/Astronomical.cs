@@ -1,4 +1,4 @@
-﻿namespace Abc.Aids.Constants {
+﻿namespace Aids.Constants {
 
     public static class Astronomical {
 

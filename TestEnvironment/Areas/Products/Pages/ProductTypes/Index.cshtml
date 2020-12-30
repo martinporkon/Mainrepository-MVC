@@ -15,6 +15,16 @@
 
 
 <body>
+    <section class="esh-catalog-filters">
+        <div class="container">
+            <form method="get">
+                <label class="esh-catalog-label" data-title="brand">
+                    <select asp-for="" asp-items="@Model.Brands" class="esh-catalog-filter"></select>
+                </label>
+                <input class="esh-catalog-send" type="image" src="images/arrow-right.svg" />
+            </form>
+        </div>
+    </section>
     <div class="container">
         <div class="esh-catalog-items row">
             @foreach (var item in Model.Items)

@@ -15,6 +15,8 @@ namespace SooduskorvWebMVC
                 {
                     builder.AddUserSecrets<Program>();
                 }
+                else if (hostContext.HostingEnvironment.IsEnvironment("Custom")) { }
+                /*builder.RootComponents.Add<App>("#app");*/
             }).Build().Run();
         }
 

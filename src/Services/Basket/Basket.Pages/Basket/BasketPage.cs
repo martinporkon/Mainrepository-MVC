@@ -1,5 +1,4 @@
-﻿using Basket.Domain.BasketOfProducts;
-using Basket.Pages.Common;
+﻿using Basket.Pages.Common;
 
 namespace Basket.Pages.Basket
 {

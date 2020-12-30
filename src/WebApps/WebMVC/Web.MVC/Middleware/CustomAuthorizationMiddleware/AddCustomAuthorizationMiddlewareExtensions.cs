@@ -14,7 +14,7 @@ namespace Microsoft.AspNetCore.Builder
                     policyBuilder =>
                     {
                         policyBuilder.RequireAuthenticatedUser();
-                        policyBuilder.RequireClaim("subscriptionlevel", "Basic");
+                        policyBuilder.RequireClaim("subscription", "Basic");
                     });
             });
             return services;

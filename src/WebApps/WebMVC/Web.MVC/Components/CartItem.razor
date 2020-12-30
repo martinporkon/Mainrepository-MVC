@@ -1,15 +1,30 @@
 ﻿@inject IHttpClientFactory HttpClient
+@inherits SooduskorvWebMVC.ComponentBases.CartItemBase
 @using WebMVC.Domain.DTO.BasketService
 <style type="text/css">
-    /*TODO*/
     .delete-item {
     }
 
-    .cart-item {
+    .add-item {
+    }
+
+    .esh-catalog-button {
+        background-color: #83D01B;
+        border: 0;
+        color: #FFFFFF;
+        cursor: pointer;
+        font-size: 1rem;
+        height: 3rem;
+        margin-top: 1rem;
+        transition: all 0.35s;
+        width: 80%;
     }
 </style>
-<div class="cart-item">
-    <a @onclick="@OnRemoved" class="delete-item">@(BasketItem.Name)</a>
+<div class="esh-catalog-button">
+    @*<a @onclick="AddToBasket" class="delete-item">TODO kuidagi peab tööle saama onclick.*@
+    @(BasketItem.Name)
+    <component type="typeof(CartItemBase)" render-mode="WebAssemblyPrerendered" />
+    @*</a>*@
 
     @* stuff here *@
 </div>
@@ -17,4 +32,26 @@
 @code {
     [Parameter] public BasketDto BasketItem { get; set; }
     [Parameter] public EventCallback OnRemoved { get; set; }
+    [Parameter] public EventCallback<MouseEventArgs> OnClickCallback { get; set; }
+
+    /*Task AddToBasket()
+    {
+        //var test = HttpClient.CreateClient("APIClient");
+        //var address = new Uri("http://localhost:5000/api/products");
+        //var values = new Dictionary<string, string> {
+        //        { "accountidentifier", "Data you want to send at account field" },
+        //        { "type", "Data you want to send at type field"},
+        //        { "seriesid", "The data you went to send at seriesid field"
+        //        }
+        //    };
+
+        ////form "postable object" if that makes any sense
+        //var content = new FormUrlEncodedContent(values);
+
+        //var test2 = test.PostAsync(address, content).Result;
+
+        //var result = Js.InvokeVoidAsync("showAlert", test2).GetAwaiter();
+        var foo = EmployeeService.GetEmployees().Result;
+        return Task.CompletedTask;
+    }*/
 }

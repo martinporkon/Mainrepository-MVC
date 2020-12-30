@@ -2,6 +2,7 @@
 using Catalog.Domain;
 using Catalog.Domain.Common;
 using Catalog.Domain.Prices;
+using Catalog.Domain.Product;
 using CommonData;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Sooduskorv_MVC.Facade;
@@ -77,6 +78,38 @@ namespace Catalog.Pages
                 : condition is null ?
                     items
                     .Select(m => new SelectListItem(m.Data.Amount.ToString(), m.Data.ProductInstanceId))
+                    .ToList() :
+                     new List<SelectListItem>();
+            l.Insert(0, new SelectListItem(Word.UnSpecified, null));
+            return l;
+        }
+        protected internal static IEnumerable<SelectListItem> newPartiesList<ProductInstance, ProductInstanceData>(IProductInstancesRepository r,
+            Func<ProductInstance, bool> condition = null)
+            where ProductInstance : IEntity<ProductInstanceData>
+            where ProductInstanceData : NamedEntityData, new()
+        {
+            var items = r?.Get().GetAwaiter().GetResult();
+            var l = items is null
+                ? new List<SelectListItem>()
+                : condition is null ?
+                    items
+                    .Select(m => new SelectListItem(m.Data.Id, m.Data.PartyId))
+                    .ToList() :
+                     new List<SelectListItem>();
+            l.Insert(0, new SelectListItem(Word.UnSpecified, null));
+            return l;
+        }
+        protected internal static IEnumerable<SelectListItem> newInstancesList<ProductInstance, ProductInstanceData>(IProductInstancesRepository r,
+           Func<ProductInstance, bool> condition = null)
+           where ProductInstance : IEntity<ProductInstanceData>
+           where ProductInstanceData : NamedEntityData, new()
+        {
+            var items = r?.Get().GetAwaiter().GetResult();
+            var l = items is null
+                ? new List<SelectListItem>()
+                : condition is null ?
+                    items
+                    .Select(m => new SelectListItem(m.Data.Id, m.Data.ProductTypeId))
                     .ToList() :
                      new List<SelectListItem>();
             l.Insert(0, new SelectListItem(Word.UnSpecified, null));

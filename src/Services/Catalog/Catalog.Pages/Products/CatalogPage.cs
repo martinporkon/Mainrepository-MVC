@@ -1,5 +1,8 @@
-﻿using Aids.Methods;
+﻿using Aids.Constants;
+using Aids.Methods;
+using Catalog.Data.Price;
 using Catalog.Data.Product;
+using Catalog.Domain.Prices;
 using Catalog.Domain.Product;
 using Catalog.Facade.Product;
 using Catalog.Pages;
@@ -13,16 +16,27 @@ namespace Catalog.Pages.Products
 {
 
     public sealed class
-        ProductTypesPage : ViewsPage<IProductTypesRepository, IProductType, ProductTypeView, ProductTypeData>
+        CatalogPage : ViewsPage<IProductTypesRepository, IProductType, ProductTypeView, ProductTypeData>
     {
 
-        public ProductTypesPage(IProductTypesRepository r, IBrandsRepository b)
+        public CatalogPage(IProductTypesRepository r, IBrandsRepository b, IProductInstancesRepository i, IPricesRepository c)
             : base(r, ProductPagesNames.ProductTypes)
         {
             //Units = newItemsList<Unit, UnitData>(u);
-            ProductTypes = newItemsList<IProductType, ProductTypeData>(db);
+            Prices = newPricesList<Price, PriceData>(c);
+            Parties = newPartiesList<IProductType, ProductTypeData>(i);
             Brands = newItemsList<Brand, BrandData>(b);
+            ProductInstances = newInstancesList<IProductType, ProductTypeData>(i);
+            ProductTypes = newItemsList<IProductType, ProductTypeData>(db);
+
         }
+        public IEnumerable<SelectListItem> Prices;
+        public ProductKind ProductKind { get; internal set; }
+
+        public IEnumerable<SelectListItem> Units { get; }
+        public IEnumerable<SelectListItem> Brands { get; }
+        public IEnumerable<SelectListItem> Parties { get; }
+        public IEnumerable<SelectListItem> ProductInstances { get; }
 
         protected internal override Uri pageUrl() => new Uri(ProductPagesUrls.ProductTypes, UriKind.Relative);
 
@@ -34,11 +48,7 @@ namespace Catalog.Pages.Products
             return ProductTypeViewFactory.Create(o);
         }
 
-        public ProductKind ProductKind { get; internal set; }
-
-        public IEnumerable<SelectListItem> Units { get; }
-        public IEnumerable<SelectListItem> Brands { get; }
-
+       
         public Uri CreateUri(ProductKind k) => createUri((int)k);
 
         public override IActionResult OnGetCreate(
@@ -72,7 +82,43 @@ namespace Catalog.Pages.Products
 
         public string UnitName(string id) => itemName(Units, id);
         public string BrandName(string id) => itemName(Brands, id);
-        
+        public string priceAmount(string productInstanceId)
+        {
+            return itemPrice(Prices, productInstanceId).ToString();
+        }
+
+
+        public decimal itemPrice(IEnumerable<SelectListItem> list, string productInstanceId)
+        {
+            if (list is null) return 0;
+
+            foreach (var m in list)
+            {
+                if (m.Value == productInstanceId)
+                    return decimal.Round(Convert.ToDecimal(m.Text), 2, MidpointRounding.AwayFromZero);
+            }
+
+
+            return 0;
+        }
+        public string getPartyId(string productInstanceId)
+        {
+            return partyId(Parties, productInstanceId);
+        }
+
+        public string partyId(IEnumerable<SelectListItem> list, string productInstanceId)
+        {
+            if (list is null) return Word.NotKnown;
+
+            foreach (var m in list)
+            {
+                if (m.Text == productInstanceId)
+                    return m.Value;
+            }
+
+
+            return Word.NotKnown;
+        }
 
 
 

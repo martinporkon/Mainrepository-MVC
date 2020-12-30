@@ -3,7 +3,7 @@
 @using Catalog.Pages.Common.Aids
 @using Catalog.Pages.Common.Consts
 @using Catalog.Pages.Common.Extensions
-@model Catalog.Pages.Products.ProductTypesPage
+@model Catalog.Pages.Products.CatalogPage
 
 @{
     Layout = "_Index";
@@ -14,17 +14,17 @@
 <link rel="stylesheet" href="~/css/catalog/catalog.component.css" />
 
 
-<body>
-    <section class="esh-catalog-filters">
-        <div class="container">
-            <form method="get">
-                <label class="esh-catalog-label" data-title="brand">
-                    <select asp-for="" asp-items="@Model.Brands" class="esh-catalog-filter"></select>
-                </label>
-                <input class="esh-catalog-send" type="image" src="images/arrow-right.svg" />
-            </form>
-        </div>
-    </section>
+<body>  
+    <div class="container">
+        <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+            <ul class="navbar-nav flex-grow-1">
+                @Html.DropMenu("Sorteeri:",
+            new Link(Html.DisplayName("Sorteeri tähestiku järgi"), Model.GetSortString(m => m.Name, page)),
+            new Link(Html.DisplayName("Sorteeri koguse järgi"), Model.GetSortString(m => m.Amount, page))
+            )
+            </ul>
+        </div>                
+    </div>
     <div class="container">
         <div class="esh-catalog-items row">
             @foreach (var item in Model.Items)
@@ -35,15 +35,24 @@
                         <div class="esh-catalog-name">
                             <span>@item.Name @Model.BrandName(item.BrandId) @item.Amount @Model.UnitName(item.UnitId)</span>
                         </div>
-                        <div class="esh-catalog-price">
-                            @await Html.PartialAsync("_PartialPriceView", item.parties)
 
+                        <div class="esh-catalog-prices">
+                            @foreach (var instance in Model.ProductInstances.Where(x => x.Value == item.Id))
+                            {
+                                <div class="esh-catalog-partyname">
+                                    @Html.Raw(Model.getPartyId(instance.Text))
+                                    <div class="esh-catalog-price">
+                                        @Html.Raw(Model.priceAmount(instance.Text))
+                                    </div>
+                                </div>
+                            }
                         </div>
+
                         <input class="esh-catalog-button" type="submit" value="Lisa ostukorvi" />
                         <input type="hidden" asp-for="@item.Id" name="id" />
                         <input type="hidden" asp-for="@item.Name" name="name" />
                         <input type="hidden" asp-for="@item.Image" name="pictureUri" />
-                        <input type="hidden" asp-for="@item.Amount" name="price" />
+                        <input type="hidden" asp-for="@item.Amount" name="amount" />
                     </form>
                 </div>
             }

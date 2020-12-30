@@ -1,0 +1,25 @@
+﻿@model IEnumerable<SooduskorvWebMVC.ComponentBases.PartyInstanceView>;
+
+@{
+    //Layout = "_Index";
+    //var page = Model.PageUrl;
+}
+
+
+
+<body>
+    @foreach (var item in Model)
+    {
+        <div class="esh-catalog-item col-md-4">
+            <form asp-page="/Basket/Index" method="post">
+                @*<img class="esh-catalog-thumbnail" src="@item.Image" width="30" height="30" />*@
+                <div class="esh-catalog-price">
+
+                    @Html.DisplayFor(expression => item.Name)
+                </div>
+
+            </form>
+        </div>
+    }
+
+</body>

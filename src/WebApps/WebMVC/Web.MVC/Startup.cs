@@ -1,3 +1,4 @@
+using System;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Builder;
@@ -10,6 +11,7 @@ using Microsoft.Extensions.Options;
 using Sooduskorv_MVC.Aids.Constants;
 using Sooduskorv_MVC.Middleware.Culture;
 using Sooduskorv_MVC.Middleware.Session;
+using SooduskorvWebMVC.ComponentBases;
 using SooduskorvWebMVC.HttpHandlers;
 using SooduskorvWebMVC.Middleware;
 using SooduskorvWebMVC.PostConfigurationOptions;
@@ -53,6 +55,15 @@ namespace SooduskorvWebMVC
             services.AddSingleton<IPostConfigureOptions<OpenIdConnectOptions>, OpenIdConnectOptionsPostConfigurationOptions>();
             /*services.AddCustomSessions(Configuration);*/
             services.AddScoped<RequestLocalizationMiddleware>();
+            
+
+            // TODO temporary
+            services.AddHttpClient<IBasketService, BasketService>(config =>
+            {
+                config.BaseAddress = new Uri("http://localhost:5000");
+            });
+
+
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IOptions<RequestLocalizationOptions>
@@ -61,16 +72,19 @@ namespace SooduskorvWebMVC
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseWebAssemblyDebugging();
             }
             else
             {
                 app.UseExceptionHandler("/Home/Error");
+                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
             /*app.UseStatusCodePages("text/plain", "Status Code; {0}. Contact support.");*/
             app.UseHttpsRedirection();
             /*app.UseIpRateLimiting();*/
+            app.UseBlazorFrameworkFiles();
             app.UseStaticFiles();
             app.UseRequestLocalization().WithCookies();
             app.UseCookiePolicy();
@@ -93,7 +107,7 @@ namespace SooduskorvWebMVC
                 endpoints.MapCustomEndpointRouteBuilder(Configuration, rlo);// TODO
                 endpoints.MapRazorPages();
                 endpoints.MapBlazorHub();
-                /*endpoints.MapFallbackToPage("/.....");*/
+                /*endpoints.MapFallbackToPage("Server/Pages/_Host.cshtml");*/
             });
         }
     }

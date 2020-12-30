@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using SooduskorvWebMVC.Models;
-using WebMVC.Domain.Services;
 using WebMVC.Domain.Services.Catalog;
 
 namespace SooduskorvWebMVC.Controllers

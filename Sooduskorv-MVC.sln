@@ -95,13 +95,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sooduskorv-MVC.Data", "src\
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sooduskorv-MVC.Aids", "src\Common\Sooduskorv-MVC.Aids\Sooduskorv-MVC.Aids.csproj", "{D548ED1F-8412-4AA9-88B9-5DBA3FA717E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sooduskorv-MVC.Facade", "Sooduskorv-MVC.Facade\Sooduskorv-MVC.Facade.csproj", "{C6C3C193-5292-4AF3-BC37-952E6E0D690F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sooduskorv-MVC.Facade", "Sooduskorv-MVC.Facade\Sooduskorv-MVC.Facade.csproj", "{C6C3C193-5292-4AF3-BC37-952E6E0D690F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sooduskorv-MVC.Infra", "Sooduskorv-MVC.Infra\Sooduskorv-MVC.Infra.csproj", "{DF27E599-2B1F-46F9-8154-5F1EF5E6280D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sooduskorv-MVC.Infra", "Sooduskorv-MVC.Infra\Sooduskorv-MVC.Infra.csproj", "{DF27E599-2B1F-46F9-8154-5F1EF5E6280D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SooduskorvWEB", "SooduskorvWEB\SooduskorvWEB.csproj", "{D68AA14E-0F0B-45E3-B2E5-7498D6F6B5C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SooduskorvWEB", "SooduskorvWEB\SooduskorvWEB.csproj", "{D68AA14E-0F0B-45E3-B2E5-7498D6F6B5C3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEnvironment", "TestEnvironment\TestEnvironment.csproj", "{8EB8C406-F98E-487C-A0E3-42E275D018C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestEnvironment", "TestEnvironment\TestEnvironment.csproj", "{8EB8C406-F98E-487C-A0E3-42E275D018C0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Quantity", "Quantity", "{9D4A156D-54DA-442E-BC54-1D8C18FAD491}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -322,6 +324,7 @@ Global
 		{DF27E599-2B1F-46F9-8154-5F1EF5E6280D} = {52F2373F-C16A-4BBC-BE8B-7E90BF569AAA}
 		{D68AA14E-0F0B-45E3-B2E5-7498D6F6B5C3} = {E9EC62D0-6A1F-4B27-8654-BAA17670C3C7}
 		{8EB8C406-F98E-487C-A0E3-42E275D018C0} = {07D8366C-243D-459F-8550-E7E55DCC906F}
+		{9D4A156D-54DA-442E-BC54-1D8C18FAD491} = {B2BBFD93-6629-4FE4-AC7C-4253D0ADE800}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EE13611F-F2D2-4137-965F-69359A5D24DF}

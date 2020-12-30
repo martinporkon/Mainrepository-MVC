@@ -1,17 +1,19 @@
 ﻿using Catalog.Domain;
 using Catalog.Domain.Common;
+using CommonData;
 using Microsoft.EntityFrameworkCore;
-using Sooduskorv_MVC.Data.CommonData;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
+using System.Text;
 
-namespace Catalog.Infra.Common
+namespace Sooduskorv_MVC.Infra
 {
     public abstract class SortedRepository<TDomain, TData> : BaseRepository<TDomain, TData>, ISorting
-       where TDomain : IEntity<TData>
-       where TData : PeriodData, new()
+        where TDomain : IEntity<TData>
+        where TData : UniqueEntityData, new()
     {
 
         public virtual string SortOrder { get; set; }

@@ -1,6 +1,6 @@
-﻿using Aids.Methods;
-using Catalog.Data.CatalogEntries;
+﻿using Catalog.Data.CatalogEntries;
 using Catalog.Domain.Catalog;
+using Sooduskorv_MVC.Aids.Methods;
 
 namespace Catalog.Facade.Catalog
 {

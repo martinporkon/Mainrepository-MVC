@@ -1,9 +1,6 @@
-﻿using Aids.Methods;
-using Catalog.Data.CatalogedProducts;
+﻿using Catalog.Data.CatalogedProducts;
 using Catalog.Domain.Catalog;
-using System;
-using System.Collections.Generic;
-using System.Text;
+using Sooduskorv_MVC.Aids.Methods;
 
 namespace Catalog.Facade.Catalog
 {

@@ -1,16 +1,18 @@
 ﻿using Catalog.Domain;
 using Catalog.Domain.Common;
+using CommonData;
 using Microsoft.EntityFrameworkCore;
-using Sooduskorv_MVC.Data.CommonData;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
+using System.Text;
 
-namespace Catalog.Infra.Common
+namespace Sooduskorv_MVC.Infra
 {
     public abstract class FilteredRepository<TDomain, TData> : SortedRepository<TDomain, TData>, IFiltering
        where TDomain : IEntity<TData>
-       where TData : PeriodData, new()
+       where TData : UniqueEntityData, new()
     {
 
         public string SearchString { get; set; }

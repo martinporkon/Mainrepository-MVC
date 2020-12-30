@@ -1,15 +1,18 @@
 ﻿using Catalog.Domain;
 using Catalog.Domain.Common;
+using CommonData;
 using Microsoft.EntityFrameworkCore;
-using Sooduskorv_MVC.Data.CommonData;
-using System;
-using System.Linq;
 
-namespace Catalog.Infra.Common
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace Sooduskorv_MVC.Infra
 {
     public abstract class PaginatedRepository<TDomain, TData> : FilteredRepository<TDomain, TData>, IPaging
         where TDomain : IEntity<TData>
-        where TData : PeriodData, new()
+        where TData : UniqueEntityData, new()
     {
 
         public int PageIndex { get; set; }

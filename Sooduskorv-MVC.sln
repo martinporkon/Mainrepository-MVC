@@ -151,6 +151,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebMVC.Bff.HttpAggregator.T
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sooduskorv_MVC.Areas", "src\Common\Sooduskorv_MVC.Areas\Sooduskorv_MVC.Areas.csproj", "{037889D9-F689-4398-B3A6-1676D4A6144D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sooduskorv_MVC.Facade", "Sooduskorv_MVC.Facade\Sooduskorv_MVC.Facade.csproj", "{615FDDD1-160A-4230-BF58-B87774113BFD}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		src\Common\Sooduskorv_MVC.Shared\Sooduskorv_MVC.Shared.projitems*{07f2497d-15b5-44a2-8e8d-ba463d4cf3a2}*SharedItemsImports = 5
@@ -394,6 +396,10 @@ Global
 		{037889D9-F689-4398-B3A6-1676D4A6144D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{037889D9-F689-4398-B3A6-1676D4A6144D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{037889D9-F689-4398-B3A6-1676D4A6144D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{615FDDD1-160A-4230-BF58-B87774113BFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{615FDDD1-160A-4230-BF58-B87774113BFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{615FDDD1-160A-4230-BF58-B87774113BFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{615FDDD1-160A-4230-BF58-B87774113BFD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -471,6 +477,7 @@ Global
 		{6089C04E-2177-498E-91FF-E9AC11261B4E} = {40785CBB-B3A8-4FCB-8C51-31A93A7A63F3}
 		{D8576FFE-4F4F-43D5-ACE0-F94EA763EBDD} = {40785CBB-B3A8-4FCB-8C51-31A93A7A63F3}
 		{037889D9-F689-4398-B3A6-1676D4A6144D} = {52F2373F-C16A-4BBC-BE8B-7E90BF569AAA}
+		{615FDDD1-160A-4230-BF58-B87774113BFD} = {52F2373F-C16A-4BBC-BE8B-7E90BF569AAA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EE13611F-F2D2-4137-965F-69359A5D24DF}

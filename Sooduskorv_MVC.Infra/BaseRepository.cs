@@ -1,17 +1,18 @@
-﻿using Catalog.Domain;
+﻿using Aids.Methods;
+using Catalog.Domain;
 using Catalog.Domain.Common;
+using CommonData;
 using Microsoft.EntityFrameworkCore;
-using Sooduskorv_MVC.Aids.Methods;
-using Sooduskorv_MVC.Data.CommonData;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Catalog.Infra.Common
+namespace Sooduskorv_MVC.Infra
 {
     public abstract class BaseRepository<TDomain, TData> : ICrudMethods<TDomain>, IRepository
         where TDomain : IEntity<TData>
-        where TData : PeriodData, new()
+        where TData : UniqueEntityData, new()
     {
 
         protected internal DbContext db;

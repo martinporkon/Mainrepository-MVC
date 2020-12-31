@@ -11,6 +11,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using Nupp.Services;
 using Nupp.Views.Home;
+using Nupp.Views.Home.Button;
 
 namespace Nupp
 {
@@ -34,6 +35,7 @@ namespace Nupp
             services.AddScoped<ViewState>();
             services.AddScoped<NotifierService>();
             services.AddScoped<CartItemState>();
+            services.AddScoped<SendBasketItemBase>();
             services.AddOptions();
             services.AddSingleton<PageSettings>();
             services.AddHttpClient<IBasketService, BasketService>(client =>
@@ -63,10 +65,12 @@ namespace Nupp
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            /*app.UseAuthorization();*/
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapRazorPages();
+                endpoints.MapControllers();
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");

@@ -4,10 +4,16 @@
 @using Nupp.Views.Home.Button
 @inject IJSRuntime Js;
 @inject SendBasketItemBase A;
-@model Nupp.Views.Home.ProductTypeView
+
+@model IEnumerable<ProductTypeView>
 
 @{
-    var item = new ProductTypeView();
+    var Item = new List<ProductTypeView>
+{
+        new ProductTypeView(),
+        new ProductTypeView(),
+        new ProductTypeView()
+    };
     Layout = "_Layout";
 }
 
@@ -17,38 +23,71 @@
 <body>
     <h1>@A.TotalSelectedItemsCount</h1>
     <div class="container">
-        @(await Html.RenderComponentAsync<CatalogItems>(RenderMode.WebAssemblyPrerendered,
-            new { Products = Model}))@*TODO basket andmed on ka juba siin arrays olemas
-                                         TODO annab edasi iga toote numbri palju seda on valitud*@
-        </div>
-    </body>
-    @(await Html.RenderComponentAsync<SendBasketItemBase>(RenderMode.ServerPrerendered, Model))
-    <script>
-        function showAlert(message) {
-            alert(message);
+        @*@(await Html.RenderComponentAsync<CatalogItems>(RenderMode.WebAssemblyPrerendered, new {Products = new List<ProductTypeView>
+            {
+                new ProductTypeView { },
+                new ProductTypeView { },
+                new ProductTypeView { }
+            }}))*@ss
+        @foreach (var item in Item)
+        {
+            <div class="esh-catalog-item col-md-4">
+                @*<form asp-page="/Basket/Index" method="post">*@
+                    <img class="esh-catalog-thumbnail" src="https://m1.selver.ee/media/catalog/product/cache/1/image/409x/9df78eab33525d08d6e5fb8d27136e95/4/7/4740125000108_2.jpg" />
+                    <div class="esh-catalog-name">
+                        <span>@item.Name @item.BrandId @item.Amount @item.UnitId</span>
+                    </div>
+                    @*<div class="esh-catalog-price">
+                            @await Html.PartialAsync("_PartialPriceView", item.Parties)
+                        </div>*@
+
+                    @*$2$$4$<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>#4##2#
+
+                        $2$$4$<component type="typeof(CatalogItemsBase)" render-mode="WebAssembly" />#4#
+                            $4$<component type="typeof(CatalogItemsBase)" render-mode="WebAssemblyPrerendered" />#4##2#*@
+
+                    @*<component type="typeof(CatalogItem)" render-mode="WebAssembly" />*@
+                    @*<CataglogItem></CataglogItem>*@
+                    @(await Html.RenderComponentAsync<CatalogItem>(RenderMode.WebAssemblyPrerendered, new { Product = item}))
+                    @*<CatalogItem OnProductSelected="ProductSelectionChanged"
+                                     Product="@item">
+                        </CatalogItem>*@
+                    @*$2$$4$<input type="hidden" asp-for="@item.Id" name="id" />
+                        <input type="hidden" asp-for="@item.Name" name="name" />
+                        <input type="hidden" asp-for="@item.Image" name="pictureUri" />
+                        <input type="hidden" asp-for="@item.Amount" name="price" />#4##2#*@
+                @*</form>*@
+            </div>
         }
-    </script>
-
-    <div class="text-center">
-        <h1 class="display-4">Welcome</h1>
-        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
     </div>
-
-    @section Scripts {
-        <script src="~/_framework/blazor.webassembly.js"></script>
+</body>
+@*@(await Html.RenderComponentAsync<SendBasketItemBase>(RenderMode.ServerPrerendered/*,#1# Model*/))*@
+<script>
+    function showAlert(message) {
+        alert(message);
     }
+</script>
 
-    @*Ostukorvi vaate jaoks*@
-    @*<div class="card">
-            <img class="esh-catalog-thumbnail" src="https://m1.selver.ee/media/catalog/product/cache/1/image/409x/9df78eab33525d08d6e5fb8d27136e95/4/7/4740125000108_2.jpg" />
-            <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            </div>
-            <div class="esh-catalog-price">
-                @await Html.PartialAsync("_PartialPriceView", item.Parties)
-            </div>
-            <div class="card-footer">
-                <small class="text-muted">Last updated 3 mins ago</small>
-            </div>
-        </div>*@
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+@*@section Scripts {
+    <script src="~/_framework/blazor.webassembly.js"></script>
+}*@
+
+@*Ostukorvi vaate jaoks*@
+@*<div class="card">
+        <img class="esh-catalog-thumbnail" src="https://m1.selver.ee/media/catalog/product/cache/1/image/409x/9df78eab33525d08d6e5fb8d27136e95/4/7/4740125000108_2.jpg" />
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+        <div class="esh-catalog-price">
+            @await Html.PartialAsync("_PartialPriceView", item.Parties)
+        </div>
+        <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+        </div>
+    </div>*@

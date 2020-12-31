@@ -6,6 +6,7 @@
 @using Microsoft.AspNetCore.Components.Web
 @using Microsoft.JSInterop
 @using Nupp.Services
+
 @inherits Views.Home.Button.CatalogItemBase
 <style type="text/css">
     .esh-catalog-button-add {
@@ -33,19 +34,18 @@
     }
 </style>
 
-@if (Product.ProductsInUserBasket == 0)
-{
-    <input class="esh-catalog-button-add" @onclick="@AddToBasketChanged" }
-           type="submit" value="Lisa ostukorvi" />
-}
-else if (Product.ProductsInUserBasket > 0)
-{
-    <input class="esh-catalog-button-remove" @onclick="@RemoveBasketChanged"
-           type="submit" value="Eemalda" />
-    <input class="esh-catalog-button-add" @onclick="@AddToBasketChanged"
-           type="submit" value="Lisa" />
-    // TODO two-buttons with add and remove buttons. Different colors.
-}
+@*@if (Product.ProductsInUserBasket == 0)
+    {*@
+<input class="esh-catalog-button-add" @onclick="@AddToBasketChanged" value="Lisa ostukorvi" />
+@*}
+    else if (Product.ProductsInUserBasket > 0)
+    {
+        <input class="esh-catalog-button-remove" @onclick="@RemoveBasketChanged"
+               type="submit" value="Eemalda" />
+        <input class="esh-catalog-button-add" @onclick="@AddToBasketChanged"
+               type="submit" value="Lisa" />
+        // TODO two-buttons with add and remove buttons. Different colors.
+    }*@
 
 @code {
     /*[Parameter] public BasketDto BasketItem { get; set; }

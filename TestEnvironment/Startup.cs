@@ -1,3 +1,4 @@
+using System;
 using Catalog.API.Data;
 using Catalog.Infra;
 using Catalog.Infra.Catalog;
@@ -7,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using TestEnvironment.Areas.Products.Pages;
 
 namespace TestEnvironment
 {
@@ -23,6 +25,7 @@ namespace TestEnvironment
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddServerSideBlazor();
             services.AddDbContext<CatalogApplicationDbContext>(options =>
             {
                 options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=CatalogDB;Trusted_Connection=True;");
@@ -32,6 +35,13 @@ namespace TestEnvironment
                 options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=CatalogDB;Trusted_Connection=True;");
             });
             registerRepositories(services);
+            services.AddScoped<ViewState>();
+            services.AddScoped<SendBasketItemBase>();
+            services.AddScoped<CatalogItemBase>();
+            services.AddHttpClient<IBasketService, BasketService>(client =>
+            {
+                client.BaseAddress = new Uri("http://localhost:5000");
+            });
 
         }
         private void registerRepositories(IServiceCollection services)
@@ -64,6 +74,7 @@ namespace TestEnvironment
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
+                endpoints.MapBlazorHub();
             });
         }
     }

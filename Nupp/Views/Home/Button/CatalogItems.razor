@@ -1,8 +1,8 @@
 ﻿@inherits DisplayBasketItemBase
 @using Microsoft.AspNetCore.Components.Web
 @using Microsoft.JSInterop
+@inject ViewState ViewState;
 @inject IJSRuntime Js;
-
 <div class="esh-catalog-items row">
     <div class="card-deck">
         @foreach (var item in Products)
@@ -25,7 +25,8 @@
                 @*<component type="typeof(CatalogItem)" render-mode="WebAssemblyPrerendered"
                     value="" />*@
                 <CatalogItem OnProductSelected="ProductSelectionChanged"
-                             Product="@item">
+                             Product="@item"
+                             OnProductRemoved="ProductSelectionRemovedChanged">
                 </CatalogItem>
                 @*$2$$4$<input type="hidden" asp-for="@item.Id" name="id" />
                     <input type="hidden" asp-for="@item.Name" name="name" />
@@ -43,11 +44,22 @@
 
     private int ProductCount;
 
-    protected void ProductSelectionChanged(ProductTypeView Product)
+
+
+    protected async Task ProductSelectionChanged(ProductTypeView Product)
     {
         this.ProductCount = Product.ProductsInUserBasket;
+        /*CatalogItemState*/
+        ViewState.Product = Product;
+        ViewState.NotifyStateChanged();
+    }
 
-
+    protected async Task ProductSelectionRemovedChanged(ProductTypeView Product)
+    {
+        this.ProductCount = Product.ProductsInUserBasket;
+        /*CatalogItemState*/
+        ViewState.Product = Product;
+        ViewState.NotifyStateRemoveChanged();
     }
     //TODO ostukorvi lisatakase vale toode?
 

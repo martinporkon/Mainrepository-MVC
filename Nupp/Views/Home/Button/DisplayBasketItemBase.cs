@@ -10,6 +10,10 @@ namespace Nupp.Views.Home.Button
     {
         [Parameter]
         public BasketDto BasketItem { get; set; }
+        public async Task OnNotify()
+        {
+            await InvokeAsync(StateHasChanged);
+        }
 
         [Parameter]
         public IEnumerable<ProductTypeView> Products { get; set; }

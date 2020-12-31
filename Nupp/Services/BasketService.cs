@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
+using Nupp.Views.Home;
 
 namespace Nupp.Services
 {
@@ -12,7 +13,7 @@ namespace Nupp.Services
 
         public BasketService()
         {
-            
+
         }
 
         public BasketService(HttpClient httpClient)
@@ -20,8 +21,9 @@ namespace Nupp.Services
             _httpClient = httpClient;
         }
 
-        public async Task<IEnumerable<Basket>> PostToBasket()
+        public async Task<IEnumerable<Basket>> PostToBasket(ProductTypeView p)
         {
+            var toBasketP = p;
             var address = new Uri("http://localhost:5000/api/products");
             var values = new Dictionary<string, string> {
                 { "id", "Data you want to send at id field" },
@@ -33,7 +35,7 @@ namespace Nupp.Services
             var content = new FormUrlEncodedContent(values);
 
             var test2 = _httpClient.PostAsync(address, content).Result;
-            return new List<Basket> { new Basket { }};
+            return new List<Basket> { new Basket { } };
         }
     }
 }

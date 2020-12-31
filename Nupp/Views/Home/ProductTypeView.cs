@@ -15,6 +15,11 @@ namespace Nupp.Views.Home
             new PartyInstanceView() { Name = "test2"},
             new PartyInstanceView() { Id = "123"},
         };
-        public int ProductsInUserBasket { get; set; } = 0;
+
+        public int ProductsInUserBasket
+        {
+            get;//TODO if lower than zero. Set to zero.
+            set;//TODO if lower than zero. Set to zero.
+        } = 0;
     }
 }

@@ -39,7 +39,7 @@ namespace Nupp
             /*services.AddHttpClient("APIClient");*/
             services.AddScoped<ViewState>();
             services.AddScoped<NotifierService>();
-            services.AddScoped<CartItemState>();
+            services.AddScoped<CatalogItemState>();
             services.AddScoped<SendBasketItemBase>();
             services.AddScoped<CatalogItemBase>();
             services.AddOptions();
@@ -48,6 +48,7 @@ namespace Nupp
             {
                 client.BaseAddress = new Uri("http://localhost:5000");
             });
+            services.AddResponseCompression(options => { });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

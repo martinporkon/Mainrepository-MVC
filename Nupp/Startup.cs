@@ -30,10 +30,10 @@ namespace Nupp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddRazorPages();/*options =>
-            {
+            services.AddRazorPages();/*options =>*/
+            /*{
                 options.RootDirectory = "/Views";
-            });*/
+            });#1#*/
             services.AddServerSideBlazor();
 
             /*services.AddHttpClient("APIClient");*/
@@ -76,10 +76,11 @@ namespace Nupp
 
             app.UseEndpoints(endpoints =>
             {
-                /*endpoints.MapRazorPages();*/
+                endpoints.MapRazorPages();
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllers();
                 endpoints.MapBlazorHub();
                 /*endpoints.MapFallbackToPage("/_Host");*/
             });

@@ -7,16 +7,7 @@
 @using Microsoft.JSInterop
 @using Nupp.Services
 @inherits Views.Home.Button.CatalogItemBase
-@*TODO sai selle toote COUNT into teada. Kui palju seda on.*@
-@*TODO Nüüd renderdab vastavalt sellele endale nupud.*@
 <style type="text/css">
-    /*TODO*/
-    .delete-item {
-    }
-
-    .cart-item {
-    }
-
     .esh-catalog-button-add {
         background-color: #83D01B;
         border: 0;
@@ -42,21 +33,23 @@
     }
 </style>
 
-@*<div class="esh-catalog-button" value="Lisa ostukorvi" @onclick="IncrementCount">
-        $1$<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>#1#
-    </div>*@
-
-@{ RenderButton();};
-
-@*TODO Kui väärtus läheb nulli. Siis Vahetatakse ära teine RenderFragment komponendile. Mis on iseseisev.*@
-
+@if (Product.ProductsInUserBasket == 0)
+{
+    <input class="esh-catalog-button-add" @onclick="@AddToBasketChanged" }
+           type="submit" value="Lisa ostukorvi" />
+}
+else if (Product.ProductsInUserBasket > 0)
+{
+    <input class="esh-catalog-button-remove" @onclick="@RemoveBasketChanged"
+           type="submit" value="Eemalda" />
+    <input class="esh-catalog-button-add" @onclick="@AddToBasketChanged"
+           type="submit" value="Lisa" />
+    // TODO two-buttons with add and remove buttons. Different colors.
+}
 
 @code {
     /*[Parameter] public BasketDto BasketItem { get; set; }
     [Parameter] public EventCallback<MouseEventArgs> OnClickCallback { get; set; }*/
-
-    /*[Parameter]
-    public int ProductCount { get; set; }*/
 
     [Parameter]
     public ProductTypeView Product { get; set; }
@@ -64,30 +57,9 @@
     [Parameter]
     public EventCallback<ProductTypeView> OnProductSelected { get; set; }
 
-    public void RenderButton()
-    {
-        if (Product.ProductsInUserBasket == 0)
-        {
-            <input class="esh-catalog-button-add" @onclick="@AddToBasketChanged"
-                   type="submit" value="Lisa ostukorvi" />
-        }
-        else if (Product.ProductsInUserBasket > 0)
-        {
-            <input class="esh-catalog-button-remove" @onclick="@RemoveBasketChanged"
-                   type="submit" value="Eemalda" />
-            <input class="esh-catalog-button-add" @onclick="@AddToBasketChanged"
-                   type="submit" value="Lisa" />
-            // TODO two-buttons with add and remove buttons. Different colors.
-        }
-        /*StateHasChanged();*/
-        //TODO ProductCount < 0?
-    }
-
     public async Task AddToBasketChanged()
-    {// Render Fragment based on Product Count for this product.
+    {
         Product.ProductsInUserBasket++;
-
-        /*StateHasChanged();*/
         await OnProductSelected.InvokeAsync(Product);
         this.StateHasChanged();
     }
@@ -102,46 +74,4 @@
         await OnProductSelected.InvokeAsync(Product);
         this.StateHasChanged();
     }
-
-
-    /*readonly RenderFragment RenderButtonNotSelected = __builder =>
-    {
-
-
-    // TODO + JsInterop for selecting buttons and deselecting buttons.
-    };
-
-    readonly RenderFragment RenderButtonSelected = __builder =>
-    {
-
-    // TODO + JsInterop for selecting buttons and deselecting buttons.
-    };*/
 }
-
-
-
-
-@*/*Task IncrementCount()
-    {
-    //var test = HttpClient.CreateClient("APIClient");
-    //var address = new Uri("http://localhost:5000/api/products");
-    //var values = new Dictionary<string, string> {
-    //        { "accountidentifier", "Data you want to send at account field" },
-    //        { "type", "Data you want to send at type field"},
-    //        { "seriesid", "The data you went to send at seriesid field"
-    //        }
-    //    };
-
-    ////form "postable object" if that makes any sense
-    //var content = new FormUrlEncodedContent(values);
-
-    var test2 = Js.InvokeVoidAsync("showAlert", "test2");
-
-    var foo = BasketService.PostToBasket().Result;
-    return Task.CompletedTask;
-    }*/
-
-    /*readonly List<RenderFragment> _buttonComponents = new List<RenderFragment> {
-    RenderButtonNotSelected,TODO had problems here with compiler
-    RenderButtonSelected
-    };*/*@

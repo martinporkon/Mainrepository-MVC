@@ -45,7 +45,6 @@
     <ProjectReference Include="..\..\src\WebApps\WebMVC.Facade\WebMVC.Facade.csproj" />
     <ProjectReference Include="..\..\src\WebApps\WebMVC.Pages\WebMVC.Pages.csproj" />
     <ProjectReference Include="..\..\src\WebApps\WebMVC.Tests\WebMVC.Tests.csproj" />
-    <ProjectReference Include="..\..\src\WebApps\WebMvc\SooduskorvWebMVC.csproj" />
   </ItemGroup>
 
 </Project>

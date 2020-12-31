@@ -40,7 +40,7 @@ namespace Quantity.Infra {
                 addItem(
                     new SystemOfUnitsData {
                         Id = d.Id,
-                        Code = d.Code,
+                        /*Code = d.Code,*/
                         Name = d.Name,
                         Definition = d.Definition
                     }, db);
@@ -98,7 +98,7 @@ namespace Quantity.Infra {
             addItem(
                 new MeasureData {
                     Id = measure.Id,
-                    Code = measure.Code,
+                    /*Code = measure.Code,*/
                     Name = measure.Name,
                     Definition = measure.Definition
                 }, db);
@@ -116,7 +116,7 @@ namespace Quantity.Infra {
                     new UnitData {
                         MeasureId = measureId,
                         Id = d.Id,
-                        Code = d.Code,
+                        /*Code = d.Code,*/
                         Name = d.Name,
                         Definition = d.Definition
                     }, db);

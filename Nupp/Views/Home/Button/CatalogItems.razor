@@ -5,7 +5,7 @@
 
 <div class="esh-catalog-items row">
     <div class="card-deck">
-        @foreach (var item in Products)@*TODO saab need andmed iga toote kohta palj mitu korda on seda toodet ostukorvi pandud*@
+        @foreach (var item in Products)
         {
             <div class="esh-catalog-item col-md-4">
                 <form asp-page="/Basket/Index" method="post">
@@ -26,7 +26,7 @@
                                value="" />*@
                     <CatalogItem OnProductSelected="ProductSelectionChanged"
                                  Product="@item">
-                    </CatalogItem>@*TODO annab selle COUNT info teada siia*@
+                    </CatalogItem>
                     @*$2$$4$<input type="hidden" asp-for="@item.Id" name="id" />
                         <input type="hidden" asp-for="@item.Name" name="name" />
                         <input type="hidden" asp-for="@item.Image" name="pictureUri" />

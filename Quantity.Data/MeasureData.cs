@@ -9,7 +9,7 @@ namespace Quantity.Data {
  
         public MeasureData(string n=null, string c=null, string d=null, MeasureType t = MeasureType.Unspecified) {
             Name = n;
-            Code = c;
+            /*Code = c*/;
             Definition = d;
             MeasureType = t;
         }

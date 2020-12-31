@@ -11,7 +11,7 @@ namespace Quantity.Data
         public UnitData(string measureId, string n=null, string c= null, string d= null, UnitType t=UnitType.Unspecified) {
             MeasureId = measureId;
             Name = n;
-            Code = c;
+            /*Code = c;*/
             Definition = d;
             UnitType = t;
         }

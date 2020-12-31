@@ -8,6 +8,7 @@ namespace Quantity.Domain.Common {
 
         public virtual string Definition => Data?.Definition?? Unspecified;
 
+        public string Code { get; }
     }
 
 }

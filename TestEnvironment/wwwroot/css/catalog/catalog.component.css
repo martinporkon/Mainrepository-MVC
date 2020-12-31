@@ -15,7 +15,7 @@
 
 .esh-catalog-filter {
     -webkit-appearance: none;
-    background-color: ##FFFAF0;
+    background-color: #FFFAF0;
     border-color: #00d9cc;
     color: #FFFFFF;
     cursor: pointer;
@@ -125,19 +125,8 @@
     text-transform: uppercase;
 }
 
-.esh-catalog-sidenav {
-    height: 100%;
-    width: 160px; /* Set the width of the sidebar */
-    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
-    z-index: 1; /* Stay on top */
-    top: 0; /* Stay at the top */
-    left: 0;
-    background-color: #F0F8FF;
-    overflow-x: hidden; /* Disable horizontal scroll */
-    padding-top: 20px;
-}
 .esh-catalog-accordion {
-    background-color: #eee;
+    background-color: #00BFFF;
     color: #444;
     cursor: pointer;
     padding: 18px;
@@ -149,10 +138,13 @@
 }
 .esh-catalog-panel {
     padding: 0 18px;
-    background-color: white;
+    background-color: #E0FFFF;
     display: none;
     overflow: hidden;
 }
+
+
+
 
 
 .esh-catalog-price {
@@ -162,3 +154,15 @@
     .esh-catalog-price::after {
         content: '€';
     }
+.esh-catalog-sidenav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 160px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #FFFFFF; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+}
+

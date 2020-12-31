@@ -42,10 +42,5 @@ namespace TestEnvironment.Areas.Products.Pages
         {
             StateHasChanged();
         }
-        /*
-        public int TotalSelectedItemsCount { get; set; } = 0;
-        [Parameter]
-        public RenderFragment CustomMessage { get; set; }
-        */
     }
 }

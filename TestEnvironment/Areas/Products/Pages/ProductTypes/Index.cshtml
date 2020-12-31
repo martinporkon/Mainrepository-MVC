@@ -80,8 +80,15 @@
     <div class="container">
         <component type="typeof(SendBasketItem)" render-mode="ServerPrerendered" />
         <hr />
-        @(await Html.RenderComponentAsync<CatalogItems>(RenderMode.ServerPrerendered,
-            new { Products = Model }))
+        @(await Html.RenderComponentAsync<CatalogItems>(RenderMode.ServerPrerendered,new
+        {
+            Products = new List<ProductTypeView>
+            {
+                new ProductTypeView {},
+                new ProductTypeView {},
+                new ProductTypeView {}
+            }
+        }))
     </div>
     @(await Html.RenderComponentAsync<SendBasketItemBase>(RenderMode.ServerPrerendered))
 </body>

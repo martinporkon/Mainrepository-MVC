@@ -29,10 +29,11 @@
             <div class="esh-catalog-panel">
                 @foreach (var category in Model.BaseCategories.Where(x => x.Text == basecategory.Value))
                 {
-
+                <p>
                     @Html.DisplayName(Model.CategoryName(category.Value))
-                }
-            </div>
+                </p>
+                    }
+</div>
         }
 
 
@@ -82,4 +83,5 @@
         }))
     </div>
     @(await Html.RenderComponentAsync<SendBasketItemBase>(RenderMode.ServerPrerendered))
+    <script src="~/_framework/blazor.server.js"></script>
 </body>

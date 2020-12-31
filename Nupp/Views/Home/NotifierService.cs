@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace Nupp.Views.Home
+namespace Nupp.Views.Home.Button
 {
     public class NotifierService
     {

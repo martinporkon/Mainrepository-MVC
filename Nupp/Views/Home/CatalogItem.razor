@@ -9,6 +9,7 @@
 
 @inherits Views.Home.Button.CatalogItemBase
 <style type="text/css">
+
     .esh-catalog-button-add {
         background-color: #83D01B;
         border: 0;
@@ -22,7 +23,7 @@
     }
 
     .esh-catalog-button-remove {
-        background-color: #990000;
+        background-color: #ff3333;
         border: 0;
         color: #FFFFFF;
         cursor: pointer;
@@ -33,19 +34,19 @@
         width: 80%;
     }
 </style>
-
-@*@if (Product.ProductsInUserBasket == 0)
-    {*@
-<input class="esh-catalog-button-add" @onclick="@AddToBasketChanged" value="Lisa ostukorvi" />
-@*}
-    else if (Product.ProductsInUserBasket > 0)
-    {
-        <input class="esh-catalog-button-remove" @onclick="@RemoveBasketChanged"
-               type="submit" value="Eemalda" />
-        <input class="esh-catalog-button-add" @onclick="@AddToBasketChanged"
-               type="submit" value="Lisa" />
-        // TODO two-buttons with add and remove buttons. Different colors.
-    }*@
+<h5>Items: @Product.ProductsInUserBasket</h5>
+@if (Product.ProductsInUserBasket == 0)
+{
+    <input class="esh-catalog-button-add" @onclick="@AddToBasketChanged" value="Lisa ostukorvi" />
+}
+else if (Product.ProductsInUserBasket > 0)
+{
+    <input class="esh-catalog-button-remove" @onclick="@RemoveBasketChanged"
+           type="submit" value="Eemalda" />
+    <input class="esh-catalog-button-add" @onclick="@AddToBasketChanged"
+           type="submit" value="Lisa" />
+    // TODO two-buttons with add and remove buttons. Different colors.
+}
 
 @code {
     /*[Parameter] public BasketDto BasketItem { get; set; }
@@ -56,6 +57,8 @@
 
     [Parameter]
     public EventCallback<ProductTypeView> OnProductSelected { get; set; }
+    [Parameter]
+    public EventCallback<ProductTypeView> OnProductRemoved { get; set; }
 
     public async Task AddToBasketChanged()
     {
@@ -71,7 +74,7 @@
         {
             Product.ProductsInUserBasket = 0;
         }
-        await OnProductSelected.InvokeAsync(Product);
+        await OnProductRemoved.InvokeAsync(Product);
         this.StateHasChanged();
     }
 }

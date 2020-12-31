@@ -1,12 +1,19 @@
 ﻿@using Catalog.Pages.Common.Aids
 @using Catalog.Pages.Common.Consts
 @using Catalog.Pages.Common.Extensions
+@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.AspNetCore.Components.WebAssembly
+@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.JSInterop
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, Microsoft.AspNetCore.Razor.TagHelpers
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - TestEnvironment</title>
+    <base href="~/" />
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
@@ -28,7 +35,6 @@
                             new Link(ProductPagesNames.ProductInstances, ProductPagesUrls.ProductInstances),
                             new Link(ProductPagesNames.ProductTypes, ProductPagesUrls.ProductTypes))
 
-
                         @Html.DropMenu("Help",
                             new Link("About", new Uri("/Index", UriKind.Relative)),
                             new Link("Privacy", new Uri("/Privacy", UriKind.Relative)))
@@ -45,14 +51,15 @@
 
     <footer class="border-top footer text-muted">
         <div class="container">
-            &copy; 2020 - TestEnvironment - <a asp-area="" asp-page="/Privacy">Privacy</a>
+            &copy; @DateTime.Now.Year - TestEnvironment - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-
-    @RenderSection("Scripts", required: false)
+    <script src="~/_framework/blazor.server.js"></script>
+    <script src="~/_framework/blazor.webassembly.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>

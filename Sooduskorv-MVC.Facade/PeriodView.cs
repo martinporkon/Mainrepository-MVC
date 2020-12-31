@@ -10,11 +10,11 @@ namespace Sooduskorv_MVC.Facade
     {
         [DataType(DataType.Date)]
         [DisplayName("Valid From")]
-        public DateTime? ValidFrom { get; set; }
+        public DateTime? ValidFrom { get; set; } = DateTime.Now;
 
         [DataType(DataType.Date)]
         [DisplayName("Valid To")]
-        public DateTime? ValidTo { get; set; }
+        public DateTime? ValidTo { get; set; } = DateTime.UtcNow;
 
         public override string GetId() => Id;
     }

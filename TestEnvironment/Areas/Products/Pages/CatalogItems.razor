@@ -1,9 +1,6 @@
 ﻿@inherits DisplayBasketItemBase
 @using Catalog.Facade.Product
 @using Microsoft.JSInterop
-@using System.Net.Http
-@using Microsoft.AspNetCore.Components.Web
-@using Microsoft.JSInterop
 @inject ViewState ViewState;
 @inject IJSRuntime Js;
 <hr />
@@ -16,6 +13,7 @@
                 <div class="esh-catalog-name">
                     <span>@item.Name @item.BrandId @item.Amount @item.UnitId</span>
                 </div>
+                @{ var a = "";}
                 @*<div class="esh-catalog-price">
                         @await Html.PartialAsync("_PartialPriceView", item.Parties)
                     </div>*@

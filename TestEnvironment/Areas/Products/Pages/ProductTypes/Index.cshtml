@@ -4,22 +4,21 @@
 @using Catalog.Pages.Common.Aids
 @using Catalog.Pages.Common.Consts
 @using Catalog.Pages.Common.Extensions
+@using Microsoft.AspNetCore.Components;
+@using Microsoft.AspNetCore.Mvc.TagHelpers
 @using TestEnvironment.Areas.Products.Pages
 @model Catalog.Pages.Products.CatalogPage
 @using System.Net.Http
-@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.AspNetCore.Components.WebAssembly
 @using Microsoft.JSInterop
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, Microsoft.AspNetCore.Razor.TagHelpers
 
 @{
     Layout = "_Index";
     var page = Model.PageUrl;
 }
-
-
 <link rel="stylesheet" href="~/css/catalog/catalog.component.css" />
-
-
-
 
 <body>
     <div class="esh-catalog-sidenav">
@@ -31,11 +30,8 @@
                 <div class="esh-catalog-panel">
                     @Html.DisplayName(Model.CategoryName(category.Value))
                 </div>
-
             }
         }
-
-
         <button class="esh-catalog-accordion">Liha</button>
         <div class="esh-catalog-panel">
             <p>Kanaliha</p>
@@ -46,49 +42,40 @@
             <p>Piim</p>
         </div>
     </div>
-    <script>
-        var acc = document.getElementsByClassName("esh-catalog-accordion");
-        var i;
 
-        for (i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function () {
-                /* Toggle between adding and removing the "active" class,
-                to highlight the button that controls the panel */
-                this.classList.toggle("active");
+    @Html.DropMenu("Sorteeri:",
+        new Link(Html.DisplayName("Sorteeri tähestiku järgi"), Model.GetSortString(m => m.Name, page)),
+        new Link(Html.DisplayName("Sorteeri koguse järgi"), Model.GetSortString(m => m.Amount, page))
+        )
 
-                /* Toggle between hiding and showing the active panel */
-                var panel = this.nextElementSibling;
-                if (panel.style.display === "block") {
-                    panel.style.display = "none";
-                } else {
-                    panel.style.display = "block";
-                }
-            });
-        }
-    </script>
-
-    <div class="container">
-        <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
-            <ul class="navbar-nav flex-grow-1">
-                @Html.DropMenu("Sorteeri:",
-            new Link(Html.DisplayName("Sorteeri tähestiku järgi"), Model.GetSortString(m => m.Name, page)),
-            new Link(Html.DisplayName("Sorteeri koguse järgi"), Model.GetSortString(m => m.Amount, page))
-            )
-            </ul>
-        </div>
-    </div>
     <div class="container">
         <component type="typeof(SendBasketItem)" render-mode="ServerPrerendered" />
-        <hr />
-        @(await Html.RenderComponentAsync<CatalogItems>(RenderMode.ServerPrerendered,new
-        {
-            Products = new List<ProductTypeView>
-            {
-                new ProductTypeView {},
-                new ProductTypeView {},
-                new ProductTypeView {}
-            }
-        }))
+        @*<div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">*@
+        @*<ul class="navbar-nav flex-grow-1">*@
+        @(await Html.RenderComponentAsync<CatalogItems>(RenderMode.ServerPrerendered, new {Products = Model.Items}))
+        @*</ul>*@
+        @*</div>*@
     </div>
     @(await Html.RenderComponentAsync<SendBasketItemBase>(RenderMode.ServerPrerendered))
 </body>
+
+<script>
+    var acc = document.getElementsByClassName("esh-catalog-accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function () {
+            /* Toggle between adding and removing the "active" class,
+            to highlight the button that controls the panel */
+            this.classList.toggle("active");
+
+            /* Toggle between hiding and showing the active panel */
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
+</script>

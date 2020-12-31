@@ -66,8 +66,8 @@ namespace TestEnvironment
             }
 
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
             app.UseBlazorFrameworkFiles();
+            app.UseStaticFiles();
             app.UseRouting();
 
             /*app.UseAuthorization();*/

@@ -1,4 +1,4 @@
-﻿namespace Nupp.Views.Home
+﻿namespace Nupp2.Views.Home
 {
     public class BasketDto
     {

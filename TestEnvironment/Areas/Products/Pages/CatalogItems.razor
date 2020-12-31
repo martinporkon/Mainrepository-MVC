@@ -1,9 +1,12 @@
 ﻿@inherits DisplayBasketItemBase
 @using Catalog.Facade.Product
 @using Microsoft.JSInterop
+@using System.Net.Http
+@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.JSInterop
 @inject ViewState ViewState;
 @inject IJSRuntime Js;
-    <hr />
+<hr />
 <div class="esh-catalog-items row">
     <div class="card-deck">
         @foreach (var item in Products)
@@ -14,10 +17,10 @@
                     <span>@item.Name @item.BrandId @item.Amount @item.UnitId</span>
                 </div>
                 @*<div class="esh-catalog-price">
-                            @await Html.PartialAsync("_PartialPriceView", item.Parties)
-                        </div>*@
+                        @await Html.PartialAsync("_PartialPriceView", item.Parties)
+                    </div>*@
                 @*<component type="typeof(CatalogItem)" render-mode="WebAssemblyPrerendered"
-                        value="" />*@
+                    value="" />*@
                 <CatalogItem OnProductSelected="ProductSelectionChanged"
                              Product="@item"
                              OnProductRemoved="ProductSelectionRemovedChanged">

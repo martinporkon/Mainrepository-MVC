@@ -4,7 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Nupp.Views.Home;
+using Nupp2.Views.Home;
 
 namespace API.Controllers
 {

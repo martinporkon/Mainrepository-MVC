@@ -1,11 +1,11 @@
 ﻿@inject IHttpClientFactory HttpClient;
 @inject IJSRuntime Js;
-@inject IBasketService BasketService;
-@*@inherits Nupp.Services.CatalogItemsBase*@
 @using System.Net.Http
-@using Catalog.Facade.Product
 @using Microsoft.AspNetCore.Components.Web
 @using Microsoft.JSInterop
+@inject IBasketService BasketService;
+@*@inherits Nupp.Services.CatalogItemsBase*@
+@using Catalog.Facade.Product
 
 @inherits TestEnvironment.Areas.Products.Pages.CatalogItemBase
 <style type="text/css">

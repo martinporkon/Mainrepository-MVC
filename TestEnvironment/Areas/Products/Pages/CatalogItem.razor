@@ -47,3 +47,30 @@ else if (Product.ProductsInUserBasket > 0)
            type="submit" value="Lisa" />
     // TODO get different colors right and position them accordingly.
 }
+
+@code {
+    [Parameter]
+    public ProductTypeView Product { get; set; }
+
+    [Parameter]
+    public EventCallback<ProductTypeView> OnProductSelected { get; set; }
+    [Parameter]
+    public EventCallback<ProductTypeView> OnProductRemoved { get; set; }
+    public async Task AddToBasketChanged()
+    {
+        Product.ProductsInUserBasket++;
+        await OnProductSelected.InvokeAsync(Product);
+        this.StateHasChanged();
+    }
+
+    public async Task RemoveBasketChanged()
+    {
+        var count = Product.ProductsInUserBasket--;
+        if (count < 0)
+        {
+            Product.ProductsInUserBasket = 0;
+        }
+        await OnProductRemoved.InvokeAsync(Product);
+        this.StateHasChanged();
+    }
+}

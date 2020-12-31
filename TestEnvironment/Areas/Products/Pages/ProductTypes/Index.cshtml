@@ -21,12 +21,18 @@
 
 
     <div class="esh-catalog-sidenav">
+        @foreach (var basecategory in Model.BaseCategories.Where(x => x.Text is null))
+        {
+            <button class="esh-catalog-accordion">@Html.DisplayName(Model.CategoryName(basecategory.Value))</button>
+            @foreach (var category in Model.Categories.Where(x => x.Value == basecategory.Text))
+            {
+                <div class="esh-catalog-panel">
+                 @Html.DisplayName(Model.CategoryName(category.Value))
+                </div>
 
-        <button class="esh-catalog-accordion">Puuviljad</button>
-        <div class="esh-catalog-panel">
-            <p>Apelsin</p>
-            <p>Pirn</p>
-        </div>
+            }
+        }
+        
 
         <button class="esh-catalog-accordion">Liha</button>
         <div class="esh-catalog-panel">

@@ -19,7 +19,7 @@ namespace Catalog.Pages.Products
         CatalogPage : ViewsPage<IProductTypesRepository, IProductType, ProductTypeView, ProductTypeData>
     {
 
-        public CatalogPage(IProductTypesRepository r, IBrandsRepository b, IProductInstancesRepository i, IPricesRepository c)
+        public CatalogPage(IProductTypesRepository r, IBrandsRepository b, IProductInstancesRepository i, IPricesRepository c, IProductCategoriesRepository p)
             : base(r, ProductPagesNames.ProductTypes)
         {
             //Units = newItemsList<Unit, UnitData>(u);
@@ -28,11 +28,14 @@ namespace Catalog.Pages.Products
             Brands = newItemsList<Brand, BrandData>(b);
             ProductInstances = newInstancesList<IProductType, ProductTypeData>(i);
             ProductTypes = newItemsList<IProductType, ProductTypeData>(db);
+            Categories = newItemsList<ProductCategory, ProductCategoryData>(p);
+            BaseCategories = newSubCategoriesList<ProductCategory, ProductCategoryData>(p);
 
         }
+        public IEnumerable<SelectListItem> Categories;
         public IEnumerable<SelectListItem> Prices;
         public ProductKind ProductKind { get; internal set; }
-
+        public IEnumerable<SelectListItem> BaseCategories { get; }
         public IEnumerable<SelectListItem> Units { get; }
         public IEnumerable<SelectListItem> Brands { get; }
         public IEnumerable<SelectListItem> Parties { get; }
@@ -79,6 +82,7 @@ namespace Catalog.Pages.Products
         public IEnumerable<SelectListItem> ProductTypes { get; private set; }
 
         public string BaseTypeName(string id) => itemName(ProductTypes, id);
+        public string CategoryName(string id) => itemName(Categories, id);
 
         public string UnitName(string id) => itemName(Units, id);
         public string BrandName(string id) => itemName(Brands, id);

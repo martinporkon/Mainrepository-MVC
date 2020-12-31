@@ -4,6 +4,7 @@ using Catalog.Data.CatalogedProducts;
 using Catalog.Data.CatalogEntries;
 using Catalog.Data.Product;
 using Catalog.Domain.Catalog;
+using Catalog.Domain.Product;
 using Catalog.Facade.Catalog;
 using Catalog.Pages.Common.Consts;
 using Microsoft.AspNetCore.Mvc;

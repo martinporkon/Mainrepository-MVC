@@ -42,7 +42,7 @@ namespace TestEnvironment
             {
                 client.BaseAddress = new Uri("http://localhost:5000");
             });
-
+            services.AddResponseCompression(options => { });
         }
         private void registerRepositories(IServiceCollection services)
         {
@@ -67,15 +67,16 @@ namespace TestEnvironment
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseBlazorFrameworkFiles();
             app.UseRouting();
 
-            app.UseAuthorization();
+            /*app.UseAuthorization();*/
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
                 endpoints.MapBlazorHub();
+                /*endpoints.MapFallbackToPage("/_Host");*/
             });
         }
     }

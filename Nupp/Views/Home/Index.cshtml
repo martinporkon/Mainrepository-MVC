@@ -23,42 +23,42 @@
 <body>
     <h1>@A.TotalSelectedItemsCount</h1>
     <div class="container">
-        @*@(await Html.RenderComponentAsync<CatalogItems>(RenderMode.WebAssemblyPrerendered, new {Products = new List<ProductTypeView>
+        @(await Html.RenderComponentAsync<CatalogItems>(RenderMode.ServerPrerendered, new {Products = new List<ProductTypeView>
             {
                 new ProductTypeView { },
                 new ProductTypeView { },
                 new ProductTypeView { }
-            }}))*@ss
-        @foreach (var item in Item)
-        {
-            <div class="esh-catalog-item col-md-4">
-                @*<form asp-page="/Basket/Index" method="post">*@
-                    <img class="esh-catalog-thumbnail" src="https://m1.selver.ee/media/catalog/product/cache/1/image/409x/9df78eab33525d08d6e5fb8d27136e95/4/7/4740125000108_2.jpg" />
-                    <div class="esh-catalog-name">
-                        <span>@item.Name @item.BrandId @item.Amount @item.UnitId</span>
-                    </div>
-                    @*<div class="esh-catalog-price">
-                            @await Html.PartialAsync("_PartialPriceView", item.Parties)
-                        </div>*@
+            }}))
+        @*@foreach (var item in Item)
+            {
+                <div class="esh-catalog-item col-md-4">
+                    $1$<form asp-page="/Basket/Index" method="post">#1#
+                        <img class="esh-catalog-thumbnail" src="https://m1.selver.ee/media/catalog/product/cache/1/image/409x/9df78eab33525d08d6e5fb8d27136e95/4/7/4740125000108_2.jpg" />
+                        <div class="esh-catalog-name">
+                            <span>@item.Name @item.BrandId @item.Amount @item.UnitId</span>
+                        </div>
+                        $1$<div class="esh-catalog-price">
+                                @await Html.PartialAsync("_PartialPriceView", item.Parties)
+                            </div>#1#
 
-                    @*$2$$4$<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>#4##2#
+                        $1$$3$$5$<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>#5##3#
 
-                        $2$$4$<component type="typeof(CatalogItemsBase)" render-mode="WebAssembly" />#4#
-                            $4$<component type="typeof(CatalogItemsBase)" render-mode="WebAssemblyPrerendered" />#4##2#*@
+                            $3$$5$<component type="typeof(CatalogItemsBase)" render-mode="WebAssembly" />#5#
+                                $5$<component type="typeof(CatalogItemsBase)" render-mode="WebAssemblyPrerendered" />#5##3##1#
 
-                    @*<component type="typeof(CatalogItem)" render-mode="WebAssembly" />*@
-                    @*<CataglogItem></CataglogItem>*@
-                    @(await Html.RenderComponentAsync<CatalogItem>(RenderMode.WebAssemblyPrerendered, new { Product = item}))
-                    @*<CatalogItem OnProductSelected="ProductSelectionChanged"
-                                     Product="@item">
-                        </CatalogItem>*@
-                    @*$2$$4$<input type="hidden" asp-for="@item.Id" name="id" />
-                        <input type="hidden" asp-for="@item.Name" name="name" />
-                        <input type="hidden" asp-for="@item.Image" name="pictureUri" />
-                        <input type="hidden" asp-for="@item.Amount" name="price" />#4##2#*@
-                @*</form>*@
-            </div>
-        }
+                        $1$<component type="typeof(CatalogItem)" render-mode="WebAssembly" />#1#
+                        $1$<CataglogItem></CataglogItem>#1#
+                        @(await Html.RenderComponentAsync<CatalogItem>(RenderMode.ServerPrerendered, new { Product = item}))
+                        $1$<CatalogItem OnProductSelected="ProductSelectionChanged"
+                                         Product="@item">
+                            </CatalogItem>#1#
+                        $1$$3$$5$<input type="hidden" asp-for="@item.Id" name="id" />
+                            <input type="hidden" asp-for="@item.Name" name="name" />
+                            <input type="hidden" asp-for="@item.Image" name="pictureUri" />
+                            <input type="hidden" asp-for="@item.Amount" name="price" />#5##3##1#
+                    $1$</form>#1#
+                </div>
+            }*@
     </div>
 </body>
 @*@(await Html.RenderComponentAsync<SendBasketItemBase>(RenderMode.ServerPrerendered/*,#1# Model*/))*@
@@ -74,8 +74,8 @@
 </div>
 
 @*@section Scripts {
-    <script src="~/_framework/blazor.webassembly.js"></script>
-}*@
+        <script src="~/_framework/blazor.webassembly.js"></script>
+    }*@
 
 @*Ostukorvi vaate jaoks*@
 @*<div class="card">

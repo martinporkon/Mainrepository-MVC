@@ -24,7 +24,7 @@
         @foreach (var basecategory in Model.BaseCategories.Where(x => x.Text is null))
         {
             <button class="esh-catalog-accordion">@Html.DisplayName(Model.CategoryName(basecategory.Value))</button>
-            @foreach (var category in Model.Categories.Where(x => x.Value == basecategory.Text))
+            @foreach (var category in Model.BaseCategories.Where(x => x.Text == basecategory.Text))
             {
                 <div class="esh-catalog-panel">
                  @Html.DisplayName(Model.CategoryName(category.Value))
@@ -32,17 +32,6 @@
 
             }
         }
-        
-
-        <button class="esh-catalog-accordion">Liha</button>
-        <div class="esh-catalog-panel">
-            <p>Kanaliha</p>
-        </div>
-
-        <button class="esh-catalog-accordion">Piimatooted</button>
-        <div class="esh-catalog-panel">
-            <p>Piim</p>
-        </div>
     </div>
     <script>
         var acc = document.getElementsByClassName("esh-catalog-accordion");

@@ -8,8 +8,15 @@ namespace Nupp.Views.Home.Button
     {
         [Inject]
         private HttpClient HttpClient { get; set; }
+        [Inject]
+        private NotifierService NotifierService { get; set; }
         public int TotalSelectedItemsCount { get; set; } = 0;
         [Parameter]
         public RenderFragment CustomMessage { get; set; }
+
+        public void SendToBasket()
+        {
+            /*NotifierService*/
+        }
     }
 }

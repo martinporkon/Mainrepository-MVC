@@ -9,8 +9,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Nupp.Services;
 using Nupp.Views.Home;
+using Nupp.Views.Home.Button;
+using CatalogItemBase = Nupp.Views.Home.Button.CatalogItemBase;
 
 namespace Nupp
 {
@@ -27,13 +30,18 @@ namespace Nupp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddRazorPages();
+            services.AddRazorPages();/*options =>
+            {
+                options.RootDirectory = "/Views";
+            });*/
             services.AddServerSideBlazor();
 
             /*services.AddHttpClient("APIClient");*/
             services.AddScoped<ViewState>();
             services.AddScoped<NotifierService>();
             services.AddScoped<CartItemState>();
+            services.AddScoped<SendBasketItemBase>();
+            services.AddScoped<CatalogItemBase>();
             services.AddOptions();
             services.AddSingleton<PageSettings>();
             services.AddHttpClient<IBasketService, BasketService>(client =>
@@ -63,14 +71,16 @@ namespace Nupp
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            /*app.UseAuthorization();*/
 
             app.UseEndpoints(endpoints =>
             {
+                /*endpoints.MapRazorPages();*/
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
                 endpoints.MapBlazorHub();
+                /*endpoints.MapFallbackToPage("/_Host");*/
             });
         }
     }

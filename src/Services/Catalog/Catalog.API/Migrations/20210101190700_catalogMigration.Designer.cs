@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Catalog.API.Migrations
 {
     [DbContext(typeof(CatalogApplicationDbContext))]
-    [Migration("20201231181825_test")]
-    partial class test
+    [Migration("20210101190700_catalogMigration")]
+    partial class catalogMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -25,6 +25,9 @@ namespace Catalog.API.Migrations
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Code")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
@@ -52,6 +55,9 @@ namespace Catalog.API.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("CategoryId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Code")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
@@ -101,6 +107,9 @@ namespace Catalog.API.Migrations
                     b.Property<decimal>("Amount")
                         .HasColumnType("decimal(16,4)");
 
+                    b.Property<string>("Code")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("CurrencyId")
                         .HasColumnType("nvarchar(max)");
 
@@ -126,6 +135,9 @@ namespace Catalog.API.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("Code")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
@@ -147,6 +159,9 @@ namespace Catalog.API.Migrations
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Code")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
@@ -185,6 +200,9 @@ namespace Catalog.API.Migrations
                     b.Property<string>("BaseCategoryId")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Code")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
@@ -209,6 +227,9 @@ namespace Catalog.API.Migrations
 
                     b.Property<double>("Amount")
                         .HasColumnType("float");
+
+                    b.Property<string>("Code")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("DeliveredFrom")
                         .HasColumnType("datetime2");
@@ -268,6 +289,9 @@ namespace Catalog.API.Migrations
                     b.Property<string>("BrandId")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Code")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("CountryOfOriginId")
                         .HasColumnType("nvarchar(max)");
 
@@ -317,6 +341,9 @@ namespace Catalog.API.Migrations
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("Code")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");

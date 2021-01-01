@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace Catalog.API.Migrations
 {
-    public partial class test : Migration
+    public partial class catalogMigration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,6 +14,7 @@ namespace Catalog.API.Migrations
                     Id = table.Column<string>(nullable: false),
                     ValidFrom = table.Column<DateTime>(nullable: true),
                     ValidTo = table.Column<DateTime>(nullable: true),
+                    Code = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true)
                 },
@@ -44,6 +45,7 @@ namespace Catalog.API.Migrations
                     Id = table.Column<string>(nullable: false),
                     ValidFrom = table.Column<DateTime>(nullable: true),
                     ValidTo = table.Column<DateTime>(nullable: true),
+                    Code = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
                     CatalogId = table.Column<string>(nullable: true),
@@ -61,6 +63,7 @@ namespace Catalog.API.Migrations
                     Id = table.Column<string>(nullable: false),
                     ValidFrom = table.Column<DateTime>(nullable: true),
                     ValidTo = table.Column<DateTime>(nullable: true),
+                    Code = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true)
                 },
@@ -76,6 +79,7 @@ namespace Catalog.API.Migrations
                     Id = table.Column<string>(nullable: false),
                     ValidFrom = table.Column<DateTime>(nullable: true),
                     ValidTo = table.Column<DateTime>(nullable: true),
+                    Code = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
                     OfficialName = table.Column<string>(nullable: true),
@@ -112,6 +116,7 @@ namespace Catalog.API.Migrations
                     Id = table.Column<string>(nullable: false),
                     ValidFrom = table.Column<DateTime>(nullable: true),
                     ValidTo = table.Column<DateTime>(nullable: true),
+                    Code = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
                     ProductTypeId = table.Column<string>(nullable: true),
@@ -146,6 +151,7 @@ namespace Catalog.API.Migrations
                     Id = table.Column<string>(nullable: false),
                     ValidFrom = table.Column<DateTime>(nullable: true),
                     ValidTo = table.Column<DateTime>(nullable: true),
+                    Code = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Amount = table.Column<decimal>(type: "decimal(16,4)", nullable: false),
                     CurrencyId = table.Column<string>(nullable: true),
@@ -163,6 +169,7 @@ namespace Catalog.API.Migrations
                     Id = table.Column<string>(nullable: false),
                     ValidFrom = table.Column<DateTime>(nullable: true),
                     ValidTo = table.Column<DateTime>(nullable: true),
+                    Code = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
                     BaseCategoryId = table.Column<string>(nullable: true)
@@ -179,6 +186,7 @@ namespace Catalog.API.Migrations
                     Id = table.Column<string>(nullable: false),
                     ValidFrom = table.Column<DateTime>(nullable: true),
                     ValidTo = table.Column<DateTime>(nullable: true),
+                    Code = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
                     ProductTypeId = table.Column<string>(nullable: true),
@@ -204,6 +212,7 @@ namespace Catalog.API.Migrations
                     Id = table.Column<string>(nullable: false),
                     ValidFrom = table.Column<DateTime>(nullable: true),
                     ValidTo = table.Column<DateTime>(nullable: true),
+                    Code = table.Column<string>(nullable: true),
                     Name = table.Column<string>(nullable: true),
                     Description = table.Column<string>(nullable: true),
                     ProductKind = table.Column<int>(nullable: false),

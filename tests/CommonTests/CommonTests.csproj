@@ -47,4 +47,11 @@
     <ProjectReference Include="..\..\src\WebApps\WebMVC.Tests\WebMVC.Tests.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="AidsTests\ClassesTests\" />
+    <Folder Include="AidsTests\ConstantsTests\" />
+    <Folder Include="AidsTests\EnumsTests\" />
+    <Folder Include="FacadeTests\" />
+  </ItemGroup>
+
 </Project>

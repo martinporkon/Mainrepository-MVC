@@ -1,9 +1,4 @@
-﻿using Aids.Methods;
-using Catalog.Domain;
-using Catalog.Domain.Common;
-using CommonData;
-using Microsoft.EntityFrameworkCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;

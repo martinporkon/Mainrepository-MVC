@@ -7,6 +7,10 @@ namespace Quantity.Domain {
 
         public UnitFactor(UnitFactorData d = null) : base(d) { }
 
+        public UnitFactor()
+        { 
+        }
+
 
         public double Factor => Data?.Factor ?? 0D;
 

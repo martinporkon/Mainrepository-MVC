@@ -16,6 +16,10 @@ namespace Quantity.Domain {
         protected Unit(UnitData d = null) : base(d) { }
         protected Unit(UnitData d, Measure m) : base(d) => measure = m;
 
+        public Unit()
+        {
+        }
+
 
         public string MeasureId => Data?.MeasureId ?? Unspecified;
 

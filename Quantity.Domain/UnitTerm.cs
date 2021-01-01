@@ -15,6 +15,10 @@ namespace Quantity.Domain {
             term = t;
         }
 
+        public UnitTerm()
+        {
+        }
+
         public string MasterUnitId => Data?.MasterId ?? Unspecified;
 
         public string TermUnitId => Data?.TermId ?? Unspecified;

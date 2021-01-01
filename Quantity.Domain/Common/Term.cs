@@ -7,6 +7,10 @@ namespace Quantity.Domain.Common {
 
         protected Term(TData data) : base(data) {}
 
+        protected Term()
+        {
+        }
+
         public int Power => data?.Power?? 0;
         
         protected internal string formula(string s) => Power  == 1 ? s : $"{s}^{Power}";

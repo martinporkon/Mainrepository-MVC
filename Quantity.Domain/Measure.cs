@@ -17,6 +17,10 @@ namespace Quantity.Domain {
 
         protected Measure(MeasureData d = null) : base(d) { }
 
+        public Measure()
+        {
+        }
+
         public IReadOnlyList<Unit> Units 
             => new GetFrom<IUnitsRepository, Unit>().ListBy(measureId, Id);
 

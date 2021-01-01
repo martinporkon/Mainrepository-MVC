@@ -4,10 +4,10 @@ using Quantity.Data;
 using Quantity.Domain;
 using Quantity.Domain.Common;
 
-namespace Abc.Tests.Domain.Quantity
+namespace Quantity.Tests.Domain
 {
-    [TestClass]
-    public class MeasureTests : SealedClassTests<Measure, Entity<MeasureData>>
-    {
-    }
+    //[TestClass]
+    //public class MeasureTests : SealedClassTests<Measure, Entity<MeasureData>>
+    //{
+    //}
 }

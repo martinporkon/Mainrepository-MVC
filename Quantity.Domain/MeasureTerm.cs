@@ -15,7 +15,11 @@ namespace Quantity.Domain {
             term = t;
         }
 
-      
+        public MeasureTerm()
+        {
+           
+        }
+
 
         public string MasterMeasureId => Data?.MasterId ?? Unspecified;
 

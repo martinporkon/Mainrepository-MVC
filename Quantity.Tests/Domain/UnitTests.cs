@@ -6,8 +6,8 @@ using Quantity.Domain.Common;
 
 namespace Quantity.Tests.Domain
 {
-    [TestClass]
-    public class UnitTests : SealedClassTests<Unit, Entity<UnitData>>
-    {
-    }
+    //[TestClass]
+    //public class UnitTests : SealedClassTests<Unit, Entity<UnitData>>
+    //{
+    //}
 }

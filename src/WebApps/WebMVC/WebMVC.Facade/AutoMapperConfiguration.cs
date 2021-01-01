@@ -1,17 +1,16 @@
-﻿//using System;
-//using System.Collections.Generic;
-//using System.Text;
+﻿using System;
+using WebMVC.Facade.BasketView;
 
-//namespace WebMVC.Facade.Profiles
-//{
-//    public class AutoMapperConfiguration
-//    {
-//        public static Type[] RegisterMappings()
-//        {
-//            return new Type[]
-//            {
-//                typeof()
-//            };
-//        }
-//    }
-//}
+namespace WebMVC.Facade.Profiles
+{
+    public static class AutoMapperConfiguration
+    {
+        public static Type[] RegisterMappings()
+        {
+            return new Type[]
+            {
+                typeof(BasketViewFactoryProfile)
+            };
+        }
+    }
+}

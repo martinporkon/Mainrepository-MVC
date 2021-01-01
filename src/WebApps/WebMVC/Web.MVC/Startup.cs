@@ -1,5 +1,6 @@
 using System;
 using System.IdentityModel.Tokens.Jwt;
+using AutoMapper;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -15,6 +16,7 @@ using SooduskorvWebMVC.ComponentBases;
 using SooduskorvWebMVC.HttpHandlers;
 using SooduskorvWebMVC.Middleware;
 using SooduskorvWebMVC.PostConfigurationOptions;
+using WebMVC.Facade.Profiles;
 
 namespace SooduskorvWebMVC
 {
@@ -55,7 +57,7 @@ namespace SooduskorvWebMVC
             services.AddSingleton<IPostConfigureOptions<OpenIdConnectOptions>, OpenIdConnectOptionsPostConfigurationOptions>();
             /*services.AddCustomSessions(Configuration);*/
             services.AddScoped<RequestLocalizationMiddleware>();
-            
+
 
             // TODO temporary
             services.AddHttpClient<IBasketService, BasketService>(config =>
@@ -63,7 +65,7 @@ namespace SooduskorvWebMVC
                 config.BaseAddress = new Uri("http://localhost:5000");
             });
 
-
+            services.AddAutoMapper(AutoMapperConfiguration.RegisterMappings());
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IOptions<RequestLocalizationOptions>

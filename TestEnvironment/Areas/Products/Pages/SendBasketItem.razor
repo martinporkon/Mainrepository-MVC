@@ -1,0 +1,25 @@
+﻿@inject ViewState ViewState;
+<h1>@TotalSelectedItemsCount</h1>
+
+@code {
+
+    private int TotalSelectedItemsCount { get; set; } = 0;
+    protected override void OnInitialized()
+    {
+        ViewState.OnChange += () =>
+        {
+            StateHasChanged();
+            TotalSelectedItemsCount++;
+        };
+
+        ViewState.OnRemove += () =>
+        {
+            StateHasChanged();
+            var test = TotalSelectedItemsCount--;
+            if (test < 0)
+            {
+                TotalSelectedItemsCount = 0;
+            }
+        };
+    }
+}

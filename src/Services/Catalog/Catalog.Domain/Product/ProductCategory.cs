@@ -1,10 +1,11 @@
 ﻿using Catalog.Data.Product;
+using Catalog.Domain.Catalog;
 using Catalog.Domain.Common;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace Catalog.Domain.Catalog
+namespace Catalog.Domain.Product
 {
     public sealed class ProductCategory : DescribedEntity<ProductCategoryData>
     {

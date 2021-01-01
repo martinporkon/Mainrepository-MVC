@@ -83,6 +83,22 @@ namespace Catalog.Pages
             l.Insert(0, new SelectListItem(Word.UnSpecified, null));
             return l;
         }
+        protected internal static IEnumerable<SelectListItem> newSubCategoriesList<ProductCategory, ProductCategoryData>(IProductCategoriesRepository r,
+            Func<ProductCategory, bool> condition = null)
+            where ProductCategory : IEntity<ProductCategoryData>
+            where ProductCategoryData : NamedEntityData, new()
+        {
+            var items = r?.Get().GetAwaiter().GetResult();
+            var l = items is null
+                ? new List<SelectListItem>()
+                : condition is null ?
+                    items
+                    .Select(m => new SelectListItem(m.Data.BaseCategoryId, m.Data.Id))
+                    .ToList() :
+                     new List<SelectListItem>();
+            l.Insert(0, new SelectListItem(Word.UnSpecified, null));
+            return l;
+        }
         protected internal static IEnumerable<SelectListItem> newPartiesList<ProductInstance, ProductInstanceData>(IProductInstancesRepository r,
             Func<ProductInstance, bool> condition = null)
             where ProductInstance : IEntity<ProductInstanceData>

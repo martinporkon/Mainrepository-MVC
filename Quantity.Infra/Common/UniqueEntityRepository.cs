@@ -7,7 +7,7 @@ namespace Quantity.Infra.Common {
 
     public abstract class UniqueEntityRepository<TDomain, TData> : PaginatedRepository<TDomain, TData>
         where TDomain : IEntity<TData>
-        where TData : UniqueEntityData, new() {
+        where TData : PeriodData, new() {// TODO Must be UniqueEntityData.
 
         protected UniqueEntityRepository(DbContext c, DbSet<TData> s) : base(c, s) { }
 

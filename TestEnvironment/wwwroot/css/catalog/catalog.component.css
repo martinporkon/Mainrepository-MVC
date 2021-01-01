@@ -15,7 +15,7 @@
 
 .esh-catalog-filter {
     -webkit-appearance: none;
-    background-color: ##FFFAF0;
+    background-color: #FFFAF0;
     border-color: #00d9cc;
     color: #FFFFFF;
     cursor: pointer;
@@ -125,6 +125,28 @@
     text-transform: uppercase;
 }
 
+.esh-catalog-accordion {
+    background-color: #00BFFF;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+}
+.esh-catalog-panel {
+    padding: 0 18px;
+    background-color: #E0FFFF;
+    display: none;
+    overflow: hidden;
+}
+
+
+
+
+
 .esh-catalog-price {
   font-size: 16px;
   font-weight: 200;
@@ -132,3 +154,15 @@
     .esh-catalog-price::after {
         content: '€';
     }
+.esh-catalog-sidenav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 160px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #FFFFFF; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+}
+

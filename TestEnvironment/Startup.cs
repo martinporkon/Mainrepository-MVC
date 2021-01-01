@@ -1,17 +1,14 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Catalog.API.Data;
 using Catalog.Infra;
 using Catalog.Infra.Catalog;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using TestEnvironment.Areas.Products.Pages;
 
 namespace TestEnvironment
 {
@@ -28,6 +25,7 @@ namespace TestEnvironment
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+            services.AddServerSideBlazor();
             services.AddDbContext<CatalogApplicationDbContext>(options =>
             {
                 options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=CatalogDB;Trusted_Connection=True;");
@@ -37,7 +35,14 @@ namespace TestEnvironment
                 options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=CatalogDB;Trusted_Connection=True;");
             });
             registerRepositories(services);
-
+            services.AddScoped<ViewState>();
+            services.AddScoped<SendBasketItemBase>();
+            services.AddScoped<CatalogItemBase>();
+            services.AddHttpClient<IBasketService, BasketService>(client =>
+            {
+                client.BaseAddress = new Uri("http://localhost:5000");
+            });
+            services.AddResponseCompression(options => { });
         }
         private void registerRepositories(IServiceCollection services)
         {
@@ -51,6 +56,7 @@ namespace TestEnvironment
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseWebAssemblyDebugging();
             }
             else
             {
@@ -60,15 +66,17 @@ namespace TestEnvironment
             }
 
             app.UseHttpsRedirection();
+            app.UseBlazorFrameworkFiles();
             app.UseStaticFiles();
-
             app.UseRouting();
 
-            app.UseAuthorization();
+            /*app.UseAuthorization();*/
 
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapRazorPages();
+                endpoints.MapBlazorHub();
+                /*endpoints.MapFallbackToPage("/_Host");*/
             });
         }
     }

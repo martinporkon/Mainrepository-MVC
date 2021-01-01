@@ -6,7 +6,7 @@ namespace Sooduskorv_MVC.Facade
     public abstract class UniqueEntityView
     {
         [Required]
-        public string Id { get; set; }
+        public string Id { get; set; } = "asd";
         public abstract string GetId();
     }
 }

@@ -23,12 +23,12 @@ namespace Quantity.Pages.Common {
         ? string.Empty
         : $"{pageSubtitle()}";
 
-        protected internal virtual string pageSubtitle() => string.Empty;
+        public virtual string pageSubtitle() => string.Empty;
 
         public Uri PageUrl => pageUrl();
         public Uri CreateUrl => createUrl();
 
-        protected internal Uri createUrl() 
+        public Uri createUrl() 
             => new Uri($"{PageUrl}/Create"+
                        "?handler=Create"+
                        $"&pageIndex={PageIndex}" +
@@ -37,11 +37,11 @@ namespace Quantity.Pages.Common {
                        $"&fixedFilter={FixedFilter}"+
                        $"&fixedValue={FixedValue}", UriKind.Relative);
 
-        protected internal abstract Uri pageUrl();
+        public abstract Uri pageUrl();
 
         public Uri IndexUrl => indexUrl();
 
-        protected internal Uri indexUrl() =>
+        public Uri indexUrl() =>
             new Uri($"{PageUrl}/Index?handler=Index&fixedFilter={FixedFilter}&fixedValue={FixedValue}", UriKind.Relative);
 
         protected internal static IEnumerable<SelectListItem> newItemsList<TTDomain, TTData>(IRepository<TTDomain> r,

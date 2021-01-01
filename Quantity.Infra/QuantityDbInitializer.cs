@@ -11,7 +11,7 @@ namespace Quantity.Infra {
 
     public class QuantityDbInitializer: DbInitializer {
 
-        internal static QuantityDbContext db;
+        public static QuantityDbContext db;
 
         public static void Initialize(QuantityDbContext c) {
             db = c;
@@ -32,7 +32,7 @@ namespace Quantity.Infra {
             
         }
 
-        internal static void initialize(IEnumerable<UnitInfo> data) {
+        public static void initialize(IEnumerable<UnitInfo> data) {
             foreach (var d in from d in data
                 let o = db.SystemsOfUnits.FirstOrDefaultAsync(m => m.Id == d.Id).GetAwaiter().GetResult()
                 where o is null
@@ -47,7 +47,7 @@ namespace Quantity.Infra {
             }
         }
 
-        internal static void initialize(UnitInfo measure, List<UnitInfo> units) {
+        public static void initialize(UnitInfo measure, List<UnitInfo> units) {
             addMeasure(measure);
             addTerms(measure, db.MeasureTerms);
             addUnits(units, measure.Id);
@@ -55,7 +55,7 @@ namespace Quantity.Infra {
             addUnitFactors(units, SystemOfUnits.SiSystemId);
         }
 
-        internal static void addUnitFactors(List<UnitInfo> units, string siSystemId) {
+        public static void addUnitFactors(List<UnitInfo> units, string siSystemId) {
             foreach (var d in units) {
                 if (Math.Abs(d.Factor) < double.Epsilon) continue;
                 var o = db.UnitFactors.FirstOrDefaultAsync(
@@ -71,12 +71,12 @@ namespace Quantity.Infra {
             }
         }
 
-        internal static void addTerms(List<UnitInfo> units) {
+        public static void addTerms(List<UnitInfo> units) {
             foreach (var d in units)
                 addTerms(d, db.UnitTerms);
         }
 
-        internal static void addTerms<T>(UnitInfo measure, DbSet<T> set) where T : CommonTermData, new() {
+        public static void addTerms<T>(UnitInfo measure, DbSet<T> set) where T : CommonTermData, new() {
             foreach (var d in measure.Terms) {
                 var o = set.FirstOrDefaultAsync(
                     m => m.MasterId == measure.Id && m.TermId == d.TermId).GetAwaiter().GetResult();
@@ -91,7 +91,7 @@ namespace Quantity.Infra {
             }
         }
 
-        internal static void addMeasure(UnitInfo measure) {
+        public static void addMeasure(UnitInfo measure) {
             var o = getItem(db.Measures, measure.Id);
 
             if (!(o is null)) return;
@@ -104,10 +104,10 @@ namespace Quantity.Infra {
                 }, db);
         }
 
-        internal static T getItem<T>(IQueryable<T> set, string id) where T : UniqueEntityData
+        public static T getItem<T>(IQueryable<T> set, string id) where T : UniqueEntityData
             => set.FirstOrDefaultAsync(m => m.Id == id).GetAwaiter().GetResult();
 
-        internal static void addUnits(IEnumerable<UnitInfo> units, string measureId) {
+        public static void addUnits(IEnumerable<UnitInfo> units, string measureId) {
             foreach (var d in from d in units
                 let o = getItem(db.Units, d.Id)
                 where o is null

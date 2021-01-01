@@ -13,12 +13,12 @@ namespace Quantity.Pages {
         public SystemsOfUnitsPage(ISystemsOfUnitsRepository r) 
             : base(r, QuantityPagesNames.SystemsOfUnits) { }
 
-        protected internal override Uri pageUrl() => new Uri(QuantityPagesUrls.SystemsOfUnits, UriKind.Relative);
+        public override Uri pageUrl() => new Uri(QuantityPagesUrls.SystemsOfUnits, UriKind.Relative);
 
-        protected internal override SystemOfUnits toObject(SystemOfUnitsView view) =>
+        public override SystemOfUnits toObject(SystemOfUnitsView view) =>
             SystemOfUnitsViewFactory.Create(view);
 
-        protected internal override SystemOfUnitsView toView(SystemOfUnits obj) => SystemOfUnitsViewFactory.Create(obj);
+        public override SystemOfUnitsView toView(SystemOfUnits obj) => SystemOfUnitsViewFactory.Create(obj);
 
     }
 }

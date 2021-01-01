@@ -26,12 +26,12 @@ namespace Catalog.Pages.Catalog
             Categories = newItemsList<ProductCategory, ProductCategoryData>(ca);
         }
 
-        protected internal override Uri pageUrl() => new Uri(ProductPagesUrls.CatalogEntries, UriKind.Relative);
+        protected override Uri pageUrl() => new Uri(ProductPagesUrls.CatalogEntries, UriKind.Relative);
 
-        protected internal override CatalogEntry toObject(CatalogEntryView view) =>
+        protected override CatalogEntry toObject(CatalogEntryView view) =>
             CatalogEntryViewFactory.Create(view);
 
-        protected internal override CatalogEntryView toView(CatalogEntry obj) => CatalogEntryViewFactory.Create(obj);
+        protected override CatalogEntryView toView(CatalogEntry obj) => CatalogEntryViewFactory.Create(obj);
         public string CatalogName(string id) => itemName(Catalogs, id);
 
         public string CategoryName(string id) => itemName(Categories, id);
@@ -58,7 +58,7 @@ namespace Catalog.Pages.Catalog
             };
         }
 
-        protected internal override string pageSubtitle() => $"{CatalogName(FixedValue)}";
+        protected override string pageSubtitle() => $"{CatalogName(FixedValue)}";
 
         public override async Task<IActionResult> OnGetDetailsAsync(string id, string sortOrder, string searchString,
     int pageIndex, string fixedFilter, string fixedValue)

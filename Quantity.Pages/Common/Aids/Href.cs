@@ -29,36 +29,36 @@ namespace Quantity.Pages.Common.Aids {
             return remove(s) + addClass(args?.Disabled) + addTitle(args?.Title);
         }
 
-        internal static string addPage(Uri s, string id = null) =>
+        public static string addPage(Uri s, string id = null) =>
             s is null ? "<a href=\"#" :
             id is null ? $"<a href=\"{s}" :
             $"<a id=\"{id}\" href=\"{s}";
 
-        internal static string addAction(string s) => s is null ? "?" : $"/{s}?";
+        public static string addAction(string s) => s is null ? "?" : $"/{s}?";
 
-        internal static string addHandler(string s) => s is null ? string.Empty : $"handler={s}";
+        public static string addHandler(string s) => s is null ? string.Empty : $"handler={s}";
 
-        internal static string addItemId(string s) => s is null ? string.Empty : $"&id={s}";
+        public static string addItemId(string s) => s is null ? string.Empty : $"&id={s}";
 
-        internal static string addFixedFilter(string s) => s is null ? string.Empty : $"&fixedFilter={s}";
+        public static string addFixedFilter(string s) => s is null ? string.Empty : $"&fixedFilter={s}";
 
-        internal static string addFixedValue(string s) => s is null ? string.Empty : $"&fixedValue={s}";
+        public static string addFixedValue(string s) => s is null ? string.Empty : $"&fixedValue={s}";
 
-        internal static string addSortOrder(string s) => s is null ? string.Empty : $"&sortOrder={s}";
+        public static string addSortOrder(string s) => s is null ? string.Empty : $"&sortOrder={s}";
 
-        internal static string addSearchString(string s) => s is null ? string.Empty : $"&searchString={s}";
+        public static string addSearchString(string s) => s is null ? string.Empty : $"&searchString={s}";
 
-        internal static string addCurrentFilter(string s) => s is null ? string.Empty : $"&currentFilter={s}";
+        public static string addCurrentFilter(string s) => s is null ? string.Empty : $"&currentFilter={s}";
 
-        internal static string addPageIndex(int? s) => s is null ? string.Empty : $"&pageIndex={s}";
+        public static string addPageIndex(int? s) => s is null ? string.Empty : $"&pageIndex={s}";
 
-        internal static string addClass(string s) => s is null ? string.Empty : $"\" class=\"btn btn-link {s}";
+        public static string addClass(string s) => s is null ? string.Empty : $"\" class=\"btn btn-link {s}";
 
-        internal static string addTitle(string s) {
+        public static string addTitle(string s) {
             return s is null ? "\"></a>" : $"\">{s}</a>";
         }
 
-        internal static string remove(string s) {
+        public static string remove(string s) {
             if (s is null) return null;
             if (s.EndsWith("?", StringComparison.InvariantCulture)) s = s[..^1];
 

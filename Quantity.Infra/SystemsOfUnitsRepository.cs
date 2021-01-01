@@ -9,7 +9,7 @@ namespace Quantity.Infra {
 
         public SystemsOfUnitsRepository(QuantityDbContext c = null) : base(c, c?.SystemsOfUnits) { }
 
-        protected internal override SystemOfUnits toDomainObject(SystemOfUnitsData d) => new SystemOfUnits(d);
+        public override SystemOfUnits toDomainObject(SystemOfUnitsData d) => new SystemOfUnits(d);
     }
 
 }

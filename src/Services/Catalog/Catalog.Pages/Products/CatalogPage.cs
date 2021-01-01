@@ -41,11 +41,11 @@ namespace Catalog.Pages.Products
         public IEnumerable<SelectListItem> Parties { get; }
         public IEnumerable<SelectListItem> ProductInstances { get; }
 
-        protected internal override Uri pageUrl() => new Uri(ProductPagesUrls.ProductTypes, UriKind.Relative);
+        protected override Uri pageUrl() => new Uri(ProductPagesUrls.ProductTypes, UriKind.Relative);
 
-        protected internal override IProductType toObject(ProductTypeView view) => ProductTypeViewFactory.Create(view);
+        protected override IProductType toObject(ProductTypeView view) => ProductTypeViewFactory.Create(view);
 
-        protected internal override ProductTypeView toView(IProductType o)
+        protected override ProductTypeView toView(IProductType o)
         {
             ProductKind = o.ProductKind;
             return ProductTypeViewFactory.Create(o);

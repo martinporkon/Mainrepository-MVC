@@ -8,7 +8,7 @@ namespace Quantity.Infra {
 
         public UnitsRepository(QuantityDbContext c = null) : base(c, c?.Units) { }
 
-        protected internal override Unit toDomainObject(UnitData d) => UnitFactory.Create(d);
+        public override Unit toDomainObject(UnitData d) => UnitFactory.Create(d);
     }
 
 }

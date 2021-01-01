@@ -11,9 +11,8 @@ namespace Quantity.Infra.Common {
     public abstract class BaseRepository<TDomain, TData> : ICrudMethods<TDomain>, IRepository
         where TDomain : IEntity<TData>
         where TData : PeriodData, new() {
-
-        protected internal DbContext db;
-        protected internal DbSet<TData> dbSet;
+        public DbContext db;
+        public DbSet<TData> dbSet;
 
         protected BaseRepository(DbContext c, DbSet<TData> s) {
             db = c;
@@ -87,7 +86,7 @@ namespace Quantity.Infra.Common {
             return query;
         }
 
-        protected internal abstract TDomain toDomainObject(TData periodData);
+        public abstract TDomain toDomainObject(TData periodData);
 
         protected abstract Task<TData> getData(string id);
 

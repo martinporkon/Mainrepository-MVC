@@ -5,7 +5,8 @@ using Quantity.Domain.Common;
 
 namespace Quantity.Domain {
 
-    public abstract class Measure : CommonMetric<MeasureData> {
+    public abstract class Measure : CommonMetric<MeasureData>
+    {
 
         protected MeasureTerms measureTerms;
         protected MeasureData measureData;

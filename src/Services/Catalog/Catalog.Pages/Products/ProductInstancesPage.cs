@@ -66,11 +66,11 @@ namespace Catalog.Pages.Products
         //    => ProductTypes =
         //        newItemsList<IProductType, ProductTypeData>(productTypesRepository, d => d.ProductKind == ProductKind  );
 
-        protected internal override Uri pageUrl() => new Uri(ProductPagesUrls.ProductInstances, UriKind.Relative);
+        protected override Uri pageUrl() => new Uri(ProductPagesUrls.ProductInstances, UriKind.Relative);
 
-        protected internal override IProductInstance toObject(ProductInstanceView view) => ProductInstanceViewFactory.Create(view);
+        protected override IProductInstance toObject(ProductInstanceView view) => ProductInstanceViewFactory.Create(view);
 
-        protected internal override ProductInstanceView toView(IProductInstance obj)
+        protected override ProductInstanceView toView(IProductInstance obj)
         {
             ProductKind = obj.ProductKind;
             ProductTypeId = obj.ProductTypeId;

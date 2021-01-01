@@ -72,9 +72,9 @@ namespace Catalog.Pages
             await deleteObject(id, fixedFilter, fixedValue).ConfigureAwait(true);
         }
 
-        protected internal abstract TDomain toObject(TView v);
+        protected abstract TDomain toObject(TView v);
 
-        protected internal abstract TView toView(TDomain o);
+        protected abstract TView toView(TDomain o);
 
     }
 }

@@ -12,11 +12,11 @@ namespace Quantity.Pages.Common.Aids {
         public int? PageIndex { get; internal set; }
         public string FixedFilter { get; internal set; }
         public string FixedValue { get; internal set; }
-        public string Handler { get; internal set; }
-        public string Title { get; internal set; }
-        public string Action { get; internal set; }
-        public string Disabled { get; internal set; }
-        public string ControlId { get; internal set; }
+        public string Handler { get; set; }
+        public string Title { get; set; }
+        public string Action { get; set; }
+        public string Disabled { get; set; }
+        public string ControlId { get; set; }
         public string CurrentFilter { get; internal set; }
 
         public Args(

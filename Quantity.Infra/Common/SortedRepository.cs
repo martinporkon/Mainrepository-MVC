@@ -24,7 +24,7 @@ namespace Quantity.Infra.Common {
             return query;
         }
 
-        protected internal IQueryable<TData> addSorting(IQueryable<TData> query) {
+        public IQueryable<TData> addSorting(IQueryable<TData> query) {
             var expression = createExpression();
 
             var r = expression is null ? query : addOrderBy(query, expression);
@@ -32,13 +32,13 @@ namespace Quantity.Infra.Common {
             return r;
         }
 
-        internal Expression<Func<TData, object>> createExpression() {
+        public Expression<Func<TData, object>> createExpression() {
             var property = findProperty();
 
             return property is null ? null : lambdaExpression(property);
         }
 
-        internal Expression<Func<TData, object>> lambdaExpression(PropertyInfo p) {
+        public Expression<Func<TData, object>> lambdaExpression(PropertyInfo p) {
             var param = Expression.Parameter(typeof(TData), "x");
             var property = Expression.Property(param, p);
             var body = Expression.Convert(property, typeof(object));
@@ -46,20 +46,20 @@ namespace Quantity.Infra.Common {
             return Expression.Lambda<Func<TData, object>>(body, param);
         }
 
-        internal PropertyInfo findProperty() {
+        public PropertyInfo findProperty() {
             var name = getName();
 
             return typeof(TData).GetProperty(name);
         }
 
-        internal string getName() {
+        public string getName() {
             if (string.IsNullOrEmpty(SortOrder)) return string.Empty;
             var idx = SortOrder.IndexOf(DescendingString, StringComparison.Ordinal);
 
             return idx > 0 ? SortOrder.Remove(idx) : SortOrder;
         }
 
-        internal IQueryable<TData> addOrderBy(IQueryable<TData> query, Expression<Func<TData, object>> e) {
+        public IQueryable<TData> addOrderBy(IQueryable<TData> query, Expression<Func<TData, object>> e) {
             if (query is null) return null;
             if (e is null) return query;
 
@@ -67,7 +67,7 @@ namespace Quantity.Infra.Common {
             catch { return query; }
         }
 
-        internal bool isDescending() => !string.IsNullOrEmpty(SortOrder) && SortOrder.EndsWith(DescendingString);
+        public bool isDescending() => !string.IsNullOrEmpty(SortOrder) && SortOrder.EndsWith(DescendingString);
 
     }
 

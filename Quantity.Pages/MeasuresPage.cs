@@ -20,11 +20,11 @@ namespace Quantity.Pages {
             terms = t;
         }
 
-        protected internal override Uri pageUrl() => new Uri(QuantityPagesUrls.Measures, UriKind.Relative);
+        public override Uri pageUrl() => new Uri(QuantityPagesUrls.Measures, UriKind.Relative);
 
-        protected internal override Measure toObject(MeasureView view) => MeasureViewFactory.Create(view);
+        public override Measure toObject(MeasureView view) => MeasureViewFactory.Create(view);
 
-        protected internal override MeasureView toView(Measure obj) => MeasureViewFactory.Create(obj);
+        public override MeasureView toView(Measure obj) => MeasureViewFactory.Create(obj);
 
         public IList<MeasureTermView> Terms { get; }
 

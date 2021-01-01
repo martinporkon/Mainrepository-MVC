@@ -2,5 +2,5 @@
 
 namespace Basket.Domain.Baskets
 {
-    public interface IBasketRepository : IRepository<Basket2> { }
+    public interface IBasketRepository : IRepository<Basket> { }
 }

@@ -19,4 +19,9 @@
     </Reference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="BasketOfProducts\" />
+    <Folder Include="BasketItems\" />
+  </ItemGroup>
+
 </Project>

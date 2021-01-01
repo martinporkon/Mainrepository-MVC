@@ -5,9 +5,9 @@ using Sooduskorv_MVC.Aids.Enums;
 
 namespace SooduskorvWebMVC.Pages.Common.Extensions
 {
-    public static class PagingForHtmlExtension
+    public static class PagingFor
     {
-        public static IHtmlContent PagingFor(
+        public static IHtmlContent Paging(
             this IHtmlHelper htmlHelper, string page, string sortOrder,
             string fixedFilter, string fixedValue, int pageIndex,
             string searchString, bool hasPreviousPage, bool hasNextPage,

@@ -8,4 +8,10 @@
     <ProjectReference Include="..\Basket.Domain\Basket.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="BasketItems\Docs\" />
+    <Folder Include="BasketOfProducts\Docs\" />
+    <Folder Include="Baskets\Docs\" />
+  </ItemGroup>
+
 </Project>

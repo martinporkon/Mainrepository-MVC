@@ -20,7 +20,7 @@ namespace SooduskorvWebMVC.Pages.Common.Extensions
         internal static List<object> HtmlStrings<TModel>(IHtmlHelper<TModel> htmlHelper, byte[] image, string alternateText, object htmlAttributes)
         {
             var builder = new TagBuilder("img");
-            builder.MergeAttribute("src", $"data:image/jpg;base64, {Convert.ToBase64String(image)}");
+            builder.MergeAttribute("src", $"{Constants.ImageType}, {Convert.ToBase64String(image)}");
             builder.MergeAttribute("alt", alternateText);
             builder.MergeAttributes(new RouteValueDictionary(htmlAttributes));
             return new List<object> { builder };

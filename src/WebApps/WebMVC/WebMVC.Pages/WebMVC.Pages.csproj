@@ -5,6 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Services\**" />
+    <EmbeddedResource Remove="Services\**" />
+    <None Remove="Services\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Html.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc.ViewFeatures" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="5.0.0" />
@@ -12,16 +18,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Common\Aids\" />
-    <Folder Include="Common\Const\" />
-    <Folder Include="Common\Docs\" />
-    <Folder Include="Services\Basket\" />
-    <Folder Include="Services\Catalog\" />
-    <Folder Include="Services\Order\" />
+    <Folder Include="Baskets\" />
+    <Folder Include="Catalogs\" />
+    <Folder Include="Orders\" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Common\Sooduskorv_MVC.Aids\Sooduskorv_MVC.Aids.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.AspNetCore.Mvc.RazorPages">
+      <HintPath>..\..\..\..\..\..\..\..\..\..\Program Files\dotnet\packs\Microsoft.AspNetCore.App.Ref\5.0.0\ref\net5.0\Microsoft.AspNetCore.Mvc.RazorPages.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>

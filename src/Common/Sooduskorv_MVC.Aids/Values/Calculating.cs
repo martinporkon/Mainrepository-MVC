@@ -1,12 +1,13 @@
 using System;
+using System.Collections.Generic;
 using Sooduskorv_MVC.Aids.Extensions;
+using Sooduskorv_MVC.Aids.Methods;
 
 namespace Sooduskorv_MVC.Aids.Values
 {
 
     public static class Calculating
     {
-
         public static object Add(object x, object y)
         {
             if (AreTypes.Bool(x, y)) return ((bool)x).Add((bool)y);
@@ -319,6 +320,192 @@ namespace Sooduskorv_MVC.Aids.Values
             return null;
         }
 
+        /*public void Perform(Operation o)
+        {
+            switch (o)
+            {
+                case Operation.Add:
+                    Add();
+
+                    break;
+                case Operation.Subtract:
+                    Subtract();
+
+                    break;
+                case Operation.Multiply:
+                    Multiply();
+
+                    break;
+                case Operation.Divide:
+                    Divide();
+
+                    break;
+                case Operation.Power:
+                    Power();
+
+                    break;
+                case Operation.Inverse:
+                    Inverse();
+
+                    break;
+                case Operation.Opposite:
+                    Opposite();
+
+                    break;
+                case Operation.Square:
+                    Square();
+
+                    break;
+                case Operation.Sqrt:
+                    Sqrt();
+
+                    break;
+                case Operation.And:
+                    And();
+
+                    break;
+                case Operation.Or:
+                    Or();
+
+                    break;
+                case Operation.Xor:
+                    Xor();
+
+                    break;
+                case Operation.Not:
+                    Not();
+
+                    break;
+                case Operation.Equal:
+                    Equal();
+
+                    break;
+                case Operation.Greater:
+                    Greater();
+
+                    break;
+                case Operation.Less:
+                    Less();
+
+                    break;
+                case Operation.GetYear:
+                    GetYear();
+
+                    break;
+                case Operation.GetMonth:
+                    GetMonth();
+
+                    break;
+                case Operation.GetDay:
+                    GetDay();
+
+                    break;
+                case Operation.GetHour:
+                    GetHour();
+
+                    break;
+                case Operation.GetMinute:
+                    GetMinute();
+
+                    break;
+                case Operation.GetSecond:
+                    GetSecond();
+
+                    break;
+                case Operation.GetAge:
+                    GetAge();
+
+                    break;
+                case Operation.GetInterval:
+                    GetInterval();
+
+                    break;
+                case Operation.ToYears:
+                    ToYears();
+
+                    break;
+                case Operation.ToMonths:
+                    ToMonths();
+
+                    break;
+                case Operation.ToDays:
+                    ToDays();
+
+                    break;
+                case Operation.ToHours:
+                    ToHours();
+
+                    break;
+                case Operation.ToMinutes:
+                    ToMinutes();
+
+                    break;
+                case Operation.ToSeconds:
+                    ToSeconds();
+
+                    break;
+                case Operation.AddSeconds:
+                    AddSeconds();
+
+                    break;
+                case Operation.AddMinutes:
+                    AddMinutes();
+
+                    break;
+                case Operation.AddHours:
+                    AddHours();
+
+                    break;
+                case Operation.AddDays:
+                    AddDays();
+
+                    break;
+                case Operation.AddMonths:
+                    AddMonths();
+
+                    break;
+                case Operation.AddYears:
+                    AddYears();
+
+                    break;
+                case Operation.Length:
+                    Length();
+
+                    break;
+                case Operation.ToUpper:
+                    ToUpper();
+
+                    break;
+                case Operation.ToLower:
+                    ToLower();
+
+                    break;
+                case Operation.Trim:
+                    Trim();
+
+                    break;
+                case Operation.Substring:
+                    Substring();
+
+                    break;
+                case Operation.Contains:
+                    Contains();
+
+                    break;
+                case Operation.EndsWith:
+                    EndsWith();
+
+                    break;
+                case Operation.StartsWith:
+                    StartsWith();
+
+                    break;
+                default:
+                    Dummy();
+
+                    break;
+            }
+        }*/
     }
 
 }

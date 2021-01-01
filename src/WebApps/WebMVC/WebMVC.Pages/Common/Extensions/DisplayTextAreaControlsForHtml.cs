@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace SooduskorvWebMVC.Pages.Common.Extensions
 {
-    public static class DisplayTextAreaControlsForHtmlExtension
+    public static class DisplayTextAreaControlsForHtml
     {
         public static IHtmlContent DisplayTextAreaControlsFor<TModel, TResult>(
             this IHtmlHelper<TModel> htmlHelper, Expression<Func<TModel, TResult>> expression)

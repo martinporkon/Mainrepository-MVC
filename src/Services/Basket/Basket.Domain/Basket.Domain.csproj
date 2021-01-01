@@ -20,4 +20,10 @@
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="BasketItems\Docs\" />
+    <Folder Include="BasketOfProducts\Docs\" />
+    <Folder Include="Baskets\Docs\" />
+  </ItemGroup>
+
 </Project>

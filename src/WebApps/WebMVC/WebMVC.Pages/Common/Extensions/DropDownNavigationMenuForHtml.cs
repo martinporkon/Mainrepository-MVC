@@ -5,7 +5,7 @@ using Sooduskorv_MVC.Aids.HTTP;
 
 namespace SooduskorvWebMVC.Pages.Common.Extensions
 {
-    public static class DropDownNavigationMenuForHtmlExtension {
+    public static class DropDownNavigationMenuForHtml {
         internal static void addDropDownMenuItem(List<object> htmlStrings, Link item) {
             if (htmlStrings is null) return;
             if (item is null) return;

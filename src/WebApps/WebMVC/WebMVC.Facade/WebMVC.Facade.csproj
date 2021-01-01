@@ -9,11 +9,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="CatalogView\" />
+    <ProjectReference Include="..\WebMVC.Domain\WebMVC.Domain.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WebMVC.Domain\WebMVC.Domain.csproj" />
+    <Folder Include="CatalogView\" />
+    <Folder Include="Common\" />
+    <Folder Include="OrderView\" />
   </ItemGroup>
 
 </Project>

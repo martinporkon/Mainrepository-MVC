@@ -8,7 +8,7 @@ namespace SooduskorvWebMVC.Pages.Common.Extensions
     /// <summary>
     /// TODO
     /// </summary>
-    public static class DropDownCultureMenuForExtensions
+    public static class DropDownCultureMenuFor
     {
         internal static void addDropDownMenuItem(List<object> htmlStrings, Link item)
         {
@@ -37,7 +37,7 @@ namespace SooduskorvWebMVC.Pages.Common.Extensions
         }
 
         public static IHtmlContent
-            DropDownCultureMenuFor(this IHtmlHelper helper, string name, params Link[] items)
+            DropDownCultureMenu(this IHtmlHelper helper, string name, params Link[] items)
         {
             var strings = HtmlStrings(name, items);
             return new HtmlContentBuilder(strings);

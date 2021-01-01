@@ -4,9 +4,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Basket.Infra
 {
-    /// <summary>
-    /// TODO UnitOfWork pattern integration ?
-    /// </summary>
     public class ResilientTransactionContext
     {
         private readonly DbContext _context;

@@ -8,6 +8,7 @@ namespace Quantity.Infra {
 
         public MeasuresRepository(QuantityDbContext c = null) : base(c, c?.Measures) { }
 
+
         public override Measure toDomainObject(MeasureData d) => MeasureFactory.Create(d);
     }
 

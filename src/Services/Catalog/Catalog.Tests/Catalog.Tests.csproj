@@ -48,6 +48,12 @@
     <ProjectReference Include="..\Catalog.Domain\Catalog.Domain.csproj" />
     <ProjectReference Include="..\Catalog.Facade\Catalog.Facade.csproj" />
     <ProjectReference Include="..\Catalog.Infra\Catalog.Infra.csproj" />
+    <ProjectReference Include="..\Catalog.Pages\Catalog.Pages.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Data\UserProfiles\" />
+    <Folder Include="Data\Quantities\" />
   </ItemGroup>
 
 </Project>

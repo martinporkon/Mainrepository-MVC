@@ -8,10 +8,9 @@ using System.Text;
 namespace CommonTests.DataTests.CommonDataTests
 {
     [TestClass]
-    public class PricedEntityDataTests : AbstractClassTests<PricedEntityData, PeriodData>
+    public class CodedEntityDataTests : AbstractClassTests<CodedEntityData, NamedEntityData>
     {
-
-        private class testClass : PricedEntityData { }
+        private class testClass : CodedEntityData { }
 
         [TestInitialize]
         public override void TestInitialize()
@@ -19,12 +18,8 @@ namespace CommonTests.DataTests.CommonDataTests
             base.TestInitialize();
             obj = new testClass();
         }
-
         [TestMethod]
-        public void NameTest()
-            => isNullableProperty(() => obj.Price, x => obj.Price = x);
-
-
-
+        public void CodeTest()
+            => isNullableProperty(() => obj.Code, x => obj.Code = x);
     }
 }

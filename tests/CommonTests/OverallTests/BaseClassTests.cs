@@ -2,23 +2,30 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Diagnostics;
 using Aids.Random;
+using System.Reflection;
+using Aids.Reflection;
+using System.Collections.Generic;
+using Catalog.Domain;
 
 namespace CommonTests.OverallTests
 {
     public abstract class BaseClassTests<TClass, TBaseClass> : BaseTests
     {
+        [TestInitialize] public virtual void TestInitialize() => type = typeof(TClass);
         protected TClass obj;
-
-        [TestInitialize]
-        public virtual void TestInitialize() => type = typeof(TClass);
+        [TestCleanup]
+        public virtual void TestCleanup()
+        {
+            type = null;
+            obj = default;
+        }
 
         [TestMethod]
         public void IsInheritedTest()
-        {
-            Assert.AreEqual(typeof(TBaseClass), type.BaseType);
-        }
+            => Assert.AreEqual(getBaseClass(), type.BaseType);
 
         [TestMethod] public void CanCreateTest() => Assert.IsNotNull(obj);
+
 
         protected virtual Type getBaseClass() => typeof(TBaseClass);
 
@@ -29,43 +36,77 @@ namespace CommonTests.OverallTests
             Assert.IsNull(get());
         }
 
-        protected static void isNullableProperty(object o, string name, Type type)
-        {
-            var property = o.GetType().GetProperty(name);
-            Assert.IsNotNull(property);
-            Assert.AreEqual(type, property.PropertyType);
-            Assert.IsTrue(property.CanWrite);
-            property.SetValue(o, null);
-            var actual = property.GetValue(o);
-            Assert.AreEqual(null, actual);
-        }
-
         protected static void isProperty<T>(Func<T> get, Action<T> set)
         {
             var d = (T)GetRandom.Value(typeof(T));
-            Assert.AreNotEqual(d, get);
+
+            while (true)
+            {
+                if (!d.Equals(get())) break;
+                d = (T)GetRandom.Value(typeof(T));
+            }
+
+            Assert.AreNotEqual(d, get());
             set(d);
             Assert.AreEqual(d, get());
         }
 
-        public static void isReadOnlyProperty(object o, string name, object expected)
+        protected static void isProperty(Func<bool> get, Action<bool> set)
         {
-            var property = o.GetType().GetProperty(name);
-            Assert.IsNotNull(property);
-            Assert.IsFalse(property.CanWrite);
-            Assert.IsTrue(property.CanRead);
-            var actual = property.GetValue(o);
-            Assert.AreEqual(expected, actual);
+            var d = !get();
+            Assert.AreNotEqual(d, get());
+            set(d);
+            Assert.AreEqual(d, get());
         }
-        protected static void isReadAndWriteProperty(object o, string name, object expected)
+
+        protected static void isNullableProperty(object o, string name, Type t)
         {
-            var property = o.GetType().GetProperty(name);
-            Assert.IsNotNull(property);
-            Assert.IsTrue(property.CanWrite);
-            Assert.IsTrue(property.CanRead);
-            var actual = property.GetValue(o);
-            Assert.AreEqual(expected, actual);
+            isProperty(o, name, t);
+            var p = o.GetType().GetProperty(name);
+            canSetValue(o, p, null);
         }
+
+        protected static void isProperty(object o, string name, Type t)
+        {
+            var p = isReadWriteProperty(o, name, t);
+            canSetValue(o, p, GetRandom.Value(t));
+        }
+        private static void canSetValue(object o, PropertyInfo p, object v)
+        {
+            p.SetValue(o, v);
+            Assert.AreEqual(v, p.GetValue(o));
+        }
+        protected static PropertyInfo isReadWriteProperty(object o, string name, Type t)
+        {
+            var p = o.GetType().GetProperty(name);
+            Assert.IsNotNull(p);
+            Assert.AreEqual(t, p.PropertyType);
+            Assert.IsTrue(p.CanWrite);
+            Assert.IsTrue(p.CanRead);
+
+            return p;
+        }
+        protected static void hasDisplayName(string propertyName, string displayName)
+            => Assert.AreEqual(displayName, GetMember.DisplayName<TClass>(propertyName));
+
+        protected void isProperty<TType>(string propertyName, string displayName)
+        {
+            isProperty(obj, propertyName, typeof(TType));
+            hasDisplayName(propertyName, displayName);
+        }
+
+        protected void isNullableProperty<TType>(string propertyName, string displayName)
+        {
+            isNullableProperty(obj, propertyName, typeof(TType));
+            hasDisplayName(propertyName, displayName);
+        }
+
+        protected void isProperty<TType>()
+        {
+            var n = getPropertyName();
+            isProperty(obj, n, typeof(TType));
+        }
+
         protected string getPropertyName(int stackFrameIdx = 2)
         {
             var stack = new StackTrace();
@@ -73,8 +114,56 @@ namespace CommonTests.OverallTests
 
             return n?.Replace("Test", string.Empty);
         }
+
+        protected void isNullableProperty<TType>()
+        {
+            var n = getPropertyName();
+            isNullableProperty(obj, n, typeof(TType));
+        }
+
+        protected void isProperty<TType>(string displayName)
+        {
+            var n = getPropertyName();
+            isProperty(obj, n, typeof(TType));
+            hasDisplayName(n, displayName);
+        }
+
+        protected void isNullableProperty<TType>(string displayName)
+        {
+            var n = getPropertyName();
+            isNullableProperty(obj, n, typeof(TType));
+            hasDisplayName(n, displayName);
+        }
+
+        
+
        
+
        
-    
+
+        protected string getPropertyNameAfter(string methodName)
+        {
+            var stack = new StackTrace();
+            int i;
+            for (i = 0; i < stack.FrameCount - 1; i++)
+            {
+                var n = stack.GetFrame(i)?.GetMethod()?.Name;
+
+                if (n == methodName) break;
+            }
+
+            for (i += 1; i < stack.FrameCount - 1; i++)
+            {
+                var n = stack.GetFrame(i)?.GetMethod()?.Name;
+
+                if (n == "MoveNext" || n == "Start") continue;
+
+                return n?.Replace("Test", string.Empty);
+            }
+
+            return string.Empty;
+        }
+
+
     }
 }

@@ -17,13 +17,23 @@ namespace Aids.Reflection {
         public static string Name<T>(Expression<Action<T>> ex) {
             return Safe.Run(() => name(ex.Body), string.Empty);
         }
-        public static string DisplayName<T>(Expression<Func<T, object>> ex) {
+        public static string DisplayName<T>(Expression<Func<T, object>> ex)
+        {
             return Safe.Run(() => {
                 var name = Name(ex);
+                return DisplayName<T>(name);
+            }, string.Empty);
+        }
+        public static string DisplayName<T>(string propertyName)
+        {
+            return Safe.Run(() => {
+                var name = propertyName ?? string.Empty;
                 var p = GetClass.Property<T>(name);
                 var list = p?.GetCustomAttributes(typeof(DisplayNameAttribute), true);
+
                 if (list is null || list.Length < 1) return name;
                 var a = list.Cast<DisplayNameAttribute>().Single();
+
                 return a?.DisplayName ?? name;
             }, string.Empty);
         }

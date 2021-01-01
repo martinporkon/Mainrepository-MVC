@@ -31,7 +31,7 @@ namespace CommonTests.OverallTests
         public virtual void IsTested()
         {
             if (type == null) Assert.Inconclusive(notSpecified);
-            var m = GetClass.Members(type, PublicBindingFlagsFor.DeclaredMembers);
+            var m = GetClass.Members(type, PublicFlagsFor.Declared);
             members = m.Select(e => e.Name).ToList();
             removeTested();
 

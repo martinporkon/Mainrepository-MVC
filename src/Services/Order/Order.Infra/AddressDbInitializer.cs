@@ -1,5 +1,4 @@
-﻿using Aids.Enums;
-using Aids.Random;
+﻿using Aids.Random;
 using Order.Data.Addresses;
 using Order.Data.AddressOfCustomer;
 using Order.Data.AddressOfParty;
@@ -27,7 +26,7 @@ namespace Order.Infra
                 addresses.Add(new AddressData
                 {
                     Address = GetRandom.String() + " linn, " + GetRandom.String() + " " + GetRandom.Int8(1, 99),
-                    Area = GetRandom.Enum<Areas>().ToString(),
+                    Area = "",
                     EmailAddress = GetRandom.Email(),
                     Id = i.ToString(),
                     Phone = GetRandom.Int32(50000000, 59999999).ToString(),

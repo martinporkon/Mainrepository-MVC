@@ -3,10 +3,10 @@ using CommonData;
 using CommonTests.OverallTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace Catalog.Tests.Data.Categories
+namespace Catalog.Tests.Data.Product
 {
     [TestClass]
-    public class CategoryDataTests : SealedClassTests<ProductCategoryData, NamedEntityData>
+    public class BrandDataTests : SealedClassTests<BrandData, DescribedEntityData>
     {
     }
 }

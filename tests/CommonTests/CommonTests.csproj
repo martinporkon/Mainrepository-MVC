@@ -48,9 +48,17 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="AidsTests\ClassesTests\" />
-    <Folder Include="AidsTests\ConstantsTests\" />
     <Folder Include="AidsTests\EnumsTests\" />
+    <Folder Include="AidsTests\ExtensionsTests\" />
+    <Folder Include="AidsTests\FormatsTests\" />
+    <Folder Include="AidsTests\LoggingTests\" />
+    <Folder Include="AidsTests\MethodsTests\" />
+    <Folder Include="AidsTests\ValuesTests\" />
+    <Folder Include="AidsTests\ServicesTests\" />
+    <Folder Include="AidsTests\RegionsTests\" />
+    <Folder Include="AidsTests\RegExpTests\" />
+    <Folder Include="AidsTests\ReflectionTests\" />
+    <Folder Include="AidsTests\RandomTests\" />
     <Folder Include="FacadeTests\" />
   </ItemGroup>
 

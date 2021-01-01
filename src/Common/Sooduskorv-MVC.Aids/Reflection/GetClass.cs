@@ -19,7 +19,7 @@ namespace Aids.Reflection {
             return type is null ? string.Empty : type.Namespace;
         }
         public static List<MemberInfo> Members(Type type,
-            BindingFlags f = PublicBindingFlagsFor.AllMembers,
+            BindingFlags f = PublicFlagsFor.All,
             bool clean = true) {
             if (type is null) return new List<MemberInfo>();
             var l = type.GetMembers(f).ToList();
@@ -27,7 +27,7 @@ namespace Aids.Reflection {
             return l;
         }
         public static List<PropertyInfo> Properties(Type type,
-            BindingFlags f = PublicBindingFlagsFor.AllMembers) {
+            BindingFlags f = PublicFlagsFor.All) {
             return type?.GetProperties(f).ToList() ?? new List<PropertyInfo>();
         }
         public static PropertyInfo Property<T>(string name) {

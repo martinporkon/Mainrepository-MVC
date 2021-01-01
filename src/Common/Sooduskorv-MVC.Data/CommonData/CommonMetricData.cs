@@ -1,6 +1,14 @@
 ﻿
-namespace CommonData {
+using MatBlazor;
 
-    public abstract class CommonMetricData : DefinedEntityData { }
+namespace CommonData 
+{
+
+    public abstract class CommonMetricData : DefinedEntityData
+    {
+        
+    }
+   
+    
 
 }

@@ -1,8 +1,7 @@
-﻿namespace Sooduskorv_MVC.Aids.Constants
-{
+﻿namespace Aids.Constants {
 
-    public static class Astronomical
-    {
+    public static class Astronomical {
+
         public static double HoursPerDay => 24.0;
 
         public static double MinutesPerHour => 60.0;

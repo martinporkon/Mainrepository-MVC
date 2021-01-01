@@ -53,6 +53,11 @@ namespace Catalog.API
             {
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
+            registerRepositories(services);
+        }
+        private void registerRepositories(IServiceCollection services)
+        {
+            CatalogRepositories.Register(services);
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

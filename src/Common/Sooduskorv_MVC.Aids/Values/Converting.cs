@@ -1,19 +1,16 @@
 ﻿using System;
 using System.Globalization;
-using Sooduskorv_MVC.Aids.Constants;
-using Sooduskorv_MVC.Aids.Regions;
+using Aids.Constants;
+using Aids.Regions;
 
-namespace Sooduskorv_MVC.Aids.Values
-{
+namespace Aids.Values {
 
-    public static class Converting
-    {
+    public static class Converting {
 
         public static bool ToDecimal(string s, out decimal d)
             => decimal.TryParse(s, NumberStyles.Any, UseCulture.Invariant, out d);
 
-        public static bool ToDecimal(object o, out decimal v)
-        {
+        public static bool ToDecimal(object o, out decimal v) {
             v = decimal.Zero;
             var r = true;
 
@@ -34,8 +31,7 @@ namespace Sooduskorv_MVC.Aids.Values
             return r;
         }
 
-        public static decimal ToDecimal(object o)
-        {
+        public static decimal ToDecimal(object o) {
             ToDecimal(o, out var d);
 
             return d;

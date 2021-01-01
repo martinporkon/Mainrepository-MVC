@@ -2,26 +2,21 @@
 using System;
 using System.Linq;
 
-namespace Sooduskorv_MVC.Aids.Values
-{
+namespace Aids.Values {
 
-    public static class AreTypes
-    {
+    public static class AreTypes {
 
-        public static bool Null(params object[] objects)
-        {
+        public static bool Null(params object[] objects) {
             if (objects is null) return true;
 
             return !objects.Any() || objects.All(o => o is null);
         }
 
-        public static bool DateTime(params object[] values)
-        {
+        public static bool DateTime(params object[] values) {
             return isTypeOf(values, IsType.DateTime);
         }
 
-        public static bool String(params object[] values)
-        {
+        public static bool String(params object[] values) {
             return isTypeOf(values, IsType.String);
         }
 
@@ -59,8 +54,7 @@ namespace Sooduskorv_MVC.Aids.Values
 
         public static bool AnyLong(params object[] values) => isTypeOf(values, IsType.AnyLong);
 
-        private static bool isTypeOf(object[] values, Func<object, bool> isTypeOf)
-        {
+        private static bool isTypeOf(object[] values, Func<object, bool> isTypeOf) {
             if (values is null) return false;
 
             return values.Any() && values.All(isTypeOf);

@@ -1,6 +1,9 @@
 using System;
 using System.IO;
+using Catalog.Domain.Common;
 using Catalog.Infra;
+using Catalog.Infra.Catalog;
+using Catalog.Pages.Catalog;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -56,6 +59,8 @@ namespace Catalog.API
                     Log.CloseAndFlush();
                 }
             }
+            GetRepository.SetServiceProvider(host.Services);
+            
             host.Run();
         }
 

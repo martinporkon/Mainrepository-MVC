@@ -1,0 +1,15 @@
+﻿@page
+@using Catalog.Pages.Common.Extensions
+@model Catalog.Pages.Catalog.CatalogPage
+
+@{
+    Layout = "_Edit";
+}
+
+<body>
+    <input type="hidden" asp-for="Item.Id" />
+    @Html.Editor(m => m.Item.Name)
+    @Html.Editor(m => m.Item.Description)
+    @Html.Editor(m => m.Item.ValidFrom)
+    @Html.Editor(m => m.Item.ValidTo)
+</body>

@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Globalization;
 using System.Linq;
-using Sooduskorv_MVC.Aids.Methods;
+using Aids.Methods;
 
-namespace Sooduskorv_MVC.Aids.Extensions
-{
+namespace Aids.Extensions {
 
-    public static class Strings
-    {
+    public static class Strings {
 
         public static string Format(this string s, params object[] args)
             => Safe.Run(
@@ -21,8 +19,7 @@ namespace Sooduskorv_MVC.Aids.Extensions
 
         public static string Backwards(this string s)
             => Safe.Run(
-                () =>
-                {
+                () => {
                     if (s is null) return string.Empty;
                     var x = s.Length - 1;
                     var r = string.Empty;
@@ -46,13 +43,12 @@ namespace Sooduskorv_MVC.Aids.Extensions
             => Safe.Run(
                 () =>
                     s?.Where(char.IsLetterOrDigit)
-                        .Aggregate(string.Empty, (current, c) => current + c) ?? string.Empty,
+                        .Aggregate(string.Empty, (current, c) => current + c)?? string.Empty,
                 s ?? string.Empty);
 
         public static string GetHead(this string s, char seperator = '.')
             => Safe.Run(
-                () =>
-                {
+                () => {
 
                     if (string.IsNullOrWhiteSpace(s)) return string.Empty;
                     var i = s.IndexOf(seperator);
@@ -62,8 +58,7 @@ namespace Sooduskorv_MVC.Aids.Extensions
 
         public static string GetTail(this string s, char seperator = '.')
             => Safe.Run(
-                () =>
-                {
+                () => {
                     if (string.IsNullOrWhiteSpace(s)) return string.Empty;
                     var i = s.IndexOf(seperator);
 
@@ -72,8 +67,7 @@ namespace Sooduskorv_MVC.Aids.Extensions
 
         public static string IfNullSetEmpty(string s) => s ?? string.Empty;
 
-        public static string Trim(string s)
-        {
+        public static string Trim(string s) {
             return IfNullSetEmpty(s).Trim();
         }
 
@@ -123,7 +117,7 @@ namespace Sooduskorv_MVC.Aids.Extensions
         internal static string addStringPattern => "{0}{1}";
 
         public static string Add(string s1, string s2)
-        {
+        { 
             s1 ??= string.Empty;
             s2 ??= string.Empty;
             return string.Format(addStringPattern, s1, s2);
@@ -132,3 +126,5 @@ namespace Sooduskorv_MVC.Aids.Extensions
     }
 
 }
+
+

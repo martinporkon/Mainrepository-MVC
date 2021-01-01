@@ -1,18 +1,14 @@
 using System;
-using System.Collections.Generic;
-using Sooduskorv_MVC.Aids.Extensions;
-using Sooduskorv_MVC.Aids.Methods;
+using Aids.Extensions;
 
-namespace Sooduskorv_MVC.Aids.Values
-{
+namespace Aids.Values {
 
-    public static class Calculating
-    {
-        public static object Add(object x, object y)
-        {
-            if (AreTypes.Bool(x, y)) return ((bool)x).Add((bool)y);
-            if (AreTypes.String(x, y)) return Strings.Add((string)x, (string)y);
-            if (AreTypes.DateTime(x, y)) return ((DateTime)x).AddSafe((DateTime)y);
+    public static class Calculating {
+
+        public static object Add(object x, object y) {
+            if (AreTypes.Bool(x, y)) return ((bool) x).Add((bool) y);
+            if (AreTypes.String(x, y)) return Strings.Add((string) x, (string) y);
+            if (AreTypes.DateTime(x, y)) return ((DateTime) x).AddSafe((DateTime) y);
             if (AreTypes.AnyDecimal(x, y)) return Converting.ToDecimal(x).Add(Converting.ToDecimal(y));
             if (AreTypes.AnyDouble(x, y))
                 return Doubles.ToDouble(x).Add(Doubles.ToDouble(y));
@@ -20,14 +16,8 @@ namespace Sooduskorv_MVC.Aids.Values
             return null;
         }
 
-        public static object Modulus(object x, object y)
-        {
-            throw new NotImplementedException();
-        }
-
-        public static object Subtract(object x, object y)
-        {
-            if (AreTypes.DateTime(x, y)) return ((DateTime)x).SubtractSafe((DateTime)y);
+        public static object Subtract(object x, object y) {
+            if (AreTypes.DateTime(x, y)) return ((DateTime) x).SubtractSafe((DateTime) y);
             if (AreTypes.AnyDecimal(x, y)) return Converting.ToDecimal(x).Subtract(Converting.ToDecimal(y));
             if (AreTypes.AnyDouble(x, y))
                 return Doubles.ToDouble(x).Subtract(Doubles.ToDouble(y));
@@ -35,9 +25,8 @@ namespace Sooduskorv_MVC.Aids.Values
             return null;
         }
 
-        public static object Multiply(object x, object y)
-        {
-            if (AreTypes.Bool(x, y)) return ((bool)x).Multiply((bool)y);
+        public static object Multiply(object x, object y) {
+            if (AreTypes.Bool(x, y)) return ((bool) x).Multiply((bool) y);
             if (AreTypes.AnyDecimal(x, y)) return Converting.ToDecimal(x).Multiply(Converting.ToDecimal(y));
             if (AreTypes.AnyDouble(x, y))
                 return Doubles.ToDouble(x).Multiply(Doubles.ToDouble(y));
@@ -45,8 +34,7 @@ namespace Sooduskorv_MVC.Aids.Values
             return null;
         }
 
-        public static object Divide(object x, object y)
-        {
+        public static object Divide(object x, object y) {
             if (AreTypes.AnyDecimal(x, y)) return Converting.ToDecimal(x).Divide(Converting.ToDecimal(y));
             if (AreTypes.AnyDouble(x, y))
                 return Doubles.ToDouble(x).Divide(Doubles.ToDouble(y));
@@ -54,100 +42,88 @@ namespace Sooduskorv_MVC.Aids.Values
             return null;
         }
 
-        public static object Power(object x, object y)
-        {
+        public static object Power(object x, object y) {
             if (AreTypes.AnyDouble(x, y))
                 return Doubles.ToDouble(x).Power(Doubles.ToDouble(y));
 
             return null;
         }
 
-        public static object Inverse(object x)
-        {
+        public static object Inverse(object x) {
             if (AreTypes.AnyDecimal(x)) return Converting.ToDecimal(x).Inverse();
             if (AreTypes.AnyDouble(x)) return Doubles.ToDouble(x).Inverse();
 
             return null;
         }
 
-        public static object Opposite(object x)
-        {
+        public static object Opposite(object x) {
             if (AreTypes.AnyDecimal(x)) return Converting.ToDecimal(x).Opposite();
             if (AreTypes.AnyDouble(x)) return Doubles.ToDouble(x).Opposite();
 
             return null;
         }
 
-        public static object Square(object x)
-        {
+        public static object Square(object x) {
             if (AreTypes.AnyDouble(x)) return Doubles.ToDouble(x).Square();
 
             return null;
         }
 
-        public static object Sqrt(object x)
-        {
+        public static object Sqrt(object x) {
             if (AreTypes.AnyDouble(x)) return Doubles.ToDouble(x).Sqrt();
 
             return null;
         }
 
 
-        public static object And(object x, object y)
-        {
-            if (AreTypes.Bool(x, y)) return ((bool)x).And((bool)y);
+        public static object And(object x, object y) {
+            if (AreTypes.Bool(x, y)) return ((bool) x).And((bool) y);
 
             return null;
         }
 
-        public static object Or(object x, object y)
-        {
-            if (AreTypes.Bool(x, y)) return ((bool)x).Or((bool)y);
+        public static object Or(object x, object y) {
+            if (AreTypes.Bool(x, y)) return ((bool) x).Or((bool) y);
 
             return null;
         }
 
-        public static object Xor(object x, object y)
-        {
-            if (AreTypes.Bool(x, y)) return ((bool)x).Xor((bool)y);
+        public static object Xor(object x, object y) {
+            if (AreTypes.Bool(x, y)) return ((bool) x).Xor((bool) y);
 
             return null;
         }
 
-        public static object Not(object x)
-        {
-            if (AreTypes.Bool(x)) return ((bool)x).Not();
+        public static object Not(object x) {
+            if (AreTypes.Bool(x)) return ((bool) x).Not();
 
             return null;
         }
 
-        public static object IsEqual(object x, object y)
-        {
-            if (AreTypes.Bool(x, y)) return ((bool)x).IsEqual((bool)y);
-            if (AreTypes.String(x, y)) return ((string)x).IsEqual((string)y);
-            if (AreTypes.DateTime(x, y)) return ((DateTime)x).IsEqual((DateTime)y);
+        public static object IsEqual(object x, object y) {
+            if (AreTypes.Bool(x, y)) return ((bool) x).IsEqual((bool) y);
+            if (AreTypes.String(x, y)) return ((string) x).IsEqual((string) y);
+            if (AreTypes.DateTime(x, y)) return ((DateTime) x).IsEqual((DateTime) y);
             if (AreTypes.AnyDecimal(x, y)) return Converting.ToDecimal(x).IsEqual(Converting.ToDecimal(y));
             if (AreTypes.AnyDouble(x, y)) return Doubles.ToDouble(x).IsEqual(Doubles.ToDouble(y));
 
             return null;
         }
 
-        public static object IsGreater(object x, object y)
-        {
-            if (AreTypes.Bool(x, y)) return ((bool)x).IsGreater((bool)y);
-            if (AreTypes.String(x, y)) return ((string)x).IsGreater((string)y);
-            if (AreTypes.DateTime(x, y)) return ((DateTime)x).IsGreater((DateTime)y);
+        public static object IsGreater(object x, object y) {
+            if (AreTypes.Bool(x, y)) return ((bool) x).IsGreater((bool) y);
+            if (AreTypes.String(x, y)) return ((string) x).IsGreater((string) y);
+            if (AreTypes.DateTime(x, y)) return ((DateTime) x).IsGreater((DateTime) y);
             if (AreTypes.AnyDecimal(x, y)) return Converting.ToDecimal(x).IsGreater(Converting.ToDecimal(y));
             if (AreTypes.AnyDouble(x, y)) return Doubles.ToDouble(x).IsGreater(Doubles.ToDouble(y));
 
             return null;
         }
 
-        public static object IsLess(object x, object y)
-        {
-            if (AreTypes.Bool(x, y)) return ((bool)x).IsLess((bool)y);
-            if (AreTypes.String(x, y)) return ((string)x).IsLess((string)y);
-            if (AreTypes.DateTime(x, y)) return ((DateTime)x).IsLess((DateTime)y);
+        public static object IsLess(object x, object y) {
+            if (AreTypes.Bool(x, y)) return ((bool) x).IsLess((bool) y);
+            if (AreTypes.String(x, y)) return ((string) x).IsLess((string) y);
+            if (AreTypes.DateTime(x, y)) return ((DateTime) x).IsLess((DateTime) y);
             if (AreTypes.AnyDecimal(x, y)) return Converting.ToDecimal(x).IsLess(Converting.ToDecimal(y));
             if (AreTypes.AnyDouble(x, y)) return Doubles.ToDouble(x).IsLess(Doubles.ToDouble(y));
 
@@ -209,7 +185,7 @@ namespace Sooduskorv_MVC.Aids.Values
         public static object ToMinutes(object x)
         {
             if (IsType.TimeSpan(x)) return ((TimeSpan)x).ToMinutes();
-            if (IsType.DateTime(x)) return new TimeSpan(((DateTime)x).Ticks).ToMinutes();
+            if (IsType.DateTime(x)) return new TimeSpan(((DateTime) x).Ticks).ToMinutes();
             return null;
         }
         public static object ToHours(object x)
@@ -301,7 +277,7 @@ namespace Sooduskorv_MVC.Aids.Values
         public static object Substring(object x, object y, object z)
         {
             if (!IsType.String(x) || !AreTypes.AnyInt(y, z)) return null;
-            var r = Strings.Substring((string)x, Integers.ToInteger(y), Integers.ToInteger(z));
+            var r = Strings.Substring((string) x, Integers.ToInteger(y), Integers.ToInteger(z));
             return r;
         }
         public static object Contains(object x, object y)
@@ -320,192 +296,6 @@ namespace Sooduskorv_MVC.Aids.Values
             return null;
         }
 
-        /*public void Perform(Operation o)
-        {
-            switch (o)
-            {
-                case Operation.Add:
-                    Add();
-
-                    break;
-                case Operation.Subtract:
-                    Subtract();
-
-                    break;
-                case Operation.Multiply:
-                    Multiply();
-
-                    break;
-                case Operation.Divide:
-                    Divide();
-
-                    break;
-                case Operation.Power:
-                    Power();
-
-                    break;
-                case Operation.Inverse:
-                    Inverse();
-
-                    break;
-                case Operation.Opposite:
-                    Opposite();
-
-                    break;
-                case Operation.Square:
-                    Square();
-
-                    break;
-                case Operation.Sqrt:
-                    Sqrt();
-
-                    break;
-                case Operation.And:
-                    And();
-
-                    break;
-                case Operation.Or:
-                    Or();
-
-                    break;
-                case Operation.Xor:
-                    Xor();
-
-                    break;
-                case Operation.Not:
-                    Not();
-
-                    break;
-                case Operation.Equal:
-                    Equal();
-
-                    break;
-                case Operation.Greater:
-                    Greater();
-
-                    break;
-                case Operation.Less:
-                    Less();
-
-                    break;
-                case Operation.GetYear:
-                    GetYear();
-
-                    break;
-                case Operation.GetMonth:
-                    GetMonth();
-
-                    break;
-                case Operation.GetDay:
-                    GetDay();
-
-                    break;
-                case Operation.GetHour:
-                    GetHour();
-
-                    break;
-                case Operation.GetMinute:
-                    GetMinute();
-
-                    break;
-                case Operation.GetSecond:
-                    GetSecond();
-
-                    break;
-                case Operation.GetAge:
-                    GetAge();
-
-                    break;
-                case Operation.GetInterval:
-                    GetInterval();
-
-                    break;
-                case Operation.ToYears:
-                    ToYears();
-
-                    break;
-                case Operation.ToMonths:
-                    ToMonths();
-
-                    break;
-                case Operation.ToDays:
-                    ToDays();
-
-                    break;
-                case Operation.ToHours:
-                    ToHours();
-
-                    break;
-                case Operation.ToMinutes:
-                    ToMinutes();
-
-                    break;
-                case Operation.ToSeconds:
-                    ToSeconds();
-
-                    break;
-                case Operation.AddSeconds:
-                    AddSeconds();
-
-                    break;
-                case Operation.AddMinutes:
-                    AddMinutes();
-
-                    break;
-                case Operation.AddHours:
-                    AddHours();
-
-                    break;
-                case Operation.AddDays:
-                    AddDays();
-
-                    break;
-                case Operation.AddMonths:
-                    AddMonths();
-
-                    break;
-                case Operation.AddYears:
-                    AddYears();
-
-                    break;
-                case Operation.Length:
-                    Length();
-
-                    break;
-                case Operation.ToUpper:
-                    ToUpper();
-
-                    break;
-                case Operation.ToLower:
-                    ToLower();
-
-                    break;
-                case Operation.Trim:
-                    Trim();
-
-                    break;
-                case Operation.Substring:
-                    Substring();
-
-                    break;
-                case Operation.Contains:
-                    Contains();
-
-                    break;
-                case Operation.EndsWith:
-                    EndsWith();
-
-                    break;
-                case Operation.StartsWith:
-                    StartsWith();
-
-                    break;
-                default:
-                    Dummy();
-
-                    break;
-            }
-        }*/
     }
 
 }

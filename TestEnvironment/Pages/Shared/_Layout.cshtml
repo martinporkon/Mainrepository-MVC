@@ -1,0 +1,65 @@
+﻿@using Catalog.Pages.Common.Aids
+@using Catalog.Pages.Common.Consts
+@using Catalog.Pages.Common.Extensions
+@using Microsoft.AspNetCore.Components.Web
+@using Microsoft.AspNetCore.Components.WebAssembly
+@using Microsoft.AspNetCore.Components.Forms
+@using Microsoft.JSInterop
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, Microsoft.AspNetCore.Razor.TagHelpers
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TestEnvironment</title>
+    <base href="~/" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-page="/Index">TestEnvironment</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+
+                        @Html.DropMenu("Products",
+                            new Link(ProductPagesNames.Catalogs, ProductPagesUrls.Catalogs),
+                            new Link(ProductPagesNames.CatalogEntries, ProductPagesUrls.CatalogEntries),
+                            new Link(ProductPagesNames.ProductInstances, ProductPagesUrls.ProductInstances),
+                            new Link(ProductPagesNames.ProductTypes, ProductPagesUrls.ProductTypes))
+
+                        @Html.DropMenu("Help",
+                            new Link("About", new Uri("/Index", UriKind.Relative)),
+                            new Link("Privacy", new Uri("/Privacy", UriKind.Relative)))
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; @DateTime.Now.Year - TestEnvironment - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/_framework/blazor.server.js"></script>
+    <script src="~/_framework/blazor.webassembly.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

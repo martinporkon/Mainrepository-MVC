@@ -1,19 +1,16 @@
 ﻿using System.Linq;
-using Sooduskorv_MVC.Aids.Methods;
-using Sooduskorv_MVC.Aids.Regions;
+using Aids.Methods;
+using Aids.Regions;
 
-namespace Sooduskorv_MVC.Aids.Extensions
-{
+namespace Aids.Extensions {
 
-    public static class Booleans
-    {
+    public static class Booleans {
 
-        internal static string[] anyTrue { get; } = { "TRUE", "T", "YES", "Y" };
+        internal static string[] anyTrue { get; } = {"TRUE", "T", "YES", "Y"};
 
-        internal static string[] anyFalse { get; } = { "FALSE", "F", "NO", "N", string.Empty };
+        internal static string[] anyFalse { get; } = {"FALSE", "F", "NO", "N", string.Empty};
 
-        public static bool ToBoolean(string s)
-        {
+        public static bool ToBoolean(string s) {
             s = ToBooleanString(s);
 
             if (string.IsNullOrEmpty(s)) return false;
@@ -21,8 +18,7 @@ namespace Sooduskorv_MVC.Aids.Extensions
             return bool.TryParse(s, out var b) && b;
         }
 
-        public static string ToBooleanString(string s)
-        {
+        public static string ToBooleanString(string s) {
             if (IsTrueString(s)) return ToString(true);
 
             return IsFalseString(s) ? ToString(false) : s;

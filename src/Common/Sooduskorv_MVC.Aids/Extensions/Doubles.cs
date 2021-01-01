@@ -1,13 +1,11 @@
 ﻿using System;
 using System.Globalization;
-using Sooduskorv_MVC.Aids.Methods;
-using Sooduskorv_MVC.Aids.Regions;
+using Aids.Regions;
+using Aids.Methods;
 
-namespace Sooduskorv_MVC.Aids.Extensions
-{
+namespace Aids.Extensions {
 
-    public static class Doubles
-    {
+    public static class Doubles {
 
         public static double Add(this double x, double y) => Safe.Run(() => x + y, double.NaN);
 
@@ -30,15 +28,13 @@ namespace Sooduskorv_MVC.Aids.Extensions
 
         public static double Delta(this double d) => Math.Abs(d / 1E7);
 
-        public static double ToDouble(object o)
-        {
+        public static double ToDouble(object o) {
             ToDouble(o, out double d);
             return d;
         }
 
-        public static bool TryParse(string s, out double d)
-        {
-            return double.TryParse(s, NumberStyles.Any, UseCulture.Invariant, out d);
+        public static bool TryParse(string s, out double d) {
+            return double.TryParse(s, NumberStyles.Any,UseCulture.Invariant, out d);
         }
 
         public static bool ToDouble(object o, out double d)

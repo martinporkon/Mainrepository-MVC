@@ -1,22 +1,18 @@
 ﻿using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using Sooduskorv_MVC.Aids.Extensions;
-using Sooduskorv_MVC.Aids.Methods;
+using Aids.Extensions;
+using Aids.Methods;
 
-namespace Sooduskorv_MVC.Aids.Regions
-{
+namespace Aids.Regions {
 
-    public static class SystemRegionInfo
-    {
+    public static class SystemRegionInfo {
 
         public static bool IsCountry(RegionInfo r)
             => Safe.Run(() => r?.ThreeLetterISORegionName.IsWord() ?? false, false);
 
-        public static List<RegionInfo> GetRegions()
-        {
-            return Safe.Run(() =>
-            {
+        public static List<RegionInfo> GetRegions() {
+            return Safe.Run(() => {
                 var cultures = SystemCultureInfo.GetSpecific();
                 var regions = Lists.Convert(cultures, SystemCultureInfo.ToRegionInfo);
                 regions = Lists.Distinct(regions);
@@ -28,10 +24,8 @@ namespace Sooduskorv_MVC.Aids.Regions
             }, new List<RegionInfo>());
         }
 
-        private static void removeAllButCountries(IList<RegionInfo> cultures)
-        {
-            for (var i = cultures.Count; i > 0; i--)
-            {
+        private static void removeAllButCountries(IList<RegionInfo> cultures) {
+            for (var i = cultures.Count; i > 0; i--) {
                 var c = cultures[i - 1];
 
                 if (c != null) continue;
@@ -42,3 +36,5 @@ namespace Sooduskorv_MVC.Aids.Regions
     }
 
 }
+
+

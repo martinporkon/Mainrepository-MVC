@@ -1,7 +1,8 @@
-﻿using Catalog.Data.Catalog;
+﻿using Aids.Random;
+using Catalog.Data.Catalog;
 using Catalog.Data.CatalogedProducts;
 using Catalog.Data.CatalogEntries;
-using Catalog.Data.Prices;
+using Catalog.Data.Price;
 using Catalog.Data.Product;
 using Catalog.Data.UserProfiles;
 using Sooduskorv_MVC.Aids.Random;
@@ -88,7 +89,7 @@ namespace Catalog.Infra
             ValidTo = GetRandom.DateTime(validToMinimum, validToMaximum),
             Name = "Puuviljad",
             Description = "Värsked puuviljad üle kogu maailma" },
-
+        
 
         new ProductCategoryData{
             Id = "1",
@@ -129,7 +130,7 @@ namespace Catalog.Infra
             Description = "Sealiha on lihatoodete alamkategooria",
             BaseCategoryId = "1" },
         };
-
+        
 
 
         //internal static List<PartyData> parties => new List<PartyData>{
@@ -152,7 +153,7 @@ namespace Catalog.Infra
         {
             for (int i = 0; i < randomDataGenerationAmount; i++)
             {
-                prices.Add(new PriceData { Id = i.ToString(), ValidFrom = GetRandom.DateTime(validFromMinimum, validFromMaximum), ValidTo = GetRandom.DateTime(validToMinimum, validToMaximum), Amount = GetRandom.Decimal(0, 30), CurrencyId = i.ToString(), ProductInstanceId = GetRandom.Int8(0, 8).ToString() });
+                prices.Add(new PriceData { Id = i.ToString(), ValidFrom = GetRandom.DateTime(validFromMinimum, validFromMaximum), ValidTo = GetRandom.DateTime(validToMinimum, validToMaximum), Amount = GetRandom.Decimal(0, 30), CurrencyId = i.ToString(), ProductInstanceId = GetRandom.Int8(0,8).ToString() });
             }
         }
 
@@ -194,7 +195,7 @@ namespace Catalog.Infra
         };
         internal static List<ProductTypeData> productTypes => new List<ProductTypeData>
         {
-            new ProductTypeData{
+            new ProductTypeData{ 
                 Id = "0",
                 ProductKind = ProductKind.Product,
                 Name = "Piim 2,5%",
@@ -205,7 +206,7 @@ namespace Catalog.Infra
                 BarCode = "4740125000108",
                 Description = "Hea Eestimaine piim",
                 ValidFrom=  GetRandom.DateTime(validFromMinimum, validFromMaximum),
-                ValidTo =  GetRandom.DateTime(validToMinimum, validToMaximum),
+                ValidTo =  GetRandom.DateTime(validToMinimum, validToMaximum), 
                 Image = "no-image.png"
             },
              new ProductTypeData{
@@ -295,7 +296,7 @@ namespace Catalog.Infra
             },
         };
         internal static List<ProductInstanceData> productInstances => new List<ProductInstanceData>{
-            new ProductInstanceData {
+            new ProductInstanceData { 
                 Id="0",
                 ProductTypeId= "5",
                 Amount = 1,
@@ -470,7 +471,7 @@ namespace Catalog.Infra
             initializeBrands(db);
             initializeProductCategories(db);
             initializePrices(db);
-
+           
             return true;
         }
 

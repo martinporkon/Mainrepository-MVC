@@ -1,0 +1,53 @@
+﻿@page
+@using Catalog.Pages.Common.Aids
+@using Catalog.Pages.Common.Extensions
+@model Catalog.Pages.Products.ProductInstancesPage
+
+@{
+    Layout = "_Index";
+    var page = Model.PageUrl;
+}
+
+<body>
+    <table class="table">
+        <thead>
+            @Html.Header(
+
+                new Link(Html.DisplayNameFor(m => m.Item.ProductKind), Model.GetSortString(m => m.ProductKind, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.ProductTypeId), Model.GetSortString(m => m.ProductTypeId, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.Amount), Model.GetSortString(m => m.Amount, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.UnitId), Model.GetSortString(m => m.UnitId, page)),
+                new Link(Html.DisplayName("Price"), Model.GetSortString(m => m.UnitId, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.PartyId), Model.GetSortString(m => m.PartyId, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.ValidFrom), Model.GetSortString(m => m.ValidFrom, page)),
+                new Link(Html.DisplayNameFor(m => m.Item.ValidTo), Model.GetSortString(m => m.ValidTo, page))
+                )
+
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+                <tr>
+                    @Html.Row(
+                        false,
+                        page,
+                        item.GetId(),
+                        Model.SortOrder,
+                        Model.SearchString,
+                        Model.PageIndex,
+                        Model.FixedFilter,
+                        Model.FixedValue,
+                        Html.DisplayFor(modelItem => item.ProductKind),
+                        Html.DisplayFor(modelItem => item.ProductTypeId),
+                        Html.DisplayFor(modelItem => item.Amount),
+                        Html.DisplayFor(modelItem => item.UnitId),
+                        Html.Raw(Model.priceAmount(item.Id)),
+                        Html.DisplayFor(modelItem => item.PartyId),
+                        Html.DisplayFor(modelItem => item.ValidFrom),
+                        Html.DisplayFor(modelItem => item.ValidTo)
+                        )
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>

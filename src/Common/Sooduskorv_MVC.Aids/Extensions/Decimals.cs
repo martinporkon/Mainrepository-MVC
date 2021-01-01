@@ -1,10 +1,9 @@
-﻿using Sooduskorv_MVC.Aids.Methods;
+﻿
+using Aids.Methods;
 
-namespace Sooduskorv_MVC.Aids.Extensions
-{
+namespace Aids.Extensions {
 
-    public static class Decimals
-    {
+    public static class Decimals {
 
         public static decimal Add(this decimal x, decimal y) => Safe.Run(() => x + y, decimal.MaxValue);
 

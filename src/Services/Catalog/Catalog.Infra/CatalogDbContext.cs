@@ -1,7 +1,7 @@
 ﻿using Catalog.Data.Catalog;
 using Catalog.Data.CatalogedProducts;
 using Catalog.Data.CatalogEntries;
-using Catalog.Data.Prices;
+using Catalog.Data.Price;
 using Catalog.Data.Product;
 using Catalog.Data.ProductFeature;
 using Catalog.Data.UserProfiles;

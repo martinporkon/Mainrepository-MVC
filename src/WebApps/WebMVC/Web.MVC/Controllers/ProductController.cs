@@ -24,8 +24,8 @@ namespace SooduskorvWebMVC.Controllers
 
             /*var a = response.Result;*/
 
-            var list = new List<ProductDto>();
-            var test = new ProductDto
+            var list = new List<CatalogDto>();
+            var test = new CatalogDto
             {
                 Id = a.Id,
                 Measure = a.Measure,

@@ -2,6 +2,7 @@
 using Catalog.Domain;
 using Catalog.Domain.Common;
 using Catalog.Domain.Prices;
+using Catalog.Domain.Product;
 using CommonData;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Sooduskorv_MVC.Facade;
@@ -26,7 +27,7 @@ namespace Catalog.Pages
         ? string.Empty
         : $"{pageSubtitle()}";
 
-        protected internal virtual string pageSubtitle() => string.Empty;
+        protected virtual string pageSubtitle() => string.Empty;
 
         public Uri PageUrl => pageUrl();
         public Uri CreateUrl => createUrl();
@@ -40,7 +41,7 @@ namespace Catalog.Pages
                        $"&fixedFilter={FixedFilter}" +
                        $"&fixedValue={FixedValue}", UriKind.Relative);
 
-        protected internal abstract Uri pageUrl();
+        protected abstract Uri pageUrl();
 
         public Uri IndexUrl => indexUrl();
 
@@ -77,6 +78,54 @@ namespace Catalog.Pages
                 : condition is null ?
                     items
                     .Select(m => new SelectListItem(m.Data.Amount.ToString(), m.Data.ProductInstanceId))
+                    .ToList() :
+                     new List<SelectListItem>();
+            l.Insert(0, new SelectListItem(Word.UnSpecified, null));
+            return l;
+        }
+        protected internal static IEnumerable<SelectListItem> newSubCategoriesList<ProductCategory, ProductCategoryData>(IProductCategoriesRepository r,
+            Func<ProductCategory, bool> condition = null)
+            where ProductCategory : IEntity<ProductCategoryData>
+            where ProductCategoryData : NamedEntityData, new()
+        {
+            var items = r?.Get().GetAwaiter().GetResult();
+            var l = items is null
+                ? new List<SelectListItem>()
+                : condition is null ?
+                    items
+                    .Select(m => new SelectListItem(m.Data.BaseCategoryId, m.Data.Id))
+                    .ToList() :
+                     new List<SelectListItem>();
+            l.Insert(0, new SelectListItem(Word.UnSpecified, null));
+            return l;
+        }
+        protected internal static IEnumerable<SelectListItem> newPartiesList<ProductInstance, ProductInstanceData>(IProductInstancesRepository r,
+            Func<ProductInstance, bool> condition = null)
+            where ProductInstance : IEntity<ProductInstanceData>
+            where ProductInstanceData : NamedEntityData, new()
+        {
+            var items = r?.Get().GetAwaiter().GetResult();
+            var l = items is null
+                ? new List<SelectListItem>()
+                : condition is null ?
+                    items
+                    .Select(m => new SelectListItem(m.Data.Id, m.Data.PartyId))
+                    .ToList() :
+                     new List<SelectListItem>();
+            l.Insert(0, new SelectListItem(Word.UnSpecified, null));
+            return l;
+        }
+        protected internal static IEnumerable<SelectListItem> newInstancesList<ProductInstance, ProductInstanceData>(IProductInstancesRepository r,
+           Func<ProductInstance, bool> condition = null)
+           where ProductInstance : IEntity<ProductInstanceData>
+           where ProductInstanceData : NamedEntityData, new()
+        {
+            var items = r?.Get().GetAwaiter().GetResult();
+            var l = items is null
+                ? new List<SelectListItem>()
+                : condition is null ?
+                    items
+                    .Select(m => new SelectListItem(m.Data.Id, m.Data.ProductTypeId))
                     .ToList() :
                      new List<SelectListItem>();
             l.Insert(0, new SelectListItem(Word.UnSpecified, null));

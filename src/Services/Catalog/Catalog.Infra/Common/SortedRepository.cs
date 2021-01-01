@@ -1,11 +1,13 @@
 ﻿using Catalog.Domain;
 using Catalog.Domain.Common;
+using CommonData;
 using Microsoft.EntityFrameworkCore;
-using Sooduskorv_MVC.Data.CommonData;
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
+using System.Text;
 
 namespace Catalog.Infra.Common
 {

@@ -1,11 +1,9 @@
 ﻿using System;
-using Sooduskorv_MVC.Aids.Methods;
+using Aids.Methods;
 
-namespace Sooduskorv_MVC.Aids.Extensions
-{
+namespace Aids.Extensions {
 
-    public static class Dates
-    {
+    public static class Dates {
 
         public static DateTime AddDaysSafe(this DateTime x, double y)
             => Safe.Run(() => x.AddDays(y), DateTime.MaxValue);
@@ -31,8 +29,7 @@ namespace Sooduskorv_MVC.Aids.Extensions
         public static DateTime SubtractSafe(this DateTime x, DateTime y)
             => Safe.Run(() => x.Add(-TimeSpan.FromTicks(y.Ticks)), DateTime.MaxValue);
 
-        public static int GetAge(this DateTime x, DateTime? reference = null)
-        {
+        public static int GetAge(this DateTime x, DateTime? reference = null) {
             int age()
             {
                 var now = reference ?? DateTime.Now;
@@ -58,7 +55,7 @@ namespace Sooduskorv_MVC.Aids.Extensions
 
         public static int GetYear(this DateTime x) { return Safe.Run(() => x.Year, int.MaxValue); }
 
-        public static bool IsDateOnly(DateTime x)
+        public static bool IsDateOnly(DateTime x) 
             => Safe.Run(() => x.TimeOfDay == TimeSpan.Zero, false);
 
     }

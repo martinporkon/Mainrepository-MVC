@@ -1,5 +1,4 @@
-﻿
-using Catalog.Data.Prices;
+﻿using Catalog.Data.Price;
 using Catalog.Domain.Catalog;
 using Catalog.Domain.Common;
 using System;

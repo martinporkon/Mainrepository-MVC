@@ -1,30 +1,25 @@
 ﻿using System;
 using System.Globalization;
-using Sooduskorv_MVC.Aids.Regions;
+using Aids.Regions;
 
-namespace Sooduskorv_MVC.Aids.Extensions
-{
-    public static class Integers
-    {
+namespace Aids.Extensions {
+    public static class Integers {
         public static int ToInteger(object o)
         {
             ToInteger(o, out var i);
             return i;
         }
-        private static bool tryParse(string s, out int i)
-        {
+        private static bool tryParse(string s, out int i) {
             var b = int.TryParse(s, NumberStyles.Any, UseCulture.Invariant, out i);
             if (!b) i = int.MaxValue;
 
             return b;
         }
 
-        private static bool tryConvert<T>(T x, out int i)
-        {
+        private static bool tryConvert<T>(T x, out int i) {
             i = int.MaxValue;
 
-            try
-            {
+            try {
                 i = Convert.ToInt32(x);
 
                 return true;
@@ -32,12 +27,10 @@ namespace Sooduskorv_MVC.Aids.Extensions
             catch { return false; }
         }
 
-        public static bool ToInteger(object o, out int i)
-        {
+        public static bool ToInteger(object o, out int i) {
             i = int.MaxValue;
 
-            return o switch
-            {
+            return o switch {
                 string s => tryParse(s, out i),
                 sbyte i8 => tryConvert(i8, out i),
                 short i16 => tryConvert(i16, out i),

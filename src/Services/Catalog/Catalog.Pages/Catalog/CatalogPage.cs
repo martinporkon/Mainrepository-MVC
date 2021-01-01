@@ -19,12 +19,12 @@ namespace Catalog.Pages.Catalog
         public CatalogPage(ICatalogsRepository r)
             : base(r, ProductPagesNames.Catalogs) { }
 
-        protected internal override Uri pageUrl() => new Uri("Catalog", UriKind.Relative);
+        protected override Uri pageUrl() => new Uri("Catalog", UriKind.Relative);
 
-        protected internal override Catalogs toObject(CatalogView view) =>
+        protected override Catalogs toObject(CatalogView view) =>
             CatalogViewFactory.Create(view);
 
-        protected internal override CatalogView toView(Catalogs obj) => CatalogViewFactory.Create(obj);
+        protected override CatalogView toView(Catalogs obj) => CatalogViewFactory.Create(obj);
 
         public override IActionResult OnGetCreate(
             string sortOrder, string searchString, int? pageIndex,

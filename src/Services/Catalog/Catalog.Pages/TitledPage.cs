@@ -27,7 +27,7 @@ namespace Catalog.Pages
         ? string.Empty
         : $"{pageSubtitle()}";
 
-        protected internal virtual string pageSubtitle() => string.Empty;
+        protected virtual string pageSubtitle() => string.Empty;
 
         public Uri PageUrl => pageUrl();
         public Uri CreateUrl => createUrl();
@@ -41,7 +41,7 @@ namespace Catalog.Pages
                        $"&fixedFilter={FixedFilter}" +
                        $"&fixedValue={FixedValue}", UriKind.Relative);
 
-        protected internal abstract Uri pageUrl();
+        protected abstract Uri pageUrl();
 
         public Uri IndexUrl => indexUrl();
 

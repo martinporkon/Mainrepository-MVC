@@ -18,7 +18,7 @@ namespace Quantity.Pages.Common.Extensions {
             return new HtmlContentBuilder(s);
         }
 
-        internal static List<object> htmlStrings(Args a) {
+        public static List<object> htmlStrings(Args a) {
             a.PageUrl = new Uri($"./{getPageUrl(a.PageUrl)}", UriKind.Relative);
             a.Handler = getHandler(a.Handler);
             a.Action = null;
@@ -31,11 +31,11 @@ namespace Quantity.Pages.Common.Extensions {
             };
         }
 
-        internal static string getTitle(string s) => s ?? Captions.BackToList;
+        public static string getTitle(string s) => s ?? Captions.BackToList;
 
-        internal static string getHandler(string s) => s ?? Actions.Index;
+        public static string getHandler(string s) => s ?? Actions.Index;
 
-        internal static Uri getPageUrl(Uri s) => s ?? new Uri(Actions.Index, UriKind.Relative);
+        public static Uri getPageUrl(Uri s) => s ?? new Uri(Actions.Index, UriKind.Relative);
 
     }
 

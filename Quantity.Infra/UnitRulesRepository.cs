@@ -12,7 +12,7 @@ namespace Quantity.Infra {
 
         public UnitRulesRepository(QuantityDbContext c = null) : base(c, c?.UnitRules) { }
 
-        protected internal override UnitRules toDomainObject(UnitRulesData d) => new UnitRules(d);
+        public override UnitRules toDomainObject(UnitRulesData d) => new UnitRules(d);
 
         protected override async Task<UnitRulesData> getData(string id)
         {

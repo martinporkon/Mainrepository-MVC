@@ -29,13 +29,13 @@ namespace Quantity.Pages {
         public IList<UnitTermView> Terms { get; }
         public IList<UnitFactorView> Factors { get; }
 
-        protected internal override Uri pageUrl() => new Uri(QuantityPagesUrls.Units, UriKind.Relative);
+        public override Uri pageUrl() => new Uri(QuantityPagesUrls.Units, UriKind.Relative);
 
-        protected internal override string pageSubtitle()  => MeasureName(FixedValue);
+        public override string pageSubtitle()  => MeasureName(FixedValue);
 
-        protected internal override Unit toObject(UnitView view) => UnitViewFactory.Create(view);
+        public override Unit toObject(UnitView view) => UnitViewFactory.Create(view);
 
-        protected internal override UnitView toView(Unit obj) => UnitViewFactory.Create(obj);
+        public override UnitView toView(Unit obj) => UnitViewFactory.Create(obj);
 
         public string MeasureName(string id) => itemName(Measures, id);
 

@@ -34,7 +34,7 @@ namespace Quantity.Pages.Common {
             PageIndex = pageIndex ?? 0;
         }
 
-        protected internal async Task getList(string sortOrder, string currentFilter, string searchString,
+        public async Task getList(string sortOrder, string currentFilter, string searchString,
             int? pageIndex, string fixedFilter, string fixedValue) {
 
             FixedFilter = fixedFilter;

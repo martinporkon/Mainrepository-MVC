@@ -11,7 +11,7 @@ namespace Quantity.Infra {
 
         public UnitTermsRepository(QuantityDbContext c = null) : base(c, c?.UnitTerms) { }
 
-        protected internal override UnitTerm toDomainObject(UnitTermData d) => new UnitTerm(d);
+        public override UnitTerm toDomainObject(UnitTermData d) => new UnitTerm(d);
 
         protected override async Task<UnitTermData> getData(string id) {
             var masterId = id?.GetHead();

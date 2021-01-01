@@ -5,7 +5,8 @@ using Quantity.Domain.Common;
 
 namespace Quantity.Domain {
 
-    public abstract class Measure : CommonMetric<MeasureData> {
+    public abstract class Measure : CommonMetric<MeasureData>
+    {
 
         protected MeasureTerms measureTerms;
         protected MeasureData measureData;
@@ -15,6 +16,10 @@ namespace Quantity.Domain {
         private string measureId => GetMember.Name<UnitData>(x => x.MeasureId);
 
         protected Measure(MeasureData d = null) : base(d) { }
+
+        public Measure()
+        {
+        }
 
         public IReadOnlyList<Unit> Units 
             => new GetFrom<IUnitsRepository, Unit>().ListBy(measureId, Id);

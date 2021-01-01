@@ -18,11 +18,11 @@ namespace Quantity.Pages {
             Systems = newItemsList<SystemOfUnits, SystemOfUnitsData>(s);
         }
 
-        protected internal override Uri pageUrl() => new Uri(QuantityPagesUrls.UnitFactors, UriKind.Relative);
+        public override Uri pageUrl() => new Uri(QuantityPagesUrls.UnitFactors, UriKind.Relative);
 
-        protected internal override UnitFactor toObject(UnitFactorView view) => UnitFactorViewFactory.Create(view);
+        public override UnitFactor toObject(UnitFactorView view) => UnitFactorViewFactory.Create(view);
 
-        protected internal override UnitFactorView toView(UnitFactor obj) => UnitFactorViewFactory.Create(obj);
+        public override UnitFactorView toView(UnitFactor obj) => UnitFactorViewFactory.Create(obj);
 
         public IEnumerable<SelectListItem> Units { get; }
         public IEnumerable<SelectListItem> Systems { get; }
@@ -31,7 +31,7 @@ namespace Quantity.Pages {
 
         public string SystemName(string id) => itemName(Systems, id);
 
-        protected internal override string pageSubtitle() => UnitName(FixedValue);
+        public override string pageSubtitle() => UnitName(FixedValue);
 
     }
 

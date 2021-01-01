@@ -20,6 +20,7 @@
         margin-top: 1rem;
         transition: all 0.35s;
         width: 80%;
+        text-align: center;
     }
 
     .esh-catalog-button-remove {
@@ -38,6 +39,7 @@
 @if (Product.ProductsInUserBasket == 0)
 {
     <input class="esh-catalog-button-add" @onclick="@AddToBasketChanged" value="Lisa ostukorvi" />
+
 }
 else if (Product.ProductsInUserBasket > 0)
 {

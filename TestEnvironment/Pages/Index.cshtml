@@ -5,13 +5,20 @@
     ViewData["Title"] = "Home page";
 }
 
-<head>
-    <meta charset="utf-8">
-</head>
-@(await Html.RenderComponentAsync<Nav>(RenderMode.ServerPrerendered))
+<div class="row text-center">
+    <div class="col">
+        <h1 style="padding-top: 7%">Tere tulemast Sooduskorvi!</h1>
 
+    </div>
+</div>
 
-@section Scripts {
-    
-       
-}
+<div class="row text-center">
+    <div class="col">
+        <img src="images/Family.jpg" style="width: 500px;" />
+    </div>
+
+</div>
+
+<div>
+    <h4 style="text-align: center">Eesti jaekettide hinnavõrdlus portaal</h4>
+</div>

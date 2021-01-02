@@ -6,11 +6,11 @@ namespace Sooduskorv_MVC.Common.Extensions
 {
     public class JsRuntimeExtensions : IAsyncDisposable
     {
-        private readonly Lazy<Task<IJSObjectReference>> moduleTask;
+        private readonly Lazy<Task<IJSObjectReference>> _moduleTask;
 
-        public JsRuntimeExtensions()
+        public JsRuntimeExtensions(Lazy<Task<IJSObjectReference>> moduleTask)
         {
-
+            this._moduleTask = moduleTask;
         }
 
         public ValueTask<bool> Confirm(IJSRuntime jsRuntime, string message)
@@ -20,9 +20,9 @@ namespace Sooduskorv_MVC.Common.Extensions
 
         public async ValueTask DisposeAsync()
         {
-            if (moduleTask.IsValueCreated)
+            if (_moduleTask.IsValueCreated)
             {
-                var module = await moduleTask.Value;
+                var module = await _moduleTask.Value;
                 await module.DisposeAsync();
             }
         }

@@ -10,55 +10,40 @@
     Layout = "_Index";
     var page = Model.PageUrl;
 }
-<link rel="stylesheet" href="~/css/catalog/catalog.component.css" />
-<a href="C:\Users\Yrgen\source\repos\Mainrepository-MVC\TestEnvironment\Areas\Products\Pages\CatalogItems.razor">C:\Users\Yrgen\source\repos\Mainrepository-MVC\TestEnvironment\Areas\Products\Pages\CatalogItems.razor</a>
+<link rel="stylesheet" href="css/nav.css" />
 <body>
-    <div class="esh-catalog-sidenav">
-        @foreach (var basecategory in Model.Categories.Where(x => x.Text is null))
-        {
-            <button class="esh-catalog-accordion">@Html.DisplayName(Model.CategoryName(basecategory.Value))</button>
-            <div class="esh-catalog-panel">
-                @foreach (var category in Model.Categories.Where(x => x.Text == basecategory.Value))
-                 {
-                <p> @Html.DisplayName(Model.CategoryName(category.Value))</p>
-                 }
-</div>
-                }
+
+    <div class="clearfix">
+        <div class="column menu">
+            @foreach (var basecategory in Model.Categories.Where(x => x.Text is null))
+            {
+                <button class="dropdown-btn">@Html.DisplayName(Model.CategoryName(basecategory.Value))</button>
+                <div class="dropdown-container">
+                    @foreach (var category in Model.Categories.Where(x => x.Text == basecategory.Value))
+                    {
+                        <p> @Html.DisplayName(Model.CategoryName(category.Value))</p>
+                    }
+                </div>
+            }
+
+        </div>
     </div>
-    <script>//Todo:viia script js kausta
-        var acc = document.getElementsByClassName("esh-catalog-accordion");
-        var i;
 
-        for (i = 0; i < acc.length; i++) {
-            acc[i].addEventListener("click", function () {
-                /* Toggle between adding and removing the "active" class,
-                to highlight the button that controls the panel */
-                this.classList.toggle("active");
+    <script type="text/javascript" src="js/nav.js"></script>
 
-                /* Toggle between hiding and showing the active panel */
-                var panel = this.nextElementSibling;
-                if (panel.style.display === "block") {
-                    panel.style.display = "none";
-                } else {
-                    panel.style.display = "block";
-                }
-            });
-        }
-    </script>           
+    @Html.DropMenu("Sorteeri:",
+        new Link(Html.DisplayName("Sorteeri tähestiku järgi"), Model.GetSortString(m => m.Name, page)),
+        new Link(Html.DisplayName("Sorteeri koguse järgi"), Model.GetSortString(m => m.Amount, page))
+        )
 
-            @Html.DropMenu("Sorteeri:",
-                new Link(Html.DisplayName("Sorteeri tähestiku järgi"), Model.GetSortString(m => m.Name, page)),
-                new Link(Html.DisplayName("Sorteeri koguse järgi"), Model.GetSortString(m => m.Amount, page))
-                )
-
-            <div class="container">
-                <component type="typeof(SendBasketItem)" render-mode="ServerPrerendered" />
-                @*<div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">*@
-                @*<ul class="navbar-nav flex-grow-1">*@
-                @(await Html.RenderComponentAsync<CatalogItems>(RenderMode.ServerPrerendered, new {Products = Model.Items}))
-                @*</ul>*@
-                @*</div>*@
-            </div>
-            @(await Html.RenderComponentAsync<SendBasketItemBase>(RenderMode.ServerPrerendered))
+    <div class="container">
+        <component type="typeof(SendBasketItem)" render-mode="ServerPrerendered" />
+        @*<div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">*@
+        @*<ul class="navbar-nav flex-grow-1">*@
+        @(await Html.RenderComponentAsync<CatalogItems>(RenderMode.ServerPrerendered, new {Products = Model.Items}))
+        @*</ul>*@
+        @*</div>*@
+    </div>
+    @(await Html.RenderComponentAsync<SendBasketItemBase>(RenderMode.ServerPrerendered))
 </body>
 

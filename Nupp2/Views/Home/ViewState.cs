@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Net.Http;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Components;
-using Nupp2.Views.Home.Button;
 
 namespace Nupp2.Views.Home
 {

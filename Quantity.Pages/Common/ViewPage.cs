@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
-using CommonData;
 using Microsoft.AspNetCore.Mvc;
 using Quantity.Domain.Common;
 using Quantity.Facade.Common;
+using Sooduskorv_MVC.Data.CommonData;
 
 namespace Quantity.Pages.Common {
 

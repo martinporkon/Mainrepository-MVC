@@ -1,4 +1,6 @@
-﻿namespace CommonData {
+﻿using WebMVC.Domain.CommonData;
+
+namespace CommonData {
 
     public abstract class RelationshipData : DefinedEntityData {
 

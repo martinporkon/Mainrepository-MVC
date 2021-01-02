@@ -1,5 +1,5 @@
 ﻿
-using CommonData;
+using WebMVC.Domain.CommonData;
 
 namespace Quantity.Data
 {

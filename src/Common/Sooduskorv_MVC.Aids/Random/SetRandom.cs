@@ -45,6 +45,3 @@ namespace Sooduskorv_MVC.Aids.Random
         }
     }
 }
-
-
-

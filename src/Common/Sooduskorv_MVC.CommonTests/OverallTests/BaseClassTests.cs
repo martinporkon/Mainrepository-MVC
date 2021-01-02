@@ -3,7 +3,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Diagnostics;
 using Sooduskorv_MVC.Aids.Random;
 
-namespace CommonTests.OverallTests
+namespace Sooduskorv_MVC.CommonTests.OverallTests
 {
     public abstract class BaseClassTests<TClass, TBaseClass> : BaseTests
     {

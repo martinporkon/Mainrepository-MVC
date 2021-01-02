@@ -1,7 +1,4 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Quantity.Data;
+﻿using Quantity.Data;
 using Quantity.Domain;
 using Quantity.Infra;
 using Quantity.Infra.Common;

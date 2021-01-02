@@ -1,5 +1,4 @@
 ﻿using System;
-using CommonData;
 using Quantity.Core.Rounding;
 
 namespace Quantity.Domain.Common {

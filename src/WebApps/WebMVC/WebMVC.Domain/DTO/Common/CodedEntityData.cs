@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Sooduskorv_MVC.Data.CommonData;
 
 namespace CommonData
 {

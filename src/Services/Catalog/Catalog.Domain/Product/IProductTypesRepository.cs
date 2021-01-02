@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Catalog.Domain.Product
+﻿namespace Catalog.Domain.Product
 {
     public interface IProductTypesRepository : IRepository<IProductType> { }
 }

@@ -1,5 +1,4 @@
-﻿using Aids.Random;
-using Catalog.Data.Catalog;
+﻿using Catalog.Data.Catalog;
 using Catalog.Data.CatalogedProducts;
 using Catalog.Data.CatalogEntries;
 using Catalog.Data.Price;

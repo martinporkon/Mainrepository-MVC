@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Globalization;
-using Aids.Constants;
-using Aids.Regions;
+using Sooduskorv_MVC.Aids.Constants;
+using Sooduskorv_MVC.Aids.Regions;
 
-namespace Aids.Values {
+namespace Sooduskorv_MVC.Aids.Values {
 
     public static class Converting {
 
@@ -50,7 +50,5 @@ namespace Aids.Values {
         public static double ToMinutes(this TimeSpan a) => a.TotalMinutes;
 
         public static double ToSeconds(this TimeSpan a) => a.TotalSeconds;
-
     }
-
 }

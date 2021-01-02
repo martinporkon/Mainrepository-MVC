@@ -50,7 +50,7 @@ namespace Sooduskorv_MVC.Middleware.Culture
             var supportedCultures = CultureInfo.GetCultures(CultureTypes.AllCultures);
             var l = new RequestLocalizationOptions
             {
-                DefaultRequestCulture = new RequestCulture(UseCulture.EnglishUs),
+                DefaultRequestCulture = new RequestCulture(UseCulture.EnglishUS),
                 SupportedCultures = supportedCultures,
                 SupportedUICultures = supportedCultures
             };

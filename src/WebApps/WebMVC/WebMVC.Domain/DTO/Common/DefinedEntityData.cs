@@ -1,4 +1,6 @@
-﻿namespace CommonData {
+﻿using Sooduskorv_MVC.Data.CommonData;
+
+namespace WebMVC.Domain.CommonData {
 
     public abstract class DefinedEntityData : NamedEntityData {
 

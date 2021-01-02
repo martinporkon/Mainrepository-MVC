@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using MediatR;
 using WebMVC.Bff.HttpAggregator.Domain.CatalogService.CommandRequests;
 using WebMVC.Bff.HttpAggregator.Domain.Common;
-using WebMVC.Bff.HttpAggregator.Domain.DTO;
 
 namespace WebMVC.Bff.HttpAggregator.Domain.CatalogService.CommandHandlers
 {
@@ -21,5 +20,9 @@ namespace WebMVC.Bff.HttpAggregator.Domain.CatalogService.CommandHandlers
         {
             throw new System.NotImplementedException();
         }
+    }
+
+    public class BasketDto
+    {
     }
 }

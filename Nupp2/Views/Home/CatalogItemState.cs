@@ -1,6 +1,4 @@
-﻿using System.Net.Http;
-
-namespace Nupp2.Views.Home
+﻿namespace Nupp2.Views.Home
 {
     public class CatalogItemState : ViewState
     {

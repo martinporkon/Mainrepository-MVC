@@ -2,9 +2,7 @@
 using Catalog.Data.Catalog;
 using Catalog.Data.CatalogEntries;
 using Catalog.Domain.Common;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Catalog.Domain.Catalog
 {

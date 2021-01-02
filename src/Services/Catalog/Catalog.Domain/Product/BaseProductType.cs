@@ -3,11 +3,8 @@ using Catalog.Data.Product;
 using Catalog.Data.ProductFeature;
 using Catalog.Domain.Catalog;
 using Catalog.Domain.Common;
-using Catalog.Domain.Prices;
 using Catalog.Domain.ProductFeature;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Catalog.Domain.Product
 {

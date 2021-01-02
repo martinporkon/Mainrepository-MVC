@@ -1,7 +1,5 @@
 ﻿using Sooduskorv_MVC.Aids.Constants;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Catalog.Domain.Common
 {

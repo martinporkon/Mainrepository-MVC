@@ -1,14 +1,17 @@
 using System;
-using Aids.Extensions;
+using Sooduskorv_MVC.Aids.Extensions;
 
-namespace Aids.Values {
+namespace Sooduskorv_MVC.Aids.Values
+{
 
-    public static class Calculating {
+    public static class Calculating
+    {
 
-        public static object Add(object x, object y) {
-            if (AreTypes.Bool(x, y)) return ((bool) x).Add((bool) y);
-            if (AreTypes.String(x, y)) return Strings.Add((string) x, (string) y);
-            if (AreTypes.DateTime(x, y)) return ((DateTime) x).AddSafe((DateTime) y);
+        public static object Add(object x, object y)
+        {
+            if (AreTypes.Bool(x, y)) return ((bool)x).Add((bool)y);
+            if (AreTypes.String(x, y)) return Strings.Add((string)x, (string)y);
+            if (AreTypes.DateTime(x, y)) return ((DateTime)x).AddSafe((DateTime)y);
             if (AreTypes.AnyDecimal(x, y)) return Converting.ToDecimal(x).Add(Converting.ToDecimal(y));
             if (AreTypes.AnyDouble(x, y))
                 return Doubles.ToDouble(x).Add(Doubles.ToDouble(y));
@@ -16,8 +19,14 @@ namespace Aids.Values {
             return null;
         }
 
-        public static object Subtract(object x, object y) {
-            if (AreTypes.DateTime(x, y)) return ((DateTime) x).SubtractSafe((DateTime) y);
+        public static object Modulus(object x, object y)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static object Subtract(object x, object y)
+        {
+            if (AreTypes.DateTime(x, y)) return ((DateTime)x).SubtractSafe((DateTime)y);
             if (AreTypes.AnyDecimal(x, y)) return Converting.ToDecimal(x).Subtract(Converting.ToDecimal(y));
             if (AreTypes.AnyDouble(x, y))
                 return Doubles.ToDouble(x).Subtract(Doubles.ToDouble(y));
@@ -25,8 +34,9 @@ namespace Aids.Values {
             return null;
         }
 
-        public static object Multiply(object x, object y) {
-            if (AreTypes.Bool(x, y)) return ((bool) x).Multiply((bool) y);
+        public static object Multiply(object x, object y)
+        {
+            if (AreTypes.Bool(x, y)) return ((bool)x).Multiply((bool)y);
             if (AreTypes.AnyDecimal(x, y)) return Converting.ToDecimal(x).Multiply(Converting.ToDecimal(y));
             if (AreTypes.AnyDouble(x, y))
                 return Doubles.ToDouble(x).Multiply(Doubles.ToDouble(y));
@@ -34,7 +44,8 @@ namespace Aids.Values {
             return null;
         }
 
-        public static object Divide(object x, object y) {
+        public static object Divide(object x, object y)
+        {
             if (AreTypes.AnyDecimal(x, y)) return Converting.ToDecimal(x).Divide(Converting.ToDecimal(y));
             if (AreTypes.AnyDouble(x, y))
                 return Doubles.ToDouble(x).Divide(Doubles.ToDouble(y));
@@ -42,88 +53,100 @@ namespace Aids.Values {
             return null;
         }
 
-        public static object Power(object x, object y) {
+        public static object Power(object x, object y)
+        {
             if (AreTypes.AnyDouble(x, y))
                 return Doubles.ToDouble(x).Power(Doubles.ToDouble(y));
 
             return null;
         }
 
-        public static object Inverse(object x) {
+        public static object Inverse(object x)
+        {
             if (AreTypes.AnyDecimal(x)) return Converting.ToDecimal(x).Inverse();
             if (AreTypes.AnyDouble(x)) return Doubles.ToDouble(x).Inverse();
 
             return null;
         }
 
-        public static object Opposite(object x) {
+        public static object Opposite(object x)
+        {
             if (AreTypes.AnyDecimal(x)) return Converting.ToDecimal(x).Opposite();
             if (AreTypes.AnyDouble(x)) return Doubles.ToDouble(x).Opposite();
 
             return null;
         }
 
-        public static object Square(object x) {
+        public static object Square(object x)
+        {
             if (AreTypes.AnyDouble(x)) return Doubles.ToDouble(x).Square();
 
             return null;
         }
 
-        public static object Sqrt(object x) {
+        public static object Sqrt(object x)
+        {
             if (AreTypes.AnyDouble(x)) return Doubles.ToDouble(x).Sqrt();
 
             return null;
         }
 
 
-        public static object And(object x, object y) {
-            if (AreTypes.Bool(x, y)) return ((bool) x).And((bool) y);
+        public static object And(object x, object y)
+        {
+            if (AreTypes.Bool(x, y)) return ((bool)x).And((bool)y);
 
             return null;
         }
 
-        public static object Or(object x, object y) {
-            if (AreTypes.Bool(x, y)) return ((bool) x).Or((bool) y);
+        public static object Or(object x, object y)
+        {
+            if (AreTypes.Bool(x, y)) return ((bool)x).Or((bool)y);
 
             return null;
         }
 
-        public static object Xor(object x, object y) {
-            if (AreTypes.Bool(x, y)) return ((bool) x).Xor((bool) y);
+        public static object Xor(object x, object y)
+        {
+            if (AreTypes.Bool(x, y)) return ((bool)x).Xor((bool)y);
 
             return null;
         }
 
-        public static object Not(object x) {
-            if (AreTypes.Bool(x)) return ((bool) x).Not();
+        public static object Not(object x)
+        {
+            if (AreTypes.Bool(x)) return ((bool)x).Not();
 
             return null;
         }
 
-        public static object IsEqual(object x, object y) {
-            if (AreTypes.Bool(x, y)) return ((bool) x).IsEqual((bool) y);
-            if (AreTypes.String(x, y)) return ((string) x).IsEqual((string) y);
-            if (AreTypes.DateTime(x, y)) return ((DateTime) x).IsEqual((DateTime) y);
+        public static object IsEqual(object x, object y)
+        {
+            if (AreTypes.Bool(x, y)) return ((bool)x).IsEqual((bool)y);
+            if (AreTypes.String(x, y)) return ((string)x).IsEqual((string)y);
+            if (AreTypes.DateTime(x, y)) return ((DateTime)x).IsEqual((DateTime)y);
             if (AreTypes.AnyDecimal(x, y)) return Converting.ToDecimal(x).IsEqual(Converting.ToDecimal(y));
             if (AreTypes.AnyDouble(x, y)) return Doubles.ToDouble(x).IsEqual(Doubles.ToDouble(y));
 
             return null;
         }
 
-        public static object IsGreater(object x, object y) {
-            if (AreTypes.Bool(x, y)) return ((bool) x).IsGreater((bool) y);
-            if (AreTypes.String(x, y)) return ((string) x).IsGreater((string) y);
-            if (AreTypes.DateTime(x, y)) return ((DateTime) x).IsGreater((DateTime) y);
+        public static object IsGreater(object x, object y)
+        {
+            if (AreTypes.Bool(x, y)) return ((bool)x).IsGreater((bool)y);
+            if (AreTypes.String(x, y)) return ((string)x).IsGreater((string)y);
+            if (AreTypes.DateTime(x, y)) return ((DateTime)x).IsGreater((DateTime)y);
             if (AreTypes.AnyDecimal(x, y)) return Converting.ToDecimal(x).IsGreater(Converting.ToDecimal(y));
             if (AreTypes.AnyDouble(x, y)) return Doubles.ToDouble(x).IsGreater(Doubles.ToDouble(y));
 
             return null;
         }
 
-        public static object IsLess(object x, object y) {
-            if (AreTypes.Bool(x, y)) return ((bool) x).IsLess((bool) y);
-            if (AreTypes.String(x, y)) return ((string) x).IsLess((string) y);
-            if (AreTypes.DateTime(x, y)) return ((DateTime) x).IsLess((DateTime) y);
+        public static object IsLess(object x, object y)
+        {
+            if (AreTypes.Bool(x, y)) return ((bool)x).IsLess((bool)y);
+            if (AreTypes.String(x, y)) return ((string)x).IsLess((string)y);
+            if (AreTypes.DateTime(x, y)) return ((DateTime)x).IsLess((DateTime)y);
             if (AreTypes.AnyDecimal(x, y)) return Converting.ToDecimal(x).IsLess(Converting.ToDecimal(y));
             if (AreTypes.AnyDouble(x, y)) return Doubles.ToDouble(x).IsLess(Doubles.ToDouble(y));
 
@@ -185,7 +208,7 @@ namespace Aids.Values {
         public static object ToMinutes(object x)
         {
             if (IsType.TimeSpan(x)) return ((TimeSpan)x).ToMinutes();
-            if (IsType.DateTime(x)) return new TimeSpan(((DateTime) x).Ticks).ToMinutes();
+            if (IsType.DateTime(x)) return new TimeSpan(((DateTime)x).Ticks).ToMinutes();
             return null;
         }
         public static object ToHours(object x)
@@ -277,7 +300,7 @@ namespace Aids.Values {
         public static object Substring(object x, object y, object z)
         {
             if (!IsType.String(x) || !AreTypes.AnyInt(y, z)) return null;
-            var r = Strings.Substring((string) x, Integers.ToInteger(y), Integers.ToInteger(z));
+            var r = Strings.Substring((string)x, Integers.ToInteger(y), Integers.ToInteger(z));
             return r;
         }
         public static object Contains(object x, object y)

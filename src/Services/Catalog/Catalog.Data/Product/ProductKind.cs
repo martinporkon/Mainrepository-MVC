@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿/*
 namespace Catalog.Data.Product
 {
     public enum ProductKind
@@ -15,3 +12,4 @@ namespace Catalog.Data.Product
 
     }
 }
+*/

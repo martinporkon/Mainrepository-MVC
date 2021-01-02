@@ -1,9 +1,4 @@
-﻿using System.Linq;
-using Catalog.Infra;
-using CommonTests.InfraTests;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace Catalog.Tests.Infra
+﻿namespace Catalog.Tests.Infra
 {
     //[TestClass]
     //public class CatalogDbInitializerTests : DbInitializerTests<CatalogDbContext>

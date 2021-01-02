@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Catalog.Facade.Product
+﻿namespace Catalog.Facade.Product
 {
     public class PartyInstanceView
     {

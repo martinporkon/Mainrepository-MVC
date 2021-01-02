@@ -2,8 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Aids.Logging;
-using CommonData;
 
 namespace Quantity.Infra {
     public class DbInitializer {

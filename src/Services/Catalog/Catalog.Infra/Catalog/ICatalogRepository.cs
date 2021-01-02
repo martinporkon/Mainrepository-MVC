@@ -1,8 +1,4 @@
-﻿using Catalog.Data.UserProfiles;
-using System;
-using System.Collections.Generic;
-
-namespace Catalog.Infra.Catalog
+﻿namespace Catalog.Infra.Catalog
 {
     //public interface ICatalogRepository
     //{

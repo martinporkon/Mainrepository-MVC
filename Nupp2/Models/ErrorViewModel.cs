@@ -1,5 +1,3 @@
-using System;
-
 namespace Nupp2.Models
 {
     public class ErrorViewModel

@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CommonTests.OverallTests
+namespace Sooduskorv_MVC.CommonTests.OverallTests
 {
     public abstract class SealedClassTests<TClass, TBaseClass> : ClassTests<TClass, TBaseClass> where TClass : new()
     {

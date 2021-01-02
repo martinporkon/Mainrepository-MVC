@@ -1,6 +1,6 @@
-﻿using CommonTests.OverallTests;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Order.Data.Orders;
+using Sooduskorv_MVC.CommonTests.OverallTests;
 using Sooduskorv_MVC.Data.CommonData;
 
 namespace Order.Tests.Data.Orders

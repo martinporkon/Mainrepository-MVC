@@ -1,8 +1,8 @@
 ﻿using System.Linq;
-using Aids.Methods;
-using Aids.Regions;
+using Sooduskorv_MVC.Aids.Methods;
+using Sooduskorv_MVC.Aids.Regions;
 
-namespace Aids.Extensions {
+namespace Sooduskorv_MVC.Aids.Extensions {
 
     public static class Booleans {
 

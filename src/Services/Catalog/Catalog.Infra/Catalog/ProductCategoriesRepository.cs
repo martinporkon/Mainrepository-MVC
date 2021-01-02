@@ -1,6 +1,5 @@
-﻿using Catalog.Data.Product;
+﻿/*using Catalog.Data.Product;
 using Catalog.Domain.Catalog;
-using Catalog.Infra.Common;
 
 namespace Catalog.Infra.Catalog
 {
@@ -15,4 +14,4 @@ namespace Catalog.Infra.Catalog
 
     }
 
-}
+}*/

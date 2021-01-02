@@ -1,6 +1,4 @@
-﻿using Aids.Random;
-using CommonTests.OverallTests;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using CommonTests.OverallTests;
 using Quantity.Data;
 using Quantity.Domain;
 using Quantity.Facade;

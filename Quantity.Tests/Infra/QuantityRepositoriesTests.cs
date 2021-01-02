@@ -1,6 +1,4 @@
-﻿using System;
-using CommonTests.OverallTests;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using CommonTests.OverallTests;
 using Quantity.Domain;
 using Quantity.Domain.Common;
 using Quantity.Infra;

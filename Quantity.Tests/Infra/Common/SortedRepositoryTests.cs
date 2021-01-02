@@ -1,13 +1,4 @@
-﻿using System;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Reflection;
-using System.Threading.Tasks;
-using Aids.Random;
-using Aids.Reflection;
-using CommonTests.OverallTests;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using CommonTests.OverallTests;
 using Quantity.Data;
 using Quantity.Domain;
 using Quantity.Infra;

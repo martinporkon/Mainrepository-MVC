@@ -1,11 +1,9 @@
-﻿using CommonData;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿/*
+using Sooduskorv_MVC.Data.CommonData;
 
 namespace Catalog.Data.Product
 {
-    public sealed class CountryOfOriginData:DescribedEntityData
+    public sealed class CountryOfOriginData : DescribedEntityData
     {
         public string OfficialName { get; set; }
         public string NativeName { get; set; }
@@ -14,3 +12,4 @@ namespace Catalog.Data.Product
 
     }
 }
+*/

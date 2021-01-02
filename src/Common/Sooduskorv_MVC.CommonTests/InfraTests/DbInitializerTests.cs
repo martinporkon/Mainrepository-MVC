@@ -1,7 +1,6 @@
-﻿
-using CommonTests.OverallTests;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Sooduskorv_MVC.CommonTests.OverallTests;
 
 namespace CommonTests.InfraTests
 {

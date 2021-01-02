@@ -1,5 +1,4 @@
-﻿using Catalog.Data.Services;
-using CommonData;
+﻿/*using Catalog.Data.Services;
 using Sooduskorv_MVC.Data.CommonData;
 using System;
 
@@ -20,4 +19,4 @@ namespace Catalog.Data.Product
         public DateTime DeliveredTo { get; set; }
         public DeliveryStatus DeliveryStatus { get; set; }
     }
-}
+}*/

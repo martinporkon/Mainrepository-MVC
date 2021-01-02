@@ -9,6 +9,7 @@ using Quantity.Pages.Common.Consts;
 
 namespace Quantity.Pages {
 
+    /*
     public sealed class MeasureTermsPage
         : ViewPage<IMeasureTermsRepository, MeasureTerm, MeasureTermView, MeasureTermData> {
 
@@ -30,6 +31,7 @@ namespace Quantity.Pages {
         public override string pageSubtitle() => MeasureName(FixedValue);
 
     }
+    */
 
 }
 

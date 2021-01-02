@@ -1,7 +1,7 @@
-﻿using CommonTests.OverallTests;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Order.Data.Orders;
 using Sooduskorv_MVC.Aids.Reflection;
+using Sooduskorv_MVC.CommonTests.OverallTests;
 
 namespace Order.Tests.Data.Orders
 {

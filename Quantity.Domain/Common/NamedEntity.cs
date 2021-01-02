@@ -1,6 +1,4 @@
 ﻿
-using CommonData;
-
 namespace Quantity.Domain.Common {
 
     public abstract class NamedEntity<T> : UniqueEntity<T> where T : NamedEntityData, new() {

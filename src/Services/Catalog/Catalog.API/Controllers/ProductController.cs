@@ -1,8 +1,5 @@
-﻿using Catalog.Data.Product;
-using Microsoft.AspNetCore.Authorization;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Threading.Tasks;
 
 namespace Catalog.API.Controllers
 {

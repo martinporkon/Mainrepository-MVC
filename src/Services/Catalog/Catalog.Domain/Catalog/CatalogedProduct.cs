@@ -1,9 +1,6 @@
 ﻿using Catalog.Data.CatalogedProducts;
 using Catalog.Domain.Common;
 using Catalog.Domain.Product;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Catalog.Domain.Catalog
 {

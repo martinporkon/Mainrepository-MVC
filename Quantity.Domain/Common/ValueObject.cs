@@ -1,5 +1,4 @@
 ﻿using System;
-using Aids.Methods;
 
 namespace Quantity.Domain.Common {
 

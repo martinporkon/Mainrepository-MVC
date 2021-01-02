@@ -1,6 +1,4 @@
-﻿using Aids.Methods;
-using CommonTests.OverallTests;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using CommonTests.OverallTests;
 using Quantity.Facade;
 using Quantity.Facade.Common;
 

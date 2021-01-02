@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
-using Aids.Methods;
+using Sooduskorv_MVC.Aids.Methods;
 
-namespace Aids.Regions {
+namespace Sooduskorv_MVC.Aids.Regions {
 
     public static class SystemCultureInfo {
         public static CultureInfo[] GetSpecific() {
@@ -21,10 +21,3 @@ namespace Aids.Regions {
     }
 
 }
-
-
-
-
-
-
-

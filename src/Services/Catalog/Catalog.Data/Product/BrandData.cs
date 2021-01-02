@@ -1,11 +1,10 @@
-﻿using CommonData;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿/*
+using Sooduskorv_MVC.Data.CommonData;
 
 namespace Catalog.Data.Product
 {
-    public sealed class BrandData:DescribedEntityData
+    public sealed class BrandData : DescribedEntityData
     {
     }
 }
+*/

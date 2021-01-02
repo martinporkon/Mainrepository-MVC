@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using Aids.Constants;
-using CommonData;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Quantity.Domain.Common;
 using Quantity.Facade.Common;
-using Quantity.Pages.Common;
 
 namespace Quantity.Pages.Common {
 

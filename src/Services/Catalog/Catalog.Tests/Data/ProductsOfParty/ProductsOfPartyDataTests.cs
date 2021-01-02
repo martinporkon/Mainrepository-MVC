@@ -1,10 +1,4 @@
-﻿using CommonData;
-using Catalog.Data.ProductOfParty;
-using CommonTests.OverallTests;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Sooduskorv_MVC.Data.CommonData;
-
-namespace Catalog.Tests.Data.ProductsOfParty
+﻿namespace Catalog.Tests.Data.ProductsOfParty
 {
 
 //    [TestClass]

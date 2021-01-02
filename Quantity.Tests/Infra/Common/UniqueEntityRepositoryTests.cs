@@ -1,6 +1,4 @@
 ﻿using CommonTests.OverallTests;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Quantity.Data;
 using Quantity.Domain;
 using Quantity.Infra.Common;

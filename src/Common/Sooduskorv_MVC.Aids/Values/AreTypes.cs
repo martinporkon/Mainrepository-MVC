@@ -1,8 +1,7 @@
-﻿
-using System;
+﻿using System;
 using System.Linq;
 
-namespace Aids.Values {
+namespace Sooduskorv_MVC.Aids.Values {
 
     public static class AreTypes {
 

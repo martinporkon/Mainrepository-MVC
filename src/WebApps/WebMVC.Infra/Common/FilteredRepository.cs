@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿/*
+using System;
 using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
+using Microsoft.EntityFrameworkCore;
+using Sooduskorv_MVC.Infra;
 
-namespace Sooduskorv_MVC.Infra
+namespace WebMVC.Infra
 {
     public abstract class FilteredRepository<TDomain, TData> : SortedRepository<TDomain, TData>, IFiltering
        where TDomain : IEntity<TData>
@@ -86,3 +87,4 @@ namespace Sooduskorv_MVC.Infra
 
     }
 }
+*/

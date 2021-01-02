@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Globalization;
-using Aids.Regions;
-using Aids.Methods;
+using Sooduskorv_MVC.Aids.Methods;
+using Sooduskorv_MVC.Aids.Regions;
 
-namespace Aids.Extensions {
+namespace Sooduskorv_MVC.Aids.Extensions {
 
     public static class Doubles {
 
@@ -57,7 +57,5 @@ namespace Aids.Extensions {
             else r = false;
             return r;
         }
-
     }
-
 }

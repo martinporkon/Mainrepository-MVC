@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Catalog.Domain.Common
+namespace Sooduskorv_MVC.CommonTests.OverallTests
 {
     public interface IEntity
     {

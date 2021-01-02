@@ -1,9 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Catalog.Domain.Common;
-using CommonData;
+using Sooduskorv_MVC.Data.CommonData;
 
-namespace CommonTests.OverallTests {
+namespace Sooduskorv_MVC.CommonTests.OverallTests
+{
 
     public abstract class periodRepository<TObj, TData>
         where TObj : IEntity<TData>

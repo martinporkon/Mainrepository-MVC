@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Sooduskorv_MVC.Facade
+﻿namespace Sooduskorv_MVC.Facade
 {
     public abstract class NamedEntityView:PeriodView
     {

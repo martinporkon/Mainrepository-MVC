@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using CommonData;
 using Microsoft.EntityFrameworkCore;
 using Quantity.Domain.Common;
 

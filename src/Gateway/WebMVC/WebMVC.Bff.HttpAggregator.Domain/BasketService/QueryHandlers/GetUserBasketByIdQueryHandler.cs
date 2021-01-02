@@ -1,10 +1,10 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 using MediatR;
+using WebMVC.Bff.HttpAggregator.Domain.CatalogService.CommandHandlers;
 using WebMVC.Bff.HttpAggregator.Domain.Common;
 using WebMVC.Bff.HttpAggregator.Domain.CurrentService.CurrentServiceQuery;
 using WebMVC.Bff.HttpAggregator.Domain.CurrentService.Entities;
-using WebMVC.Bff.HttpAggregator.Domain.DTO;
 using WebMVC.HttpAggregator.Domain.BasketService.QueryRequests;
 
 namespace WebMVC.HttpAggregator.Domain.BasketService.QueryHandlers

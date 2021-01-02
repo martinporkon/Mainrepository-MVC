@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Sooduskorv_MVC.Data.CommonData
+﻿namespace Sooduskorv_MVC.Data.CommonData
 {
     public enum ValueType
     {

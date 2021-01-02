@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Aids.Methods;
-using CommonData;
 using Microsoft.EntityFrameworkCore;
 using Quantity.Domain.Common;
 

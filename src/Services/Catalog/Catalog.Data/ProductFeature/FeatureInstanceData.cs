@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
+﻿/*
 namespace Catalog.Data.ProductFeature
 {
     public sealed class FeatureInstanceData : FeatureValueData
@@ -9,3 +6,4 @@ namespace Catalog.Data.ProductFeature
         public string ProductId { get; set; }
     }
 }
+*/

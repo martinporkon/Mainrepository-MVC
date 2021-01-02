@@ -1,11 +1,4 @@
-﻿
-using Catalog.Data.Categories;
-using Catalog.Data.Parties;
-using Catalog.Data.Prices;
-using Catalog.Data.ProductOfParty;
-using Catalog.Data.Products;
-using Catalog.Data.SubCategories;
-using Catalog.Data.UserProfiles;
+﻿using Catalog.Data.UserProfiles;
 using Catalog.Infra;
 using CommonTests.InfraTests;
 using Microsoft.EntityFrameworkCore;

@@ -1,14 +1,8 @@
-﻿using Catalog.Data.CatalogedProducts;
-using Catalog.Infra.Common;
-using Catalog.Domain.Common;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿/*
+using Catalog.Data.CatalogedProducts;
 using System.Threading.Tasks;
 using Catalog.Domain.Catalog;
-using Microsoft.EntityFrameworkCore;
-using Sooduskorv_MVC;
-using Aids.Extensions;
+using Sooduskorv_MVC.Aids.Extensions;
 
 namespace Catalog.Infra.Catalog
 {
@@ -35,3 +29,4 @@ namespace Catalog.Infra.Catalog
 
     }
 }
+*/

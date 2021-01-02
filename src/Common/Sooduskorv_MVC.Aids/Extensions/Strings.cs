@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Globalization;
 using System.Linq;
-using Aids.Methods;
+using Sooduskorv_MVC.Aids.Methods;
 
-namespace Aids.Extensions {
+namespace Sooduskorv_MVC.Aids.Extensions {
 
     public static class Strings {
 
@@ -126,5 +126,3 @@ namespace Aids.Extensions {
     }
 
 }
-
-

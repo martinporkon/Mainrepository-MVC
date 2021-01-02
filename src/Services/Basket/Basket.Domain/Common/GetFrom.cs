@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Basket.Domain.Common;
 using Sooduskorv_MVC.Aids.Methods;
+using Sooduskorv_MVC.Common.Domain;
 
 namespace Catalog.Domain.Common
 {

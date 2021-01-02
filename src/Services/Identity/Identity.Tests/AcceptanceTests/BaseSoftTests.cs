@@ -1,7 +1,7 @@
 ﻿using System.Net.Http;
-using CommonTests.OverallTests;
 using Sooduskorv.IDP;
 using Sooduskorv.IDP.Tests.AcceptanceTests.Soft;
+using Sooduskorv_MVC.CommonTests.OverallTests;
 
 namespace WebMVC.Tests
 {

@@ -1,6 +1,4 @@
 ﻿using System.ComponentModel;
-using System.ComponentModel.DataAnnotations;
-using Aids.Methods;
 using Quantity.Facade.Common;
 
 namespace Quantity.Facade {

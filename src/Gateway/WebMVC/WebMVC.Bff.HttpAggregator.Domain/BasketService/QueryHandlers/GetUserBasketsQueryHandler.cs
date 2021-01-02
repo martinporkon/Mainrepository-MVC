@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Basket.Facade.Baskets;
 using MediatR;
 using WebMVC.Bff.HttpAggregator.Domain.BasketService;
-using WebMVC.Bff.HttpAggregator.Domain.DTO;
+using WebMVC.Bff.HttpAggregator.Domain.CatalogService.CommandHandlers;
 using WebMVC.HttpAggregator.Domain.BasketService.QueryRequests;
 
 namespace WebMVC.HttpAggregator.Domain.BasketService.QueryHandlers

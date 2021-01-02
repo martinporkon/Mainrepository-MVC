@@ -1,9 +1,6 @@
-﻿using Catalog.Data.Catalog;
+﻿/*
+using Catalog.Data.Catalog;
 using Catalog.Domain.Catalog;
-using Catalog.Infra.Common;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Catalog.Infra.Catalog
 {
@@ -17,3 +14,4 @@ namespace Catalog.Infra.Catalog
 
     }
 }
+*/

@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using MediatR;
 using WebMVC.Bff.HttpAggregator.Core.Errors;
-using WebMVC.Bff.HttpAggregator.Domain.DTO;
+using WebMVC.Bff.HttpAggregator.Domain.CatalogService.CommandHandlers;
 
 namespace WebMVC.HttpAggregator.Domain.BasketService.QueryRequests
 {

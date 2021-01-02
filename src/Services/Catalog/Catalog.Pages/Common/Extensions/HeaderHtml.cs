@@ -1,7 +1,4 @@
-﻿using Aids.Extensions;
-using Catalog.Pages.Common.Aids;
-using Microsoft.AspNetCore.Html;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Catalog.Pages.Common.Aids;
 using System;
 using System.Collections.Generic;
 

@@ -1,5 +1,4 @@
-﻿using Sooduskorv_MVC.Aids.Computations;
-using System;
+﻿using System;
 
 namespace Sooduskorv_MVC.Data.CommonData
 {

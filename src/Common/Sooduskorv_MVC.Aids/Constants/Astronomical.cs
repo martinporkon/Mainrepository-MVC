@@ -1,4 +1,4 @@
-﻿namespace Aids.Constants {
+﻿namespace Sooduskorv_MVC.Aids.Constants {
 
     public static class Astronomical {
 

@@ -2,6 +2,6 @@
 {
     public class Singleton
     {
-        // TODO fast
+
     }
 }

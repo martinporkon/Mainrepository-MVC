@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿/*
 using System.Threading.Tasks;
 
 namespace Sooduskorv_MVC.Infra
@@ -19,3 +17,4 @@ namespace Sooduskorv_MVC.Infra
 
     }
 }
+*/

@@ -1,9 +1,6 @@
-﻿using Catalog.Data.Product;
+﻿/*
+using Catalog.Data.Product;
 using Catalog.Domain.Product;
-using Catalog.Infra.Common;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Catalog.Infra.Product
 {
@@ -15,3 +12,4 @@ namespace Catalog.Infra.Product
             => new Brand(d);
     }
 }
+*/

@@ -1,17 +1,12 @@
-﻿using Aids.Methods;
-using Aids.Reflection;
-using Catalog.Data.Price;
+﻿using Catalog.Data.Price;
 using Catalog.Data.Product;
 using Catalog.Domain.Prices;
 using Catalog.Domain.Product;
 using Catalog.Facade.Product;
 using Catalog.Pages.Common.Consts;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Catalog.Pages.Products
 {

@@ -1,10 +1,4 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
-using Aids.Random;
-using CommonData;
-using CommonTests.OverallTests;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using CommonTests.OverallTests;
 using Quantity.Data;
 using Quantity.Domain;
 using Quantity.Infra;

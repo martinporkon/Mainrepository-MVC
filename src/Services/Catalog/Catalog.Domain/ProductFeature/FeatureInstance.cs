@@ -1,9 +1,4 @@
-﻿using Catalog.Data.ProductFeature;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Catalog.Domain.ProductFeature
+﻿namespace Catalog.Domain.ProductFeature
 {
     //public sealed class FeatureInstance : FeatureValue<FeatureInstanceData>
     //{

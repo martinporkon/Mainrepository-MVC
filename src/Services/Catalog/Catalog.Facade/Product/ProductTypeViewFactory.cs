@@ -1,6 +1,6 @@
-﻿using Aids.Methods;
-using Catalog.Data.Product;
+﻿using Catalog.Data.Product;
 using Catalog.Domain.Product;
+using Sooduskorv_MVC.Aids.Methods;
 
 namespace Catalog.Facade.Product
 {

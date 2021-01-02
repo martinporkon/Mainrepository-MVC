@@ -1,5 +1,4 @@
 ﻿using System;
-using CommonData;
 
 namespace Quantity.Domain.Common {
 

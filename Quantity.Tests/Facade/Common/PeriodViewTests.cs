@@ -1,6 +1,4 @@
-using System;
 using CommonTests.OverallTests;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Quantity.Facade.Common;
 
 namespace Quantity.Tests.Facade.Common {

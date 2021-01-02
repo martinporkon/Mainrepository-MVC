@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using Quantity.Domain.Common;
 using Quantity.Facade.Common;
-using Quantity.Pages.Common;
 
 namespace Quantity.Pages.Common {
 

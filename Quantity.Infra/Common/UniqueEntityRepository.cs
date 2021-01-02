@@ -1,5 +1,4 @@
 ﻿using System.Threading.Tasks;
-using CommonData;
 using Microsoft.EntityFrameworkCore;
 using Quantity.Domain.Common;
 

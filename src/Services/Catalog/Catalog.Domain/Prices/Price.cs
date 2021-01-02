@@ -1,9 +1,5 @@
 ﻿using Catalog.Data.Price;
-using Catalog.Domain.Catalog;
 using Catalog.Domain.Common;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Catalog.Domain.Prices
 {

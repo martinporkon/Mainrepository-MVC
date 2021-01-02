@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Aids.Values {
+namespace Sooduskorv_MVC.Aids.Values {
 
     public static class IsType {
 
@@ -62,7 +62,5 @@ namespace Aids.Values {
         public static bool Decimal(object x) => x is decimal;
 
         public static bool Null(object o) => o is null;
-
     }
-
 }

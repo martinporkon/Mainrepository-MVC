@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
@@ -14,8 +14,8 @@
     <ProjectReference Include="..\Quantity.Domain\Quantity.Domain.csproj" />
     <ProjectReference Include="..\Quantity.Facade\Quantity.Facade.csproj" />
     <ProjectReference Include="..\Quantity.Infra\Quantity.Infra.csproj" />
-    <ProjectReference Include="..\src\Common\Sooduskorv-MVC.Aids\Sooduskorv-MVC.Aids.csproj" />
-    <ProjectReference Include="..\src\Common\Sooduskorv-MVC.Data\Sooduskorv-MVC.Data.csproj" />
+    <ProjectReference Include="..\src\Common\Sooduskorv_MVC.Aids\Sooduskorv_MVC.Aids.csproj" />
+    <ProjectReference Include="..\src\Common\Sooduskorv_MVC.Data\Sooduskorv_MVC.Data.csproj" />
   </ItemGroup>
 
 </Project>

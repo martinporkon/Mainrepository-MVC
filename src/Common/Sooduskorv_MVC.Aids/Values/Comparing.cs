@@ -1,8 +1,8 @@
-﻿
-using System;
-using Aids.Methods;
+﻿using System;
+using Sooduskorv_MVC.Aids.Methods;
 
-namespace Aids.Values {
+
+namespace Sooduskorv_MVC.Aids.Values {
 
     public static class Comparing {
 

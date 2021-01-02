@@ -28,7 +28,7 @@ namespace SooduskorvWebMVC.Controllers
             var test = new CatalogDto
             {
                 Id = a.Id,
-                Measure = a.Measure,
+                /*Measure = a.Measure,
                 Name = a.Name,
                 Description = a.Description,
                 CategoryId = a.CategoryId,
@@ -37,7 +37,7 @@ namespace SooduskorvWebMVC.Controllers
                 Composition = a.Composition,
                 PartyId = a.PartyId,
                 Brand = a.Brand,
-                CountryOfOrigin = a.CountryOfOrigin,
+                CountryOfOrigin = a.CountryOfOrigin,*/
             };
             list.Add(test);
 

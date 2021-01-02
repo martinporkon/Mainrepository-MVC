@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Linq;
 using Catalog.Data.UserProfiles;
-using Catalog.Infra.Catalog;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 

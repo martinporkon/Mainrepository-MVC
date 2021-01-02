@@ -1,9 +1,6 @@
-﻿using Catalog.Data.Price;
+﻿/*
+using Catalog.Data.Price;
 using Catalog.Domain.Prices;
-using Catalog.Infra.Common;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Catalog.Infra.Prices
 {
@@ -15,3 +12,4 @@ namespace Catalog.Infra.Prices
             => new Price(d);
     }
 }
+*/

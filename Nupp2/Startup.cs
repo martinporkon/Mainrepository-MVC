@@ -1,19 +1,12 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 using Nupp2.Services;
 using Nupp2.Views.Home;
 using Nupp2.Views.Home.Button;
-using CatalogItemBase = Nupp2.Views.Home.Button.CatalogItemBase;
 
 namespace Nupp2
 {

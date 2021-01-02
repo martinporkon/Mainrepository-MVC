@@ -1,7 +1,7 @@
-﻿using Aids.Methods;
-using Aids.Values;
-using System;
+﻿using System;
 using System.Collections.Generic;
+using Sooduskorv_MVC.Aids.Methods;
+using Sooduskorv_MVC.Aids.Values;
 
 namespace Quantity.Core.Calculator
 {

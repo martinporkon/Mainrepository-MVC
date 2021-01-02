@@ -1,8 +1,4 @@
-﻿using Aids.Random;
-using CommonData;
-using CommonTests.OverallTests;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using CommonTests.OverallTests;
 using Quantity.Domain.Common;
 using Quantity.Infra;
 using Quantity.Infra.Common;

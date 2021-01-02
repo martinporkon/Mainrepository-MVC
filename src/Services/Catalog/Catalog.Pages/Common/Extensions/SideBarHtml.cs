@@ -1,11 +1,4 @@
-﻿using Catalog.Pages.Common.Aids;
-using Microsoft.AspNetCore.Html;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Catalog.Pages.Common.Extensions
+﻿namespace Catalog.Pages.Common.Extensions
 {
     public static class SideBarHtml
     {

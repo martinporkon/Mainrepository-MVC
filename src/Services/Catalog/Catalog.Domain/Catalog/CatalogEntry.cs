@@ -3,10 +3,8 @@ using Catalog.Data.CatalogedProducts;
 using Catalog.Data.CatalogEntries;
 using Catalog.Domain.Common;
 using Catalog.Domain.Product;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Catalog.Domain.Catalog
 {

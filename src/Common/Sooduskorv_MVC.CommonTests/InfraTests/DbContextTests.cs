@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Linq;
 using System.Linq.Expressions;
-using CommonTests.OverallTests;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Sooduskorv_MVC.Aids.Reflection;
+using Sooduskorv_MVC.CommonTests.OverallTests;
 
 namespace CommonTests.InfraTests
 {
@@ -43,7 +43,5 @@ namespace CommonTests.InfraTests
             isNullableProperty(obj, name, typeof(DbSet<T>));
             testEntity(b, values);
         }
-
     }
-
 }

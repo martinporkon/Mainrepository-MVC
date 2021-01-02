@@ -1,10 +1,4 @@
-﻿using Catalog.Data.ProductFeature;
-using Catalog.Domain.Common;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Catalog.Domain.ProductFeature
+﻿namespace Catalog.Domain.ProductFeature
 {
     //public abstract class FeatureValue<TData> : UniqueEntity<TData> where TData : FeatureValueData, new()
     //{

@@ -1,15 +1,11 @@
-﻿using Aids.Constants;
-using Catalog.Domain;
+﻿using Catalog.Domain;
 using Catalog.Domain.Common;
 using Catalog.Domain.Prices;
 using Catalog.Domain.Product;
-using CommonData;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using Sooduskorv_MVC.Facade;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Catalog.Pages
 {

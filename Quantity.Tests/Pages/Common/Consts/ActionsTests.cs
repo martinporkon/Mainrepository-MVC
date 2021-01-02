@@ -1,5 +1,4 @@
 ﻿using CommonTests.OverallTests;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Quantity.Pages.Common.Consts;
 
 namespace Quantity.Tests.Pages.Common.Consts

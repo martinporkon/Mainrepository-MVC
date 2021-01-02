@@ -1,10 +1,10 @@
 ﻿using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
-using Aids.Extensions;
-using Aids.Methods;
+using Sooduskorv_MVC.Aids.Extensions;
+using Sooduskorv_MVC.Aids.Methods;
 
-namespace Aids.Regions {
+namespace Sooduskorv_MVC.Aids.Regions {
 
     public static class SystemRegionInfo {
 
@@ -32,9 +32,5 @@ namespace Aids.Regions {
                 cultures.RemoveAt(i - 1);
             }
         }
-
     }
-
 }
-
-

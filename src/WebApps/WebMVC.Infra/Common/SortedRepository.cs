@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿/*
+using System;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
-using System.Text;
 
 namespace Sooduskorv_MVC.Infra
 {
@@ -78,3 +77,4 @@ namespace Sooduskorv_MVC.Infra
 
     }
 }
+*/

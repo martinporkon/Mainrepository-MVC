@@ -1,7 +1,4 @@
-﻿using Aids.Random;
-using Aids.Reflection;
-using CommonTests.OverallTests;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using CommonTests.OverallTests;
 using Quantity.Facade.Common;
 
 namespace Quantity.Tests.Facade.Common {

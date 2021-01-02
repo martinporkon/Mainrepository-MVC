@@ -1,6 +1,4 @@
-﻿using System.Threading.Tasks;
-using Catalog.Facade.Product;
-using Microsoft.AspNetCore.Components;
+﻿using Microsoft.AspNetCore.Components;
 
 namespace TestEnvironment.Areas.Products.Pages
 {

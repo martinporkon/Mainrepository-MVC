@@ -1,4 +1,4 @@
-﻿namespace Aids.Constants {
+﻿namespace Sooduskorv_MVC.Aids.Constants {
     public static class Character {
         public static char Comma => ',';
         public static char Dot => '.';
@@ -14,4 +14,3 @@
         public static bool IsSpace(char c) => c.Equals(Space);
     }
 }
-

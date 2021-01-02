@@ -1,8 +1,5 @@
 ﻿using Catalog.Data.Product;
 using Catalog.Domain.Product;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Catalog.Domain.Service
 {

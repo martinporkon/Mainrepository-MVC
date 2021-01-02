@@ -15,7 +15,6 @@ using Sooduskorv_MVC.Middleware.Session;
 using SooduskorvWebMVC.ComponentBases;
 using SooduskorvWebMVC.HttpHandlers;
 using SooduskorvWebMVC.Middleware;
-using SooduskorvWebMVC.PostConfigurationOptions;
 using WebMVC.Facade.Profiles;
 
 namespace SooduskorvWebMVC
@@ -44,17 +43,17 @@ namespace SooduskorvWebMVC
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
             services.AddRazorPages()
-                .AddViewLocalization().AddSessionStateTempDataProvider();
-            services.AddCustomControllersWithViews();
+                .AddViewLocalization().AddDataAnnotationsLocalization().AddSessionStateTempDataProvider();
+            /*services.AddCustomControllersWithViews();*/
             services.AddServerSideBlazor();
             services.AddCustomAuthorization(Configuration);
-            services.AddHttpContextAccessor();// vist saab eemaldada. Juba olemas.
+            services.AddHttpContextAccessor();
             /*services.AddHttpClient<IProductsService, ProductsService>();
             services.AddScoped<IProductsService, ProductsService>();*/
             services.AddTransient<BearerTokenHandler>();
             services.AddHttpClientServices(Configuration);
             services.AddCustomAuthentication(Configuration);
-            services.AddSingleton<IPostConfigureOptions<OpenIdConnectOptions>, OpenIdConnectOptionsPostConfigurationOptions>();
+            /*services.AddSingleton<IPostConfigureOptions<OpenIdConnectOptions>, OpenIdConnectOptionsPostConfigurationOptions>();*/
             services.AddCustomSessions(Configuration);
             services.AddScoped<RequestLocalizationMiddleware>();
 

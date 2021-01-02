@@ -34,10 +34,12 @@
                             new Link("Privacy", new Uri("/Privacy", UriKind.Relative)))
                     </ul>
                 </div>
+                <vc:culture-switcher></vc:culture-switcher>
             </div>
         </nav>
     </header>
     <div class="container">
+        <partial name="_CookieConsentPartial" />
         <main role="main" class="pb-3">
             @RenderBody()
         </main>

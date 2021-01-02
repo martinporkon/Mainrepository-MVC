@@ -7,9 +7,6 @@ using Microsoft.Extensions.Options;
 
 namespace Sooduskorv_MVC.Middleware.Session
 {
-    /// <summary>
-    /// Remembers the selected culture.
-    /// </summary>
     public class RequestLocalizationMiddleware : IMiddleware
     {
         public CookieRequestCultureProvider Provider { get; }
@@ -35,10 +32,7 @@ namespace Sooduskorv_MVC.Middleware.Session
         public async Task InvokeAsync(HttpContext context, RequestDelegate next)
         {
             if (Provider != null)
-            {
                 DetermineRequestCultureSaving(context);
-            }
-
             await next(context);
         }
     }

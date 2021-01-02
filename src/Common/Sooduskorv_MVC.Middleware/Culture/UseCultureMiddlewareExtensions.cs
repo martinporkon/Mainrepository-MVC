@@ -47,18 +47,19 @@ namespace Sooduskorv_MVC.Middleware.Culture
         public static IServiceCollection ConfigureRequestLocalization(this IServiceCollection services, IConfiguration config)
         {
             services.AddLocalization(options => options.ResourcesPath = Localization.DefaultPath);
-            var supportedCultures = CultureInfo.GetCultures(CultureTypes.AllCultures);
+            /*var supportedCultures = CultureInfo.GetCultures(CultureTypes.AllCultures);*/
             var l = new RequestLocalizationOptions
             {
-                DefaultRequestCulture = new RequestCulture(UseCulture.EnglishUS),
+                /*DefaultRequestCulture = new RequestCulture(UseCulture.EnglishUS),
                 SupportedCultures = supportedCultures,
-                SupportedUICultures = supportedCultures
+                SupportedUICultures = supportedCultures*/
             };
-            /*l.AddSupportedUICultures("de-DE","en-US", "en-GB");*/
-            /*l.FallBackToParentUICultures = true;*/
-            l.RequestCultureProviders.Clear();
-            //l.RequestCultureProviders.Add(new CultureProviderResolverService());// Tahaksin teha varsti seda <<--
-            l.RequestCultureProviders.Remove(typeof(AcceptLanguageHeaderRequestCultureProvider));// Praegu prooviks niimoodi. <<--
+            l.SetDefaultCulture("en-GB");
+            l.AddSupportedUICultures("en-US", "en-GB");
+            l.FallBackToParentUICultures = true;
+            /*l.RequestCultureProviders.Clear();*/
+            //l.RequestCultureProviders.Add(new CultureProviderResolverService());
+            l.RequestCultureProviders.Remove(typeof(AcceptLanguageHeaderRequestCultureProvider));
             return services;
         }
     }

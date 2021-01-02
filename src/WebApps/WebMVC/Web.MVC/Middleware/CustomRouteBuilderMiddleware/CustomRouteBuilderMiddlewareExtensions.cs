@@ -13,10 +13,10 @@ namespace Microsoft.AspNetCore.Builder
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
 
-            b.MapControllerRoute(
+            /*b.MapControllerRoute(
                 name: "localizedDefault",
                 pattern: "{culture:culture}/{controller=Home}/{action=Index}/{id?}",
-                defaults: new { culture = rlo.Value.DefaultRequestCulture.Culture.Name });
+                defaults: new { culture = rlo.Value.DefaultRequestCulture.Culture.Name });*/
             
             return b;
         }

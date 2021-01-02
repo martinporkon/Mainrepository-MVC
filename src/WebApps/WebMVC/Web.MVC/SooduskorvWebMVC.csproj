@@ -14,32 +14,24 @@
     <Compile Remove="Localization\Areas\Models\**" />
     <Compile Remove="Localization\Areas\Shared\**" />
     <Compile Remove="Localization\Models\**" />
-    <Compile Remove="wwwroot\css\basket\**" />
-    <Compile Remove="wwwroot\css\catalog\**" />
     <Content Remove="Areas\Manage\**" />
     <Content Remove="Areas\Shared\Common\**" />
     <Content Remove="Areas\Shared\Product\**" />
     <Content Remove="Localization\Areas\Models\**" />
     <Content Remove="Localization\Areas\Shared\**" />
     <Content Remove="Localization\Models\**" />
-    <Content Remove="wwwroot\css\basket\**" />
-    <Content Remove="wwwroot\css\catalog\**" />
     <EmbeddedResource Remove="Areas\Manage\**" />
     <EmbeddedResource Remove="Areas\Shared\Common\**" />
     <EmbeddedResource Remove="Areas\Shared\Product\**" />
     <EmbeddedResource Remove="Localization\Areas\Models\**" />
     <EmbeddedResource Remove="Localization\Areas\Shared\**" />
     <EmbeddedResource Remove="Localization\Models\**" />
-    <EmbeddedResource Remove="wwwroot\css\basket\**" />
-    <EmbeddedResource Remove="wwwroot\css\catalog\**" />
     <None Remove="Areas\Manage\**" />
     <None Remove="Areas\Shared\Common\**" />
     <None Remove="Areas\Shared\Product\**" />
     <None Remove="Localization\Areas\Models\**" />
     <None Remove="Localization\Areas\Shared\**" />
     <None Remove="Localization\Models\**" />
-    <None Remove="wwwroot\css\basket\**" />
-    <None Remove="wwwroot\css\catalog\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -66,6 +58,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\Common\Sooduskorv_MVC.Aids\Sooduskorv_MVC.Aids.csproj" />
     <ProjectReference Include="..\..\..\Common\Sooduskorv_MVC.Middleware\Sooduskorv_MVC.Middleware.csproj" />
+    <ProjectReference Include="..\..\..\Services\Catalog\Catalog.Pages\Catalog.Pages.csproj" />
     <ProjectReference Include="..\WebMVC.Domain\WebMVC.Domain.csproj" />
     <ProjectReference Include="..\WebMVC.Facade\WebMVC.Facade.csproj" />
     <ProjectReference Include="..\WebMVC.Pages\WebMVC.Pages.csproj" />

@@ -55,7 +55,7 @@ namespace SooduskorvWebMVC
             services.AddHttpClientServices(Configuration);
             services.AddCustomAuthentication(Configuration);
             services.AddSingleton<IPostConfigureOptions<OpenIdConnectOptions>, OpenIdConnectOptionsPostConfigurationOptions>();
-            /*services.AddCustomSessions(Configuration);*/
+            services.AddCustomSessions(Configuration);
             services.AddScoped<RequestLocalizationMiddleware>();
 
 
@@ -101,15 +101,15 @@ namespace SooduskorvWebMVC
 
             });*/
             app.UseRouting();
-            app.UseAuthentication();
-            app.UseAuthorization();
+            /*app.UseAuthentication();
+            app.UseAuthorization();*/
             app.UseSession();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapCustomEndpointRouteBuilder(Configuration, rlo);// TODO
                 endpoints.MapRazorPages();
                 endpoints.MapBlazorHub();
-                /*endpoints.MapFallbackToPage("Server/Pages/_Host.cshtml");*/
+                /*endpoints.MapFallbackToPage("/_Host");*/
             });
         }
     }

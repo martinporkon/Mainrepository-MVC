@@ -1,4 +1,5 @@
-﻿using System.Net.Http;
+﻿using System;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
 using SooduskorvWebMVC.Components;
@@ -10,21 +11,21 @@ namespace SooduskorvWebMVC.ComponentBases
         [Inject]
         public IBasketService BasketService { get; set; }
 
-        public CartItem CartItem { get; set; }
+        public ProductTypeView ProductTypeView { get; set; }
 
         protected override async Task OnInitializedAsync()
         {
-            await BasketService.PostToBasket(CartItem);// TODO need the item from the UI.
+            await BasketService.PostToBasket(ProductTypeView);// TODO need the item from the UI.
         }
     }
 
     public interface IBasketService
     {
-        Task<Task> PostToBasket(CartItem item);// TODO Task<Task>?
+        Task<Task> PostToBasket(ProductTypeView item);// TODO Task<Task>?
     }
 
-    public class CartDto// TODO lihtsalt toode juures ei sobiks?
-    {// Mingi transaction siia.
+    public class CartDto
+    {
         public string Id { get; set; }
         public string Name { get; set; }
         public int Quantity { get; set; }
@@ -38,10 +39,18 @@ namespace SooduskorvWebMVC.ComponentBases
             _httpClient = httpClient;
         }
 
-        public async Task<Task> PostToBasket(CartItem item)// TODO Deadlock ennetusmeetodid.
+        public async Task<Task> PostToBasket(ProductTypeView item)
         {
-            var client = _httpClient.CreateClient();
-            var result = client.PostJsonAsync("/api/baskets", item);
+            Task result = null;
+            try
+            {
+                var client = _httpClient.CreateClient();
+                result = client.PostJsonAsync("/api/baskets", item);
+            }
+            catch (Exception e)
+            {
+
+            }
             return result;
         }
     }

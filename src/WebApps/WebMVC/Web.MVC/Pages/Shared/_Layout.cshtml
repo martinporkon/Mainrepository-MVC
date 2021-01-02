@@ -1,8 +1,6 @@
 ﻿@using Catalog.Pages.Common.Aids
 @using Catalog.Pages.Common.Consts
 @using Catalog.Pages.Common.Extensions
-@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
-@addTagHelper *, Microsoft.AspNetCore.Razor.TagHelpers
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,7 +32,8 @@
                             new Link("Privacy", new Uri("/Privacy", UriKind.Relative)))
                     </ul>
                 </div>
-                <vc:culture-switcher></vc:culture-switcher>
+                <vc:culture-switcher />
+                @await Component.InvokeAsync("CultureSwitcher")
             </div>
         </nav>
     </header>

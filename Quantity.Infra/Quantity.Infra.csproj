@@ -14,8 +14,6 @@
     <ProjectReference Include="..\Quantity.Data\Quantity.Data.csproj" />
     <ProjectReference Include="..\Quantity.Domain\Quantity.Domain.csproj" />
     <ProjectReference Include="..\Quantity.Facade\Quantity.Facade.csproj" />
-    <ProjectReference Include="..\src\Common\Sooduskorv-MVC.Aids\Sooduskorv-MVC.Aids.csproj" />
-    <ProjectReference Include="..\src\Common\Sooduskorv-MVC.Data\Sooduskorv-MVC.Data.csproj" />
   </ItemGroup>
 
 </Project>

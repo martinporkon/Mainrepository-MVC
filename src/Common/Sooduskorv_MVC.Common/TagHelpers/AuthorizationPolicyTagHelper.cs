@@ -25,7 +25,7 @@ namespace Sooduskorv_MVC.Common.TagHelpers
         [HtmlAttributeName("asp-auth-policy")]
         public string PolicyName { get; set; }
 
-        public override async Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
+        public override /*async*/ Task ProcessAsync(TagHelperContext context, TagHelperOutput output)
         {
             throw new NotImplementedException();
         }

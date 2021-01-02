@@ -7,7 +7,7 @@ namespace Catalog.Infra.Catalog
 {
 
     public sealed class ProductCategoriesRepository : UniqueEntityRepository<ProductCategory, ProductCategoryData>,
-        IProductCategoriesRepository
+        Domain.Product.IProductCategoriesRepository
     {
 
         public ProductCategoriesRepository(CatalogDbContext c = null) : base(c, c?.ProductCategories) { }

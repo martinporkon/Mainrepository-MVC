@@ -1,11 +1,13 @@
-﻿/*using Catalog.Data.Product;
+﻿using Catalog.Data.Product;
 using Catalog.Domain.Catalog;
+using Catalog.Domain.Product;
+using Catalog.Infra.Common;
 
 namespace Catalog.Infra.Catalog
 {
 
     public sealed class ProductCategoriesRepository : UniqueEntityRepository<ProductCategory, ProductCategoryData>,
-        IProductCategoriesRepository
+        Domain.Product.IProductCategoriesRepository
     {
 
         public ProductCategoriesRepository(CatalogDbContext c = null) : base(c, c?.ProductCategories) { }
@@ -14,4 +16,4 @@ namespace Catalog.Infra.Catalog
 
     }
 
-}*/
+}

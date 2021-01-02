@@ -1,5 +1,6 @@
 ﻿using Catalog.Data.Price;
 using Catalog.Data.Product;
+using Catalog.Domain.Catalog;
 using Catalog.Domain.Prices;
 using Catalog.Domain.Product;
 using Catalog.Facade.Product;
@@ -27,14 +28,14 @@ namespace Catalog.Pages.Products
             Brands = newItemsList<Brand, BrandData>(b);
             ProductInstances = newInstancesList<IProductType, ProductTypeData>(i);
             ProductTypes = newItemsList<IProductType, ProductTypeData>(db);
-            Categories = newItemsList<ProductCategory, ProductCategoryData>(p);
-            BaseCategories = newSubCategoriesList<ProductCategory, ProductCategoryData>(p);
+            CategoryNames = newItemsList<ProductCategory, ProductCategoryData>(p);
+            Categories = newSubCategoriesList<ProductCategory, ProductCategoryData>(p);
 
         }
-        public IEnumerable<SelectListItem> Categories;
+        public IEnumerable<SelectListItem> CategoryNames;
         public IEnumerable<SelectListItem> Prices;
         public ProductKind ProductKind { get; internal set; }
-        public IEnumerable<SelectListItem> BaseCategories { get; }
+        public IEnumerable<SelectListItem> Categories { get; }
         public IEnumerable<SelectListItem> Units { get; }
         public IEnumerable<SelectListItem> Brands { get; }
         public IEnumerable<SelectListItem> Parties { get; }
@@ -81,7 +82,7 @@ namespace Catalog.Pages.Products
         public IEnumerable<SelectListItem> ProductTypes { get; private set; }
 
         public string BaseTypeName(string id) => itemName(ProductTypes, id);
-        public string CategoryName(string id) => itemName(Categories, id);
+        public string CategoryName(string id) => itemName(CategoryNames, id);
 
         public string UnitName(string id) => itemName(Units, id);
         public string BrandName(string id) => itemName(Brands, id);

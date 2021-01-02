@@ -1,6 +1,13 @@
-﻿namespace Catalog.Infra.Catalog
+﻿using Catalog.Data.UserProfiles;
+using Catalog.Domain.Catalog;
+using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+namespace Catalog.Infra.Catalog
 {
-    //public class CatalogRepository : ICatalogRepository
+    //public class CatalogRepository : ICatalogsRepository
     //{
     //    private CatalogDbContext _context;
 
@@ -41,5 +48,5 @@
     //    {
     //        return (_context.SaveChanges() >= 0);
     //    }
-//}
+    //}
 }

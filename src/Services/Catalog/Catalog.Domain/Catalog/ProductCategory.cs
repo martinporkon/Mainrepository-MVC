@@ -1,5 +1,6 @@
 ﻿using Catalog.Data.Product;
 using Catalog.Domain.Common;
+using Catalog.Domain.Product;
 
 namespace Catalog.Domain.Catalog
 {

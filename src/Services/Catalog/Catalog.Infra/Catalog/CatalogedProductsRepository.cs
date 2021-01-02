@@ -1,8 +1,10 @@
-﻿/*
+﻿
 using Catalog.Data.CatalogedProducts;
 using System.Threading.Tasks;
 using Catalog.Domain.Catalog;
 using Sooduskorv_MVC.Aids.Extensions;
+using Catalog.Infra.Common;
+using Microsoft.EntityFrameworkCore;
 
 namespace Catalog.Infra.Catalog
 {
@@ -29,4 +31,4 @@ namespace Catalog.Infra.Catalog
 
     }
 }
-*/
+

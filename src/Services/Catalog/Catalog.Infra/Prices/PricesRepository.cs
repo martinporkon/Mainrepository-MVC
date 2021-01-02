@@ -1,6 +1,7 @@
-﻿/*
+﻿
 using Catalog.Data.Price;
 using Catalog.Domain.Prices;
+using Catalog.Infra.Common;
 
 namespace Catalog.Infra.Prices
 {
@@ -12,4 +13,4 @@ namespace Catalog.Infra.Prices
             => new Price(d);
     }
 }
-*/
+

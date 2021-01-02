@@ -13,7 +13,7 @@ namespace Catalog.Infra.Catalog
         public static void Register(IServiceCollection services)
         {
 
-            //services.AddScoped<ICatalogsRepository, CatalogsRepository>();
+            services.AddScoped<ICatalogsRepository, CatalogsRepository>();
             services.AddScoped<ICatalogEntriesRepository, CatalogEntriesRepository>();
             services.AddScoped<ICatalogedProductsRepository, CatalogedProductsRepository>();
             services.AddScoped<IProductCategoriesRepository, ProductCategoriesRepository>();

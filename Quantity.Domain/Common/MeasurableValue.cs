@@ -1,7 +1,10 @@
 ﻿using System;
 using Quantity.Core.Rounding;
+using Sooduskorv_MVC.Data.CommonData;
+using Quantity.Data;
 
-namespace Quantity.Domain.Common {
+namespace Quantity.Domain.Common
+{
 
     public abstract class MeasurableValue<TQuantity, TAmount, TMeasure> : PeriodData, IComparable<TQuantity>,
         IComparable

@@ -1,9 +1,12 @@
-﻿using CommonTests.OverallTests;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Quantity.Domain;
 using Quantity.Domain.Common;
 using Quantity.Infra;
+using Sooduskorv_MVC.CommonTests.OverallTests;
+using System;
 
-namespace Quantity.Tests.Infra {
+namespace Quantity.Tests.Infra
+{
 
     [TestClass] public class QuantityRepositoriesTests : BaseTests {
 

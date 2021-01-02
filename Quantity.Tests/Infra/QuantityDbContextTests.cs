@@ -1,4 +1,7 @@
 ﻿using CommonTests.InfraTests;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Conventions;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Quantity.Data;
 using Quantity.Infra;
 

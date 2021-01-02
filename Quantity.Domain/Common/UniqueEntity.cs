@@ -1,4 +1,6 @@
 ﻿
+using Sooduskorv_MVC.Data.CommonData;
+
 namespace Quantity.Domain.Common {
 
     public abstract class UniqueEntity<T> : Entity<T>, IUniqueEntity<T> where T : PeriodData, new() {

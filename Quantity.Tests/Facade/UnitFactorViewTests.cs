@@ -1,8 +1,11 @@
-﻿using CommonTests.OverallTests;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Quantity.Facade;
 using Quantity.Facade.Common;
+using Sooduskorv_MVC.Aids.Methods;
+using Sooduskorv_MVC.CommonTests.OverallTests;
 
-namespace Quantity.Tests.Facade {
+namespace Quantity.Tests.Facade
+{
 
     [TestClass] public class UnitFactorViewTests : SealedClassTests<UnitFactorView, PeriodView> {
 

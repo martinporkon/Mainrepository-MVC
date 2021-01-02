@@ -20,6 +20,7 @@
     <ProjectReference Include="..\Quantity.Facade\Quantity.Facade.csproj" />
     <ProjectReference Include="..\Quantity.Infra\Quantity.Infra.csproj" />
     <ProjectReference Include="..\Quantity.Pages\Quantity.Pages.csproj" />
+    <ProjectReference Include="..\src\Common\Sooduskorv_MVC.CommonTests\Sooduskorv-MVC.CommonTests.csproj" />
     <ProjectReference Include="..\tests\CommonTests\CommonTests.csproj" />
   </ItemGroup>
 

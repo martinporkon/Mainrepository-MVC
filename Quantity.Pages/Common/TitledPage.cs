@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using Quantity.Data;
 using Quantity.Domain.Common;
 using Quantity.Facade.Common;
+using Sooduskorv_MVC.Aids.Constants;
 
 namespace Quantity.Pages.Common {
 
@@ -56,18 +58,18 @@ namespace Quantity.Pages.Common {
                     .Where(condition )
                     .Select(m => new SelectListItem(m.Data.Name, m.Data.Id))
                     .ToList();
-            l.Insert(0, new SelectListItem(Word.UnSpecified, null));
+            l.Insert(0, new SelectListItem(Word.Unspecified, null));
             return l;
         }
 
         protected internal static string itemName(IEnumerable<SelectListItem> list, string id) {
-            if (list is null) return Word.UnSpecified;
+            if (list is null) return Word.Unspecified;
 
             foreach (var m in list)
                 if (m.Value == id)
                     return m.Text;
 
-            return Word.UnSpecified;
+            return Word.Unspecified;
         }
 
         public virtual bool IsMasterDetail() => PageSubTitle != string.Empty;

@@ -4,6 +4,7 @@ using System.Linq.Expressions;
 using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using Quantity.Domain.Common;
+using Sooduskorv_MVC.Data.CommonData;
 
 namespace Quantity.Infra.Common {
 

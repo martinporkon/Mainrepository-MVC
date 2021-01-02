@@ -1,4 +1,5 @@
-﻿using Sooduskorv_MVC.Data.CommonData;
+﻿using Quantity.Domain.Common;
+using Sooduskorv_MVC.Data.CommonData;
 
 namespace Sooduskorv_MVC.CommonTests.OverallTests
 {

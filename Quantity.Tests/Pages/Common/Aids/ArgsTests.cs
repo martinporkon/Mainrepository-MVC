@@ -1,4 +1,8 @@
-﻿using Quantity.Pages.Common.Aids;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Quantity.Pages.Common.Aids;
+using Sooduskorv_MVC.Aids.Random;
+using Sooduskorv_MVC.CommonTests.OverallTests;
+using System;
 
 namespace Quantity.Tests.Pages.Common.Aids {
 

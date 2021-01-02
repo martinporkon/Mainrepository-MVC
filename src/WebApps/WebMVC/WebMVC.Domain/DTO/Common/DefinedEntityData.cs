@@ -1,8 +1,10 @@
 ﻿using Sooduskorv_MVC.Data.CommonData;
 
-namespace WebMVC.Domain.CommonData {
+namespace WebMVC.Domain.DTO.Common
+{
 
-    public abstract class DefinedEntityData : NamedEntityData {
+    public abstract class DefinedEntityData : NameEntityData
+    {
 
         public string Definition { get; set; }
     }

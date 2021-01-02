@@ -1,5 +1,7 @@
-﻿using CommonTests.OverallTests;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Quantity.Data;
+using Sooduskorv_MVC.Aids.Reflection;
+using Sooduskorv_MVC.CommonTests.OverallTests;
 
 namespace Quantity.Tests.Data
 {

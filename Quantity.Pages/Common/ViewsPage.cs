@@ -1,6 +1,7 @@
 ﻿using System;
 using Quantity.Domain.Common;
 using Quantity.Facade.Common;
+using Sooduskorv_MVC.Data.CommonData;
 
 namespace Quantity.Pages.Common
 {

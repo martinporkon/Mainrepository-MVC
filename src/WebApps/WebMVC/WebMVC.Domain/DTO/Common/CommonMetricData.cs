@@ -1,7 +1,6 @@
-﻿
-using WebMVC.Domain.CommonData;
+﻿using WebMVC.Domain.DTO.Common;
 
-namespace CommonData 
+namespace CommonData
 {
 
     public abstract class CommonMetricData : DefinedEntityData

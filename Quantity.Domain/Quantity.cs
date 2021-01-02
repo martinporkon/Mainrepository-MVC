@@ -1,12 +1,14 @@
 ﻿using System;
 using Quantity.Core.Rounding;
 using Quantity.Domain.Common;
+using Sooduskorv_MVC.Aids.Constants;
+using Sooduskorv_MVC.Aids.Extensions;
 
 namespace Quantity.Domain {
 
     public sealed class Quantity :MeasurableValue<Quantity, double, Unit> {
 
-        public Quantity() : this(double.NaN, Word.UnSpecified) { }
+        public Quantity() : this(double.NaN, Word.Unspecified) { }
 
         public Quantity(double amount, Unit u) : base(amount, u ?? UnitFactory.Create()) { }
 

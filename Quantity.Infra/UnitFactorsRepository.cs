@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Quantity.Data;
 using Quantity.Domain;
 using Quantity.Infra.Common;
+using Sooduskorv_MVC.Aids.Extensions;
 
 namespace Quantity.Infra {
 

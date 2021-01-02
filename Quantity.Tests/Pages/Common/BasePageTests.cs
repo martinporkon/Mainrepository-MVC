@@ -1,7 +1,11 @@
-﻿using Quantity.Data;
+﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Quantity.Data;
 using Quantity.Domain;
 using Quantity.Facade;
 using Quantity.Pages.Common;
+using Sooduskorv_MVC.Aids.Random;
+using System;
 
 namespace Quantity.Tests.Pages.Common {
 

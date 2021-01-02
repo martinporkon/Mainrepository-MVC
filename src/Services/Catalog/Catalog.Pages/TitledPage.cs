@@ -2,6 +2,9 @@
 using Catalog.Domain.Common;
 using Catalog.Domain.Prices;
 using Catalog.Domain.Product;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Sooduskorv_MVC.Aids.Constants;
+using Sooduskorv_MVC.Data.CommonData;
 using Sooduskorv_MVC.Facade;
 using System;
 using System.Collections.Generic;
@@ -47,7 +50,7 @@ namespace Catalog.Pages
         protected internal static IEnumerable<SelectListItem> newItemsList<TTDomain, TTData>(IRepository<TTDomain> r,
             Func<TTDomain, bool> condition = null)
             where TTDomain : IEntity<TTData>
-            where TTData : NamedEntityData, new()
+            where TTData : NameEntityData, new()
         {
             var items = r?.Get().GetAwaiter().GetResult();
             var l = items is null
@@ -60,13 +63,13 @@ namespace Catalog.Pages
                     .Where(condition)
                     .Select(m => new SelectListItem(m.Data.Name, m.Data.Id))
                     .ToList();
-            l.Insert(0, new SelectListItem(Word.UnSpecified, null));
+            l.Insert(0, new SelectListItem(Word.Unspecified, null));
             return l;
         }
         protected internal static IEnumerable<SelectListItem> newPricesList<Price, PriceData>(IPricesRepository r,
             Func<Price, bool> condition = null)
             where Price : IEntity<PriceData>
-            where PriceData : NamedEntityData, new()
+            where PriceData : NameEntityData, new()
         {
             var items = r?.Get().GetAwaiter().GetResult();
             var l = items is null
@@ -76,13 +79,13 @@ namespace Catalog.Pages
                     .Select(m => new SelectListItem(m.Data.Amount.ToString(), m.Data.ProductInstanceId))
                     .ToList() :
                      new List<SelectListItem>();
-            l.Insert(0, new SelectListItem(Word.UnSpecified, null));
+            l.Insert(0, new SelectListItem(Word.Unspecified, null));
             return l;
         }
         protected internal static IEnumerable<SelectListItem> newSubCategoriesList<ProductCategory, ProductCategoryData>(IProductCategoriesRepository r,
             Func<ProductCategory, bool> condition = null)
             where ProductCategory : IEntity<ProductCategoryData>
-            where ProductCategoryData : NamedEntityData, new()
+            where ProductCategoryData : NameEntityData, new()
         {
             var items = r?.Get().GetAwaiter().GetResult();
             var l = items is null
@@ -92,13 +95,13 @@ namespace Catalog.Pages
                     .Select(m => new SelectListItem(m.Data.BaseCategoryId, m.Data.Id))
                     .ToList() :
                      new List<SelectListItem>();
-            l.Insert(0, new SelectListItem(Word.UnSpecified, null));
+            l.Insert(0, new SelectListItem(Word.Unspecified, null));
             return l;
         }
         protected internal static IEnumerable<SelectListItem> newPartiesList<ProductInstance, ProductInstanceData>(IProductInstancesRepository r,
             Func<ProductInstance, bool> condition = null)
             where ProductInstance : IEntity<ProductInstanceData>
-            where ProductInstanceData : NamedEntityData, new()
+            where ProductInstanceData : NameEntityData, new()
         {
             var items = r?.Get().GetAwaiter().GetResult();
             var l = items is null
@@ -108,13 +111,13 @@ namespace Catalog.Pages
                     .Select(m => new SelectListItem(m.Data.Id, m.Data.PartyId))
                     .ToList() :
                      new List<SelectListItem>();
-            l.Insert(0, new SelectListItem(Word.UnSpecified, null));
+            l.Insert(0, new SelectListItem(Word.Unspecified, null));
             return l;
         }
         protected internal static IEnumerable<SelectListItem> newInstancesList<ProductInstance, ProductInstanceData>(IProductInstancesRepository r,
            Func<ProductInstance, bool> condition = null)
            where ProductInstance : IEntity<ProductInstanceData>
-           where ProductInstanceData : NamedEntityData, new()
+           where ProductInstanceData : NameEntityData, new()
         {
             var items = r?.Get().GetAwaiter().GetResult();
             var l = items is null
@@ -124,7 +127,7 @@ namespace Catalog.Pages
                     .Select(m => new SelectListItem(m.Data.Id, m.Data.ProductTypeId))
                     .ToList() :
                      new List<SelectListItem>();
-            l.Insert(0, new SelectListItem(Word.UnSpecified, null));
+            l.Insert(0, new SelectListItem(Word.Unspecified, null));
             return l;
         }
 
@@ -132,13 +135,13 @@ namespace Catalog.Pages
 
         protected internal static string itemName(IEnumerable<SelectListItem> list, string id)
         {
-            if (list is null) return Word.UnSpecified;
+            if (list is null) return Word.Unspecified;
 
             foreach (var m in list)
                 if (m.Value == id)
                     return m.Text;
 
-            return Word.UnSpecified;
+            return Word.Unspecified;
         }
 
 

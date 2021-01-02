@@ -1,8 +1,9 @@
-﻿using System;
+﻿using Sooduskorv_MVC.Data.CommonData;
+using System;
 
 namespace Quantity.Domain.Common {
 
-    public abstract class Entity<TData> : ValueObject<TData>, IEntity<TData> where TData : PeriodData, new() {
+    public abstract class Entity<TData> : ValueObject<TData>, IEntity<TData> where TData :PeriodData, new() {
 
 
         protected internal Entity(TData d = null): base(d) { }

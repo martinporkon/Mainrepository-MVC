@@ -5,10 +5,10 @@ using Sooduskorv_MVC.Data.CommonData;
 namespace CommonTests.DataTests.CommonDataTests
 {
     [TestClass]
-    public class NamedEntityDataTests : AbstractClassTests<NamedEntityData, PeriodData>
+    public class NamedEntityDataTests : AbstractClassTests<NameEntityData, PeriodData>
     {
 
-        private class testClass : NamedEntityData { }
+        private class testClass : NameEntityData { }
 
         [TestInitialize]
         public override void TestInitialize()

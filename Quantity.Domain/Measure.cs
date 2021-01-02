@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Quantity.Data;
 using Quantity.Domain.Common;
+using Sooduskorv_MVC.Aids.Reflection;
 
 namespace Quantity.Domain {
 

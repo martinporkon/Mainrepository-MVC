@@ -33,7 +33,7 @@ namespace Catalog.API
             services.AddCustomSwagger(Configuration);
             services.AddHttpContextAccessor();
             services.AddOptions();
-            services.AddScoped<ICatalogRepository, CatalogRepository>();// TODO
+           /* services.AddScoped<ICatalogRepository, CatalogRepository>();*/// TODO
             services.AddScoped<IAuthorizationHandler, SubjectMustMatchUserHandler>();
 
             services.AddCustomAuthorization(Configuration);

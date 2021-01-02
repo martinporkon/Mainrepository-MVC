@@ -3,6 +3,7 @@ using System.Linq;
 using System.Linq.Expressions;
 using Microsoft.EntityFrameworkCore;
 using Quantity.Domain.Common;
+using Sooduskorv_MVC.Data.CommonData;
 
 namespace Quantity.Infra.Common {
 

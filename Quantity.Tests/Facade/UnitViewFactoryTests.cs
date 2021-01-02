@@ -1,9 +1,12 @@
-﻿using CommonTests.OverallTests;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Quantity.Data;
 using Quantity.Domain;
 using Quantity.Facade;
+using Sooduskorv_MVC.Aids.Random;
+using Sooduskorv_MVC.CommonTests.OverallTests;
 
-namespace Quantity.Tests.Facade {
+namespace Quantity.Tests.Facade
+{
 
     [TestClass] public class UnitViewFactoryTests : BaseTests {
 

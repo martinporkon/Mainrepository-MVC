@@ -1,10 +1,16 @@
-﻿using CommonTests.OverallTests;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Quantity.Data;
 using Quantity.Domain;
 using Quantity.Infra;
 using Quantity.Infra.Common;
+using Sooduskorv_MVC.Aids.Random;
+using Sooduskorv_MVC.CommonTests.OverallTests;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace Quantity.Tests.Infra.Common {
+namespace Quantity.Tests.Infra.Common
+{
 
     [TestClass] public class BaseRepositoryTests
         : AbstractClassTests<BaseRepository<Measure, MeasureData>, object> {

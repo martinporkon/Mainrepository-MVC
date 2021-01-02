@@ -1,6 +1,6 @@
-﻿using CommonTests.OverallTests;
-using Microsoft.AspNetCore.Html;
+﻿using Microsoft.AspNetCore.Html;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Sooduskorv_MVC.CommonTests.OverallTests;
 using Sooduskorv_MVC.Data.CommonData;
 using SooduskorvWebMVC.Pages.Common.Extensions;
 using System.Collections.Generic;

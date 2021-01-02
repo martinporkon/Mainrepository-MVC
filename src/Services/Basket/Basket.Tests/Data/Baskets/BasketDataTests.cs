@@ -6,7 +6,7 @@ using Sooduskorv_MVC.Data.CommonData;
 namespace Basket.Tests.Data.Baskets
 {
     [TestClass]
-    public class BasketDataTests : SealedClassTests<BasketData, NamedEntityData>
+    public class BasketDataTests : SealedClassTests<BasketData, NameEntityData>
     {
         [TestMethod]
         public void CustomerIdTest() =>

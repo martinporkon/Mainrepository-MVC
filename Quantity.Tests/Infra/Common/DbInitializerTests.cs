@@ -1,6 +1,9 @@
-﻿using CommonTests.OverallTests;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Sooduskorv_MVC.CommonTests.OverallTests;
 
-namespace Quantity.Tests.Infra.Common {
+namespace Quantity.Tests.Infra.Common
+{
 
     public class DbInitializerTests<TDbContext> : BaseTests
         where TDbContext : DbContext {

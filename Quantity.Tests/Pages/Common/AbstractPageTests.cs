@@ -1,10 +1,14 @@
-﻿using CommonTests.OverallTests;
+﻿using Abc.Pages.Common.Consts;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Quantity.Data;
 using Quantity.Domain;
 using Quantity.Facade;
 using Quantity.Pages.Common;
+using Sooduskorv_MVC.CommonTests.OverallTests;
+using System;
 
-namespace Quantity.Tests.Pages.Common {
+namespace Quantity.Tests.Pages.Common
+{
 
     public abstract class AbstractPageTests<TClass, TBaseClass> : AbstractClassTests<TClass, TBaseClass>
         where TClass : BasePage<ISystemsOfUnitsRepository, SystemOfUnits, SystemOfUnitsView, SystemOfUnitsData>

@@ -1,6 +1,14 @@
-﻿using CommonTests.OverallTests;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Sooduskorv_MVC.Aids.Reflection;
+using Sooduskorv_MVC.CommonTests.OverallTests;
+using System;
+using System.Linq;
+using System.Linq.Expressions;
 
-namespace Quantity.Tests.Infra.Common {
+namespace Quantity.Tests.Infra.Common
+{
 
     public abstract class DbContextTests<TClass, TBaseClass> : BaseClassTests<TClass, TBaseClass>
         where TClass : DbContext {

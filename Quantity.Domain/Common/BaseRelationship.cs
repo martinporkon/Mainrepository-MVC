@@ -1,4 +1,6 @@
-﻿namespace Quantity.Domain.Common {
+﻿using Quantity.Data;
+
+namespace Quantity.Domain.Common {
 
     public abstract class BaseRelationship<TEntity, TData> : DefinedEntity<TData> where TData: RelationshipData, new() {
 

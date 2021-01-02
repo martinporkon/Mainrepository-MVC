@@ -1,5 +1,6 @@
 ﻿using Catalog.Domain;
 using Catalog.Domain.Common;
+using Sooduskorv_MVC.Data.CommonData;
 using Sooduskorv_MVC.Facade;
 using System;
 

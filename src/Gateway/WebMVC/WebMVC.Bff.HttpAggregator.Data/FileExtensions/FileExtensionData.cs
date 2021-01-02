@@ -2,7 +2,7 @@
 
 namespace WebMVC.Bff.HttpAggregator.Data.FileExtensions
 {
-    public class FileExtensionData : NamedEntityData
+    public class FileExtensionData : NameEntityData
     {
         public string Value { get; set; }
     }

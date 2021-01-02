@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Quantity.Data;
+using System.Collections.Generic;
 
 namespace Quantity.Domain.Common {
 

@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Quantity.Pages.Common.Aids;
 using Quantity.Pages.Common.Consts;
+using Sooduskorv_MVC.Aids.Extensions;
 
 namespace Quantity.Pages.Common.Extensions {
 

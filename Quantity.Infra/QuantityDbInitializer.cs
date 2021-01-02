@@ -4,6 +4,7 @@ using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Quantity.Core.Units;
 using Quantity.Data;
+using Sooduskorv_MVC.Data.CommonData;
 using UnitData = Quantity.Data.UnitData;
 
 namespace Quantity.Infra {
@@ -97,7 +98,7 @@ namespace Quantity.Infra {
             addItem(
                 new MeasureData {
                     Id = measure.Id,
-                    /*Code = measure.Code,*/
+                    Code = measure.Code,
                     Name = measure.Name,
                     Definition = measure.Definition
                 }, db);

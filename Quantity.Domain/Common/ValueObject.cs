@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Sooduskorv_MVC.Aids.Methods;
+using System;
 
 namespace Quantity.Domain.Common {
 

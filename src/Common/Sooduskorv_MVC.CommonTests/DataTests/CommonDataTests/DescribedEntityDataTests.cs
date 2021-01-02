@@ -5,7 +5,7 @@ using Sooduskorv_MVC.Data.CommonData;
 namespace CommonTests.DataTests.CommonDataTests
 {
     [TestClass]
-    public class DescribedEntityDataTests : AbstractClassTests<DescribedEntityData, NamedEntityData>
+    public class DescribedEntityDataTests : AbstractClassTests<DescribedEntityData, NameEntityData>
     {
         private class testClass : DescribedEntityData { }
 

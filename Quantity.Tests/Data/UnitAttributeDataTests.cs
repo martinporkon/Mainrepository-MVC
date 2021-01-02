@@ -1,5 +1,8 @@
-﻿using CommonTests.OverallTests;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Quantity.Data;
+using Sooduskorv_MVC.Aids.Random;
+using Sooduskorv_MVC.CommonTests.OverallTests;
+using Sooduskorv_MVC.Data.CommonData;
 
 namespace Quantity.Tests.Data
 {

@@ -3,6 +3,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using Quantity.Domain.Common;
+using Sooduskorv_MVC.Aids.Methods;
+using Sooduskorv_MVC.Data.CommonData;
 
 namespace Quantity.Infra.Common {
 

@@ -1,7 +1,9 @@
-using CommonTests.OverallTests;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Quantity.Facade.Common;
+using Sooduskorv_MVC.CommonTests.OverallTests;
 
-namespace Quantity.Tests.Facade.Common {
+namespace Quantity.Tests.Facade.Common
+{
 
     [TestClass] public class DefinedViewTests : AbstractClassTests<DefinedView, NamedView> {
 

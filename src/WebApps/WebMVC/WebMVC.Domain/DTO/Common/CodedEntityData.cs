@@ -2,7 +2,7 @@
 
 namespace CommonData
 {
-    public abstract class CodedEntityData : NamedEntityData
+    public abstract class CodedEntityData : NameEntityData
     {
         public string Code { get; set; }
     }

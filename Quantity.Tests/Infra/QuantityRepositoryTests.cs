@@ -1,9 +1,14 @@
-﻿using CommonTests.OverallTests;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Quantity.Domain.Common;
 using Quantity.Infra;
 using Quantity.Infra.Common;
+using Sooduskorv_MVC.Aids.Random;
+using Sooduskorv_MVC.CommonTests.OverallTests;
+using Sooduskorv_MVC.Data.CommonData;
 
-namespace Quantity.Tests.Infra {
+namespace Quantity.Tests.Infra
+{
 
     public abstract class
         QuantityRepositoryTests<TRepository, TDomain, TData> : SealedClassTests<TRepository,

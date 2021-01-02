@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using Sooduskorv_MVC.Aids.Methods;
+using System.Collections.Generic;
 
 namespace Quantity.Domain.Common {
 

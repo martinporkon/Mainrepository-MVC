@@ -5,6 +5,9 @@ using Catalog.Domain.Product;
 using Catalog.Facade.Product;
 using Catalog.Pages.Common.Consts;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Sooduskorv_MVC.Aids.Constants;
+using Sooduskorv_MVC.Aids.Methods;
 using System;
 using System.Collections.Generic;
 
@@ -108,7 +111,7 @@ namespace Catalog.Pages.Products
 
         public string partyId(IEnumerable<SelectListItem> list, string productInstanceId)
         {
-            if (list is null) return Word.NotKnown;
+            if (list is null) return Word.Undefined;
 
             foreach (var m in list)
             {
@@ -117,7 +120,7 @@ namespace Catalog.Pages.Products
             }
 
 
-            return Word.NotKnown;
+            return Word.Undefined;
         }
 
 

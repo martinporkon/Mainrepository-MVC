@@ -1,4 +1,6 @@
 ﻿using Catalog.Domain;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using Sooduskorv_MVC.Aids.Reflection;
 using Sooduskorv_MVC.Facade;
 using System;
 using System.Collections.Generic;

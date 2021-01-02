@@ -1,5 +1,6 @@
 ﻿using Quantity.Data;
 using Quantity.Domain;
+using Sooduskorv_MVC.Aids.Methods;
 
 namespace Quantity.Facade {
 

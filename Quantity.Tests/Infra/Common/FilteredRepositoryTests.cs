@@ -1,17 +1,24 @@
-﻿using CommonTests.OverallTests;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Quantity.Data;
 using Quantity.Domain;
 using Quantity.Infra;
 using Quantity.Infra.Common;
+using Sooduskorv_MVC.Aids.Random;
+using Sooduskorv_MVC.CommonTests.OverallTests;
+using System.Data.Entity;
+using System.Linq;
+using System.Threading.Tasks;
 
-namespace Quantity.Tests.Infra.Common {
+namespace Quantity.Tests.Infra.Common
+{
 
     [TestClass] public class FilteredRepositoryTests : AbstractClassTests<FilteredRepository<Measure, MeasureData>,
         SortedRepository<Measure, MeasureData>> {
 
         private class testClass : FilteredRepository<Measure, MeasureData> {
 
-            public testClass(DbContext c, DbSet<MeasureData> s) : base(c, s) { }
+            public testClass(Microsoft.EntityFrameworkCore.DbContext c, Microsoft.EntityFrameworkCore.DbSet<MeasureData> s) : base(c, s) { }
             public override Measure toDomainObject(MeasureData d) => MeasureFactory.Create(d);
             protected override async Task<MeasureData> getData(string id) {
                 await Task.CompletedTask;

@@ -1,10 +1,10 @@
-﻿using Catalog.Pages.Common.Aids;
-using Microsoft.AspNetCore.Html;
+﻿using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;
 using System.Linq;
+using SooduskorvWebMVC.Pages.Common.Aids;
 
-namespace Catalog.Pages.Common.Extensions
+namespace SooduskorvWebMVC.Pages.Common.Extensions
 {
     public static class LinkHtml
     {

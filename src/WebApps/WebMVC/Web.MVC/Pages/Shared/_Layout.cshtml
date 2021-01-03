@@ -22,13 +22,18 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
-
                         @Html.DropMenu($"{Localizer["Catalog"]}",
-                                                new Link(ProductPagesNames.ProductTypes, ProductPagesUrls.ProductTypes))
+                                                new Link(
+                                                    $"{ProductPagesNames.ProductTypes}",
+                                                    $"{ProductPagesUrls.ProductTypes}"))
 
                         @Html.DropMenu($"{Localizer["Help"]}",
                                                 new Link("About", new Uri("/Index", UriKind.Relative)),
                                                 new Link("Privacy", new Uri("/Privacy", UriKind.Relative)))
+                        @*TODO kuidas panna vaaded nagu profiil teisele poole paremale nurka ekraanil?*@
+                        @Html.DropMenu($"{Localizer["Basket"]}",
+                            new Link("About", new Uri("/Index", UriKind.Relative)),
+                            new Link("Privacy", new Uri("/Privacy", UriKind.Relative)))
                     </ul>
                 </div>
                 <vc:culture-switcher />

@@ -1,11 +1,11 @@
-﻿using Catalog.Pages.Common.Aids;
-using Catalog.Pages.Common.Consts;
-using Microsoft.AspNetCore.Html;
+﻿using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
+using SooduskorvWebMVC.Pages.Common.Aids;
+using SooduskorvWebMVC.Pages.Common.Const;
 
-namespace Catalog.Pages.Common.Extensions
+namespace SooduskorvWebMVC.Pages.Common.Extensions
 {
 
 

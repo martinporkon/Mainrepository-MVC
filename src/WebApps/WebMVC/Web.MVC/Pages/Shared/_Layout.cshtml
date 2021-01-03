@@ -1,8 +1,5 @@
-﻿@using Catalog.Pages.Common.Aids
-@using Catalog.Pages.Common.Consts
+﻿@using SooduskorvWebMVC
 @inject IStringLocalizer<Program> Localizer
-@using SooduskorvWebMVC
-@using Catalog.Pages.Common.Extensions
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,11 +24,11 @@
                     <ul class="navbar-nav flex-grow-1">
 
                         @Html.DropMenu($"{Localizer["Catalog"]}",
-                            new Link(ProductPagesNames.ProductTypes, ProductPagesUrls.ProductTypes))
+                                                new Link(ProductPagesNames.ProductTypes, ProductPagesUrls.ProductTypes))
 
                         @Html.DropMenu($"{Localizer["Help"]}",
-                            new Link("About", new Uri("/Index", UriKind.Relative)),
-                            new Link("Privacy", new Uri("/Privacy", UriKind.Relative)))
+                                                new Link("About", new Uri("/Index", UriKind.Relative)),
+                                                new Link("Privacy", new Uri("/Privacy", UriKind.Relative)))
                     </ul>
                 </div>
                 <vc:culture-switcher />

@@ -1,4 +1,6 @@
-﻿@using Microsoft.AspNetCore.Http.Features
+﻿@inject IStringLocalizer<Program> Localizer
+@using Microsoft.AspNetCore.Http.Features
+@using SooduskorvWebMVC
 
 @{
     var consentFeature = Context.Features.Get<ITrackingConsentFeature>();
@@ -8,10 +10,10 @@
 
 @if (showBanner)
 {
-<div id="cookieConsent" class="alert alert-info alert-dismissible fade show" role="alert">
-        Use this space to summarize your privacy and cookie use policy. <a asp-page="/Privacy">Learn More</a>.
+    <div id="cookieConsent" class="alert alert-info alert-dismissible fade show" role="alert">
+        @Localizer["Policy"] <a asp-page="/Privacy">@Localizer["LearnMoreAboutOurCookiePolicy"]</a>
         <button type="button" class="accept-policy close" data-dismiss="alert" aria-label="Close" data-cookie-string="@cookieString">
-            <span aria-hidden="true">Accept</span>@*TODO vahetada ära see kole aria-hidden värv*@
+            <span aria-hidden="true">@Localizer["Accept Policy"]</span>@*TODO vahetada ära see kole aria-hidden värv*@
         </button>
     </div>
     <script>

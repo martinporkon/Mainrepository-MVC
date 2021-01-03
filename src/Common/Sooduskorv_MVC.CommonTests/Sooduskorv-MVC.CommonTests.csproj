@@ -16,7 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Quantity.Domain\Quantity.Domain.csproj" />
     <ProjectReference Include="..\Sooduskorv_MVC.Aids\Sooduskorv_MVC.Aids.csproj" />
     <ProjectReference Include="..\Sooduskorv_MVC.Data\Sooduskorv_MVC.Data.csproj" />
   </ItemGroup>

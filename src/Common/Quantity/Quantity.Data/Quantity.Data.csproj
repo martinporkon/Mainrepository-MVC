@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Sooduskorv_MVC.Data\Sooduskorv_MVC.Data.csproj" />
+    <ProjectReference Include="..\Quantity.Core\Quantity.Core.csproj" />
+  </ItemGroup>
+
+</Project>

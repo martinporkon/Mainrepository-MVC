@@ -14,4 +14,3 @@
         public static bool IsSpace(char c) => c.Equals(Space);
     }
 }
-

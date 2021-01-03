@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Sooduskorv_MVC.Common\Sooduskorv_MVC.Common.csproj" />
     <ProjectReference Include="..\Basket.Data\Basket.Data.csproj" />
   </ItemGroup>
 
@@ -18,6 +19,12 @@
     <PackageReference Include="EntityFramework" Version="6.4.4" />
     <PackageReference Include="FluentValidation" Version="9.3.0" />
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="BasketItems\Docs\" />
+    <Folder Include="BasketOfProducts\Docs\" />
+    <Folder Include="Baskets\Docs\" />
   </ItemGroup>
 
 </Project>

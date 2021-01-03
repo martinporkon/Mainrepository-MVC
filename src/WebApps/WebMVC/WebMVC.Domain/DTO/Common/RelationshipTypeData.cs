@@ -1,4 +1,4 @@
-﻿namespace Sooduskorv_MVC.Data.CommonData {
+﻿namespace CommonData {
 
     public abstract class RelationshipTypeData : EntityTypeData {
 

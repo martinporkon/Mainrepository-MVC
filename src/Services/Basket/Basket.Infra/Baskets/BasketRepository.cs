@@ -4,7 +4,7 @@ using Basket.Infra.Common;
 
 namespace Basket.Infra.Baskets
 {
-    public class BasketRepository : UniqueEntityRepository<Basket2, BasketData>,
+    public class BasketRepository : UniqueEntityRepository<Domain.Baskets.Basket, BasketData>,
         IBasketRepository
     {
         public BasketRepository() : this(null) { }

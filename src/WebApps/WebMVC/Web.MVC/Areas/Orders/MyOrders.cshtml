@@ -1,0 +1,23 @@
+﻿@page
+@model SooduskorvWebMVC.Models.ProductViewModel
+@*@model IEnumerable<SooduskorvWebMVC.Models.ProductViewModel    Cataloog ehk toote telh>*@
+
+    <div>
+        <h1>Information about the requested product:</h1>
+        @foreach (var product in Model.Products)
+        {
+            <p>@product.Id</p>
+            <p>@product.Name</p>
+            @*<p>@product.Measure</p>
+
+            <p>@product.Brand</p>
+            <p>@product.CategoryId</p>
+            <p>@product.Code</p>
+            <p>@product.Composition</p>*@
+            <p>@product.Description</p>
+            @*<p>@product.SubCategoryId</p>
+            <p>@product.PartyId</p>
+            <p>@product.Name</p>
+            <p>@product.CountryOfOrigin</p>*@
+        }
+    </div>

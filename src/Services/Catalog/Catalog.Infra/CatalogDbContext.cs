@@ -1,9 +1,9 @@
-﻿using Catalog.Data.Categories;
-using Catalog.Data.Parties;
-using Catalog.Data.Prices;
-using Catalog.Data.ProductOfParty;
-using Catalog.Data.Products;
-using Catalog.Data.SubCategories;
+﻿using Catalog.Data.Catalog;
+using Catalog.Data.CatalogedProducts;
+using Catalog.Data.CatalogEntries;
+using Catalog.Data.Price;
+using Catalog.Data.Product;
+using Catalog.Data.ProductFeature;
 using Catalog.Data.UserProfiles;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,31 +11,50 @@ namespace Catalog.Infra
 {
     public class CatalogDbContext : DbContext
     {
-        public DbSet<CategoryData> Categories { get; set; }
-        public DbSet<PartyData> Parties { get; set; }
+        public DbSet<CountryOfOriginData> CountriesOfOrigin { get; set; }
+        public DbSet<BrandData> Brands { get; set; }
+        public DbSet<ProductInstanceData> ProductInstances { get; set; }
+        public DbSet<ProductTypeData> ProductTypes { get; set; }
+        public DbSet<FeatureInstanceData> FeatureInstances { get; set; }
+        public DbSet<FeatureTypeData> FeatureTypes { get; set; }
+        public DbSet<PossibleFeatureValueData> PossibleFeatureValues { get; set; }
+        public DbSet<CatalogedProductData> CatalogedProducts { get; set; }
+        public DbSet<CatalogEntryData> CatalogEntries { get; set; }
+        public DbSet<ProductCategoryData> ProductCategories { get; set; }
+        public DbSet<CatalogData> Catalogs { get; set; }
         public DbSet<PriceData> Prices { get; set; }
-        public DbSet<ProductData> Products { get; set; }
-        public DbSet<ProductsOfPartyData> ProductsOfParties { get; set; }
-        public DbSet<SubCategoryData> SubCategories { get; set; }
         public DbSet<UserProfileData> UserProfiles { get; set; }
 
-        public CatalogDbContext(DbContextOptions<CatalogDbContext> options) : base(options) { }
+        public CatalogDbContext(DbContextOptions<CatalogDbContext> options)
+            : base(options) { }
 
-        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder builder)
         {
-            base.OnModelCreating(modelBuilder);
-            InitializeTables(modelBuilder);
+            base.OnModelCreating(builder);
+            InitializeTables(builder);
         }
-        public static void InitializeTables(ModelBuilder modelBuilder)
+
+        public static void InitializeTables(ModelBuilder builder)
         {
-            modelBuilder.Entity<UserProfileData>().ToTable(nameof(UserProfiles));
-            modelBuilder.Entity<CategoryData>().ToTable(nameof(Categories));
-            modelBuilder.Entity<PartyData>().ToTable(nameof(Parties));
-            modelBuilder.Entity<PriceData>().ToTable(nameof(Prices)).Property(x => x.Price)
-                .HasColumnType("decimal(16,2)");
-            modelBuilder.Entity<ProductData>().ToTable(nameof(Products));
-            modelBuilder.Entity<ProductsOfPartyData>().ToTable(nameof(ProductsOfParties)).HasKey(x => new { x.ProductId, x.PartyId });
-            modelBuilder.Entity<SubCategoryData>().ToTable(nameof(SubCategories));
+            if (builder is null) return;
+            builder.Entity<CountryOfOriginData>().ToTable(nameof(CountriesOfOrigin));
+            builder.Entity<BrandData>().ToTable(nameof(Brands));
+            builder.Entity<UserProfileData>().ToTable(nameof(UserProfiles));
+            builder.Entity<ProductInstanceData>().ToTable(nameof(ProductInstances));
+            builder.Entity<ProductTypeData>().ToTable(nameof(ProductTypes));
+            builder.Entity<FeatureTypeData>().ToTable(nameof(FeatureTypes));
+            builder.Entity<PossibleFeatureValueData>().ToTable(nameof(PossibleFeatureValues)).OwnsOne(
+                    x => x.Value);
+            builder.Entity<FeatureInstanceData>().ToTable(nameof(FeatureInstances)).OwnsOne(
+                x => x.Value);
+            builder.Entity<CatalogedProductData>().ToTable(nameof(CatalogedProducts))
+                .HasKey(x => new { x.CatalogEntryId, x.ProductTypeId });
+            builder.Entity<CatalogEntryData>().ToTable(nameof(CatalogEntries));
+            builder.Entity<ProductCategoryData>().ToTable(nameof(ProductCategories));
+            builder.Entity<CatalogData>().ToTable(nameof(Catalogs));
+            builder.Entity<PriceData>().ToTable(nameof(Prices))
+                .Property(x => x.Amount)
+                .HasColumnType("decimal(16,4)");
         }
     }
 }

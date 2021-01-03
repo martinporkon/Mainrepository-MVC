@@ -1,0 +1,33 @@
+﻿@page "/"
+@using Nupp2.Views.Home
+
+@{
+    var app = await Html.RenderComponentAsync<CatalogItem>(RenderMode.Static);
+}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <base href="~/" />
+</head>
+<body>
+    <app>
+        @* <component type="typeof(App)" render-mode="Static"/> *@
+        @app
+    </app>
+
+    <div id="blazor-error-ui">
+        <environment include="Staging,Production">
+            An error has occurred. This application may no longer respond until reloaded.
+        </environment>
+        <environment include="Development">
+            An unhandled exception has occurred. See browser dev tools for details.
+        </environment>>
+    </div>
+    <script src="~/_framework/blazor.server.js"></script>
+</body>
+</html>

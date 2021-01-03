@@ -5,7 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="NHibernate" Version="5.3.5" />
+    <PackageReference Include="Microsoft.JSInterop" Version="5.0.1" />
+    <PackageReference Include="Microsoft.JSInterop.WebAssembly" Version="5.0.1" />
   </ItemGroup>
 
   <ItemGroup>

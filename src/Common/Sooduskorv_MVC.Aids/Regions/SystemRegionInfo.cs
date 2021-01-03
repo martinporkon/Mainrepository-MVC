@@ -32,9 +32,5 @@ namespace Sooduskorv_MVC.Aids.Regions {
                 cultures.RemoveAt(i - 1);
             }
         }
-
     }
-
 }
-
-

@@ -1,0 +1,18 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>Sooduskorv_MVC.Infra</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="BasketRepository\" />
+    <Folder Include="CatalogRepository\" />
+    <Folder Include="OrderRepository\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.8" />
+  </ItemGroup>
+
+</Project>

@@ -4,9 +4,9 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Sooduskorv_MVC.Aids.HTTP;
-using SooduskorvWebMVC.Models;
 using WebMVC.Bff.HttpAggregator.Domain.BasketService.CommandRequests;
 using WebMVC.Bff.HttpAggregator.Domain.CatalogService.QueryRequest;
+using WebMVC.Bff.HttpAggregator.Domain.DTO;
 using WebMVC.Bff.HttpAggregator.Infra.CatalogService.QueryRequest;
 
 namespace WebMVC.Bff.HttpAggregator.Gateway.Controllers

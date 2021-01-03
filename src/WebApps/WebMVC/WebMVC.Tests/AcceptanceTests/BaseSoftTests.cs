@@ -1,6 +1,6 @@
-﻿using System.Net.Http;
-using CommonTests.OverallTests;
+﻿using Sooduskorv_MVC.CommonTests.OverallTests;
 using SooduskorvWebMVC;
+using System.Net.Http;
 using WebMVC.Tests.AcceptanceTests;
 
 namespace WebMVC.Tests

@@ -1,0 +1,82 @@
+﻿@page
+@using Nupp2.Views.Home
+@using Nupp2.Views.Home.Button
+@inject IJSRuntime Js;
+@inject ViewState ViewState;
+@inject SendBasketItemBase BasketItemBase;
+
+@model IEnumerable<ProductTypeView>
+
+@{
+    var Item = new List<ProductTypeView>
+{
+        new ProductTypeView(),
+        new ProductTypeView(),
+        new ProductTypeView()
+    };
+    Layout = "_Layout";
+}
+
+
+<link rel="stylesheet" href="~/catalog.component.css" />
+
+<body>
+    <div class="container">
+        <component type="typeof(SendBasketItem)" render-mode="ServerPrerendered" />
+        <hr />
+        @(await Html.RenderComponentAsync<CatalogItems>(RenderMode.ServerPrerendered, new
+        {
+            Products = new List<ProductTypeView>
+            {
+                new ProductTypeView {},
+                new ProductTypeView {},
+                new ProductTypeView {}
+            }
+        }))
+        @*$2$<div class="esh-catalog-price">
+                    @await Html.PartialAsync("_PartialPriceView", item.Parties)
+                </div>#2#
+
+            $2$$4$$6$<button class="btn btn-primary" @onclick="IncrementCount">Click me</button>#6##4#
+
+                $4$$6$<component type="typeof(CatalogItemsBase)" render-mode="WebAssembly" />#6#
+                    $6$<component type="typeof(CatalogItemsBase)" render-mode="WebAssemblyPrerendered" />#6##4##2#
+
+            $2$<component type="typeof(CatalogItem)" render-mode="WebAssembly" />#2#
+            $2$<CataglogItem></CataglogItem>#2#
+            @(await Html.RenderComponentAsync<CatalogItem>(RenderMode.ServerPrerendered, new { Product = item}))
+            $2$<CatalogItem OnProductSelected="ProductSelectionChanged"
+                             Product="@item">
+                </CatalogItem>#2#>*@
+
+    </div>
+</body>
+@(await Html.RenderComponentAsync<SendBasketItemBase>(RenderMode.ServerPrerendered/*,#1# Model*/))
+<script>
+    function showAlert(message) {
+        alert(message);
+    }
+</script>
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+@*@section Scripts {
+        <script src="~/_framework/blazor.webassembly.js"></script>
+    }*@
+
+@*Ostukorvi vaate jaoks*@
+@*<div class="card">
+        <img class="esh-catalog-thumbnail" src="https://m1.selver.ee/media/catalog/product/cache/1/image/409x/9df78eab33525d08d6e5fb8d27136e95/4/7/4740125000108_2.jpg" />
+        <div class="card-body">
+            <h5 class="card-title">Card title</h5>
+            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        </div>
+        <div class="esh-catalog-price">
+            @await Html.PartialAsync("_PartialPriceView", item.Parties)
+        </div>
+        <div class="card-footer">
+            <small class="text-muted">Last updated 3 mins ago</small>
+        </div>
+    </div>*@

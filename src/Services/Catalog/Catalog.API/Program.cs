@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using Catalog.Domain.Common;
 using Catalog.Infra;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -56,6 +57,8 @@ namespace Catalog.API
                     Log.CloseAndFlush();
                 }
             }
+            GetRepository.SetServiceProvider(host.Services);
+            
             host.Run();
         }
 

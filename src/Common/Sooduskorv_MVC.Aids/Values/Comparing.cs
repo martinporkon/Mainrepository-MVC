@@ -1,6 +1,7 @@
 ﻿using System;
 using Sooduskorv_MVC.Aids.Methods;
 
+
 namespace Sooduskorv_MVC.Aids.Values {
 
     public static class Comparing {

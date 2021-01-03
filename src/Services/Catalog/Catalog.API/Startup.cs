@@ -33,7 +33,7 @@ namespace Catalog.API
             services.AddCustomSwagger(Configuration);
             services.AddHttpContextAccessor();
             services.AddOptions();
-            services.AddScoped<ICatalogRepository, CatalogRepository>();// TODO
+           /* services.AddScoped<ICatalogRepository, CatalogRepository>();*/// TODO
             services.AddScoped<IAuthorizationHandler, SubjectMustMatchUserHandler>();
 
             services.AddCustomAuthorization(Configuration);
@@ -53,6 +53,11 @@ namespace Catalog.API
             {
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
             });
+            registerRepositories(services);
+        }
+        private void registerRepositories(IServiceCollection services)
+        {
+            CatalogRepositories.Register(services);
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

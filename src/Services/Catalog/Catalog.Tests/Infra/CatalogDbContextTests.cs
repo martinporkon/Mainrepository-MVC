@@ -1,10 +1,4 @@
-﻿using Catalog.Data.Categories;
-using Catalog.Data.Parties;
-using Catalog.Data.Prices;
-using Catalog.Data.ProductOfParty;
-using Catalog.Data.Products;
-using Catalog.Data.SubCategories;
-using Catalog.Data.UserProfiles;
+﻿using Catalog.Data.UserProfiles;
 using Catalog.Infra;
 using CommonTests.InfraTests;
 using Microsoft.EntityFrameworkCore;
@@ -49,14 +43,14 @@ namespace Catalog.Tests.Infra
             CatalogDbContext.InitializeTables(modelBuilder);
 
         }
-        [TestMethod] public void CategoriesTest() => testHasDbSet<CategoryData>(modelBuilder);
-        [TestMethod] public void PartyTest() => testHasDbSet<PartyData>(modelBuilder);
-        [TestMethod] public void PriceTest() => testHasDbSet<PriceData>(modelBuilder);
-        [TestMethod] public void ProductTest() => testHasDbSet<ProductData>(modelBuilder);
+        //[TestMethod] public void CategoriesTest() => testHasDbSet<CategoryData>(modelBuilder);
+        //[TestMethod] public void PartyTest() => testHasDbSet<PartyData>(modelBuilder);
+        //[TestMethod] public void PriceTest() => testHasDbSet<PriceData>(modelBuilder);
+        //[TestMethod] public void ProductTest() => testHasDbSet<ProductData>(modelBuilder);
 
-        [TestMethod] public void ProductsOfPartyTest() => testHasDbSet<ProductsOfPartyData>(modelBuilder, x => x.ProductId, x => x.PartyId);
+        //[TestMethod] public void ProductsOfPartyTest() => testHasDbSet<ProductsOfPartyData>(modelBuilder, x => x.ProductId, x => x.PartyId);
         [TestMethod] public void UserProfilesTest() => testHasDbSet<UserProfileData>(modelBuilder);
 
-        [TestMethod] public void SubCategoriesTest() => testHasDbSet<SubCategoryData>(modelBuilder);
+        //[TestMethod] public void SubCategoriesTest() => testHasDbSet<SubCategoryData>(modelBuilder);
     }
 }

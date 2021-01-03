@@ -3,10 +3,10 @@ using Basket.Data.Baskets;
 
 namespace Basket.Domain.Baskets
 {
-    public abstract class Basket2 : DefinedEntity<BasketData>, IAggregateRoot// TODO
+    public abstract class Basket : DefinedEntity<BasketData>
     {
-        protected Basket2() : this(null) { }
+        protected Basket() : this(null) { }
 
-        protected Basket2(BasketData data) : base(data) { }
+        protected Basket(BasketData data) : base(data) { }
     }
 }

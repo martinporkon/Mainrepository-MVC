@@ -50,7 +50,5 @@ namespace Sooduskorv_MVC.Aids.Values {
         public static double ToMinutes(this TimeSpan a) => a.TotalMinutes;
 
         public static double ToSeconds(this TimeSpan a) => a.TotalSeconds;
-
     }
-
 }

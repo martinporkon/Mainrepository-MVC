@@ -1,6 +1,13 @@
-﻿
-namespace Sooduskorv_MVC.Data.CommonData {
+﻿using WebMVC.Domain.DTO.Common;
 
-    public abstract class CommonMetricData : DefinedEntityData { }
+namespace CommonData
+{
+
+    public abstract class CommonMetricData : DefinedEntityData
+    {
+        
+    }
+   
+    
 
 }

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Sooduskorv_MVC.Aids.Classes;
 using Sooduskorv_MVC.Aids.Reflection;
 
-namespace CommonTests.OverallTests
+namespace Sooduskorv_MVC.CommonTests.OverallTests
 {
     public class BaseTests
     {

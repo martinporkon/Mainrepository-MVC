@@ -2,6 +2,6 @@
 {
     public interface ISorting
     {
-        string SortOrder { get; set; }// :)
+        string SortOrder { get; set; }
     }
 }

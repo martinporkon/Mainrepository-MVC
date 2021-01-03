@@ -9,6 +9,6 @@ namespace Order.Data.Addresses
         public string PostalCode { get; set; }
         public string Phone { get; set; }
         public string Area { get; set; }
-        public string Id { get; set; }
+       
     }
 }

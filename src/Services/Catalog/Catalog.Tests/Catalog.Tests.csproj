@@ -38,6 +38,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\..\TestEnvironment\TestEnvironment.csproj" />
+    <ProjectReference Include="..\..\..\..\tests\CommonTests\CommonTests.csproj" />
+    <ProjectReference Include="..\Catalog.Aids\Catalog.Aids.csproj" />
     <ProjectReference Include="..\..\..\Common\Sooduskorv_MVC.CommonTests\Sooduskorv-MVC.CommonTests.csproj" />
     <ProjectReference Include="..\Catalog.API\Catalog.API.csproj" />
     <ProjectReference Include="..\Catalog.Pages\Catalog.Pages.csproj" />

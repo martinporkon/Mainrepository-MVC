@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Quantity.Core\Quantity.Core.csproj" />
+    <ProjectReference Include="..\src\WebApps\WebMVC\WebMVC.Domain\WebMVC.Domain.csproj" />
+  </ItemGroup>
+
+</Project>

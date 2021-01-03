@@ -21,7 +21,7 @@ namespace Sooduskorv_MVC.Middleware.ViewComponents
                 SupportedCultures = l.Value.SupportedUICultures.ToList(),
                 CurrentUICulture = cultureFeature.RequestCulture.UICulture
             };
-            return /*View(model)*/null;
+            return View(model);
         }
     }
 }

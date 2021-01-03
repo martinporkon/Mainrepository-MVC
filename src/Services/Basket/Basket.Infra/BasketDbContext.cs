@@ -5,7 +5,6 @@ using Microsoft.Extensions.Logging;
 
 namespace Basket.Infra
 {
-    // TODO soddy
     public class BasketDbContext : DbContext
     {
         public DbSet<BasketData> Baskets { get; set; }

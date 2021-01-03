@@ -12,7 +12,12 @@ namespace Catalog.API.Controllers
 
         /*public async Task<ProductDetailsResponse> GetItemDetailsById(GetProductDetailsByIdRequest request, ServerCallContext context)
         {
-            throw new NotImplementedException();
+            var products = new ProductInstanceData()
+            {
+                Id = Guid.NewGuid().ToString(), 
+                
+            };
+            return Ok(products);
         }*/
     }
 }

@@ -1,0 +1,80 @@
+﻿@inherits DisplayBasketItemBase
+@using Catalog.Facade.Product
+@using Microsoft.JSInterop
+@inject ViewState ViewState;
+@inject IJSRuntime Js;
+<hr />
+<div class="esh-catalog-items row">
+    <div class="card-deck">
+        @foreach (var item in Products)
+        {
+            <div class="esh-catalog-item col-md-4">
+                <img class="esh-catalog-thumbnail" src="https://m1.selver.ee/media/catalog/product/cache/1/image/409x/9df78eab33525d08d6e5fb8d27136e95/4/7/4740125000108_2.jpg" />
+                <div class="esh-catalog-name">
+                    <span>@item.Name @item.BrandId @item.Amount @item.UnitId</span>
+                </div>
+                @*<div class="esh-catalog-price">
+                        @await Html.PartialAsync("_PartialPriceView", item.Parties)
+                    </div>*@
+                @*<component type="typeof(CatalogItem)" render-mode="WebAssemblyPrerendered"
+                    value="" />*@
+                <CatalogItem OnProductSelected="ProductSelectionChanged"
+                             Product="@item"
+                             OnProductRemoved="ProductSelectionRemovedChanged">
+                </CatalogItem>
+            </div>
+        }
+    </div>
+</div>
+
+@code{
+
+    [Parameter]
+    public IEnumerable<ProductTypeView> Products { get; set; }
+
+    [Parameter]
+    public bool Show { get; set; }
+
+    [Parameter]
+    public EventCallback<int> OnBasketChanged { get; set; }
+
+    /*protected int SelectedItemsCount { get; set; } = 0;
+        protected void BasketItemChanged(bool status)
+        {
+            if (status)
+            {
+                SelectedItemsCount++;
+            }
+            else
+            {
+                if (SelectedItemsCount > 0)
+                {
+                    SelectedItemsCount--;
+                }
+            }
+
+        }*/
+    private int ProductCount;
+
+    //TODO ostukorvi lisatakase vale toode?
+
+    protected async Task ProductSelectionChanged(ProductTypeView Product)
+    {
+        this.ProductCount = Product.ProductsInUserBasket;
+        ViewState.Product = Product;
+        ViewState.NotifyStateChanged();
+    }
+
+    protected async Task ProductSelectionRemovedChanged(ProductTypeView Product)
+    {
+        this.ProductCount = Product.ProductsInUserBasket;
+        ViewState.Product = Product;
+        ViewState.NotifyStateRemoveChanged();
+    }
+
+    /*public async Task OnNotify()
+        {
+            await InvokeAsync(StateHasChanged);
+        }*/
+
+}

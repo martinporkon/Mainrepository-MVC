@@ -6,18 +6,18 @@ namespace Microsoft.AspNetCore.Builder
 {
     public static class CustomRouteBuilderMiddlewareExtensions
     {
-        public static IEndpointRouteBuilder MapCustomEndpointRouteBuilder(this IEndpointRouteBuilder b, IConfiguration c, 
+        public static IEndpointRouteBuilder MapCustomEndpointRouteBuilder(this IEndpointRouteBuilder b, IConfiguration c,
             IOptions<RequestLocalizationOptions> rlo)
         {
             b.MapControllerRoute(
                 name: "default",
                 pattern: "{controller=Home}/{action=Index}/{id?}");
 
-            b.MapControllerRoute(
+            /*b.MapControllerRoute(
                 name: "localizedDefault",
                 pattern: "{culture:culture}/{controller=Home}/{action=Index}/{id?}",
-                defaults: new { culture = rlo.Value.DefaultRequestCulture.Culture.Name });
-            
+                defaults: new { culture = rlo.Value.DefaultRequestCulture.Culture.Name });*/
+
             return b;
         }
     }

@@ -1,4 +1,7 @@
-﻿namespace Sooduskorv_MVC.Data.CommonData {
+﻿using WebMVC.Domain.DTO.Common;
+
+namespace CommonData
+{
 
     public abstract class EntityTypeData : DefinedEntityData {
 

@@ -1,6 +1,10 @@
-﻿namespace Sooduskorv_MVC.Data.CommonData {
+﻿using Sooduskorv_MVC.Data.CommonData;
 
-    public abstract class DefinedEntityData : NamedEntityData {
+namespace WebMVC.Domain.DTO.Common
+{
+
+    public abstract class DefinedEntityData : NameEntityData
+    {
 
         public string Definition { get; set; }
     }

@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.RazorPages" Version="2.2.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Quantity.Core\Quantity.Core.csproj" />
+    <ProjectReference Include="..\Quantity.Data\Quantity.Data.csproj" />
+    <ProjectReference Include="..\Quantity.Domain\Quantity.Domain.csproj" />
+    <ProjectReference Include="..\Quantity.Facade\Quantity.Facade.csproj" />
+    <ProjectReference Include="..\Quantity.Infra\Quantity.Infra.csproj" />
+    <ProjectReference Include="..\src\Common\Sooduskorv_MVC.Aids\Sooduskorv_MVC.Aids.csproj" />
+    <ProjectReference Include="..\src\Common\Sooduskorv_MVC.Data\Sooduskorv_MVC.Data.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using WebMVC.Bff.HttpAggregator.Domain.DTO;
+using WebMVC.Bff.HttpAggregator.Domain.CatalogService.CommandHandlers;
 
 namespace WebMVC.Bff.HttpAggregator.Domain.Rules
 {

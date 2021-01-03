@@ -1,6 +1,6 @@
 ﻿using Catalog.Data.UserProfiles;
-using CommonTests.OverallTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Sooduskorv_MVC.CommonTests.OverallTests;
 using Sooduskorv_MVC.Data.CommonData;
 
 namespace Catalog.Tests.Data.UserProfiles

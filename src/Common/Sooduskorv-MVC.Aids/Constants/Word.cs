@@ -1,4 +1,4 @@
-﻿namespace Sooduskorv_MVC.Aids.Constants
+﻿namespace Aids.Constants
 {
     public static class Word
     {

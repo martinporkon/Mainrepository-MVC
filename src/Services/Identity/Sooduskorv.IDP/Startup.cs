@@ -8,7 +8,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Sooduskorv.IDP.Data;
-using Sooduskorv.IDP.Middleware.DbContextStore;
 using Sooduskorv_MVC.Aids.Reflection;
 
 namespace Sooduskorv.IDP

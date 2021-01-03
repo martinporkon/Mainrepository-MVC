@@ -57,7 +57,5 @@ namespace Sooduskorv_MVC.Aids.Extensions {
             else r = false;
             return r;
         }
-
     }
-
 }

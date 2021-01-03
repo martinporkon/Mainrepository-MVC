@@ -12,9 +12,7 @@ namespace SooduskorvWebMVC
             CreateHostBuilder(args).ConfigureAppConfiguration((hostContext, builder) =>
             {
                 if (hostContext.HostingEnvironment.IsDevelopment())
-                {
                     builder.AddUserSecrets<Program>();
-                }
             }).Build().Run();
         }
 

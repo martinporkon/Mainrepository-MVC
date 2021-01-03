@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace WebMVC.Domain.Common
 {
-    public interface ICrudMethods<T>// TODO?
+    public interface ICrudMethods<T>
     {
         Task<List<T>> Get();
 

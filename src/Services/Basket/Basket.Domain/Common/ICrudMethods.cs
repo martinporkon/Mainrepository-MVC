@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace Basket.Domain.Common
 {
-    public interface ICrudMethods<T> : IAggregateRoot// TODO
+    public interface ICrudMethods<T>
     {
         Task<List<T>> Get();
         Task<T> Get(string id);

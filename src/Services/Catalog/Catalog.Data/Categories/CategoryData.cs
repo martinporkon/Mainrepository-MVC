@@ -2,5 +2,5 @@
 
 namespace Catalog.Data.Categories
 {
-    public sealed class CategoryData : NamedEntityData { }
+    public sealed class CategoryData : NameEntityData { }
 }

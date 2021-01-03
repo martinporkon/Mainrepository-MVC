@@ -9,6 +9,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Sooduskorv_MVC.Aids.Constants;
+using Sooduskorv_MVC.Common.Domain;
 using Sooduskorv_MVC.Middleware.Diagnostics;
 using Sooduskorv_MVC.Middleware.SystemDiagnostics;
 using WebMVC.Bff.HttpAggregator.Gateway.Middleware.HealthChecks;
@@ -20,7 +22,7 @@ namespace Basket.API
         public Startup(IConfiguration c) => Configuration = c;
 
         public IConfiguration Configuration { get; }
-
+        
         public void ConfigureServices(IServiceCollection services)
         {
             /*services.AddControllers()
@@ -39,6 +41,23 @@ namespace Basket.API
                 options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=BasketDB;Trusted_Connection=True;");
             });*/
             services.AddCustomHealthChecks<BasketApplicationDbContext>();
+        }
+
+        private static void registerRepositories(IServiceCollection s)
+        {
+            GetRepository.SetServiceProvider(s.BuildServiceProvider());
+        }
+
+        private void registerDbContexts(IServiceCollection s)
+        {
+            registerDbContext<BasketApplicationDbContext>(s);
+        }
+
+        protected virtual void registerDbContext<T>(IServiceCollection s) where T : DbContext
+        {
+            s.AddDbContext<T>(options =>
+                options.UseNpgsql(
+                    Configuration.GetConnectionString(DbConnection.Default)));
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, DiagnosticListener listener)

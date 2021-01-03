@@ -119,10 +119,14 @@
   </resheader>
   <data name="Catalog" xml:space="preserve">
     <value>Catalog</value>
-    <comment>""</comment>
   </data>
   <data name="Help" xml:space="preserve">
     <value>Help</value>
-    <comment>""</comment>
+  </data>
+  <data name="Info" xml:space="preserve">
+    <value>Estonian retail chain price comparison portal</value>
+  </data>
+  <data name="Welcome" xml:space="preserve">
+    <value>Welcome to Sooduskorv!</value>
   </data>
 </root>

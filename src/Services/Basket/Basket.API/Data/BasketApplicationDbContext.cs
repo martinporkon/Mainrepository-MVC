@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Basket.Infra;
+using Microsoft.EntityFrameworkCore;
 
 namespace Basket.API.Data
 {

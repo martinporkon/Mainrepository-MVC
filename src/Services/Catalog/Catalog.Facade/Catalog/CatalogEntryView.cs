@@ -1,8 +1,9 @@
 ﻿using System.ComponentModel;
+using Catalog.Facade.Common;
 
 namespace Catalog.Facade.Catalog
 {
-    public sealed class CatalogEntryView:PeriodView
+    public sealed class CatalogEntryView : NamedEntityView
     {
         [DisplayName("Catalog")]
         public string CatalogId { get; set; }

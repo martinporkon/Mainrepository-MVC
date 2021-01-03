@@ -20,8 +20,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Sooduskorv_MVC.Common\Sooduskorv_MVC.Common.csproj" />
     <ProjectReference Include="..\..\..\Common\Sooduskorv_MVC.Middleware\Sooduskorv_MVC.Middleware.csproj" />
     <ProjectReference Include="..\..\..\Communication\EventBus\EventBus.csproj" />
+    <ProjectReference Include="..\Basket.Infra\Basket.Infra.csproj" />
   </ItemGroup>
 
 

@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Web.Pages.Common.ViewsPage&lt;TPage, TRepository, TDomain, TView, TData&gt;">
+    <Position X="0.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\ViewsPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Web.Pages.Common.ViewPage&lt;TPage, TRepository, TDomain, TView, TData&gt;">
+    <Position X="2.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAAAQAAAABCAAAAAAAEEkAAAAAA=</HashCode>
+      <FileName>Common\ViewPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Web.Pages.Common.UnifiedPage&lt;TPage, TRepository, TDomain, TView, TData&gt;">
+    <Position X="4.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAAAAAACAAAAAAAAAgQACA=</HashCode>
+      <FileName>Common\UnifiedPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Web.Pages.Common.TitledPage&lt;TRepository, TDomain, TView, TData&gt;">
+    <Position X="6.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAgAAAAAAAAACAgAAAQAAhAAAAIQAAAAAAAA=</HashCode>
+      <FileName>Common\TitledPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Web.Pages.Common.PagedPage&lt;TRepository, TDomain, TView, TData&gt;">
+    <Position X="8.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAgAAAABACAAAAAAAEAAUAAAAAAAAAAAAAgAIAAA=</HashCode>
+      <FileName>Common\PagedPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Web.Pages.Common.CrudPage&lt;TRepository, TDomain, TView, TData&gt;">
+    <Position X="10.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAIAAAAAAAAAAAAAiCAEAAAUAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\CrudPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Web.Pages.Common.BasePage&lt;TRepository, TDomain, TView, TData&gt;">
+    <Position X="12.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEABAAIAABQAAAAAAAAgAAAAAAIAAAAAABAASAAAAA=</HashCode>
+      <FileName>Common\BasePage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

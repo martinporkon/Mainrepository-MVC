@@ -1,4 +1,7 @@
-﻿using CommonTests.InfraTests;
+﻿using Basket.Data.BasketOfProducts;
+using Basket.Data.Baskets;
+using Basket.Infra;
+using CommonTests.InfraTests;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Conventions;
 using Microsoft.VisualStudio.TestTools.UnitTesting;

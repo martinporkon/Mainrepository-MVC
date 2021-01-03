@@ -39,7 +39,6 @@
     <ProjectReference Include="..\..\..\Services\Basket\Basket.API\Basket.API.csproj" />
     <ProjectReference Include="..\..\..\Services\Basket\Basket.Domain\Basket.Domain.csproj" />
     <ProjectReference Include="..\..\..\Services\Basket\Basket.Facade\Basket.Facade.csproj" />
-    <ProjectReference Include="..\..\..\WebApps\WebMVC\WebMVC.Domain\Web.Domain.csproj" />
     <ProjectReference Include="..\WebMVC.Bff.HttpAggregator.Domain\WebMVC.Bff.HttpAggregator.Domain.csproj" />
     <ProjectReference Include="..\WebMVC.Bff.HttpAggregator.Infra\WebMVC.Bff.HttpAggregator.Infra.csproj" />
     <ProjectReference Include="..\WebMVC.Bff.HttpAggregator.Pages\WebMVC.Bff.HttpAggregator.Pages.csproj" />

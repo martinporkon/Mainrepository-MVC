@@ -9,8 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Sooduskorv_MVC.Aids.Constants;
-using Sooduskorv_MVC.Middleware.Diagnostics;
-using Sooduskorv_MVC.Middleware.SystemDiagnostics;
+using Sooduskorv_MVC.Common.Domain;
 using WebMVC.Bff.HttpAggregator.Gateway.Middleware.HealthChecks;
 
 namespace Basket.API
@@ -60,8 +59,8 @@ namespace Basket.API
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, DiagnosticListener listener)
         {
-            listener.SubscribeWithAdapter(new BasketSystemDiagnosticsListener(),
-                new BasketListener());
+            /*listener.SubscribeWithAdapter(new BasketSystemDiagnosticsListener(),
+                new BasketListener());*/
 
             if (env.IsDevelopment())
             {

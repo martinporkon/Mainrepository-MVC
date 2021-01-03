@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
 using Web.Domain.Common;
@@ -28,8 +29,15 @@ namespace Web.Infra.Common
             BaseAddress = baseAddress;
         }
 
+
         public async Task<List<TDomain>> Get()
         {
+
+            var request = new HttpRequestMessage(HttpMethod.Get, "api/mvc-bff/products");
+            request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            request.Headers.AcceptEncoding.Add(new StringWithQualityHeaderValue("brotli"));
+
+
             throw new System.NotImplementedException();
         }
 
@@ -37,6 +45,8 @@ namespace Web.Infra.Common
         {
             throw new System.NotImplementedException();
         }
+
+
 
         public async Task Delete(string id)
         {

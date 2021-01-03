@@ -18,11 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Catalog.Facade\Catalog.Facade.csproj" />
     <ProjectReference Include="..\Catalog.Infra\Catalog.Infra.csproj" />
-    <ProjectReference Include="..\Catalog.Data\Catalog.Data.csproj" />
-    <ProjectReference Include="..\Catalog.Domain\Catalog.Domain.csproj" />
-    <ProjectReference Include="..\Catalog.Facade\Catalog.Facade.csproj" />
   </ItemGroup>
 
 </Project>

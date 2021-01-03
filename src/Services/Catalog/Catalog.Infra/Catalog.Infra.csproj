@@ -26,18 +26,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Catalog.Domain\Catalog.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Catalog.Data\Catalog.Data.csproj" />
-    <ProjectReference Include="..\Catalog.Domain\Catalog.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="Catalog\Docs\" />
     <Folder Include="Catalog\Prices\" />
     <Folder Include="Docs\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Catalog.Facade\Catalog.Facade.csproj" />
   </ItemGroup>
 
 </Project>

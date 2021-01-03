@@ -4,7 +4,6 @@ using Catalog.Domain.Catalog;
 using Catalog.Domain.Prices;
 using Catalog.Domain.Product;
 using Catalog.Facade.Product;
-using Catalog.Pages.Common.Consts;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Sooduskorv_MVC.Aids.Constants;

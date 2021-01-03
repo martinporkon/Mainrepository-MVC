@@ -18,6 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Quantity\Quantity.Facade\Quantity.Facade.csproj" />
     <ProjectReference Include="..\Catalog.Infra\Catalog.Infra.csproj" />
   </ItemGroup>
 

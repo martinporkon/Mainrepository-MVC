@@ -2,7 +2,7 @@
 
 namespace Web.Domain.Common
 {
-    public class UniqueEntity<T> : Entity<T>, IUniqueDto<T> where T : UniqueEntityDto, new()
+    public abstract class UniqueEntity<T> : Entity<T>, IUniqueDto<T> where T : UniqueEntityDto, new()
     {
         protected internal UniqueEntity(T d = null) : base(d) { }
 

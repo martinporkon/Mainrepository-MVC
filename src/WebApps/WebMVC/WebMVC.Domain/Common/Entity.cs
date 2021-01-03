@@ -3,7 +3,7 @@ using Web.Domain.DTO.Common;
 
 namespace Web.Domain.Common
 {
-    public class Entity<TData> : ValueObject<TData>, IDto<TData> where TData : PeriodEntityDto, new()
+    public abstract class Entity<TData> : ValueObject<TData>, IDto<TData> where TData : PeriodEntityDto, new()
     {
         protected internal Entity(TData d = null) : base(d) { }
 

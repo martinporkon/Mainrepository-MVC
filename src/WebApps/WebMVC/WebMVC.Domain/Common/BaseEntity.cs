@@ -2,7 +2,7 @@
 
 namespace Web.Domain.Common
 {
-    public class BaseEntity
+    public abstract class BaseEntity
     {
         public static string Unspecified => Sooduskorv_MVC.Aids.Constants.Word.Unspecified;
         public static DateTime UnspecifiedValidFrom => DateTime.MinValue;

@@ -3,7 +3,7 @@ using Sooduskorv_MVC.Aids.Methods;
 
 namespace Web.Domain.Common
 {
-    public class ValueObject<TData> : BaseEntity where TData : class, new()
+    public abstract class ValueObject<TData> : BaseEntity where TData : class, new()
     {
         protected readonly TData data;
         internal static Guid guid;

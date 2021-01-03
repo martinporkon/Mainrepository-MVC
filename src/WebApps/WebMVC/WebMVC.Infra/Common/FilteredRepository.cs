@@ -13,8 +13,10 @@ namespace Web.Infra.Common
         public string FixedFilter { get; set; }
         public string FixedValue { get; set; }
 
-        public FilteredRepository(IHttpClientFactory h, string baseAddress) : base(h, baseAddress)
-        {
-        }
+        public FilteredRepository(IHttpClientFactory h, string baseAddress) : base(h, baseAddress) { }
+
+
+
+
     }
 }

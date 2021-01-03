@@ -19,38 +19,27 @@ namespace Web.Infra.Common
             _baseAddress = baseAddress;
         }
 
-
-
-
-
-        public Task<List<TDomain>> Get()
+        public async Task<List<TDomain>> Get()
         {
             throw new System.NotImplementedException();
         }
 
-
-
-        public Task<TDomain> Get(string id)
+        public async Task<TDomain> Get(string id)
         {
             throw new System.NotImplementedException();
         }
 
-
-
-
-
-
-        public Task Delete(string id)
+        public async Task Delete(string id)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task Add(TDomain obj)
+        public async Task Add(TDomain obj)
         {
             throw new System.NotImplementedException();
         }
 
-        public Task Update(TDomain obj)
+        public async Task Update(TDomain obj)
         {
             throw new System.NotImplementedException();
         }
@@ -59,5 +48,13 @@ namespace Web.Infra.Common
         {
             throw new System.NotImplementedException();
         }
+
+        protected internal abstract TDomain toDomainObject(TData periodData);
+
+        protected abstract Task<TData> getData(string id);
+
+        protected TData getData(TDomain obj) => obj?.Data;
+
+        protected abstract TData getDataById(TData d);
     }
 }

@@ -10,13 +10,18 @@ namespace Web.Infra.Common
     {
         public int PageIndex { get; set; }
         public int PageSize { get; set; }
-        public int TotalPages { get; }
-        public bool HasNextPage { get; }
-        public bool HasPreviousPage { get; }
+        public int TotalPages => getTotalPages(PageSize);
+        public bool HasNextPage => PageIndex < TotalPages;
+        public bool HasPreviousPage => PageIndex > 1;
 
-        public PaginatedRepository(IHttpClientFactory h, string baseAddress) : base(h, baseAddress)
+        public PaginatedRepository(IHttpClientFactory h, string baseAddress) : base(h, baseAddress) { }
+
+        internal int getTotalPages(in int pageSize)
         {
-
+            /*var count = getItemsCount();
+            var pages = countTotalPages(count, pageSize);*/
+            // TODO
+            return pageSize;
         }
     }
 }

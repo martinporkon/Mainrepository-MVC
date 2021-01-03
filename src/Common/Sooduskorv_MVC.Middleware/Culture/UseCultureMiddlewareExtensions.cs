@@ -11,68 +11,22 @@ namespace Sooduskorv_MVC.Middleware.Culture
 {
     public static class UseCultureMiddlewareExtensions
     {
-        /*public static IApplicationBuilder UseCultureForRequestLocalization(this IApplicationBuilder app, IConfiguration config)
-        {
-            var supportedCultures = CultureInfo.GetCultures(CultureTypes.AllCultures);
-            /*var supportedCultures = new[]
-            {// Add the culture of choosing.
-                new CultureInfo("en"),
-                new CultureInfo("de"),
-                new CultureInfo("fr"),
-                new CultureInfo("es"),
-                new CultureInfo("ru"),
-                new CultureInfo("ja"),
-                new CultureInfo("ar"),
-                new CultureInfo("zh"),
-                new CultureInfo("en-GB")
-            };#1#
-            var l = new RequestLocalizationOptions
-            {
-                DefaultRequestCulture = new RequestCulture(UseCulture.EnglishUs),
-                SupportedCultures = supportedCultures,
-                SupportedUICultures = supportedCultures
-            };
-            l.RequestCultureProviders.Clear();
-            l.RequestCultureProviders.Add(new CultureProviderResolverService());
-            app.UseRequestLocalization(l);
-            return app;
-        }*/
-
-        /// <summary>
-        /// Sooduskorv custom request localization service.
-        /// </summary>
-        /// <param name="services"></param>
-        /// <param name="config"></param>
-        /// <returns></returns>
         public static IServiceCollection ConfigureRequestLocalization(this IServiceCollection services, IConfiguration config)
         {
             services.AddLocalization(options => options.ResourcesPath = Localization.DefaultPath);
             /*var supportedCultures = CultureInfo.GetCultures(CultureTypes.AllCultures);*/
-            var l = new RequestLocalizationOptions
+            services.Configure<RequestLocalizationOptions>(options =>
             {
-                /*DefaultRequestCulture = new RequestCulture(UseCulture.EnglishUS),
-                SupportedCultures = supportedCultures,
-                SupportedUICultures = supportedCultures*/
-            };
-            l.SetDefaultCulture("en-GB");
-            l.AddSupportedUICultures("en-US", "en-GB");
-            l.FallBackToParentUICultures = true;
+                options.SetDefaultCulture("et-EE");
+                //https://static.visitestonia.com/docs/3371896_tourism-in-estonia-2018.pdf
+                options.AddSupportedUICultures("fi-FI", "ja-JP", "de-DE", "en-US", "et-EE", "en-GB", "ru-RU");
+                options.FallBackToParentUICultures = true;
+                options.RequestCultureProviders.Remove(
+                    typeof(AcceptLanguageHeaderRequestCultureProvider));
+            });
             /*l.RequestCultureProviders.Clear();*/
             //l.RequestCultureProviders.Add(new CultureProviderResolverService());
-            l.RequestCultureProviders.Remove(typeof(AcceptLanguageHeaderRequestCultureProvider));
             return services;
         }
     }
 }
-/*var supportedCultures = new[]
-{// Add the culture of choosing.
-    new CultureInfo("en"),
-    new CultureInfo("de"),
-    new CultureInfo("fr"),
-    new CultureInfo("es"),
-    new CultureInfo("ru"),
-    new CultureInfo("ja"),
-    new CultureInfo("ar"),
-    new CultureInfo("zh"),
-    new CultureInfo("en-GB")
-};*/

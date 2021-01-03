@@ -33,31 +33,26 @@ namespace SooduskorvWebMVC
         {
             /*RateLimit.ConfigureServices(services, Configuration);*/
             /*services.AddMemoryCache();*/
-            services.AddLocalization(options => options.ResourcesPath = Localization.DefaultPath);
             services.ConfigureRequestLocalization(Configuration);
             services.Configure<CookiePolicyOptions>(options =>
             {
-                // This lambda determines whether user consent for non-essential 
-                // cookies is needed for a given request.
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
             services.AddRazorPages()
-                .AddViewLocalization().AddDataAnnotationsLocalization().AddSessionStateTempDataProvider();
-            /*services.AddCustomControllersWithViews();*/
+                .AddViewLocalization()
+                .AddDataAnnotationsLocalization()
+                .AddSessionStateTempDataProvider();
             services.AddServerSideBlazor();
             services.AddCustomAuthorization(Configuration);
             services.AddHttpContextAccessor();
             /*services.AddHttpClient<IProductsService, ProductsService>();
             services.AddScoped<IProductsService, ProductsService>();*/
+            services.AddScoped<RequestLocalizationMiddleware>();
             services.AddTransient<BearerTokenHandler>();
             services.AddHttpClientServices(Configuration);
             services.AddCustomAuthentication(Configuration);
-            /*services.AddSingleton<IPostConfigureOptions<OpenIdConnectOptions>, OpenIdConnectOptionsPostConfigurationOptions>();*/
             services.AddCustomSessions(Configuration);
-            services.AddScoped<RequestLocalizationMiddleware>();
-
-
             // TODO temporary
             services.AddHttpClient<IBasketService, BasketService>(config =>
             {

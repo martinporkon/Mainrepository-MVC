@@ -9,28 +9,16 @@
 
   <ItemGroup>
     <Compile Remove="Areas\Manage\**" />
-    <Compile Remove="Areas\Shared\Common\**" />
-    <Compile Remove="Areas\Shared\Product\**" />
     <Compile Remove="Localization\Areas\Models\**" />
-    <Compile Remove="Localization\Areas\Shared\**" />
     <Compile Remove="Localization\Models\**" />
     <Content Remove="Areas\Manage\**" />
-    <Content Remove="Areas\Shared\Common\**" />
-    <Content Remove="Areas\Shared\Product\**" />
     <Content Remove="Localization\Areas\Models\**" />
-    <Content Remove="Localization\Areas\Shared\**" />
     <Content Remove="Localization\Models\**" />
     <EmbeddedResource Remove="Areas\Manage\**" />
-    <EmbeddedResource Remove="Areas\Shared\Common\**" />
-    <EmbeddedResource Remove="Areas\Shared\Product\**" />
     <EmbeddedResource Remove="Localization\Areas\Models\**" />
-    <EmbeddedResource Remove="Localization\Areas\Shared\**" />
     <EmbeddedResource Remove="Localization\Models\**" />
     <None Remove="Areas\Manage\**" />
-    <None Remove="Areas\Shared\Common\**" />
-    <None Remove="Areas\Shared\Product\**" />
     <None Remove="Localization\Areas\Models\**" />
-    <None Remove="Localization\Areas\Shared\**" />
     <None Remove="Localization\Models\**" />
   </ItemGroup>
 

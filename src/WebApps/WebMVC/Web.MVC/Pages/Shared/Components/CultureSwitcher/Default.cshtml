@@ -9,7 +9,10 @@
             <select id="culture-options" class="form-control" name="culture" onchange="this.parentElement.parentElement.submit();">
                 @foreach (var culture in Model.SupportedCultures)
                 {
-                    <option value="@culture.Name" selected="@(Model.CurrentUICulture.Name == culture.Name)">@culture.DisplayName</option>
+                    <option value="@culture.Name"
+                            selected="@(Model.CurrentUICulture.Name == culture.Name)">
+                        @culture.DisplayName
+                    </option>
                 }
             </select>
         </div>
@@ -18,6 +21,6 @@
 
 <script>
     document.getElementById("culture-options").addEventListener("change", () => {
-        document.getElementById("culture-switcher").submit();// JSInterop in C#
+        document.getElementById("culture-switcher").submit();
     });
 </script>

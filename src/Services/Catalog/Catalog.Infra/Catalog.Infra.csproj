@@ -36,6 +36,7 @@
 
   <ItemGroup>
     <Folder Include="Catalog\Docs\" />
+    <Folder Include="Catalog\Prices\" />
     <Folder Include="Docs\" />
   </ItemGroup>
 

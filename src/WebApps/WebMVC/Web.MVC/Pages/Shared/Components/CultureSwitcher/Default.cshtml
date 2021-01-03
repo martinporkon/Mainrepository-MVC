@@ -1,0 +1,24 @@
+﻿@model Sooduskorv_MVC.Middleware.Culture.CultureSwitcher
+@inject IJSRuntime Js
+
+<div>
+    <form id="culture-switcher" method="GET">
+        <div class="form-group">
+            <select id="culture-options" class="form-control" name="culture" onchange="this.parentElement.parentElement.submit();">
+                @foreach (var culture in Model.SupportedCultures)
+                {
+                    <option value="@culture.Name"
+                            selected="@(Model.CurrentUICulture.Name == culture.Name)">
+                        @culture.DisplayName
+                    </option>
+                }
+            </select>
+        </div>
+    </form>
+</div>
+
+<script>
+    document.getElementById("culture-options").addEventListener("change", () => {
+        document.getElementById("culture-switcher").submit();
+    });
+</script>

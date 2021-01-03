@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Quantity.Data;
-using Quantity.Domain;
-using Quantity.Facade;
-using Quantity.Pages.Common;
-using Quantity.Pages.Common.Consts;
-using Sooduskorv_MVC.Aids.Reflection;
-
-namespace Quantity.Pages
+﻿namespace Quantity.Pages
 {
     /*public sealed class MeasuresPage
         : ViewPage<IMeasuresRepository, Measure, MeasureView, MeasureData>

@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using EventBus.Events;
+﻿using EventBus.Events;
 
 namespace Catalog.API.DTOs
 {

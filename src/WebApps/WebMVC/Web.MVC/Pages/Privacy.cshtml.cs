@@ -1,4 +1,6 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Http.Features;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
 
 namespace SooduskorvWebMVC.Pages
@@ -14,6 +16,13 @@ namespace SooduskorvWebMVC.Pages
 
         public void OnGet()
         {
+
+        }
+
+        public IActionResult OnPostWithdraw()
+        {
+            HttpContext.Features.Get<ITrackingConsentFeature>().WithdrawConsent();
+            return RedirectToPage("./Index");
         }
     }
 }

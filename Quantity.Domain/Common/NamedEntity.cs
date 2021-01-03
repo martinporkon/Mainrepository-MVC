@@ -1,6 +1,5 @@
 ﻿
 using Quantity.Data;
-using Sooduskorv_MVC.Data.CommonData;
 
 namespace Quantity.Domain.Common {
 

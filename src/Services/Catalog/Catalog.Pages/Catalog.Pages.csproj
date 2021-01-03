@@ -25,4 +25,8 @@
     <ProjectReference Include="..\Catalog.Facade\Catalog.Facade.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Common\Extensions\" />
+  </ItemGroup>
+
 </Project>

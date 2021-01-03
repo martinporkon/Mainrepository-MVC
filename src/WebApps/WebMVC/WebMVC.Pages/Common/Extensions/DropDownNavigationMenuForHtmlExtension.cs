@@ -16,8 +16,7 @@ namespace SooduskorvWebMVC.Pages.Common.Extensions
         internal static void beginDropDownNavigationMenu(List<object> htmlStrings, string name) {
             if (htmlStrings is null) return;
             htmlStrings.Add(new HtmlString("<li class=\"nav-item dropdown\">"));
-            htmlStrings.Add(new HtmlString(
-                "<a class=\"nav-link text-dark dropdown-toggle\" href=\"#\" id=\"navbardrop\" data-toggle=\"dropdown\">"));
+            htmlStrings.Add(new HtmlString("<a class=\"nav-link text-dark dropdown-toggle\" href=\"#\" id=\"navbardrop\" data-toggle=\"dropdown\">"));
             htmlStrings.Add(new HtmlString(name));
             htmlStrings.Add(new HtmlString("</a>"));
             htmlStrings.Add(new HtmlString("<div class=\"dropdown-menu\">"));

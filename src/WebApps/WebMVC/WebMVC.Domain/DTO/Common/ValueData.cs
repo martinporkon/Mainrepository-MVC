@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace Sooduskorv_MVC.Data.CommonData
+namespace Web.Domain.DTO.Common
 {
     [ComplexType]
     public sealed class ValueData

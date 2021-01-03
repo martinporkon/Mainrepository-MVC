@@ -1,6 +1,6 @@
 ﻿using Sooduskorv_MVC.Data.CommonData;
 
-namespace CommonData
+namespace Web.Domain.DTO.Common
 {
     public abstract class CodedEntityData : NameEntityData
     {

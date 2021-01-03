@@ -1,11 +1,11 @@
-﻿using Microsoft.AspNetCore.Html;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using SooduskorvWebMVC.Pages.Common.Aids;
-using SooduskorvWebMVC.Pages.Common.Const;
+using Microsoft.AspNetCore.Html;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Web.Pages.Common.Aids;
+using Web.Pages.Common.Const;
 
-namespace SooduskorvWebMVC.Pages.Common.Extensions
+namespace Web.Pages.Common.Extensions
 {
 
     public static class BackToHtml

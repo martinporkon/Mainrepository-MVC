@@ -1,6 +1,4 @@
-﻿using WebMVC.Domain.DTO.Common;
-
-namespace CommonData
+﻿namespace Web.Domain.DTO.Common
 {
 
     public abstract class RelationshipData : DefinedEntityData {

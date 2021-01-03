@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Routing;
 
-namespace SooduskorvWebMVC.Pages.Common.Extensions
+namespace Web.Pages.Common.Extensions
 {
     public static class DisplayImageForHtmlExtension
     {

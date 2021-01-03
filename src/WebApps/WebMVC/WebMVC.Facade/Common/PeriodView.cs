@@ -1,7 +1,19 @@
-﻿namespace WebMVC.Facade.Profiles.Common
+﻿using System;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
+
+namespace Web.Facade.Common
 {
-    public class PeriodView
+    public abstract class PeriodView
     {
-        
+        [DataType(DataType.Date)]
+        [DisplayName("Valid From")]
+        public DateTime? ValidFrom { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayName("Valid To")]
+        public DateTime? ValidTo { get; set; }
+
+        public abstract string GetId();
     }
 }

@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
-using SooduskorvWebMVC.Models;
+using Web.Domain.DTO;
 
 namespace SooduskorvWebMVC.Controllers
 {

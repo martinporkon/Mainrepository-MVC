@@ -1,12 +1,12 @@
 ﻿using System.Net.Http;
-using SooduskorvWebMVC.Domain.DTO.Common;
-using WebMVC.Domain.Common;
+using Web.Domain.Common;
+using Web.Domain.DTO.Common;
 
-namespace WebMVC.Infra.Common
+namespace Web.Infra.Common
 {
     public class FilteredRepository<TDomain, TData> : SortedRepository<TDomain, TData>, IFiltering
         where TDomain : IDto<TData>
-        where TData : PeriodDto, new()
+        where TData : PeriodEntityDto, new()
     {
         public string SearchString { get; set; }
         public string CurrentFilter { get; set; }

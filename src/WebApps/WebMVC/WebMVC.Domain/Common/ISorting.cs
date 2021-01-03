@@ -1,4 +1,4 @@
-﻿namespace WebMVC.Domain.Common
+﻿namespace Web.Domain.Common
 {
     public interface ISorting
     {

@@ -1,12 +1,12 @@
 ﻿using System.Net.Http;
-using SooduskorvWebMVC.Domain.DTO.Common;
-using WebMVC.Domain.Common;
+using Web.Domain.Common;
+using Web.Domain.DTO.Common;
 
-namespace WebMVC.Infra.Common
+namespace Web.Infra.Common
 {
     public class SortedRepository<TDomain, TData> : BaseRepository<TDomain, TData>, ISorting
         where TDomain : IDto<TData>
-        where TData : PeriodDto, new()
+        where TData : PeriodEntityDto, new()
     {
         public string SortOrder { get; set; }
 

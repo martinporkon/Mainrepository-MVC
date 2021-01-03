@@ -2,9 +2,9 @@
 using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Collections.Generic;
 using System.Linq;
-using SooduskorvWebMVC.Pages.Common.Aids;
+using Web.Pages.Common.Aids;
 
-namespace SooduskorvWebMVC.Pages.Common.Extensions
+namespace Web.Pages.Common.Extensions
 {
     public static class LinkHtml
     {

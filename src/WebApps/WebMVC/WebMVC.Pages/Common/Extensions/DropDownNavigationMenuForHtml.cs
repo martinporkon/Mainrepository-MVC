@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Sooduskorv_MVC.Aids.HTTP;
 
-namespace SooduskorvWebMVC.Pages.Common.Extensions
+namespace Web.Pages.Common.Extensions
 {
     public static class DropDownNavigationMenuForHtml {
         internal static void addDropDownMenuItem(List<object> htmlStrings, Link item) {

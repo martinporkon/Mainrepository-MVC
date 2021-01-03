@@ -2,8 +2,8 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using SooduskorvWebMVC.Models;
-using WebMVC.Domain.Services.Catalog;
+using Web.Domain.DTO;
+using Web.Domain.DTO.CatalogService;
 
 namespace SooduskorvWebMVC.Controllers
 {

@@ -1,7 +1,7 @@
 ﻿using System;
-using WebMVC.Facade.BasketView;
+using Web.Facade.Baskets.BasketView;
 
-namespace WebMVC.Facade.Profiles
+namespace Web.Facade.Profiles
 {
     public static class AutoMapperConfiguration
     {

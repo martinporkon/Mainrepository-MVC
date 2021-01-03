@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Html;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Sooduskorv_MVC.Aids.Enums;
 
-namespace SooduskorvWebMVC.Pages.Common.Extensions
+namespace Web.Pages.Common.Extensions
 {
     public static class PagingFor
     {

@@ -1,7 +1,7 @@
-﻿namespace WebMVC.Facade.Profiles.Common
+﻿namespace Web.Facade.Common
 {
-    public class NamedView
+    public class NamedView : UniqueView
     {
-        
+        public string Name { get; set; }
     }
 }

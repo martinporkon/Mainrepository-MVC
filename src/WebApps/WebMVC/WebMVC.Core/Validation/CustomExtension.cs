@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using FluentValidation;
 
-namespace WebMVC.Core.Validation
+namespace Web.Core.Validation
 {
     public static class CustomExtension
     {

@@ -1,12 +1,12 @@
 ﻿using System.Net.Http;
-using SooduskorvWebMVC.Domain.DTO.Common;
-using WebMVC.Domain.Common;
+using Web.Domain.Common;
+using Web.Domain.DTO.Common;
 
-namespace WebMVC.Infra.Common
+namespace Web.Infra.Common
 {
     public class PaginatedRepository<TDomain, TData> : FilteredRepository<TDomain, TData>, IPaging
         where TDomain : IDto<TData>
-        where TData : PeriodDto, new()
+        where TData : PeriodEntityDto, new()
     {
         public int PageIndex { get; set; }
         public int PageSize { get; set; }
@@ -16,6 +16,7 @@ namespace WebMVC.Infra.Common
 
         public PaginatedRepository(IHttpClientFactory h, string baseAddress) : base(h, baseAddress)
         {
+
         }
     }
 }

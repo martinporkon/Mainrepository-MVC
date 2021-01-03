@@ -3,10 +3,10 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using System;
 using System.Collections.Generic;
 using Sooduskorv_MVC.Aids.Extensions;
-using SooduskorvWebMVC.Pages.Common.Aids;
-using SooduskorvWebMVC.Pages.Common.Const;
+using Web.Pages.Common.Aids;
+using Web.Pages.Common.Const;
 
-namespace SooduskorvWebMVC.Pages.Common.Extensions
+namespace Web.Pages.Common.Extensions
 {
 
     public static class NavButtonsHtml

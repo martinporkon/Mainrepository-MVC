@@ -1,4 +1,4 @@
-﻿namespace SooduskorvWebMVC.Pages.Common.Extensions
+﻿namespace Web.Pages.Common.Extensions
 {
     public static class Constants
     {

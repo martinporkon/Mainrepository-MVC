@@ -2,9 +2,9 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Sooduskorv_MVC.CommonTests.OverallTests;
 using Sooduskorv_MVC.Data.CommonData;
-using SooduskorvWebMVC.Pages.Common.Extensions;
 using System.Collections.Generic;
 using System.Text.Encodings.Web;
+using Web.Pages.Common.Extensions;
 
 namespace CoinCollectorProject.Tests.Pages.Extensions
 {

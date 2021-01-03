@@ -1,4 +1,4 @@
-﻿namespace Sooduskorv_MVC.Data.CommonData
+﻿namespace Web.Domain.DTO.Common
 {
     public enum ValueType
     {

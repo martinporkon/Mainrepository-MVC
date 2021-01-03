@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SooduskorvWebMVC.Models
+namespace Web.Domain.DTO
 {
     public class ApplicationUserProfileDto
     {

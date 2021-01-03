@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Protocols.OpenIdConnect;
-using SooduskorvWebMVC.Models;
+using Web.Domain.DTO;
 
 namespace SooduskorvWebMVC.Controllers
 {

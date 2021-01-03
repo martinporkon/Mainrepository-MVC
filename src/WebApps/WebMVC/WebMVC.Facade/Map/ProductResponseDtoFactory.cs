@@ -1,4 +1,4 @@
-﻿namespace WebMVC.Facade.Map
+﻿namespace Web.Facade.Map
 {
     public class ProductResponseDtoFactory
     {

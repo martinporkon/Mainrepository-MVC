@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SooduskorvWebMVC.Pages.Common.Aids
+namespace Web.Pages.Common.Aids
 {
     public sealed class Args
     {

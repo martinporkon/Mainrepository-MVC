@@ -48,7 +48,7 @@
     <ProjectReference Include="..\..\..\Common\Sooduskorv_MVC.Middleware\Sooduskorv_MVC.Middleware.csproj" />
     <ProjectReference Include="..\..\..\Services\Catalog\Catalog.API\Catalog.API.csproj" />
     <ProjectReference Include="..\..\..\Services\Catalog\Catalog.Pages\Catalog.Pages.csproj" />
-    <ProjectReference Include="..\WebMVC.Pages\WebMVC.Pages.csproj" />
+    <ProjectReference Include="..\WebMVC.Pages\Web.Pages.csproj" />
   </ItemGroup>
 
   <ItemGroup>

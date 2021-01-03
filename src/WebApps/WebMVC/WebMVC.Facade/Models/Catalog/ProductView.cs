@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using System.ComponentModel;
 
 namespace WebMVC.Facade.Models.Catalog
@@ -25,4 +25,4 @@ namespace WebMVC.Facade.Models.Catalog
         public string Composition { get; set; }
         public string Picture { get; set; }
     }
-}
+}*/

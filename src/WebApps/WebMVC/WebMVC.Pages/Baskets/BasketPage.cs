@@ -1,4 +1,4 @@
-﻿namespace WebMVC.Pages.Baskets
+﻿namespace Web.Pages.Baskets
 {
     public class BasketPage
     {

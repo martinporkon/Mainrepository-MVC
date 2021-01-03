@@ -1,14 +1,14 @@
 ﻿using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading.Tasks;
-using SooduskorvWebMVC.Domain.DTO.Common;
-using WebMVC.Domain.Common;
+using Web.Domain.Common;
+using Web.Domain.DTO.Common;
 
-namespace WebMVC.Infra.Common
+namespace Web.Infra.Common
 {
     public abstract class BaseRepository<TDomain, TData> : ICrudMethods<TDomain>, IRepository
         where TDomain : IDto<TData>
-        where TData : PeriodDto, new()
+        where TData : PeriodEntityDto, new()
     {
         private readonly IHttpClientFactory h;
         private readonly string _baseAddress;
@@ -19,15 +19,26 @@ namespace WebMVC.Infra.Common
             _baseAddress = baseAddress;
         }
 
+
+
+
+
         public Task<List<TDomain>> Get()
         {
             throw new System.NotImplementedException();
         }
 
+
+
         public Task<TDomain> Get(string id)
         {
             throw new System.NotImplementedException();
         }
+
+
+
+
+
 
         public Task Delete(string id)
         {

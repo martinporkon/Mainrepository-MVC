@@ -6,7 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Quantity.Core\Quantity.Core.csproj" />
-    <ProjectReference Include="..\src\WebApps\WebMVC\WebMVC.Domain\WebMVC.Domain.csproj" />
+    <ProjectReference Include="..\src\WebApps\WebMVC\WebMVC.Domain\Web.Domain.csproj" />
   </ItemGroup>
 
 </Project>

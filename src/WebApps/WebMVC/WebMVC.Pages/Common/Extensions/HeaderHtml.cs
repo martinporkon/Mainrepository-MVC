@@ -3,9 +3,9 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Sooduskorv_MVC.Aids.Extensions;
 using System;
 using System.Collections.Generic;
-using SooduskorvWebMVC.Pages.Common.Aids;
+using Web.Pages.Common.Aids;
 
-namespace SooduskorvWebMVC.Pages.Common.Extensions
+namespace Web.Pages.Common.Extensions
 {
 
     public static class HeaderHtml

@@ -1,4 +1,4 @@
-﻿namespace WebMVC.Domain.DTO.BasketService
+﻿namespace Web.Domain.DTO.BasketService
 {
     public class BasketDto
     {

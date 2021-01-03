@@ -1,15 +1,16 @@
 ﻿using System.Net.Http;
-using SooduskorvWebMVC.Domain.DTO.Common;
-using WebMVC.Domain.Common;
+using Web.Domain.Common;
+using Web.Domain.DTO.Common;
 
-namespace WebMVC.Infra.Common
+namespace Web.Infra.Common
 {
     public class UniqueRepository<TDomain, TData> : PaginatedRepository<TDomain, TData>
         where TDomain : IDto<TData>
-        where TData : UniqueDto, new()
+        where TData : UniqueEntityDto, new()
     {
         public UniqueRepository(IHttpClientFactory h, string baseAddress) : base(h, baseAddress)
         {
+
         }
     }
 }

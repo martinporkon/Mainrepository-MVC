@@ -1,4 +1,4 @@
-﻿namespace CommonData {
+﻿namespace Web.Domain.DTO.Common {
 
     public abstract class RelationshipTypeData : EntityTypeData {
 

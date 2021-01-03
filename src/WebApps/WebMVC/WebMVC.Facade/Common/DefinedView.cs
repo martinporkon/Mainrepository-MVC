@@ -1,7 +1,7 @@
-﻿namespace WebMVC.Facade.Profiles.Common
+﻿namespace Web.Facade.Common
 {
-    public class DefinedView
+    public class DefinedView : NamedView
     {
-        
+        public string Definition { get; set; }
     }
 }

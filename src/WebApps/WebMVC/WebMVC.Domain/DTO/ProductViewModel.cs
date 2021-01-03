@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using Web.Domain.DTO.CatalogService;
 
-namespace SooduskorvWebMVC.Models
+namespace Web.Domain.DTO
 {
     public class ProductViewModel
     {

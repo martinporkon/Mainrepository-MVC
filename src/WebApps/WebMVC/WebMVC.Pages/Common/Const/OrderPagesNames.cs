@@ -1,4 +1,4 @@
-﻿namespace SooduskorvWebMVC.Pages.Common.Const
+﻿namespace Web.Pages.Common.Const
 {
     public class OrderPagesNames
     {

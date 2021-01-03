@@ -21,8 +21,5 @@ namespace Basket.Core.Diagnostics
         {
 
         }
-
-
-        //...
     }
 }

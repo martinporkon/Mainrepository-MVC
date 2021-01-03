@@ -4,5 +4,9 @@ option csharp_namespace="Sooduskorv.Proto";
 
 package Http.Error;
 
-
-//...
+message Details {
+	string Id = 1;
+	string message = 2;
+	repeated string link = 3;
+	string title = 4;
+}

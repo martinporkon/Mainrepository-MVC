@@ -10,7 +10,7 @@ namespace WebMVC.Facade.BasketView
             CreateMap<BasketView, BasketDto>()
                 .ForMember(d => d.Name,
                     opt
-                        => opt.MapFrom(src => $"{src.Name} {src.Else}"));
+                        => opt.MapFrom(src => $"{src.Id} {src.Id}"));
         }
     }
 }

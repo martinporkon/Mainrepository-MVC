@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WebMVC.Domain\WebMVC.Domain.csproj" />
+    <ProjectReference Include="..\WebMVC.Facade\WebMVC.Facade.csproj" />
   </ItemGroup>
 
 </Project>

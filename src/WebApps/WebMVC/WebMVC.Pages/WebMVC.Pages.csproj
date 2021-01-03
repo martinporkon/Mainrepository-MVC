@@ -18,13 +18,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Baskets\" />
-    <Folder Include="Catalogs\" />
     <Folder Include="Orders\" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Common\Sooduskorv_MVC.Aids\Sooduskorv_MVC.Aids.csproj" />
+    <ProjectReference Include="..\WebMVC.Facade\WebMVC.Facade.csproj" />
   </ItemGroup>
 
   <ItemGroup>

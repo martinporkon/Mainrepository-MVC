@@ -2,7 +2,6 @@
 using Catalog.Domain.Common;
 using Microsoft.AspNetCore.Mvc;
 using Sooduskorv_MVC.Data.CommonData;
-using Sooduskorv_MVC.Facade;
 using System.Threading.Tasks;
 
 namespace Catalog.Pages

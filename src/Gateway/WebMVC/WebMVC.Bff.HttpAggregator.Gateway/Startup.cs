@@ -9,7 +9,10 @@ using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 using Serilog;
 using Sooduskorv_MVC.Aids.Constants;
+using Sooduskorv_MVC.Middleware.Diagnostics;
 using Sooduskorv_MVC.Middleware.SecurityMiddleware;
+using Sooduskorv_MVC.Middleware.SystemDiagnostics;
+using WebMVC.Bff.HttpAggregator.Core.Diagnostics;
 using WebMVC.Bff.HttpAggregator.Gateway.Data;
 using WebMVC.Bff.HttpAggregator.Gateway.Middleware;
 using WebMVC.Bff.HttpAggregator.Gateway.Middleware.HealthChecks;
@@ -26,18 +29,19 @@ namespace WebMVC.Bff.HttpAggregator.Gateway
         {
             services.AddMiddlewareAnalysis();
             services.AddCustomCors(Configuration);
+            services.AddHttpClient();
             services.AddResponseCaching();
             services.AddHttpMiddleware(Configuration);
             services.AddHttpContextAccessor();
             services.AddCustomGrpcClientFactoryMiddleware(Configuration);
             services.AddCustomSwagger(Configuration);
+            services.AddCustomIdentityMiddleware();
             services.AddCustomAssemblies();
             services.AddDbContext<ApplicationDbContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString(DbConnection.Default));
             });
-
-            // ._.
+            /*Register.Services(services);*/
             /*services.AddHttpClient<IInterface, Service>(client =>
             {
                 client.BaseAddress = new Uri("https://localhost:44340/");
@@ -51,8 +55,8 @@ namespace WebMVC.Bff.HttpAggregator.Gateway
 
         public async void Configure(IApplicationBuilder app, IWebHostEnvironment env, DiagnosticListener listener)
         {
-            /*listener.SubscribeWithAdapter(new BasketSystemDiagnosticsListener(),
-                new BasketListener());*/
+            listener.SubscribeWithAdapter(new BasketSystemDiagnosticsListener(),
+                new BasketListener());
 
             if (env.IsDevelopment())
             {
@@ -65,13 +69,12 @@ namespace WebMVC.Bff.HttpAggregator.Gateway
             }
 
             app.UseSerilogRequestLogging();
-            /*app.UseHealthChecksUI();*/
             app.UseCors(Security.MyAllowSpecificOrigins);
             await app.UseOcelot();
 
             app.UseResponseCaching();
             app.UseHttpsRedirection();
-            app.UseStaticFiles();//
+            app.UseStaticFiles();
 
             app.UseRouting();
 

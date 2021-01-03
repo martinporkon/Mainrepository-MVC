@@ -5,7 +5,6 @@ using Catalog.Domain.Product;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Sooduskorv_MVC.Aids.Constants;
 using Sooduskorv_MVC.Data.CommonData;
-using Sooduskorv_MVC.Facade;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -1,6 +1,5 @@
 ﻿using Catalog.Data.Product;
 using Catalog.Data.Services;
-using Sooduskorv_MVC.Facade;
 using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;

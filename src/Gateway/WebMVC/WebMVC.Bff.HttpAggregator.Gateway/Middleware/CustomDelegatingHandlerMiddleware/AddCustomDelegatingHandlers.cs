@@ -8,7 +8,8 @@ namespace WebMVC.Bff.HttpAggregator.Gateway.Middleware
     {
         public static IOcelotBuilder AddDelegatingHandlers(this IOcelotBuilder ocelot)
         {
-            ocelot.AddDelegatingHandler<TokenExchangeHandler>();
+            /*ocelot.AddDelegatingHandler<TokenExchangeHandler>();
+            ocelot.AddDelegatingHandler<IntegrationHandler>();*/
             return ocelot;
         }
     }

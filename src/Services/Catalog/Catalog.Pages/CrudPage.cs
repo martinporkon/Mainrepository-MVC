@@ -1,6 +1,5 @@
 ﻿using Catalog.Domain;
 using Microsoft.AspNetCore.Mvc;
-using Sooduskorv_MVC.Facade;
 using System.Threading.Tasks;
 
 namespace Catalog.Pages

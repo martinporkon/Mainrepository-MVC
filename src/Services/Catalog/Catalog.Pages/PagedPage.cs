@@ -1,5 +1,4 @@
 ﻿using Catalog.Domain;
-using Sooduskorv_MVC.Facade;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;

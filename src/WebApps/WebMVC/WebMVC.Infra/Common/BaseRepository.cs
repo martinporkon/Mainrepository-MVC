@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
+using System.Threading;
 using System.Threading.Tasks;
 using Web.Domain.Common;
 using Web.Domain.DTO.Common;
@@ -10,13 +12,20 @@ namespace Web.Infra.Common
         where TDomain : IDto<TData>
         where TData : PeriodEntityDto, new()
     {
+        public string BaseAddress { get; set; }
+        protected CancellationTokenSource CancellationToken
+            = new CancellationTokenSource();
         private readonly IHttpClientFactory h;
-        private readonly string _baseAddress;
+        private readonly HttpMethod Method;
+        private readonly CancellationToken _t;
 
-        protected BaseRepository(IHttpClientFactory h, string baseAddress)
+        protected BaseRepository(IHttpClientFactory h, string baseAddress, HttpMethod m,
+            CancellationToken t)
         {
             this.h = h;
-            _baseAddress = baseAddress;
+            Method = m;
+            /*_t.Token = t;*/
+            BaseAddress = baseAddress;
         }
 
         public async Task<List<TDomain>> Get()
@@ -49,7 +58,19 @@ namespace Web.Infra.Common
             throw new System.NotImplementedException();
         }
 
+
+
+
         protected internal abstract TDomain toDomainObject(TData periodData);
+
+        protected internal virtual HttpClient getValuesFrom()
+        {
+            var query = h.CreateClient();
+            return query;
+        }
+
+
+
 
         protected abstract Task<TData> getData(string id);
 

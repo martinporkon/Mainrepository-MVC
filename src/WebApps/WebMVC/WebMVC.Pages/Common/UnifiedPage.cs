@@ -1,10 +1,7 @@
-﻿using Microsoft.AspNetCore.Html;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using System;
+﻿using System;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Web.Domain.Common;
 using Web.Facade.Common;
-using Web.Pages.Common.Extensions;
 using System.Linq.Expressions;
 using System.Collections.Generic;
 using Web.Domain.DTO.Common;

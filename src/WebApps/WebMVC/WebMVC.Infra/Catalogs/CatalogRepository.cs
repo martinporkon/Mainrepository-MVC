@@ -5,9 +5,9 @@ using Web.Infra.Common;
 
 namespace Web.Infra.Catalog
 {
-    public class CatalogRepository : UniqueRepository<Domain.Services.Catalogs.Catalog, CatalogDto>, ICatalogsService
+    public sealed class CatalogRepository : UniqueRepository<Domain.Services.Catalogs.Catalog, CatalogDto>, ICatalogsService
     {
-        public CatalogRepository(IHttpClientFactory h, string baseAddress) : base(h, baseAddress) { }
+        public CatalogRepository(IHttpClientFactory h, string baseAddress, HttpMethod m) : base(h, baseAddress, m) { }
 
         protected internal override Domain.Services.Catalogs.Catalog toDomainObject(CatalogDto d)
             => new Domain.Services.Catalogs.Catalog(d);

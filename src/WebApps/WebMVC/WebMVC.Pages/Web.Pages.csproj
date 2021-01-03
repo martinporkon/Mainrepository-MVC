@@ -19,7 +19,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\WebMVC.Facade\Web.Facade.csproj" />
+    <ProjectReference Include="..\WebMVC.Infra\Web.Infra.csproj" />
   </ItemGroup>
 
   <ItemGroup>

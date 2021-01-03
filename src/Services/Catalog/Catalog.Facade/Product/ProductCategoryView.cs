@@ -1,5 +1,4 @@
-﻿using Sooduskorv_MVC.Facade;
-using System.ComponentModel;
+﻿using System.ComponentModel;
 
 namespace Catalog.Facade.Product
 {

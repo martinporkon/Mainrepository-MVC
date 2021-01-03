@@ -21,6 +21,8 @@ using SooduskorvWebMVC.Components;
 using SooduskorvWebMVC.HttpHandlers;
 using SooduskorvWebMVC.Localization;
 using SooduskorvWebMVC.Middleware;
+using Web.Domain.Services.Catalogs;
+using Web.Facade.Profiles;
 
 namespace SooduskorvWebMVC
 {
@@ -83,6 +85,7 @@ namespace SooduskorvWebMVC
             services.AddAutoMapper(AutoMapperConfiguration.RegisterMappings());
             registerComponents(services);
             registerRepositories(services);
+            /*services.AddHttpClient<ICatalogsService, CatalogsRepository>()*/
         }
 
         private void registerRepositories(IServiceCollection services)

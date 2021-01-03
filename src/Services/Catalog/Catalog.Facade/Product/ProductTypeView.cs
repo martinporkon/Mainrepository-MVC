@@ -1,5 +1,4 @@
 ﻿using Catalog.Data.Product;
-using Sooduskorv_MVC.Facade;
 using System.Collections.Generic;
 using System.ComponentModel;
 

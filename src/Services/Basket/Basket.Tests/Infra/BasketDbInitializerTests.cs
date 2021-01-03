@@ -1,7 +1,5 @@
-﻿using Basket.Infra;
-using CommonTests.InfraTests;
+﻿using CommonTests.InfraTests;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.Linq;
 
 namespace Basket.Tests.Infra
 {

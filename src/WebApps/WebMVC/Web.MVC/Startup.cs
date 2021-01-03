@@ -1,7 +1,7 @@
 using System;
 using System.IdentityModel.Tokens.Jwt;
+using System.Reflection;
 using AutoMapper;
-using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -10,11 +10,11 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
-using Sooduskorv_MVC.Aids.Constants;
 using Sooduskorv_MVC.Middleware.Culture;
 using Sooduskorv_MVC.Middleware.Session;
 using SooduskorvWebMVC.ComponentBases;
 using SooduskorvWebMVC.HttpHandlers;
+using SooduskorvWebMVC.Localization;
 using SooduskorvWebMVC.Middleware;
 using WebMVC.Facade.Profiles;
 
@@ -34,6 +34,7 @@ namespace SooduskorvWebMVC
         {
             /*RateLimit.ConfigureServices(services, Configuration);*/
             /*services.AddMemoryCache();*/
+            services.AddSingleton<LocalizationService>();
             services.ConfigureRequestLocalization(Configuration);
             services.Configure<CookiePolicyOptions>(options =>
             {
@@ -42,7 +43,14 @@ namespace SooduskorvWebMVC
             });
             services.AddRazorPages()
                 .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
-                .AddDataAnnotationsLocalization()
+                .AddDataAnnotationsLocalization(options =>
+                {
+                    options.DataAnnotationLocalizerProvider = (type, factory) =>
+                    {
+                        var assemblyName = new AssemblyName(typeof(SharedResource).GetTypeInfo().Assembly.FullName ?? string.Empty);
+                        return factory.Create("SharedResource", assemblyName.Name ?? string.Empty);
+                    };
+                })
                 .AddSessionStateTempDataProvider();
             services.AddServerSideBlazor();
             services.AddCustomAuthorization(Configuration);

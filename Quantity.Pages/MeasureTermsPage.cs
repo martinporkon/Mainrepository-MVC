@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Quantity.Data;
-using Quantity.Domain;
-using Quantity.Facade;
-using Quantity.Pages.Common;
-using Quantity.Pages.Common.Consts;
-
-namespace Quantity.Pages {
+﻿namespace Quantity.Pages {
 
     /*
     public sealed class MeasureTermsPage

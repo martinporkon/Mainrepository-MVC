@@ -1,11 +1,4 @@
-﻿using Catalog.Data.UserProfiles;
-using Catalog.Domain.Catalog;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace Catalog.Infra.Catalog
+﻿namespace Catalog.Infra.Catalog
 {
     //public class CatalogRepository : ICatalogsRepository
     //{

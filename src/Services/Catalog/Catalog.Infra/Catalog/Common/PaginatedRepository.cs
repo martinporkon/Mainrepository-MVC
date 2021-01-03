@@ -3,9 +3,7 @@ using Catalog.Domain.Common;
 using Sooduskorv_MVC.Data.CommonData;
 using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace Catalog.Infra.Common
 {

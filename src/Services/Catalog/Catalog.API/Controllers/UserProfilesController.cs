@@ -1,11 +1,4 @@
-﻿using System;
-using System.Linq;
-using Catalog.Data.UserProfiles;
-using Catalog.Infra.Catalog;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Mvc;
-
-namespace Catalog.API.Controllers
+﻿namespace Catalog.API.Controllers
 {
     //[Route("api/catalog/applicationuserprofiles")]// TODO
     //[ApiController]

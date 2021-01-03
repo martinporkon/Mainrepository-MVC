@@ -1,11 +1,9 @@
-﻿using System.Globalization;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Sooduskorv_MVC.Aids.Constants;
 using Sooduskorv_MVC.Aids.Extensions;
-using Sooduskorv_MVC.Aids.Regions;
 
 namespace Sooduskorv_MVC.Middleware.Culture
 {

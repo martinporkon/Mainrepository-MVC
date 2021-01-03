@@ -1,10 +1,8 @@
-﻿@using Microsoft.JSInterop
-@model Sooduskorv_MVC.Middleware.Culture.CultureSwitcher
+﻿@model Sooduskorv_MVC.Middleware.Culture.CultureSwitcher
 @inject IJSRuntime Js
 
 <div>
     <form id="culture-switcher" method="GET">
-        <!--Into HTML extension-->
         <div class="form-group">
             <select id="culture-options" class="form-control" name="culture" onchange="this.parentElement.parentElement.submit();">
                 @foreach (var culture in Model.SupportedCultures)

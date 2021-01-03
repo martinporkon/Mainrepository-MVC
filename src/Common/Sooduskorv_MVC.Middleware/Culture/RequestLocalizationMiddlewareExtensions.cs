@@ -1,7 +1,7 @@
 ﻿using System;
 using Microsoft.AspNetCore.Builder;
 
-namespace Sooduskorv_MVC.Middleware.Session
+namespace Sooduskorv_MVC.Middleware.Culture
 {
     public static class RequestLocalizationMiddlewareExtensions
     {

@@ -1,6 +1,6 @@
 ﻿@using Microsoft.AspNetCore.Http.Features
 @{
-    bool showRevoke = false;
+    var showRevoke = false;
     var consentFeature = Context.Features.Get<ITrackingConsentFeature>();
     if (consentFeature != null && consentFeature.IsConsentNeeded)
     {

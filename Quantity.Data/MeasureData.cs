@@ -1,6 +1,4 @@
 ﻿
-using CommonData;
-
 namespace Quantity.Data {
 
     public sealed class MeasureData : CommonMetricData {

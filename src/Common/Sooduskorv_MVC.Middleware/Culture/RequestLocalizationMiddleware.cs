@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Localization;
 using Microsoft.Extensions.Options;
 
-namespace Sooduskorv_MVC.Middleware.Session
+namespace Sooduskorv_MVC.Middleware.Culture
 {
     public class RequestLocalizationMiddleware : IMiddleware
     {

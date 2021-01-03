@@ -30,20 +30,22 @@
     </div>
 
     <script type="text/javascript" src="js/nav.js"></script>
+    
+        @Html.DropMenu("Sorteeri:",
+            new Link(Html.DisplayName("Sorteeri tähestiku järgi"), Model.GetSortString(m => m.Name, page)),
+            new Link(Html.DisplayName("Sorteeri koguse järgi"), Model.GetSortString(m => m.Amount, page))
+            )
+    
 
-    @Html.DropMenu("Sorteeri:",
-        new Link(Html.DisplayName("Sorteeri tähestiku järgi"), Model.GetSortString(m => m.Name, page)),
-        new Link(Html.DisplayName("Sorteeri koguse järgi"), Model.GetSortString(m => m.Amount, page))
-        )
 
-    <div class="container">
-        <component type="typeof(SendBasketItem)" render-mode="ServerPrerendered" />
-        @*<div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">*@
-        @*<ul class="navbar-nav flex-grow-1">*@
-        @(await Html.RenderComponentAsync<CatalogItems>(RenderMode.ServerPrerendered, new {Products = Model.Items}))
-        @*</ul>*@
-        @*</div>*@
-    </div>
-    @(await Html.RenderComponentAsync<SendBasketItemBase>(RenderMode.ServerPrerendered))
+        <div class="container">
+            <component type="typeof(SendBasketItem)" render-mode="ServerPrerendered" />
+            @*<div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">*@
+            @*<ul class="navbar-nav flex-grow-1">*@
+            @(await Html.RenderComponentAsync<CatalogItems>(RenderMode.ServerPrerendered, new {Products = Model.Items}))
+            @*</ul>*@
+            @*</div>*@
+        </div>
+        @(await Html.RenderComponentAsync<SendBasketItemBase>(RenderMode.ServerPrerendered))
 </body>
 

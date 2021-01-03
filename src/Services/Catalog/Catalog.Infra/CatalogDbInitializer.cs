@@ -13,6 +13,7 @@ namespace Catalog.Infra
 {
     public class CatalogDbInitializer
     {
+        //Not real data! only for testing the application purposes
         internal static DateTime validFromMinimum = new DateTime(2019, 3, 1, 7, 0, 0);
         internal static DateTime validFromMaximum = DateTime.Now;
 
@@ -67,6 +68,7 @@ namespace Catalog.Infra
                 ProductTypeId= "0",
                 ValidFrom = GetRandom.DateTime(validFromMinimum, validFromMaximum),
                 ValidTo = GetRandom.DateTime(validToMinimum, validToMaximum)}
+
         };
         internal static List<CatalogEntryData> catalogEntries => new List<CatalogEntryData>
         {
@@ -97,8 +99,37 @@ namespace Catalog.Infra
             Name = "Lihatooted",
             Description = "Lai valik erinevaid lihatooteid" },
 
-        new ProductCategoryData{
+         new ProductCategoryData{
+            Id = "2",
+            ValidFrom = GetRandom.DateTime(validFromMinimum, validFromMaximum),
+            ValidTo = GetRandom.DateTime(validToMinimum, validToMaximum),
+            Name = "Köögiviljad",
+            Description = "Lai valik erinevaid köögivilju" },
+
+          new ProductCategoryData{
             Id = "3",
+            ValidFrom = GetRandom.DateTime(validFromMinimum, validFromMaximum),
+            ValidTo = GetRandom.DateTime(validToMinimum, validToMaximum),
+            Name = "Pagaritooted",
+            Description = "Lai valik erinevaid pagaritooteid" },
+
+           new ProductCategoryData{
+            Id = "4",
+            ValidFrom = GetRandom.DateTime(validFromMinimum, validFromMaximum),
+            ValidTo = GetRandom.DateTime(validToMinimum, validToMaximum),
+            Name = "Kuivained",
+            Description = "Lai valik erinevaid lihatooteid" },
+
+            new ProductCategoryData{
+            Id = "5",
+            ValidFrom = GetRandom.DateTime(validFromMinimum, validFromMaximum),
+            ValidTo = GetRandom.DateTime(validToMinimum, validToMaximum),
+            Name = "Joogid",
+            Description = "Lai valik erinevaid jooke" },
+
+
+        new ProductCategoryData{
+            Id = "7",
             ValidFrom = GetRandom.DateTime(validFromMinimum, validFromMaximum),
             ValidTo = GetRandom.DateTime(validToMinimum, validToMaximum),
             Name = "Õunad",
@@ -106,7 +137,7 @@ namespace Catalog.Infra
             BaseCategoryId = "0" },
 
         new ProductCategoryData{
-            Id = "4",
+            Id = "8",
             ValidFrom = GetRandom.DateTime(validFromMinimum, validFromMaximum),
             ValidTo = GetRandom.DateTime(validToMinimum, validToMaximum),
             Name = "Prinid",
@@ -114,7 +145,7 @@ namespace Catalog.Infra
             BaseCategoryId = "0" },
 
         new ProductCategoryData{
-            Id = "5",
+            Id = "9",
             ValidFrom = GetRandom.DateTime(validFromMinimum, validFromMaximum),
             ValidTo = GetRandom.DateTime(validToMinimum, validToMaximum),
             Name = "Veiseliha",
@@ -122,30 +153,31 @@ namespace Catalog.Infra
             BaseCategoryId = "1" },
 
          new ProductCategoryData{
-            Id = "6",
+            Id = "10",
             ValidFrom = GetRandom.DateTime(validFromMinimum, validFromMaximum),
             ValidTo = GetRandom.DateTime(validToMinimum, validToMaximum),
             Name = "Sealiha",
             Description = "Sealiha on lihatoodete alamkategooria",
             BaseCategoryId = "1" },
+
+         new ProductCategoryData{
+            Id = "11",
+            ValidFrom = GetRandom.DateTime(validFromMinimum, validFromMaximum),
+            ValidTo = GetRandom.DateTime(validToMinimum, validToMaximum),
+            Name = "Linnuliha",
+            Description = "LinnuLiha on lihatoodete alamkategooria",
+            BaseCategoryId = "1" },
+
+         new ProductCategoryData{
+            Id = "11",
+            ValidFrom = GetRandom.DateTime(validFromMinimum, validFromMaximum),
+            ValidTo = GetRandom.DateTime(validToMinimum, validToMaximum),
+            Name = "Linnuliha",
+            Description = "LinnuLiha on lihatoodete alamkategooria",
+            BaseCategoryId = "1" },
+
         };
         
-
-
-        //internal static List<PartyData> parties => new List<PartyData>{
-        //    //TODO: Initialize predefined party data
-        //    new PartyData { Id ="0", ValidFrom =  GetRandom.DateTime(validFromMinimum, validFromMaximum),
-        //        ValidTo =  GetRandom.DateTime(validToMinimum, validToMaximum), Name="Prisma Lasnamäe", AddressId = "1",
-        //        Latitude ="59.44226761",Longitude="24.8383031", Hours = "08.00-23.00", Organization= "Prisma Peremarketid"},
-
-        //    new PartyData { Id = "1", ValidFrom =  GetRandom.DateTime(validFromMinimum, validFromMaximum),
-        //        ValidTo =  GetRandom.DateTime(validToMinimum, validToMaximum), Name="Prisma Mustamäe", AddressId = "2",
-        //        Latitude ="59.410379",Longitude="24.68301", Hours = "24h", Organization= "Prisma Peremarketid"},
-
-        //    new PartyData { Id ="2", ValidFrom =  GetRandom.DateTime(validFromMinimum, validFromMaximum),
-        //        ValidTo =  GetRandom.DateTime(validToMinimum, validToMaximum), Name="Prisma Rocca Al Mare", AddressId = "3",
-        //        Latitude ="59.410379",Longitude="24.68301", Hours = "24h", Organization= "Prisma Peremarketid"},
-        //};
 
         internal static List<PriceData> prices = new List<PriceData> { };
         internal static void generatePrices()
@@ -156,27 +188,7 @@ namespace Catalog.Infra
             }
         }
 
-        //internal static List<ProductsOfPartyData> productsOfParties = new List<ProductsOfPartyData> { };
-        //internal static void generateProductOfParties()
-        //{
-        //    for (int i = 0; i < products.Count(); i++)
-        //    {
-        //        for (int k = 0; k < parties.Count(); k++)
-        //        {
-
-        //            productsOfParties.Add(new ProductsOfPartyData
-        //            {
-        //                Id = Guid.NewGuid().ToString(),
-        //                ValidFrom = GetRandom.DateTime(validFromMinimum, validFromMaximum),
-        //                ValidTo = GetRandom.DateTime(validToMinimum, validToMaximum),
-        //                ProductId = i.ToString(),
-        //                PartyId = k.ToString(),
-        //                PriceId = GetRandom.Int32(0, (sbyte)prices.Count()).ToString()
-        //            });
-        //        }
-
-        //    }
-        //}
+       
         internal static List<CountryOfOriginData> countriesOfOrigin => new List<CountryOfOriginData>
         {
             new CountryOfOriginData{
@@ -323,22 +335,6 @@ namespace Catalog.Infra
                 ValidTo =  GetRandom.DateTime(validToMinimum, validToMaximum)},
         };
 
-        //internal static List<SubCategoryData> subcategories = new List<SubCategoryData> { };
-        //internal static void generateSubCategories()
-        //{
-        //    //TODO category id oleks korrektne
-        //    for (int i = 0; i < Enum.GetNames(typeof(SubCategories)).Length; i++)
-        //    {
-        //        subcategories.Add(new SubCategoryData
-        //        {
-        //            Id = i.ToString(),
-        //            CategoryId = GetRandom.Enum<Categories>().ToString(),
-        //            Name = ((SubCategories)i).ToString(),
-        //            ValidFrom = GetRandom.DateTime(validFromMinimum, validFromMaximum),
-        //            ValidTo = GetRandom.DateTime(validToMinimum, validToMaximum)
-        //        });
-        //    }
-        //}
         internal static List<BrandData> brands => new List<BrandData>{
             new BrandData {
                 Id="0",
@@ -446,16 +442,6 @@ namespace Catalog.Infra
             db.SaveChanges();
             return true;
         }
-
-        //private static bool initializeProducts(CatalogDbContext db)
-        //{
-        //    if (db.Products.Count() != 0) return false;
-        //    db.Products.AddRange(products);
-        //    db.SaveChanges();
-        //    return true;
-        //}
-
-
 
         public static bool Initialize(CatalogDbContext db)
         {

@@ -1,5 +1,5 @@
-﻿using Abc.Pages.Common.Consts;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Quantity.Pages.Common.Consts;
 using Sooduskorv_MVC.CommonTests.OverallTests;
 
 namespace Quantity.Tests.Pages.Common.Consts

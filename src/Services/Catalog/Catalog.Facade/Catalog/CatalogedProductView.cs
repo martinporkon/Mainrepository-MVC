@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using Catalog.Facade.Price;
 
 namespace Catalog.Facade.Catalog
 {

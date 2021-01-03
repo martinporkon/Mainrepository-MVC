@@ -3,6 +3,7 @@ using Catalog.Data.Services;
 using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using Catalog.Facade.Price;
 
 namespace Catalog.Facade.Product
 {

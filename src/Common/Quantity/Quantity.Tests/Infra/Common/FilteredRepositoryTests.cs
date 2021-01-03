@@ -6,7 +6,6 @@ using Quantity.Infra;
 using Quantity.Infra.Common;
 using Sooduskorv_MVC.Aids.Random;
 using Sooduskorv_MVC.CommonTests.OverallTests;
-using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 

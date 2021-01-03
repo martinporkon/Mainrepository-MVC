@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Basket.Data.Baskets;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Sooduskorv_MVC.CommonTests.OverallTests;
 using Sooduskorv_MVC.Data.CommonData;
 

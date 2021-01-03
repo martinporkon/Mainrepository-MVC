@@ -22,6 +22,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\..\Common\Sooduskorv_MVC.Middleware\Sooduskorv_MVC.Middleware.csproj" />
     <ProjectReference Include="..\..\..\Communication\EventBus\EventBus.csproj" />
+    <ProjectReference Include="..\Basket.Pages\Basket.Pages.csproj" />
   </ItemGroup>
 
 

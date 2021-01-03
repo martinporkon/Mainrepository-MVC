@@ -25,4 +25,9 @@ namespace Catalog.Facade.Product
 
 
     }
+
+    public class DescribedEntityView
+    {
+        public string Definition { get; set; }
+    }
 }

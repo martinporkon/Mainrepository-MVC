@@ -4,9 +4,9 @@ namespace Basket.API.Controllers
 {
     public class BasketController : PageModel
     {
-        public BasketController(IBasketOfProductRepository b)
+        /*public BasketController(IBasketOfProductRepository b)
         {
 
-        }
+        }*/
     }
 }

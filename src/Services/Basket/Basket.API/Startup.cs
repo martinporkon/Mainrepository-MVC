@@ -2,6 +2,7 @@ using System.Diagnostics;
 using Basket.API.Data;
 using Basket.API.Middleware.Authentication;
 using Basket.API.Middleware.CustomHttpMiddleware;
+using Basket.Core.Diagnostics;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Sooduskorv_MVC.Aids.Constants;
+using Sooduskorv_MVC.Common.Domain;
 using Sooduskorv_MVC.Middleware.Diagnostics;
 using Sooduskorv_MVC.Middleware.SystemDiagnostics;
 using WebMVC.Bff.HttpAggregator.Gateway.Middleware.HealthChecks;
@@ -60,8 +62,8 @@ namespace Basket.API
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, DiagnosticListener listener)
         {
-            listener.SubscribeWithAdapter(new BasketSystemDiagnosticsListener(),
-                new BasketListener());
+            /*listener.SubscribeWithAdapter(new BasketSystemDiagnosticsListener(),
+                new BasketListener());*/
 
             if (env.IsDevelopment())
             {

@@ -1,4 +1,6 @@
-﻿using System.ComponentModel;
+﻿using System;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace Catalog.Facade.Price
 {
@@ -11,7 +13,17 @@ namespace Catalog.Facade.Price
         public string ProductInstanceId { get; set; }
     }
 
-    public class PeriodView
+    public abstract class PeriodView
     {
+        [DataType(DataType.Date)]
+        [DisplayName("Valid From")]
+        public DateTime? ValidFrom { get; set; }
+
+        [DataType(DataType.Date)]
+        [DisplayName("Valid To")]
+        public DateTime? ValidTo { get; set; }
+
+        /*
+        public abstract string GetId();*/
     }
 }

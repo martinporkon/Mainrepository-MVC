@@ -1,11 +1,11 @@
 ﻿namespace Web.Domain.Common
 {
-    public interface IUniqueDto : IDto
+    public interface IUniqueEntity : IDto
     {
 
         string Id { get; }
 
     }
 
-    public interface IUniqueDto<out TData> : IUniqueDto, IDto<TData> { }
+    public interface IUniqueEntity<out TData> : IUniqueEntity, IDto<TData> { }
 }

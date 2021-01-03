@@ -1,6 +1,7 @@
 ﻿using Catalog.Domain;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
+using Quantity.Facade.Common;
 
 namespace Catalog.Pages
 {

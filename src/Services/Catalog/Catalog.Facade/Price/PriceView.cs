@@ -1,6 +1,7 @@
 ﻿using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
+using Quantity.Facade.Common;
 
 namespace Catalog.Facade.Price
 {
@@ -13,7 +14,7 @@ namespace Catalog.Facade.Price
         public string ProductInstanceId { get; set; }
     }
 
-    public abstract class PeriodView
+    public abstract class PeriodView : UniqueEntityView
     {
         [DataType(DataType.Date)]
         [DisplayName("Valid From")]

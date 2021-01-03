@@ -5,14 +5,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Common\Const\Baskets\**" />
+    <Compile Remove="Orders\**" />
     <Compile Remove="Services\**" />
+    <EmbeddedResource Remove="Common\Const\Baskets\**" />
+    <EmbeddedResource Remove="Orders\**" />
     <EmbeddedResource Remove="Services\**" />
+    <None Remove="Common\Const\Baskets\**" />
+    <None Remove="Orders\**" />
     <None Remove="Services\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Common\Const\Baskets\" />
-    <Folder Include="Orders\" />
   </ItemGroup>
 
   <ItemGroup>

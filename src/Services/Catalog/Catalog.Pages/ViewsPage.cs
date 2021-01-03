@@ -2,6 +2,7 @@
 using Catalog.Domain.Common;
 using Sooduskorv_MVC.Data.CommonData;
 using System;
+using Quantity.Facade.Common;
 
 namespace Catalog.Pages
 {

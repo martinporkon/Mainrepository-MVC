@@ -8,6 +8,7 @@ using Sooduskorv_MVC.Data.CommonData;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Quantity.Facade.Common;
 
 namespace Catalog.Pages
 {

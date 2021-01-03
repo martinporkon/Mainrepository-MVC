@@ -1,6 +1,7 @@
 ﻿using Catalog.Data.Product;
 using System.Collections.Generic;
 using System.ComponentModel;
+using Quantity.Facade.Common;
 
 namespace Catalog.Facade.Product
 {
@@ -26,8 +27,13 @@ namespace Catalog.Facade.Product
 
     }
 
-    public class DescribedEntityView
+    public class DescribedEntityView : NamedEntityView
     {
         public string Definition { get; set; }
+    }
+
+    public class NamedEntityView : UniqueEntityView
+    {
+        public string Name { get; set; }
     }
 }

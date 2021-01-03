@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Sooduskorv_MVC.Aids.Methods;
 using System;
 using System.Collections.Generic;
+using Catalog.Pages.Common.Const;
 
 namespace Catalog.Pages.Products
 {

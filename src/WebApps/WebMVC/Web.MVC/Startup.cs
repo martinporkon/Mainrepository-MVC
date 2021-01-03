@@ -2,17 +2,22 @@ using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Reflection;
 using AutoMapper;
+using Catalog.API.Data;
+using Catalog.Infra;
+using Catalog.Infra.Catalog;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
+using Sooduskorv_MVC.Aids.Constants;
 using Sooduskorv_MVC.Middleware.Culture;
 using Sooduskorv_MVC.Middleware.Session;
-using SooduskorvWebMVC.ComponentBases;
+using SooduskorvWebMVC.Components;
 using SooduskorvWebMVC.HttpHandlers;
 using SooduskorvWebMVC.Localization;
 using SooduskorvWebMVC.Middleware;
@@ -55,6 +60,14 @@ namespace SooduskorvWebMVC
             services.AddServerSideBlazor();
             services.AddCustomAuthorization(Configuration);
             services.AddHttpContextAccessor();
+            services.AddDbContext<CatalogApplicationDbContext>(options =>
+            {
+                options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=CatalogDB;Trusted_Connection=True;");
+            });
+            services.AddDbContext<CatalogDbContext>(options =>
+            {
+                options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=CatalogDB;Trusted_Connection=True;");
+            });
             /*services.AddHttpClient<IProductsService, ProductsService>();
             services.AddScoped<IProductsService, ProductsService>();*/
             services.AddScoped<RequestLocalizationMiddleware>();
@@ -62,12 +75,25 @@ namespace SooduskorvWebMVC
             services.AddHttpClientServices(Configuration);
             services.AddCustomAuthentication(Configuration);
             services.AddCustomSessions(Configuration);
+            /*services.AddResponseCompression(options => { });*/
             // TODO must refactor.
             services.AddHttpClient<IBasketService, BasketService>(config =>
             {
                 config.BaseAddress = new Uri("http://localhost:5000");
             });
             services.AddAutoMapper(AutoMapperConfiguration.RegisterMappings());
+            registerComponents(services);
+            registerRepositories(services);
+        }
+
+        private void registerRepositories(IServiceCollection services)
+        {
+            CatalogRepositories.Register(services);
+        }
+
+        private void registerComponents(IServiceCollection services)
+        {
+            BlazorComponents.Register(services);
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IOptions<RequestLocalizationOptions>
@@ -80,7 +106,7 @@ namespace SooduskorvWebMVC
             }
             else
             {
-                app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler(Url.Exception);
                 app.UseHsts();
             }
 

@@ -42,6 +42,7 @@ namespace WebMVC.Bff.HttpAggregator.Gateway
             {
                 client.BaseAddress = new Uri("https://localhost:44340/");
             });*/
+            /*services.AddResponseCompression(options => { });*/
             /*var container = new ContainerBuilder();
             container.RegisterModule(new AssemblyModule());//*///
             services.AddCustomHealthChecks<ApplicationDbContext>();

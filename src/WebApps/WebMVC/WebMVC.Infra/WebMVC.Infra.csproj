@@ -5,15 +5,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Basket\**" />
     <Compile Remove="Catalog\**" />
     <Compile Remove="Common\Docs\**" />
     <Compile Remove="Order\**" />
-    <EmbeddedResource Remove="Basket\**" />
     <EmbeddedResource Remove="Catalog\**" />
     <EmbeddedResource Remove="Common\Docs\**" />
     <EmbeddedResource Remove="Order\**" />
-    <None Remove="Basket\**" />
     <None Remove="Catalog\**" />
     <None Remove="Common\Docs\**" />
     <None Remove="Order\**" />
@@ -21,6 +18,10 @@
 
   <ItemGroup>
     <ProjectReference Include="..\WebMVC.Facade\WebMVC.Facade.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Basket\" />
   </ItemGroup>
 
 </Project>

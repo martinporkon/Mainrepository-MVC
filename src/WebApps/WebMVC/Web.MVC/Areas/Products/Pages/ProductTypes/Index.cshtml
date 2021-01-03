@@ -30,15 +30,14 @@
                     }
                 </div>
             }
-
         </div>
     </div>
 
     <script type="text/javascript" src="js/nav.js"></script>
 
-    @Html.DropMenu("Sorteeri:",
-        new Link(Html.DisplayName("Sorteeri tähestiku järgi"), Model.GetSortString(m => m.Name, page)),
-        new Link(Html.DisplayName("Sorteeri koguse järgi"), Model.GetSortString(m => m.Amount, page))
+    @Html.DropMenu($"{Localizer["Sort"]}",
+        new Link(Html.DisplayName($"{Localizer["Sort By Alphabet"]}"), Model.GetSortString(m => m.Name, page)),
+        new Link(Html.DisplayName($"{Localizer["Sort By Quantity"]}"), Model.GetSortString(m => m.Amount, page))
         )
 
     <div class="container">

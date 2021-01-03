@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <Folder Include="Docs\" />
+    <Folder Include="Catalog\" />
   </ItemGroup>
 
 </Project>

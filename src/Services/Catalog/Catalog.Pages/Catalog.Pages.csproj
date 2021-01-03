@@ -21,4 +21,8 @@
     <ProjectReference Include="..\Catalog.Infra\Catalog.Infra.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Common\Consts\" />
+  </ItemGroup>
+
 </Project>

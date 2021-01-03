@@ -1,5 +1,5 @@
 ﻿
-namespace Abc.Pages.Common.Consts
+namespace Web.Pages.Common.Const.Catalogs
 {
     public static class RulePagesNames
     {

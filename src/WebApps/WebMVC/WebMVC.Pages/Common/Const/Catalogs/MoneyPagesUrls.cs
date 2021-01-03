@@ -1,8 +1,10 @@
-﻿namespace Abc.Pages.Common.Consts {
+﻿namespace Web.Pages.Common.Const.Catalogs
+{
 
-    public static class MoneyPagesUrls {
+    public static class MoneyPagesUrls
+    {
         public static string Cards => "/Money/Cards";
-        public static string Countries  => "/Money/Countries";
+        public static string Countries => "/Money/Countries";
         public static string Currencies => "/Money/Currencies";
         public static string CurrencyUsages => "/Money/CurrencyUsages";
         public static string RateTypes => "/Money/RateTypes";

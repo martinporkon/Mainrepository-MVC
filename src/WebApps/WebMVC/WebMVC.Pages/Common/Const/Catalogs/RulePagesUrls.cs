@@ -1,6 +1,8 @@
-﻿namespace Abc.Pages.Common.Consts {
+﻿namespace Web.Pages.Common.Const.Catalogs
+{
 
-    public static class RulePagesUrls {
+    public static class RulePagesUrls
+    {
 
         public static string RuleSets => "/Rules/Sets";
         public static string Rules => "/Rules/Rules";

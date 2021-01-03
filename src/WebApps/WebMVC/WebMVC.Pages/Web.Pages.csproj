@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Common\Const\Baskets\" />
     <Folder Include="Orders\" />
   </ItemGroup>
 

@@ -1,4 +1,4 @@
-﻿namespace Catalog.Pages.Common.Consts
+﻿namespace Web.Pages.Common.Const.Catalogs
 {
 
     public static class ProductPagesNames

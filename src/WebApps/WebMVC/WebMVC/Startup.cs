@@ -131,7 +131,7 @@ namespace SooduskorvWebMVC
             app.UseSession();
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapCustomEndpointRouteBuilder(Configuration, rlo);// TODO
+                /*endpoints.MapCustomEndpointRouteBuilder(Configuration, rlo);// TODO*/
                 endpoints.MapRazorPages();
                 endpoints.MapBlazorHub();
                 /*endpoints.MapFallbackToPage("/_Host");*/

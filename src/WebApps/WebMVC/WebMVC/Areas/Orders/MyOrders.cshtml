@@ -1,6 +1,6 @@
-﻿@page
+﻿@*@page
 @model SooduskorvWebMVC.Models.ProductViewModel
-@*@model IEnumerable<SooduskorvWebMVC.Models.ProductViewModel    Cataloog ehk toote telh>*@
+@#1#model IEnumerable<SooduskorvWebMVC.Models.ProductViewModel    Cataloog ehk toote telh>#1#
 
     <div>
         <h1>Information about the requested product:</h1>
@@ -8,16 +8,16 @@
         {
             <p>@product.Id</p>
             <p>@product.Name</p>
-            @*<p>@product.Measure</p>
+            $1$<p>@product.Measure</p>
 
             <p>@product.Brand</p>
             <p>@product.CategoryId</p>
             <p>@product.Code</p>
-            <p>@product.Composition</p>*@
+            <p>@product.Composition</p>#1#
             <p>@product.Description</p>
-            @*<p>@product.SubCategoryId</p>
+            $1$<p>@product.SubCategoryId</p>
             <p>@product.PartyId</p>
             <p>@product.Name</p>
-            <p>@product.CountryOfOrigin</p>*@
+            <p>@product.CountryOfOrigin</p>#1#
         }
-    </div>
+    </div>*@

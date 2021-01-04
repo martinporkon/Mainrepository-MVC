@@ -40,7 +40,6 @@
         new Link(Html.DisplayName("Sorteeri tähestiku järgi"), Model.GetSortString(m => m.Name, page)),
         new Link(Html.DisplayName("Sorteeri koguse järgi"), Model.GetSortString(m => m.Amount, page))
         )
-
     <div class="container">
         <component type="typeof(SendBasketItem)" render-mode="ServerPrerendered" />
         @*<div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">*@

@@ -1,10 +1,11 @@
-﻿using System;
-using Web.Domain.DTO.Common;
+﻿using Sooduskorv_MVC.Data.CommonData;
+using System;
 
 namespace Web.Domain.Common
 {
-    public abstract class Entity<TData> : ValueObject<TData>, IDto<TData> where TData : PeriodEntityDto, new()
+    public abstract class Entity<TData> : ValueObject<TData>, IEntity<TData> where TData : PeriodData, new()
     {
+
         protected internal Entity(TData d = null) : base(d) { }
 
         public virtual DateTime ValidFrom => Data?.ValidFrom ?? UnspecifiedValidFrom;

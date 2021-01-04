@@ -2,10 +2,8 @@
 {
     public interface INamedEntity : IUniqueEntity
     {
-        string Name { get; }
-        string Code { get; }
-
+        string Name { get; }     
     }
 
-    public interface INamedEntity<out TData> : INamedEntity, IDto<TData> { }
+    public interface INamedEntity<out TData> : INamedEntity, IEntity<TData> { }
 }

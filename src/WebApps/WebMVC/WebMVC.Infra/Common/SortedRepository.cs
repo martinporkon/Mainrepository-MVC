@@ -9,8 +9,8 @@ using Web.Domain.DTO.Common;
 namespace Web.Infra.Common
 {
     public abstract class SortedRepository<TDomain, TData> : BaseRepository<TDomain, TData>, ISorting
-        where TDomain : IDto<TData>
-        where TData : PeriodEntityDto, new()
+        where TDomain : IEntity<TData>
+        where TData : PeriodEntityData, new()
     {
         public string SortOrder { get; set; }
         public string DescendingString => "_desc";

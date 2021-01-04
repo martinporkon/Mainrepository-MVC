@@ -5,9 +5,9 @@ using Web.Domain.DTO.Common;
 namespace Web.Facade.Common
 {
     public abstract class AbstractViewFactory<TData, TObject, TView>
-        where TData : PeriodEntityDto, new()
+        where TData : PeriodEntityData, new()
         where TView : PeriodView, new()
-        where TObject : IDto<TData>
+        where TObject : IEntity<TData>
     {
 
         public virtual TObject Create(TView v)

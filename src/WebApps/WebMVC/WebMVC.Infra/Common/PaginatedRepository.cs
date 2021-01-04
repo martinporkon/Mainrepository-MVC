@@ -9,8 +9,8 @@ using Web.Domain.DTO.Common;
 namespace Web.Infra.Common
 {
     public abstract class PaginatedRepository<TDomain, TData> : FilteredRepository<TDomain, TData>, IPaging
-        where TDomain : IDto<TData>
-        where TData : PeriodEntityDto, new()
+        where TDomain : IEntity<TData>
+        where TData : PeriodEntityData, new()
     {
         public int PageIndex { get; set; }
         public int PageSize { get; set; }

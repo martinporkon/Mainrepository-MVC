@@ -10,8 +10,8 @@ using Web.Domain.DTO.Common;
 namespace Web.Infra.Common
 {
     public abstract class BaseRepository<TDomain, TData> : ICrudMethods<TDomain>, IRepository
-        where TDomain : IDto<TData>
-        where TData : PeriodEntityDto, new()
+        where TDomain : IEntity<TData>
+        where TData : PeriodEntityData, new()
     {
         public string BaseAddress { get; set; }
         protected CancellationTokenSource CancellationToken

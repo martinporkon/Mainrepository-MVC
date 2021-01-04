@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Quantity\Quantity.Domain\Quantity.Domain.csproj" />
     <ProjectReference Include="..\..\..\Common\Sooduskorv_MVC.Data\Sooduskorv_MVC.Data.csproj" />
     <ProjectReference Include="..\WebMVC.Core\Web.Core.csproj" />
   </ItemGroup>

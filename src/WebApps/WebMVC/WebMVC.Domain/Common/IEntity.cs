@@ -2,14 +2,14 @@
 
 namespace Web.Domain.Common
 {
-    public interface IDto
+    public interface IEntity
     {
         DateTime ValidFrom { get; }
         DateTime ValidTo { get; }
 
         bool IsUnspecified { get; }
     }
-    public interface IDto<out TData> : IDto
+    public interface IEntity<out TData> : IEntity
     {
         TData Data { get; }
     }

@@ -1,6 +1,6 @@
 ﻿namespace Web.Domain.DTO.Common
 {
-    public class UniqueEntityDto : PeriodEntityDto
+    public class UniqueEntityData : PeriodEntityData
     {
         public string Id { get; set; }
     }

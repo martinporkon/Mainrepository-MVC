@@ -1,10 +1,11 @@
-﻿using System;
-using Sooduskorv_MVC.Aids.Methods;
+﻿using Sooduskorv_MVC.Aids.Methods;
+using System;
 
 namespace Web.Domain.Common
 {
     public abstract class ValueObject<TData> : BaseEntity where TData : class, new()
     {
+
         protected readonly TData data;
         internal static Guid guid;
         protected internal ValueObject(TData d = null) => data = d ?? new TData();
@@ -20,6 +21,7 @@ namespace Web.Domain.Common
                 return d;
             }
         }
+
         public bool IsUnspecified => isUnspecified();
 
         private bool isUnspecified()
@@ -65,5 +67,6 @@ namespace Web.Domain.Common
             }
             catch (FormatException) { return false; }
         }
+
     }
 }

@@ -12,7 +12,7 @@ namespace Web.Pages.Common
         where TPage : PageModel
         where TRepository : class, ICrudMethods<TDomain>, ISorting, IFiltering, IPaging
         where TDomain : IDto<TData>
-        where TData : PeriodEntityDto, new()
+        where TData : PeriodEntityData, new()
         where TView : PeriodView
     {
         protected ViewPage(TRepository r, string title) : base(r, title) { }

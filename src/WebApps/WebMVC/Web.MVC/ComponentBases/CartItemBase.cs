@@ -2,6 +2,7 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Components;
+using Web.Facade.Catalog.Products;
 
 namespace SooduskorvWebMVC.ComponentBases
 {

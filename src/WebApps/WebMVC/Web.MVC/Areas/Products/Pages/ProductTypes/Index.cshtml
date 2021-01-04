@@ -7,7 +7,7 @@
 @using Web.Pages.Common.Extensions
 @inject IStringLocalizer<CatalogPage> Localizer
 @inject IHtmlLocalizer<CatalogPage> HtmlLocalizer
-@model Catalog.Pages.Products.CatalogPage
+@model Web.Pages.Catalog.Products.CatalogPage
 @addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 @addTagHelper *, Microsoft.AspNetCore.Razor.TagHelpers
 
@@ -18,7 +18,7 @@
 <link rel="stylesheet" href="css/nav.css" />
 <body>
 
-    <div class="clearfix">
+    @*<div class="clearfix">TODO temporary uncomment
         <div class="column menu">
             @foreach (var basecategory in Model.Categories.Where(x => x.Text is null))
             {
@@ -31,7 +31,7 @@
                 </div>
             }
         </div>
-    </div>
+    </div>*@
 
     <script type="text/javascript" src="js/nav.js"></script>
 

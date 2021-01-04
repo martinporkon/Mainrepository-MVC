@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using Web.Domain.Common.Catalog.Products;
 using Web.Domain.Services.Catalog.Products.ProductTypes;
 using Web.Facade.Common;
 
-namespace Web.Facade.Profiles.Catalog.Products
+namespace Web.Facade.Catalog.Products
 {
     public class ProductTypeView : DefinedView
     {
@@ -39,5 +40,21 @@ namespace Web.Facade.Profiles.Catalog.Products
         public string Rows { get; set; }
 
         public string Levels { get; set; }
+        public string BrandId { get; set; }
+
+        public int ProductsInUserBasket { get; set; } = 0;
+
+        public List<PartyInstanceView> Parties { get; set; } = new List<PartyInstanceView>
+        {
+            new PartyInstanceView() { Name = "test2"},
+            new PartyInstanceView() { Id = "123"},
+        };
+    }
+
+    public class PartyInstanceView
+    {
+        public string Id { get; set; } = "1";
+        public string Name { get; set; } = "Test";
+        public string Party { get; set; } = "2";
     }
 }

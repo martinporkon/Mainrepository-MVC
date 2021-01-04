@@ -1,5 +1,6 @@
-﻿@inherits DisplayBasketItemBase
-@using Catalog.Facade.Product
+﻿@using Web.Facade.Catalog.Products
+@inherits DisplayBasketItemBase
+
 @inject ViewState ViewState;
 <hr />
 <div class="esh-catalog-items row">
@@ -16,10 +17,6 @@
                     </div>*@
                 @*<component type="typeof(CatalogItem)" render-mode="WebAssemblyPrerendered"
                     value="" />*@
-                <CatalogItem OnProductSelected="ProductSelectionChanged"
-                             Product="@item"
-                             OnProductRemoved="ProductSelectionRemovedChanged">
-                </CatalogItem>
             </div>
         }
     </div>

@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using Web.Domain.Common.Catalog.Products;
 using Web.Domain.DTO.CatalogService;
 using Web.Domain.Services.Catalog.Products.ProductTypes;
-using Web.Facade.Profiles.Catalog.Products;
+using Web.Facade.Catalog.Products;
 using Web.Pages.Common;
 using Web.Pages.Common.Const;
 

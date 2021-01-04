@@ -3,7 +3,7 @@ using Web.Domain.DTO.CatalogService;
 using Web.Domain.Services.Catalog.Products.ProductTypes;
 using Web.Facade.Common;
 
-namespace Web.Facade.Profiles.Catalog.Products
+namespace Web.Facade.Catalog.Products
 {
     public class ProductTypeViewFactory : AbstractViewFactory<ProductTypeDto, ProductType, ProductTypeView>
     {

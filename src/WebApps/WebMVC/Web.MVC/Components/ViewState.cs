@@ -1,5 +1,5 @@
 ﻿using System;
-using Catalog.Facade.Product;
+using Web.Facade.Catalog.Products;
 
 namespace SooduskorvWebMVC.Components
 {

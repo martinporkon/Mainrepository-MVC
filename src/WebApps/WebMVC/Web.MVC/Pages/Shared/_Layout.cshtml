@@ -35,7 +35,7 @@
                         @Html.DropMenu($"{Localizer["Basket"]}",
                              new Link("About", new Uri("/Index", UriKind.Relative)),
                              new Link("Privacy", new Uri("/Privacy", UriKind.Relative)))
-                        @if ((await AuthorizationService.AuthorizeAsync(User, "ForOrder")).Succeeded)
+                        @if ((await AuthorizationService.AuthorizeAsync(User, "Order")).Succeeded)
                         {
                             @Html.DropMenu($"{Localizer["Order"]}",
                                 new Link("My Orders", new Uri("/Index", UriKind.Relative)),

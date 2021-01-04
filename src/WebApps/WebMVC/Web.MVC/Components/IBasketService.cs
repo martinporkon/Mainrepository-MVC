@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
-using Catalog.Facade.Product;
+using Web.Facade.Catalog.Products;
 
 namespace SooduskorvWebMVC.Components
 {

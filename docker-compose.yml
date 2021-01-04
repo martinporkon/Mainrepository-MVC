@@ -1,0 +1,58 @@
+version: '3.8'
+
+networks:
+  web:
+    external: true
+services:
+  seq:
+    image: datalust/seq:latest
+    container_name: sooduskorv.logid
+    ports: 
+        - "5412:80"
+    environment:
+      ACCEPT_EULA: "Y"
+      restart: unless-stopped
+  db1:
+    image: postgres:10.15-alpine
+    container_name: catalog.db
+    ports:
+        - "8079:79"
+    volumes:
+    - ./postgres-data:/var/lib/postgresql/data
+    environment:
+        - POSTGRES_PASSWORD=password
+    restart: unless-stopped
+  mnge:
+    image: dpage/pgadmin4
+    ports:
+        - "7089:89"
+    restart: unless-stopped
+    container_name: mnge-db1
+    environment:
+        - PGADMIN_DEFAULT_EMAIL=myemail@gmail.com
+        - PGADMIN_DEFAULT_PASSWORD=a12345678
+  db2:
+    image: mysql:latest
+    container_name: basket.db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: 'db'
+      MYSQL_USER: 'user'
+      MYSQL_PASSWORD: 'password'
+      MYSQL_ROOT_PASSWORD: 'password'
+    ports:
+      - '3305:3305'
+    expose:
+      - '3305'
+    volumes:
+      - ./my-db2:/var/lib/my-db2
+  db3:
+    container_name: bff-order-sql-server.db
+    image: microsoft/mssql-server-linux:2017-latest
+    ports:
+      - "1431:1431"
+    environment:
+      SA_PASSWORD: "password"
+      ACCEPT_EULA: "Y"
+    volumes:
+      - ./my-db-sql:/var/lib/mysql-sql

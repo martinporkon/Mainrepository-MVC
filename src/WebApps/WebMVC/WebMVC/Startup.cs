@@ -128,8 +128,8 @@ namespace SooduskorvWebMVC
 
             });*/
             app.UseRouting();
-            /*app.UseAuthentication();
-            app.UseAuthorization();*/
+            app.UseAuthentication();
+            app.UseAuthorization();
             app.UseSession();
             app.UseEndpoints(endpoints =>
             {

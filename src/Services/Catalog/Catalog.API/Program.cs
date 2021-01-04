@@ -20,7 +20,6 @@ namespace Catalog.API
                 .AddEnvironmentVariables()
             .Build();
 
-
         public static void Main(string[] args)
         {
 

@@ -84,6 +84,20 @@ namespace Identity.Infra.DbContexts
              new UserClaimData()
              {
                  Id = Guid.NewGuid(),
+                 UserId = new Guid("13229d33-99e0-41b3-b18d-4f72127e3971"),
+                 Type = "subscription",
+                 Value = "None"
+             },
+             new UserClaimData()
+             {
+                 Id = Guid.NewGuid(),
+                 UserId = new Guid("96053525-f4a5-47ee-855e-0ea77fa6c55a"),
+                 Type = "subscription",
+                 Value = "Basic"
+             },
+             new UserClaimData()
+             {
+                 Id = Guid.NewGuid(),
                  UserId = new Guid("96053525-f4a5-47ee-855e-0ea77fa6c55a"),
                  Type = "given_name",
                  Value = "Bob"

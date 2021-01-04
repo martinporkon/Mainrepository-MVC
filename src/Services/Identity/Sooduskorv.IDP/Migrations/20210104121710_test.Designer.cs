@@ -10,7 +10,7 @@ using Sooduskorv.IDP.Data;
 namespace Sooduskorv.IDP.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210104074942_test")]
+    [Migration("20210104121710_test")]
     partial class test
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -53,80 +53,96 @@ namespace Sooduskorv.IDP.Migrations
                     b.HasData(
                         new
                         {
-                            Id = new Guid("cb0d22a8-82ae-4193-8808-5900a1a935e4"),
-                            ConcurrencyStamp = "d4eb18cf-1a15-499f-8126-9061f9fd532f",
+                            Id = new Guid("c857f314-1254-442f-8043-94463985d299"),
+                            ConcurrencyStamp = "bcb0ea96-ab1f-49b4-af9f-cd71a4eba0d2",
                             Type = "given_name",
                             UserId = new Guid("13229d33-99e0-41b3-b18d-4f72127e3971"),
                             Value = "Hanna"
                         },
                         new
                         {
-                            Id = new Guid("0fdc425c-238e-434e-80b3-92b911e4699d"),
-                            ConcurrencyStamp = "77f4f5bc-d6ea-42a6-a8f7-08e722e84c3d",
+                            Id = new Guid("9bbcfc21-5c66-4c41-9806-43ec1ce6cfc4"),
+                            ConcurrencyStamp = "12e5d405-8878-4c32-8f27-7a6d21ab2a84",
                             Type = "family_name",
                             UserId = new Guid("13229d33-99e0-41b3-b18d-4f72127e3971"),
                             Value = "Forest"
                         },
                         new
                         {
-                            Id = new Guid("eec1a9cf-a1a7-44f8-a86a-8efc740dff2c"),
-                            ConcurrencyStamp = "759cce95-ad9c-4f80-a461-e91d74b94e1f",
+                            Id = new Guid("c1d0257d-f65f-4e7f-83d7-73ebd975f855"),
+                            ConcurrencyStamp = "46d21d58-75f2-427a-b969-4cc2efb842ae",
                             Type = "email",
                             UserId = new Guid("13229d33-99e0-41b3-b18d-4f72127e3971"),
                             Value = "hanna@gmail.com"
                         },
                         new
                         {
-                            Id = new Guid("d2eb807a-479a-4cc6-bd3f-5b95cbb21aa0"),
-                            ConcurrencyStamp = "0be1e82f-2771-4e46-a474-f3482031b431",
+                            Id = new Guid("ea7e132a-5c32-44e6-8eed-082be9a23e51"),
+                            ConcurrencyStamp = "ea3bcb4b-2e7d-46cc-822e-41ab6bf2c311",
                             Type = "address",
                             UserId = new Guid("13229d33-99e0-41b3-b18d-4f72127e3971"),
                             Value = "Tammsaare tee"
                         },
                         new
                         {
-                            Id = new Guid("4699d3a1-285e-4e18-b5de-3adecdd2f1c2"),
-                            ConcurrencyStamp = "0179af08-3b4c-47e7-b72c-566d1a458e72",
+                            Id = new Guid("ba7a411c-52fb-4705-9476-991cb4535d5a"),
+                            ConcurrencyStamp = "760f4b42-645f-40eb-a2cb-756c74913375",
                             Type = "country",
                             UserId = new Guid("13229d33-99e0-41b3-b18d-4f72127e3971"),
                             Value = "somevalue"
                         },
                         new
                         {
-                            Id = new Guid("23177980-98f8-4665-a182-80eb5f9eacd3"),
-                            ConcurrencyStamp = "8ee8c5eb-87aa-4be4-a323-83c7c169a00f",
+                            Id = new Guid("a474b3a7-4c50-4437-9f2e-660ff16feafa"),
+                            ConcurrencyStamp = "4c1faa77-06e2-4aa5-a602-20e5a3de3c56",
+                            Type = "subscription",
+                            UserId = new Guid("13229d33-99e0-41b3-b18d-4f72127e3971"),
+                            Value = "None"
+                        },
+                        new
+                        {
+                            Id = new Guid("dd341108-86ea-4b1d-ba72-5885192db19d"),
+                            ConcurrencyStamp = "8b4d6bbe-0fb3-4827-ab99-70a397f42c2e",
+                            Type = "subscription",
+                            UserId = new Guid("96053525-f4a5-47ee-855e-0ea77fa6c55a"),
+                            Value = "Basic"
+                        },
+                        new
+                        {
+                            Id = new Guid("fdb96574-aa07-4d1b-8577-b5d528c6cf22"),
+                            ConcurrencyStamp = "7d2253c3-08b7-4843-a9f3-b521f956daf4",
                             Type = "given_name",
                             UserId = new Guid("96053525-f4a5-47ee-855e-0ea77fa6c55a"),
                             Value = "Bob"
                         },
                         new
                         {
-                            Id = new Guid("c1be34c9-12fc-4586-abf4-f962699e8bd1"),
-                            ConcurrencyStamp = "a6368173-b6e1-4d16-8b8c-bf9419ff7d1d",
+                            Id = new Guid("a30001f4-4cb2-45a3-8aef-bb36a78a5afc"),
+                            ConcurrencyStamp = "d56899c8-fe56-4a1f-a953-379a7a30689e",
                             Type = "family_name",
                             UserId = new Guid("96053525-f4a5-47ee-855e-0ea77fa6c55a"),
                             Value = "Oak"
                         },
                         new
                         {
-                            Id = new Guid("8182e5f8-2ffa-48b4-b927-827db50c3922"),
-                            ConcurrencyStamp = "165edc20-5885-4041-b718-ef846824b73e",
+                            Id = new Guid("7943b92a-b3c9-487c-b631-8cbd41a9de62"),
+                            ConcurrencyStamp = "cbcca9a0-8ef9-490e-a575-afaa9c42ef7c",
                             Type = "email",
                             UserId = new Guid("96053525-f4a5-47ee-855e-0ea77fa6c55a"),
                             Value = "bob@gmail.com"
                         },
                         new
                         {
-                            Id = new Guid("715e1d47-d9f1-41c8-93c5-5a3733bce654"),
-                            ConcurrencyStamp = "9cf2b87d-cfc9-495d-8843-4d3cb771c6fd",
+                            Id = new Guid("23a64644-0ef7-4e71-942e-5cf8ab332d9e"),
+                            ConcurrencyStamp = "4fd736c1-1ac5-43f6-9d84-c2ff9a7f81db",
                             Type = "address",
                             UserId = new Guid("96053525-f4a5-47ee-855e-0ea77fa6c55a"),
                             Value = "Ehitajate Tee"
                         },
                         new
                         {
-                            Id = new Guid("302b6fba-9fcb-4584-9224-8ac17f9e485c"),
-                            ConcurrencyStamp = "4bb46d84-dc2f-4beb-bccd-fd90d1191927",
+                            Id = new Guid("6836c99d-eaee-4c84-8a56-a85f84f979e8"),
+                            ConcurrencyStamp = "6926e56e-658a-45b5-aada-ba01751d321f",
                             Type = "country",
                             UserId = new Guid("96053525-f4a5-47ee-855e-0ea77fa6c55a"),
                             Value = "somevalue"
@@ -186,7 +202,7 @@ namespace Sooduskorv.IDP.Migrations
                         {
                             Id = new Guid("13229d33-99e0-41b3-b18d-4f72127e3971"),
                             Active = true,
-                            ConcurrencyStamp = "43a1089d-7d9f-459b-933a-b972f8b74da4",
+                            ConcurrencyStamp = "24fe2444-4611-4f44-b86a-82bd3e731d89",
                             Password = "password",
                             SecurityCodeExpirationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Subject = "d860efca-22d9-47fd-8249-791ba61b07c7",
@@ -196,7 +212,7 @@ namespace Sooduskorv.IDP.Migrations
                         {
                             Id = new Guid("96053525-f4a5-47ee-855e-0ea77fa6c55a"),
                             Active = true,
-                            ConcurrencyStamp = "ddc2ed61-89ad-4fc6-884d-74712d8790c0",
+                            ConcurrencyStamp = "b11ab7cc-1e4b-44b1-89ba-83a9437caa6c",
                             Password = "password",
                             SecurityCodeExpirationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Subject = "b7539694-97e7-4dfe-84da-b4256e1ff5c7",

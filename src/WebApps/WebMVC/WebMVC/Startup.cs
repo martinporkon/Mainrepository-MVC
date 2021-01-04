@@ -90,7 +90,7 @@ namespace SooduskorvWebMVC
 
         private void registerRepositories(IServiceCollection services)
         {
-            services.AddHttpClient<IProductTypesRepository, ProductTypesRepository>();
+            /*services.AddHttpClient<IProductTypesRepository, ProductTypesRepository>();*/
         }
 
         private void registerComponents(IServiceCollection services)

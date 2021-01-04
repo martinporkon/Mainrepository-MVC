@@ -10,6 +10,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Sooduskorv_MVC.Aids.Constants;
 using Sooduskorv_MVC.Common.Domain;
+using Sooduskorv_MVC.Middleware.HealthChecks;
 using WebMVC.Bff.HttpAggregator.Gateway.Middleware.HealthChecks;
 
 namespace Basket.API

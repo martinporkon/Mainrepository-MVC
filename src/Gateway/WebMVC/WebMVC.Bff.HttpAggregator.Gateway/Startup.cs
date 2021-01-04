@@ -9,6 +9,7 @@ using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 using Serilog;
 using Sooduskorv_MVC.Aids.Constants;
+using Sooduskorv_MVC.Middleware.HealthChecks;
 using Sooduskorv_MVC.Middleware.SecurityMiddleware;
 using WebMVC.Bff.HttpAggregator.Gateway.Data;
 using WebMVC.Bff.HttpAggregator.Gateway.Middleware;

@@ -2,7 +2,10 @@
 @using Web.Pages.Common.Aids
 @using Web.Pages.Common.Const
 @using Web.Pages.Common.Extensions
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Authentication.Cookies
 @inject IStringLocalizer<Program> Localizer
+@inject IAuthorizationService Auth;
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,17 +29,23 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         @Html.DropMenu($"{Localizer["Catalog"]}",
-                                                new Link(
-                                                    $"{ProductPagesNames.ProductTypes}",
-                                                    $"{ProductPagesUrls.ProductTypes}"))
+                                                          new Link(
+                                                              $"{ProductPagesNames.ProductTypes}",
+                                                              $"{ProductPagesUrls.ProductTypes}"))
 
                         @Html.DropMenu($"{Localizer["Help"]}",
-                                                new Link("About", new Uri("/Index", UriKind.Relative)),
-                                                new Link("Privacy", new Uri("/Privacy", UriKind.Relative)))
-                        @*TODO kuidas panna vaaded nagu profiil teisele poole paremale nurka ekraanil?*@
+                                                          new Link("About", new Uri("/Index", UriKind.Relative)),
+                                                          new Link("Privacy", new Uri("/Privacy", UriKind.Relative)))
                         @Html.DropMenu($"{Localizer["Basket"]}",
-                            new Link("About", new Uri("/Index", UriKind.Relative)),
-                            new Link("Privacy", new Uri("/Privacy", UriKind.Relative)))
+                                      new Link("About", new Uri("/Index", UriKind.Relative)),
+                                      new Link("Privacy", new Uri("/Privacy", UriKind.Relative)))
+                        @if ((await Auth.AuthorizeAsync(User, "Order")).Succeeded)
+                        {
+                            @Html.DropMenu($"{Localizer["Order"]}",
+                                new Link("My Orders", new Uri("/Index", UriKind.Relative)),
+                                new Link("Privacy", new Uri("/Privacy", UriKind.Relative)))
+                        }
+                        @if (User.Identity.IsAuthenticated) { }
                     </ul>
                 </div>
                 <vc:culture-switcher />
@@ -56,9 +65,11 @@
         </div>
     </footer>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <environment names="Development">
+        <script src="~/lib/jquery/dist/jquery.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
     <script src="~/_framework/blazor.server.js"></script>
     <script src="~/_framework/blazor.webassembly.js"></script>
     @await RenderSectionAsync("Scripts", required: false)

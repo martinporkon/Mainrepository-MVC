@@ -50,28 +50,30 @@ namespace Sooduskorv.IDP.Migrations
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "Active", "ConcurrencyStamp", "Email", "Password", "SecurityCode", "SecurityCodeExpirationDate", "Subject", "Username" },
-                values: new object[] { new Guid("13229d33-99e0-41b3-b18d-4f72127e3971"), true, "43a1089d-7d9f-459b-933a-b972f8b74da4", null, "password", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "d860efca-22d9-47fd-8249-791ba61b07c7", "Hanna" });
+                values: new object[] { new Guid("13229d33-99e0-41b3-b18d-4f72127e3971"), true, "24fe2444-4611-4f44-b86a-82bd3e731d89", null, "password", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "d860efca-22d9-47fd-8249-791ba61b07c7", "Hanna" });
 
             migrationBuilder.InsertData(
                 table: "Users",
                 columns: new[] { "Id", "Active", "ConcurrencyStamp", "Email", "Password", "SecurityCode", "SecurityCodeExpirationDate", "Subject", "Username" },
-                values: new object[] { new Guid("96053525-f4a5-47ee-855e-0ea77fa6c55a"), true, "ddc2ed61-89ad-4fc6-884d-74712d8790c0", null, "password", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "b7539694-97e7-4dfe-84da-b4256e1ff5c7", "Bob" });
+                values: new object[] { new Guid("96053525-f4a5-47ee-855e-0ea77fa6c55a"), true, "b11ab7cc-1e4b-44b1-89ba-83a9437caa6c", null, "password", null, new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "b7539694-97e7-4dfe-84da-b4256e1ff5c7", "Bob" });
 
             migrationBuilder.InsertData(
                 table: "UserClaims",
                 columns: new[] { "Id", "ConcurrencyStamp", "Type", "UserId", "Value" },
                 values: new object[,]
                 {
-                    { new Guid("cb0d22a8-82ae-4193-8808-5900a1a935e4"), "d4eb18cf-1a15-499f-8126-9061f9fd532f", "given_name", new Guid("13229d33-99e0-41b3-b18d-4f72127e3971"), "Hanna" },
-                    { new Guid("0fdc425c-238e-434e-80b3-92b911e4699d"), "77f4f5bc-d6ea-42a6-a8f7-08e722e84c3d", "family_name", new Guid("13229d33-99e0-41b3-b18d-4f72127e3971"), "Forest" },
-                    { new Guid("eec1a9cf-a1a7-44f8-a86a-8efc740dff2c"), "759cce95-ad9c-4f80-a461-e91d74b94e1f", "email", new Guid("13229d33-99e0-41b3-b18d-4f72127e3971"), "hanna@gmail.com" },
-                    { new Guid("d2eb807a-479a-4cc6-bd3f-5b95cbb21aa0"), "0be1e82f-2771-4e46-a474-f3482031b431", "address", new Guid("13229d33-99e0-41b3-b18d-4f72127e3971"), "Tammsaare tee" },
-                    { new Guid("4699d3a1-285e-4e18-b5de-3adecdd2f1c2"), "0179af08-3b4c-47e7-b72c-566d1a458e72", "country", new Guid("13229d33-99e0-41b3-b18d-4f72127e3971"), "somevalue" },
-                    { new Guid("23177980-98f8-4665-a182-80eb5f9eacd3"), "8ee8c5eb-87aa-4be4-a323-83c7c169a00f", "given_name", new Guid("96053525-f4a5-47ee-855e-0ea77fa6c55a"), "Bob" },
-                    { new Guid("c1be34c9-12fc-4586-abf4-f962699e8bd1"), "a6368173-b6e1-4d16-8b8c-bf9419ff7d1d", "family_name", new Guid("96053525-f4a5-47ee-855e-0ea77fa6c55a"), "Oak" },
-                    { new Guid("8182e5f8-2ffa-48b4-b927-827db50c3922"), "165edc20-5885-4041-b718-ef846824b73e", "email", new Guid("96053525-f4a5-47ee-855e-0ea77fa6c55a"), "bob@gmail.com" },
-                    { new Guid("715e1d47-d9f1-41c8-93c5-5a3733bce654"), "9cf2b87d-cfc9-495d-8843-4d3cb771c6fd", "address", new Guid("96053525-f4a5-47ee-855e-0ea77fa6c55a"), "Ehitajate Tee" },
-                    { new Guid("302b6fba-9fcb-4584-9224-8ac17f9e485c"), "4bb46d84-dc2f-4beb-bccd-fd90d1191927", "country", new Guid("96053525-f4a5-47ee-855e-0ea77fa6c55a"), "somevalue" }
+                    { new Guid("c857f314-1254-442f-8043-94463985d299"), "bcb0ea96-ab1f-49b4-af9f-cd71a4eba0d2", "given_name", new Guid("13229d33-99e0-41b3-b18d-4f72127e3971"), "Hanna" },
+                    { new Guid("9bbcfc21-5c66-4c41-9806-43ec1ce6cfc4"), "12e5d405-8878-4c32-8f27-7a6d21ab2a84", "family_name", new Guid("13229d33-99e0-41b3-b18d-4f72127e3971"), "Forest" },
+                    { new Guid("c1d0257d-f65f-4e7f-83d7-73ebd975f855"), "46d21d58-75f2-427a-b969-4cc2efb842ae", "email", new Guid("13229d33-99e0-41b3-b18d-4f72127e3971"), "hanna@gmail.com" },
+                    { new Guid("ea7e132a-5c32-44e6-8eed-082be9a23e51"), "ea3bcb4b-2e7d-46cc-822e-41ab6bf2c311", "address", new Guid("13229d33-99e0-41b3-b18d-4f72127e3971"), "Tammsaare tee" },
+                    { new Guid("ba7a411c-52fb-4705-9476-991cb4535d5a"), "760f4b42-645f-40eb-a2cb-756c74913375", "country", new Guid("13229d33-99e0-41b3-b18d-4f72127e3971"), "somevalue" },
+                    { new Guid("a474b3a7-4c50-4437-9f2e-660ff16feafa"), "4c1faa77-06e2-4aa5-a602-20e5a3de3c56", "subscription", new Guid("13229d33-99e0-41b3-b18d-4f72127e3971"), "None" },
+                    { new Guid("dd341108-86ea-4b1d-ba72-5885192db19d"), "8b4d6bbe-0fb3-4827-ab99-70a397f42c2e", "subscription", new Guid("96053525-f4a5-47ee-855e-0ea77fa6c55a"), "Basic" },
+                    { new Guid("fdb96574-aa07-4d1b-8577-b5d528c6cf22"), "7d2253c3-08b7-4843-a9f3-b521f956daf4", "given_name", new Guid("96053525-f4a5-47ee-855e-0ea77fa6c55a"), "Bob" },
+                    { new Guid("a30001f4-4cb2-45a3-8aef-bb36a78a5afc"), "d56899c8-fe56-4a1f-a953-379a7a30689e", "family_name", new Guid("96053525-f4a5-47ee-855e-0ea77fa6c55a"), "Oak" },
+                    { new Guid("7943b92a-b3c9-487c-b631-8cbd41a9de62"), "cbcca9a0-8ef9-490e-a575-afaa9c42ef7c", "email", new Guid("96053525-f4a5-47ee-855e-0ea77fa6c55a"), "bob@gmail.com" },
+                    { new Guid("23a64644-0ef7-4e71-942e-5cf8ab332d9e"), "4fd736c1-1ac5-43f6-9d84-c2ff9a7f81db", "address", new Guid("96053525-f4a5-47ee-855e-0ea77fa6c55a"), "Ehitajate Tee" },
+                    { new Guid("6836c99d-eaee-4c84-8a56-a85f84f979e8"), "6926e56e-658a-45b5-aada-ba01751d321f", "country", new Guid("96053525-f4a5-47ee-855e-0ea77fa6c55a"), "somevalue" }
                 });
 
             migrationBuilder.CreateIndex(

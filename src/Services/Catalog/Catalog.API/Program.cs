@@ -68,7 +68,7 @@ namespace Catalog.API
                 {
                     webBuilder.UseStartup<Startup>();
                     webBuilder.UseConfiguration(GetConfiguration());
-                });
+                }).UseSerilog();
 
         private static IConfiguration GetConfiguration()
         {

@@ -1,8 +1,4 @@
-﻿using Sooduskorv_MVC.CommonTests.OverallTests;
-using System.Net.Http;
-using WebMVC.Tests.AcceptanceTests;
-
-namespace WebMVC.Tests
+﻿namespace WebMVC.Tests
 {
     //public abstract class BaseSoftTests : BaseTests
     //{

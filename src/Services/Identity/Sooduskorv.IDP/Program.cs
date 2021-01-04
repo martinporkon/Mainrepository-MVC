@@ -25,7 +25,9 @@ namespace Sooduskorv.IDP
                 .MinimumLevel.Override("Microsoft.AspNetCore.Authentication", LogEventLevel.Information)
                 .Enrich.FromLogContext()
                 .WriteTo.Console(outputTemplate: "[{Timestamp:HH:mm:ss} {Level}] {SourceContext}{NewLine}{Message:lj}{NewLine}{Exception}{NewLine}", theme: AnsiConsoleTheme.Code)
+                .WriteTo.Seq("http://localhost:5412")
                 .CreateLogger();
+
             try
             {
                 Log.Information("Starting host...");

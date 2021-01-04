@@ -1,8 +1,4 @@
-﻿using System.Net;
-using AngleSharp.Html.Dom;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-
-namespace WebMVC.Tests
+﻿namespace WebMVC.Tests
 {
     /*public abstract class BasePageTests : BaseSoftTests
     {

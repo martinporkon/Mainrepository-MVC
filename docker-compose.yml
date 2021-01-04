@@ -8,7 +8,7 @@ services:
     image: datalust/seq:latest
     container_name: sooduskorv.logid
     ports: 
-        - "5412:80"
+        - "5412:79"
     environment:
       ACCEPT_EULA: "Y"
       restart: unless-stopped
@@ -47,12 +47,12 @@ services:
     volumes:
       - ./my-db2:/var/lib/my-db2
   db3:
-    container_name: bff-order-sql-server.db
+    container_name: bff-order-sql-server-db
     image: microsoft/mssql-server-linux:2017-latest
     ports:
       - "1431:1431"
     environment:
-      SA_PASSWORD: "password"
+      SA_PASSWORD: "yourStrong(!)Password"
       ACCEPT_EULA: "Y"
     volumes:
       - ./my-db-sql:/var/lib/mysql-sql

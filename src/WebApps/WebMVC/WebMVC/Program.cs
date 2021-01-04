@@ -2,6 +2,7 @@ using System.IO;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
+using Serilog;
 
 namespace SooduskorvWebMVC
 {
@@ -9,6 +10,10 @@ namespace SooduskorvWebMVC
     {
         public static void Main(string[] args)
         {
+            Log.Logger = new LoggerConfiguration()
+                .WriteTo.Seq("http://localhost:5412")
+                .CreateLogger();
+
             CreateHostBuilder(args).ConfigureAppConfiguration((hostContext, builder) =>
             {
                 if (hostContext.HostingEnvironment.IsDevelopment())
@@ -22,7 +27,7 @@ namespace SooduskorvWebMVC
                 {
                     webBuilder.UseStartup<Startup>();
                     webBuilder.UseConfiguration(GetConfiguration());
-                });
+                }).UseSerilog();
 
         private static IConfiguration GetConfiguration()
         {

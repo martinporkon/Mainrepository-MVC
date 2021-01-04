@@ -1,7 +1,6 @@
 ﻿using Identity.Domain.Services;
 using Identity.Infra.DbContexts;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.DataProtection;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;

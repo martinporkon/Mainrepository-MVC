@@ -6,6 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Order.Infra;
+using Serilog;
 
 namespace Order.API
 {
@@ -20,6 +21,10 @@ namespace Order.API
                     builder.AddUserSecrets<Program>();
                 }
             }).Build();
+
+            Log.Logger = new LoggerConfiguration()
+                .WriteTo.Seq("http://localhost:5412")
+                .CreateLogger();
 
             using (var scope = host.Services.CreateScope())
             {
@@ -53,7 +58,7 @@ namespace Order.API
                 {
                     webBuilder.UseStartup<Startup>();
                     webBuilder.UseConfiguration(GetConfiguration());
-                });
+                }).UseSerilog();
 
         private static IConfiguration GetConfiguration()
         {

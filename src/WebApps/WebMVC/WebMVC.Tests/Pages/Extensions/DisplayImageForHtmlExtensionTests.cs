@@ -1,9 +1,6 @@
-﻿using Microsoft.AspNetCore.Html;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Sooduskorv_MVC.CommonTests.OverallTests;
 using Sooduskorv_MVC.Data.CommonData;
-using System.Collections.Generic;
-using System.Text.Encodings.Web;
 
 namespace CoinCollectorProject.Tests.Pages.Extensions
 {

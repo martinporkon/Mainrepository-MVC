@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
+using Serilog;
 
 namespace API
 {
@@ -7,6 +8,10 @@ namespace API
     {
         public static void Main(string[] args)
         {
+            Log.Logger = new LoggerConfiguration()
+                .WriteTo.Seq("http://localhost:5412")
+                .CreateLogger();
+
             CreateHostBuilder(args).Build().Run();
         }
 
@@ -15,6 +20,6 @@ namespace API
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                });
+                }).UseSerilog();
     }
 }

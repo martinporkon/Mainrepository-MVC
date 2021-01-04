@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Sooduskorv_MVC.Aids.Constants;
 using Sooduskorv_MVC.Aids.Methods;
 using System;
 using System.Collections.Generic;

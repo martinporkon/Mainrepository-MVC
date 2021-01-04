@@ -13,6 +13,10 @@ namespace WebMVC.Bff.HttpAggregator.Gateway
     {
         public static async Task Main(string[] args)
         {
+            Log.Logger = new LoggerConfiguration()
+                .WriteTo.Seq("http://localhost:5412")
+                .CreateLogger();
+
             ThreadPool.SetMaxThreads(Environment.ProcessorCount,
                 Environment.ProcessorCount);
 

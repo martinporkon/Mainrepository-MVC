@@ -21,7 +21,6 @@ namespace Web.Pages.Catalog.Products
         {
             /*ProductTypes = newItemsList<IProductType, ProductTypeData>(db);*/
         }
-
         public IEnumerable<SelectListItem> ProductTypes { get; private set; }
         public ProductKind ProductKind { get; internal set; }
         protected override Uri pageUrl() => new Uri(ProductPagesUrls.ProductTypes, UriKind.Relative);

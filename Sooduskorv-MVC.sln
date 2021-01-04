@@ -165,6 +165,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quantity.Data", "src\Common
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Quantity.Core", "src\Common\Quantity\Quantity.Core\Quantity.Core.csproj", "{7AC1658E-09FD-4239-85CD-C50AA5C6C9DF}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SooduskorvWebMVC", "src\WebApps\WebMVC\WebMVC\SooduskorvWebMVC.csproj", "{A3374DE9-B7CB-4AE4-B957-E71C280FF1F9}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		src\Common\Sooduskorv_MVC.Shared\Sooduskorv_MVC.Shared.projitems*{07f2497d-15b5-44a2-8e8d-ba463d4cf3a2}*SharedItemsImports = 5
@@ -432,6 +434,10 @@ Global
 		{7AC1658E-09FD-4239-85CD-C50AA5C6C9DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7AC1658E-09FD-4239-85CD-C50AA5C6C9DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7AC1658E-09FD-4239-85CD-C50AA5C6C9DF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3374DE9-B7CB-4AE4-B957-E71C280FF1F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3374DE9-B7CB-4AE4-B957-E71C280FF1F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3374DE9-B7CB-4AE4-B957-E71C280FF1F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3374DE9-B7CB-4AE4-B957-E71C280FF1F9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -516,6 +522,7 @@ Global
 		{4C1C4E33-DF73-45A8-9447-E194BBD028A4} = {9D4A156D-54DA-442E-BC54-1D8C18FAD491}
 		{5B6381D0-7C46-47AA-B7D4-F37A9DF284DE} = {9D4A156D-54DA-442E-BC54-1D8C18FAD491}
 		{7AC1658E-09FD-4239-85CD-C50AA5C6C9DF} = {9D4A156D-54DA-442E-BC54-1D8C18FAD491}
+		{A3374DE9-B7CB-4AE4-B957-E71C280FF1F9} = {A87AC71C-0B77-4E3C-8099-2DEEA05544C0}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EE13611F-F2D2-4137-965F-69359A5D24DF}

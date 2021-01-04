@@ -1,6 +1,7 @@
 using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Reflection;
+using AspNetCoreRateLimit;
 using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -10,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Options;
+using Serilog;
 using Sooduskorv_MVC.Aids.Constants;
 using Sooduskorv_MVC.Middleware.Culture;
 using Sooduskorv_MVC.Middleware.Session;
@@ -38,6 +40,7 @@ namespace SooduskorvWebMVC
             /*RateLimit.ConfigureServices(services, Configuration);*/
             /*services.AddMemoryCache();*/
             registerRepositories(services);
+
             services.AddSingleton<LocalizationService>();
             services.ConfigureRequestLocalization(Configuration);
             services.Configure<CookiePolicyOptions>(options =>
@@ -109,6 +112,7 @@ namespace SooduskorvWebMVC
                 app.UseHsts();
             }
 
+            app.UseSerilogRequestLogging();
             /*app.UseStatusCodePages("text/plain", "Status Code; {0}. Contact support.");*/
             app.UseHttpsRedirection();
             /*app.UseIpRateLimiting();*/

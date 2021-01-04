@@ -15,6 +15,7 @@
     <PackageReference Include="AspNetCore.HealthChecks.UI" Version="5.0.0" />
     <PackageReference Include="AspNetCore.HealthChecks.UI.InMemory.Storage" Version="5.0.0" />
     <PackageReference Include="AspNetCore.HealthChecks.Uris" Version="5.0.0" />
+    <PackageReference Include="AspNetCoreRateLimit" Version="3.2.2" />
     <PackageReference Include="Grpc.AspNetCore" Version="2.34.0" />
     <PackageReference Include="Grpc.HealthCheck" Version="2.34.0" />
     <PackageReference Include="Grpc.Net.Client" Version="2.34.0" />

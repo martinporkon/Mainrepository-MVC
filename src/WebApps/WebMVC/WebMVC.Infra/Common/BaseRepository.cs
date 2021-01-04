@@ -1,6 +1,8 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Sooduskorv_MVC.Data.CommonData;
@@ -15,11 +17,11 @@ namespace Web.Infra.Common
         public string BaseAddress { get; set; }
         protected CancellationTokenSource CancellationToken
             = new CancellationTokenSource();
-        private readonly IHttpClientFactory h;
+        private readonly HttpClient h;
         private readonly HttpMethod Method;
         private readonly CancellationToken _t;
 
-        protected BaseRepository(IHttpClientFactory h, string baseAddress, HttpMethod m,
+        protected BaseRepository(HttpClient h, string baseAddress, HttpMethod m,
             CancellationToken t)
         {
             this.h = h;
@@ -28,24 +30,35 @@ namespace Web.Infra.Common
             BaseAddress = baseAddress;
         }
 
-
         public async Task<List<TDomain>> Get()
         {
 
-            var request = new HttpRequestMessage(HttpMethod.Get, "api/mvc-bff/products");
+            /*var request = new HttpRequestMessage(HttpMethod.Get, "api/mvc-bff/products");
+            request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            request.Headers.AcceptEncoding.Add(new StringWithQualityHeaderValue("brotli"));*/
+
+            var request = new HttpRequestMessage(
+                HttpMethod.Get,
+                $"api/mvc-bff/products/all");
+
             request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             request.Headers.AcceptEncoding.Add(new StringWithQualityHeaderValue("brotli"));
 
+            using (var response = await h.SendAsync(request,
+                HttpCompletionOption.ResponseHeadersRead))
+            {
+                var stream = await response.Content.ReadAsStreamAsync(_t).ConfigureAwait(false);
+                response.EnsureSuccessStatusCode();
+                /*var value = stream.Rea*/
+            }
 
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
         public async Task<TDomain> Get(string id)
         {
             throw new System.NotImplementedException();
         }
-
-
 
         public async Task Delete(string id)
         {
@@ -74,7 +87,7 @@ namespace Web.Infra.Common
 
         protected internal virtual HttpClient getValuesFrom()
         {
-            var query = h.CreateClient();
+            var query = h;
             return query;
         }
 

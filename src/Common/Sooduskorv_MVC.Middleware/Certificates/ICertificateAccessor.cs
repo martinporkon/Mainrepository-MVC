@@ -1,7 +1,7 @@
 ﻿using System.Security.Cryptography.X509Certificates;
 using Microsoft.Extensions.Configuration;
 
-namespace Microsoft.AspNetCore.DataProtection
+namespace Sooduskorv_MVC.Middleware
 {
     public interface ICertificateAccessor
     {

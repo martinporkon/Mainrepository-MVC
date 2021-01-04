@@ -10,13 +10,13 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Identity.Data\Identity.Data.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Folder Include="DTO\" />
     <Folder Include="Rules\" />
     <Folder Include="Protos\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Identity.Data\Identity.Data.csproj" />
   </ItemGroup>
 
 </Project>

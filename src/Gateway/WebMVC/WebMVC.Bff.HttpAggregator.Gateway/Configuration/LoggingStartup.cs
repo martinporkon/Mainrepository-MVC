@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿/*using Microsoft.AspNetCore.Hosting;
 using Serilog;
 
 [assembly: HostingStartup(typeof(WebMVC.Bff.HttpAggregator.Gateway.Configuration.LoggingStartup))]
@@ -16,4 +16,4 @@ namespace WebMVC.Bff.HttpAggregator.Gateway.Configuration
             }).ConfigureServices((context, services) => { });
         }
     }
-}
+}*/// TODO fails to execute.

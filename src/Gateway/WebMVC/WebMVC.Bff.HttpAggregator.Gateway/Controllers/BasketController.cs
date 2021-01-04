@@ -21,12 +21,12 @@ namespace WebMVC.Bff.HttpAggregator.Gateway.Controllers
     public class BasketController : BasketPage
     {
         private readonly IMediator m;
-        private readonly IQueryHandler<PictureQuery, Resource> q;
+        /*private readonly IQueryHandler<PictureQuery, Resource> q;*/
 
-        public BasketController(IMediator m, IQueryHandler<PictureQuery, Resource> q)
+        public BasketController(IMediator m/*, IQueryHandler<PictureQuery, Resource> q*/)
         {
             this.m = m;
-            this.q = q;
+            /*this.q = q;*/
         }
 
         [Route("{basketId}")]
@@ -34,11 +34,11 @@ namespace WebMVC.Bff.HttpAggregator.Gateway.Controllers
         [HttpHead]
         public async Task<ActionResult<IEnumerable<BasketView>>> GetBasket([FromRoute] GetUserBasketByIdQuery query) // + userId
         {
-            var result = await m.Send(new GetUserBasketByIdQueryHandler(q));
+            /*var result = await m.Send(new GetUserBasketByIdQueryHandler(q));
             if (result is null)
             {
                 return NotFound();
-            }
+            }*/
 
             return Ok(new BasketView());
         }

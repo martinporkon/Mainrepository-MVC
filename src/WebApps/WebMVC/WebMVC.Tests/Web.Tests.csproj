@@ -40,6 +40,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\..\Common\Sooduskorv_MVC.CommonTests\Sooduskorv-MVC.CommonTests.csproj" />
+    <ProjectReference Include="..\..\..\Gateway\WebMVC\WebMVC.Bff.HttpAggregator.Gateway\WebMVC.Bff.HttpAggregator.Gateway.csproj" />
   </ItemGroup>
 
 </Project>

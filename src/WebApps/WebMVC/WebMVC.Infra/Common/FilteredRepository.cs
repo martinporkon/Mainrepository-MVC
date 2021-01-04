@@ -14,7 +14,7 @@ namespace Web.Infra.Common
         public string FixedFilter { get; set; }
         public string FixedValue { get; set; }
 
-        protected FilteredRepository(IHttpClientFactory h, string baseAddress, HttpMethod m,
+        protected FilteredRepository(HttpClient h, string baseAddress, HttpMethod m,
             CancellationToken t) : base(h, baseAddress, m, t) { }
 
         /*protected internal override HttpClient getValuesFrom()

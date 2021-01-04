@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
 using Ocelot.DependencyInjection;
 using Ocelot.Middleware;
 using Serilog;
@@ -29,13 +30,14 @@ namespace WebMVC.Bff.HttpAggregator.Gateway
         {
             services.AddMiddlewareAnalysis();
             services.AddCustomCors(Configuration);
-            services.AddHttpClient();
+            services.AddLogging();
             services.AddResponseCaching();
+            /*services.AddSingleton(new LoggerFactory());*/
             services.AddHttpMiddleware(Configuration);
             services.AddHttpContextAccessor();
-            services.AddCustomGrpcClientFactoryMiddleware(Configuration);
+            /*services.AddCustomGrpcClientFactoryMiddleware(Configuration);*/
             services.AddCustomSwagger(Configuration);
-            services.AddCustomIdentityMiddleware();
+            /*services.AddCustomIdentityMiddleware();*/
             services.AddCustomAssemblies();
             services.AddDbContext<ApplicationDbContext>(options =>
             {
@@ -46,17 +48,17 @@ namespace WebMVC.Bff.HttpAggregator.Gateway
             {
                 client.BaseAddress = new Uri("https://localhost:44340/");
             });*/
-            /*services.AddResponseCompression(options => { });*/
+            services.AddResponseCompression(options => { });
             /*var container = new ContainerBuilder();
-            container.RegisterModule(new AssemblyModule());//*///
+            container.RegisterModule(new AssemblyModule());*/
             services.AddCustomHealthChecks<ApplicationDbContext>();
             services.AddOcelot().AddDelegatingHandlers();
         }
 
         public async void Configure(IApplicationBuilder app, IWebHostEnvironment env, DiagnosticListener listener)
         {
-            listener.SubscribeWithAdapter(new BasketSystemDiagnosticsListener(),
-                new BasketListener());
+            /*listener.SubscribeWithAdapter(new BasketSystemDiagnosticsListener(),
+                new BasketListener());*/
 
             if (env.IsDevelopment())
             {
@@ -78,8 +80,9 @@ namespace WebMVC.Bff.HttpAggregator.Gateway
 
             app.UseRouting();
 
+            /*
             app.UseAuthentication();
-            app.UseAuthorization();
+            app.UseAuthorization();*/
 
             app.UseSwaggerAPI(Configuration);
 
@@ -87,7 +90,7 @@ namespace WebMVC.Bff.HttpAggregator.Gateway
             {
                 endpoints.UseCustomHealthChecks(Configuration);
                 endpoints.MapControllers();
-                endpoints.MapServices(Configuration);
+                /*endpoints.MapServices(Configuration);*/
             });
         }
     }

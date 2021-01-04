@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -10,19 +11,12 @@ namespace WebMVC.Bff.HttpAggregator.Gateway
 {
     public class Program
     {
-        /// <summary>
-        /// TODO: Refactor later.
-        /// </summary>
-        /// <param name="args"></param>
         public static async Task Main(string[] args)
         {
-            /*Log.Logger = new LoggerConfiguration()
-                .WriteTo.Seq("http://localhost:5412")
-                .CreateLogger();*/
+            ThreadPool.SetMaxThreads(Environment.ProcessorCount,
+                Environment.ProcessorCount);
 
-            //ThreadPool.SetMaxThreads(12345, Environment.ProcessorCount);
-
-            await CreateHost(args);// TODO test if working.
+            await CreateHost(args);
 
         }
 
@@ -32,7 +26,7 @@ namespace WebMVC.Bff.HttpAggregator.Gateway
                 {
                     webBuilder.UseStartup<Startup>();
                     webBuilder.UseConfiguration(GetConfiguration());
-                });
+                }).UseSerilog();
 
         private static IConfiguration GetConfiguration()
         {

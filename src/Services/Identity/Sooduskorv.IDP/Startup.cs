@@ -9,6 +9,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Sooduskorv.IDP.Data;
 using Sooduskorv_MVC.Aids.Reflection;
+using Sooduskorv_MVC.Middleware;
 
 namespace Sooduskorv.IDP
 {
@@ -18,9 +19,9 @@ namespace Sooduskorv.IDP
         public IConfiguration Configuration { get; }
         private ICertificateAccessor Accessor { get; }
 
-        public Startup(IWebHostEnvironment e, IConfiguration c, ICertificateAccessor a)
+        public Startup(IWebHostEnvironment e, IConfiguration c/*, ICertificateAccessor a*/)
         {
-            Accessor = a;
+            /*Accessor = a;*/
             Environment = e;
             Configuration = c;
         }
@@ -28,7 +29,7 @@ namespace Sooduskorv.IDP
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            /*services.AddScoped<ILocalUserService, LocalUserService>();*/
+            services.AddScoped<ILocalUserService, LocalUserService>();
             var assembly = GetClass.assemblyName<Startup>();
             var builder = services.AddIdentityServer()
                 .AddInMemoryIdentityResources(Config.IdentityResources)
@@ -43,7 +44,7 @@ namespace Sooduskorv.IDP
             builder.AddDeveloperSigningCredential();
             /*builder.AddSigningCredential(Accessor.LoadCertificate(Configuration));*/
 
-            services.AddDbContext<IdentityApplicationDbContext>(options => // TODO !!!
+            services.AddDbContext<ApplicationDbContext>(options => // TODO !!!
             {
                 options.UseSqlServer("Server=(localdb)\\MSSQLLocaldb;Database=CustomerDB;Trusted_Connection=True;");
             });

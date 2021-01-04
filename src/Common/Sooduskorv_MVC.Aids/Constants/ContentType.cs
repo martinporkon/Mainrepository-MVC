@@ -6,5 +6,6 @@
         public const string textPlain = "text/plain";
         public const string textHtml = "text/html";
         public const string json = "application/json";
+        public const string sooduskorvJson = "application/vnd.sooduskorv.resource+json";
     }
 }

@@ -11,7 +11,7 @@ namespace Web.Infra.Catalog.Products
         IProductTypesRepository
     {
 
-        public ProductTypesRepository(IHttpClientFactory h, string b, HttpMethod m,
+        public ProductTypesRepository(HttpClient h, string b, HttpMethod m,
             CancellationToken t) : base(h, b, m, t) { }
 
         protected internal override IProductType toDomainObject(ProductTypeDto d) => ProductTypeFactory.Create(d);

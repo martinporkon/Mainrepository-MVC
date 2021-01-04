@@ -17,7 +17,7 @@ namespace Web.Infra.Common
         public bool HasNextPage => PageIndex < TotalPages;
         public bool HasPreviousPage => PageIndex > 1;
 
-        protected PaginatedRepository(IHttpClientFactory h, string baseAddress, HttpMethod m,
+        protected PaginatedRepository(HttpClient h, string baseAddress, HttpMethod m,
             CancellationToken t) : base(h, baseAddress, m, t) { }
 
         internal int getTotalPages(in int pageSize)

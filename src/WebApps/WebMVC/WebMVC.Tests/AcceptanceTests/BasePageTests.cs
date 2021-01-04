@@ -4,7 +4,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace WebMVC.Tests
 {
-    public abstract class BasePageTests : BaseSoftTests
+    /*public abstract class BasePageTests : BaseSoftTests
     {
         protected IHtmlDocument htmlDocument; // See asi saab kätte terve html dokumendi nagu ta on nähtav veebilehes
         protected string pageHtml;
@@ -20,5 +20,5 @@ namespace WebMVC.Tests
             pageHtml = page.GetString();// See asi saab kätte terve HTTPClient kasutuses oleva hetkese lehe ning teeb selle stringiks
             return HtmlDoc.GetAsync(page).GetAwaiter().GetResult();
         }
-    }
+    }*/
 }

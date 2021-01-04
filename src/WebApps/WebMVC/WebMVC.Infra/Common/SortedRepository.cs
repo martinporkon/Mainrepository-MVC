@@ -13,7 +13,7 @@ namespace Web.Infra.Common
         public string SortOrder { get; set; }
         public string DescendingString => "_desc";
 
-        protected SortedRepository(IHttpClientFactory h, string baseAddress, HttpMethod m,
+        protected SortedRepository(HttpClient h, string baseAddress, HttpMethod m,
             CancellationToken t) : base(h, baseAddress, m, t) { }
 
         protected internal override HttpClient getValuesFrom()

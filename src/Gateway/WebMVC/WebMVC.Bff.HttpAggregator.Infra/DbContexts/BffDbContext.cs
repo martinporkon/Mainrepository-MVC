@@ -8,7 +8,7 @@ namespace WebMVC.Bff.HttpAggregator.Infra
     {
         public DbSet<ResourceData> Resources { get; set; }
         public DbSet<ImageInformationData> ImageInformation { get; set; }
-        // vb võiks ikkagi mitte kasutada.
+
         public BffDbContext(DbContextOptions<BffDbContext> options) : base(options)
         {
             ChangeTracker.QueryTrackingBehavior = QueryTrackingBehavior.NoTracking;

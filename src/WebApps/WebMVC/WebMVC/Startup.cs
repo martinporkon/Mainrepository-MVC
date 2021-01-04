@@ -18,7 +18,9 @@ using SooduskorvWebMVC.Components;
 using SooduskorvWebMVC.HttpHandlers;
 using SooduskorvWebMVC.Localization;
 using SooduskorvWebMVC.Middleware;
+using Web.Domain.Services.Catalog.Products.ProductTypes;
 using Web.Facade.Profiles;
+using Web.Infra.Catalog.Products;
 
 namespace SooduskorvWebMVC
 {
@@ -36,6 +38,7 @@ namespace SooduskorvWebMVC
         {
             /*RateLimit.ConfigureServices(services, Configuration);*/
             /*services.AddMemoryCache();*/
+            registerRepositories(services);
             services.AddSingleton<LocalizationService>();
             services.ConfigureRequestLocalization(Configuration);
             services.Configure<CookiePolicyOptions>(options =>
@@ -81,13 +84,12 @@ namespace SooduskorvWebMVC
             });
             services.AddAutoMapper(AutoMapperConfiguration.RegisterMappings());
             registerComponents(services);
-            /*registerRepositories(services);*/
         }
 
-        /*private void registerRepositories(IServiceCollection services)
+        private void registerRepositories(IServiceCollection services)
         {
-            CatalogRepositories.Register(services);
-        }*/
+            services.AddHttpClient<IProductTypesRepository, ProductTypesRepository>();
+        }
 
         private void registerComponents(IServiceCollection services)
         {
@@ -131,7 +133,7 @@ namespace SooduskorvWebMVC
             app.UseSession();
             app.UseEndpoints(endpoints =>
             {
-                /*endpoints.MapCustomEndpointRouteBuilder(Configuration, rlo);// TODO*/
+                endpoints.MapCustomEndpointRouteBuilder(Configuration, rlo);// TODO*/
                 endpoints.MapRazorPages();
                 endpoints.MapBlazorHub();
                 /*endpoints.MapFallbackToPage("/_Host");*/

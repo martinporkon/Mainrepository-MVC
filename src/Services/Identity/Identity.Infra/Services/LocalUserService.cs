@@ -1,8 +1,11 @@
-﻿/*using System;
+﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Threading.Tasks;
 using Identity.Data.Entities;
+using Identity.Infra.DbContexts;
+using Microsoft.EntityFrameworkCore;
 
 namespace Identity.Domain.Services
 {
@@ -10,7 +13,7 @@ namespace Identity.Domain.Services
     {
         private readonly IdentityDbContext _context;
 
-        public LocalUserService(IdentityDbContext context)// tuleb panna õigesse kihti ning teise loogikad.
+        public LocalUserService(IdentityDbContext context)
         {
             _context = context ??
                        throw new ArgumentNullException(nameof(context));
@@ -31,22 +34,13 @@ namespace Identity.Domain.Services
             string password)
         {
             if (string.IsNullOrWhiteSpace(userName) ||
-                string.IsNullOrWhiteSpace(password))
-            {
-                return false;
-            }
+                string.IsNullOrWhiteSpace(password)) return false;
 
             var user = await GetUserByUserNameAsync(userName);
 
-            if (user is null)
-            {
-                return false;
-            }
+            if (user is null) return false;
 
-            if (!user.Active)
-            {
-                return false;
-            }
+            if (!user.Active) return false;
 
             return (user.Password == password);
         }
@@ -77,20 +71,9 @@ namespace Identity.Domain.Services
         {
             if (userToAdd is null) throw new ArgumentNullException(nameof(userToAdd));
             //TODO
-            if (string.IsNullOrWhiteSpace(password))
-            {
-                throw new ArgumentNullException(nameof(password));
-            }
-
-            if (_context.Users.Any(u => u.Username == userToAdd.Username))
-            {
-                throw new Exception("Email must be unique");
-            }
-
-            if (_context.Users.Any(u => u.Email == userToAdd.Email))
-            {
-                throw new Exception("Email must be unique");
-            }
+            if (string.IsNullOrWhiteSpace(password)) throw new ArgumentNullException(nameof(password));
+            if (_context.Users.Any(u => u.Username == userToAdd.Username)) throw new Exception("Email must be unique");
+            if (_context.Users.Any(u => u.Email == userToAdd.Email)) throw new Exception("Email must be unique");
 
             using (var randomNumberGenerator = new RNGCryptoServiceProvider())
             {
@@ -156,8 +139,7 @@ namespace Identity.Domain.Services
 
             user.SecurityCode = null;
             user.Password = password;
-            //TODO
             return true;
         }
     }
-}*/
+}

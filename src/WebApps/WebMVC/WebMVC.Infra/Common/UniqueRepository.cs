@@ -11,7 +11,7 @@ namespace Web.Infra.Common
         where TDomain : IEntity<TData>
         where TData : PeriodData, new()
     {
-        protected UniqueRepository(IHttpClientFactory h, string baseAddress, HttpMethod m,
+        protected UniqueRepository(HttpClient h, string baseAddress, HttpMethod m,
             CancellationToken t)
             : base(h, baseAddress, m, t)
         {

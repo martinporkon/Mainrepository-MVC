@@ -88,6 +88,7 @@ namespace Sooduskorv.IDP
                         "productsapi",
                         "orderapi",
                         "basketapi",
+                        "subscription"
                     },
                     ClientSecrets = {new Secret("secret".Sha256())}
                 },
@@ -95,7 +96,7 @@ namespace Sooduskorv.IDP
                 {
                     ClientName = "name",
                     ClientId = "sooduskorv-name",
-                    ClientSecrets = {new Secret("a378wefyasugvcbaduio".Sha256())},
+                    ClientSecrets = {new Secret("11B35FE3-F105-477D-88E9-ED0593063A11".Sha256())},
                     AllowedGrantTypes = GrantTypes.ClientCredentials,
                     AllowedScopes = { "productsapi" }
                 }

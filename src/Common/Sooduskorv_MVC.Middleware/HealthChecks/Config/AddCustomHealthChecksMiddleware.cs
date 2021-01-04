@@ -7,7 +7,7 @@ using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Hosting;
 using Sooduskorv_MVC.Aids.Constants;
 
-namespace WebMVC.Bff.HttpAggregator.Gateway.Middleware.HealthChecks
+namespace Sooduskorv_MVC.Middleware.HealthChecks
 {
     public static class AddCustomHealthChecksMiddleware
     {

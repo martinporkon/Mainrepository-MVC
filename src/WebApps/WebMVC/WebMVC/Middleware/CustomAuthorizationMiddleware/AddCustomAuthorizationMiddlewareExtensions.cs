@@ -10,7 +10,7 @@ namespace Microsoft.AspNetCore.Builder
             services.AddAuthorization(authorizationOptions =>
             {
                 authorizationOptions.AddPolicy(
-                    "AllowToOrderProductPolicy",
+                    "Order",
                     policyBuilder =>
                     {
                         policyBuilder.RequireAuthenticatedUser();

@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Sooduskorv_MVC.Aids.Constants;
 
-namespace WebMVC.Bff.HttpAggregator.Gateway.Middleware.HealthChecks
+namespace Sooduskorv_MVC.Middleware.HealthChecks
 {
     public static class HealthChecksEndpointsExtensions
     {
@@ -31,6 +31,7 @@ namespace WebMVC.Bff.HttpAggregator.Gateway.Middleware.HealthChecks
             where THealthService : BackgroundService
             where TDbContext : DbContext
         {
+            endpoints.MapHealthChecks(HealthCheck.Live);
             endpoints.MapGrpcService<HealthServiceImpl>();
             endpoints.MapGrpcService<THealthService>();
             // TODO Can Connect still missing here.

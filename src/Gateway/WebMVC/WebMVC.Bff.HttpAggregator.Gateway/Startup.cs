@@ -33,8 +33,8 @@ namespace WebMVC.Bff.HttpAggregator.Gateway
             services.AddHttpContextAccessor();
             /*services.AddCustomGrpcClientFactoryMiddleware(Configuration);*/
             services.AddCustomSwagger(Configuration);
-            /*services.AddCustomIdentityMiddleware();#1#
-            services.AddCustomAssemblies();*/
+            /*services.AddCustomIdentityMiddleware();*/
+            services.AddCustomAssemblies();
             services.AddDbContext<ApplicationDbContext>(options =>
             {
                 options.UseSqlServer(Configuration.GetConnectionString(DbConnection.Default));
@@ -44,11 +44,11 @@ namespace WebMVC.Bff.HttpAggregator.Gateway
             {
                 client.BaseAddress = new Uri("https://localhost:44340/");
             });*/
-            /*services.AddResponseCompression(options => { });
+            /*services.AddResponseCompression(options => { });*/
             /*var container = new ContainerBuilder();
-            container.RegisterModule(new AssemblyModule());#1#
+            container.RegisterModule(new AssemblyModule());#*/
             services.AddCustomHealthChecks<ApplicationDbContext>();
-            services.AddOcelot().AddDelegatingHandlers();*/
+            services.AddOcelot().AddDelegatingHandlers();
         }
 
         public async void Configure(IApplicationBuilder app, IWebHostEnvironment env, DiagnosticListener listener)
@@ -66,11 +66,11 @@ namespace WebMVC.Bff.HttpAggregator.Gateway
                 app.UseHsts();
             }
 
-            /*app.UseSerilogRequestLogging();
+            app.UseSerilogRequestLogging();
             app.UseCors(Security.MyAllowSpecificOrigins);
             await app.UseOcelot();
 
-            app.UseResponseCaching();*/
+            app.UseResponseCaching();
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
@@ -84,7 +84,7 @@ namespace WebMVC.Bff.HttpAggregator.Gateway
 
             app.UseEndpoints(endpoints =>
             {
-                /*endpoints.UseCustomHealthChecks(Configuration);*/
+                endpoints.UseCustomHealthChecks(Configuration);
                 endpoints.MapControllers();
                 /*endpoints.MapServices(Configuration);*/
             });

@@ -16,6 +16,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Sooduskorv_MVC.Middleware.HealthChecks;
 
 namespace Catalog.API
 {
@@ -29,10 +30,11 @@ namespace Catalog.API
         {
             /*services.AddControllers()
                 .AddJsonOptions(opts => opts.JsonSerializerOptions.PropertyNamingPolicy = null);*/
-            services.AddGrpc();
+            services.AddCustomGRpc();
             services.AddCustomSwagger(Configuration);
             services.AddHttpContextAccessor();
             services.AddOptions();
+            services.AddCustomGRpcHealthChecks<GRpcStatusService>();
            /* services.AddScoped<ICatalogRepository, CatalogRepository>();*/// TODO
             services.AddScoped<IAuthorizationHandler, SubjectMustMatchUserHandler>();
 

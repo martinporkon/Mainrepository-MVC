@@ -32,8 +32,9 @@ namespace Microsoft.AspNetCore.Builder
                     options.Scope.Add("offline_access");
                     options.Scope.Add("productsapi");
                     options.Scope.Add("roles");
-                    options.Scope.Add("address");
+                    options.Scope.Add("subscription");
                     options.ClaimActions.DeleteClaim("sid");
+                    options.ClaimActions.DeleteClaim("address");
                     options.ClaimActions.DeleteClaim("idp");
                     options.ClaimActions.DeleteClaim("s_hash");
                     options.ClaimActions.DeleteClaim("auth_time");

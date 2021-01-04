@@ -7,7 +7,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
 using Microsoft.Extensions.Hosting;
 
-namespace WebMVC.Bff.HttpAggregator.Gateway.Middleware.HealthChecks.GRpc
+namespace Sooduskorv_MVC.Middleware.HealthChecks
 {
     public class GRpcStatusService : BackgroundService
     {
@@ -26,7 +26,7 @@ namespace WebMVC.Bff.HttpAggregator.Gateway.Middleware.HealthChecks.GRpc
         protected override async Task ExecuteAsync(CancellationToken stoppingToken)
         {
             while (!stoppingToken.IsCancellationRequested)
-            {// TODO validate and check if this code is working properly.
+            {
                 var health = await _healthCheckService.CheckHealthAsync(stoppingToken);
 
                 _healthService.SetStatus(_config.GetSection("HealthChecksServiceInfo:0").ToString(),

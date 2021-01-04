@@ -3,6 +3,7 @@ using System.IO;
 using Catalog.Domain.Common;
 using Catalog.Infra;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Server.Kestrel.Core;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -58,7 +59,7 @@ namespace Catalog.API
                 }
             }
             GetRepository.SetServiceProvider(host.Services);
-            
+
             host.Run();
         }
 
@@ -67,6 +68,11 @@ namespace Catalog.API
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
+                    webBuilder.ConfigureKestrel(options =>
+                    {
+                        options.ListenLocalhost(5000, o =>
+                            o.Protocols = HttpProtocols.Http2);
+                    });
                     webBuilder.UseConfiguration(GetConfiguration());
                 }).UseSerilog();
 

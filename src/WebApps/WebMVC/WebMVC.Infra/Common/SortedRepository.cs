@@ -1,16 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net.Http;
 using System.Threading;
-using System.Threading.Tasks;
+using Sooduskorv_MVC.Data.CommonData;
 using Web.Domain.Common;
-using Web.Domain.DTO.Common;
 
 namespace Web.Infra.Common
 {
     public abstract class SortedRepository<TDomain, TData> : BaseRepository<TDomain, TData>, ISorting
         where TDomain : IEntity<TData>
-        where TData : PeriodEntityData, new()
+        where TData : PeriodData, new()
     {
         public string SortOrder { get; set; }
         public string DescendingString => "_desc";

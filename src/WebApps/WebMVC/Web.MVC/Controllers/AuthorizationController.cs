@@ -4,6 +4,6 @@ namespace SooduskorvWebMVC.Controllers
 {
     public class AuthorizationController : Controller
     {
-        public IActionResult AccessDenied() => View();
+        /*public IActionResult AccessDenied() => View();*/
     }
 }

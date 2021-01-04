@@ -1,12 +1,12 @@
 ﻿using Sooduskorv_MVC.Aids.Methods;
+using Sooduskorv_MVC.Data.CommonData;
 using Web.Domain.Common;
-using Web.Domain.DTO.Common;
 
 namespace Web.Facade.Common
 {
     public abstract class AbstractViewFactory<TData, TObject, TView>
-        where TData : PeriodEntityData, new()
-        where TView : PeriodView, new()
+        where TData : DescribedEntityData, new()
+        where TView : DefinedView, new()
         where TObject : IEntity<TData>
     {
 

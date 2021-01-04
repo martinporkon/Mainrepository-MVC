@@ -21,7 +21,6 @@ using SooduskorvWebMVC.Components;
 using SooduskorvWebMVC.HttpHandlers;
 using SooduskorvWebMVC.Localization;
 using SooduskorvWebMVC.Middleware;
-using Web.Domain.Services.Catalogs;
 using Web.Facade.Profiles;
 
 namespace SooduskorvWebMVC

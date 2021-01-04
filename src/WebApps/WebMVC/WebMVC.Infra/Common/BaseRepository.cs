@@ -1,17 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading;
 using System.Threading.Tasks;
+using Sooduskorv_MVC.Data.CommonData;
 using Web.Domain.Common;
-using Web.Domain.DTO.Common;
 
 namespace Web.Infra.Common
 {
     public abstract class BaseRepository<TDomain, TData> : ICrudMethods<TDomain>, IRepository
         where TDomain : IEntity<TData>
-        where TData : PeriodEntityData, new()
+        where TData : PeriodData, new()
     {
         public string BaseAddress { get; set; }
         protected CancellationTokenSource CancellationToken

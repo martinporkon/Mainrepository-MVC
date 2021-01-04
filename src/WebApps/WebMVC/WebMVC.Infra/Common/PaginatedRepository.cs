@@ -1,16 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading;
+using Sooduskorv_MVC.Data.CommonData;
 using Web.Domain.Common;
-using Web.Domain.DTO.Common;
 
 namespace Web.Infra.Common
 {
     public abstract class PaginatedRepository<TDomain, TData> : FilteredRepository<TDomain, TData>, IPaging
         where TDomain : IEntity<TData>
-        where TData : PeriodEntityData, new()
+        where TData : PeriodData, new()
     {
         public int PageIndex { get; set; }
         public int PageSize { get; set; }

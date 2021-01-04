@@ -7,8 +7,8 @@ using Web.Domain.DTO.CatalogService;
 
 namespace SooduskorvWebMVC.Controllers
 {
-    [AllowAnonymous]
-    public class ProductController : Controller
+    /*[AllowAnonymous]*/
+    /*public class ProductController : Controller
     {
         private readonly IProductsService _productsService;
 
@@ -22,7 +22,7 @@ namespace SooduskorvWebMVC.Controllers
 
             var a = await _productsService.GetProducts();
 
-            /*var a = response.Result;*/
+            /*var a = response.Result;#1#
 
             var list = new List<CatalogDto>();
             var test = new CatalogDto
@@ -37,11 +37,11 @@ namespace SooduskorvWebMVC.Controllers
                 Composition = a.Composition,
                 PartyId = a.PartyId,
                 Brand = a.Brand,
-                CountryOfOrigin = a.CountryOfOrigin,*/
+                CountryOfOrigin = a.CountryOfOrigin,#1#
             };
             list.Add(test);
 
             return View(new ProductViewModel(list));
         }
-    }
+    }*/
 }

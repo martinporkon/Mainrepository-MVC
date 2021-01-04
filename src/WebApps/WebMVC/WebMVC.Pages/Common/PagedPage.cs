@@ -1,33 +1,38 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Sooduskorv_MVC.Data.CommonData;
 using Web.Domain.Common;
 using Web.Facade.Common;
 
 namespace Web.Pages.Common
 {
     public abstract class PagedPage<TRepository, TDomain, TView, TData> :
-        CrudPage<TRepository, TDomain, TView, TData>
-        where TRepository : class, ICrudMethods<TDomain>, ISorting, IFiltering, IPaging
-        where TView : PeriodView
+       CrudPage<TRepository, TDomain, TView, TData>
+       where TRepository : class, ICrudMethods<TDomain>, ISorting, IFiltering, IPaging
+       where TData : UniqueEntityData, new()
+       where TView : PeriodView
     {
+
         protected PagedPage(TRepository r) : base(r) { }
 
         public IList<TView> Items { get; private set; }
-        public int PageIndex
-        {
-            get => db.PageIndex;
-            set => db.PageIndex = value;
-        }
+
         public string SelectedId
         {
             get;
             set;
         }
+        public int PageIndex
+        {
+            get => db.PageIndex;
+            set => db.PageIndex = value;
+        }
         public bool HasPreviousPage => db.HasPreviousPage;
         public bool HasNextPage => db.HasNextPage;
 
         public int TotalPages => db.TotalPages;
+
         protected internal override void setPageValues(string sortOrder, string searchString, in int? pageIndex)
         {
             SortOrder = sortOrder;
@@ -51,7 +56,9 @@ namespace Web.Pages.Common
         internal async Task<List<TView>> getList()
         {
             var l = await db.Get().ConfigureAwait(true);
+
             return l.Select(toView).ToList();
         }
+
     }
 }

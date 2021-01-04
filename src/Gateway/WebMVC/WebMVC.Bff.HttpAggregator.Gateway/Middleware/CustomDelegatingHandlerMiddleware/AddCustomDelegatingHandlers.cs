@@ -1,5 +1,4 @@
 ﻿using Ocelot.DependencyInjection;
-using WebMVC.Bff.HttpAggregator.Gateway.HttpHandlers;
 
 // TODO FIX NAMESPACES!!
 namespace WebMVC.Bff.HttpAggregator.Gateway.Middleware

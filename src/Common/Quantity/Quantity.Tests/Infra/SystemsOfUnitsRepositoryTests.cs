@@ -1,12 +1,4 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Quantity.Data;
-using Quantity.Domain;
-using Quantity.Infra;
-using Quantity.Infra.Common;
-using System;
-
-namespace Quantity.Tests.Infra {
+﻿namespace Quantity.Tests.Infra {
 
     //[TestClass] public class
     //    SystemsOfUnitsRepositoryTests : QuantityRepositoryTests<SystemsOfUnitsRepository, SystemOfUnits,

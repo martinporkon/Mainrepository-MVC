@@ -1,5 +1,8 @@
 ﻿@using SooduskorvWebMVC
-@inject IStringLocalizer<Program> Localizer
+@using Web.Pages.Common.Const
+@using Microsoft.AspNetCore.Authorization
+@inject IStringLocalizer<Program> Localizer;
+@inject IAuthorizationService AuthorizationService;
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,21 +26,29 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <ul class="navbar-nav flex-grow-1">
                         @Html.DropMenu($"{Localizer["Catalog"]}",
-                                                new Link(
-                                                    $"{ProductPagesNames.ProductTypes}",
-                                                    $"{ProductPagesUrls.ProductTypes}"))
-
+                            new Link(
+                                $"{ProductPagesNames.ProductTypes}",
+                                $"{ProductPagesUrls.ProductTypes}"))
                         @Html.DropMenu($"{Localizer["Help"]}",
-                                                new Link("About", new Uri("/Index", UriKind.Relative)),
-                                                new Link("Privacy", new Uri("/Privacy", UriKind.Relative)))
-                        @*TODO kuidas panna vaaded nagu profiil teisele poole paremale nurka ekraanil?*@
-                        @Html.DropMenu($"{Localizer["Basket"]}",
                             new Link("About", new Uri("/Index", UriKind.Relative)),
                             new Link("Privacy", new Uri("/Privacy", UriKind.Relative)))
+                        @Html.DropMenu($"{Localizer["Basket"]}",
+                             new Link("About", new Uri("/Index", UriKind.Relative)),
+                             new Link("Privacy", new Uri("/Privacy", UriKind.Relative)))
+                        @if ((await AuthorizationService.AuthorizeAsync(User, "ForOrder")).Succeeded)
+                        {
+                            @Html.DropMenu($"{Localizer["Order"]}",
+                                new Link("My Orders", new Uri("/Index", UriKind.Relative)),
+                                new Link("Buy again", new Uri("/Privacy", UriKind.Relative)))
+                        }
                     </ul>
                 </div>
                 <vc:culture-switcher />
             </div>
+            @if (User.Identity.IsAuthenticated)
+            {
+                @*TODO log out the logged in user*@
+            }
         </nav>
     </header>
     <div class="container">
@@ -52,10 +63,12 @@
             &copy; @DateTime.Now.Year - TestEnvironment - <a asp-area="" asp-page="/Privacy">Privacy</a>
         </div>
     </footer>
-
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+    <environment names="Development">
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+    </environment>
+    @*TODO not working here*@
     <script src="~/_framework/blazor.server.js"></script>
     <script src="~/_framework/blazor.webassembly.js"></script>
     @await RenderSectionAsync("Scripts", required: false)

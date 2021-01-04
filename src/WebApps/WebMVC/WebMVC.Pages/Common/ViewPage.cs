@@ -1,29 +1,29 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Sooduskorv_MVC.Data.CommonData;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc.RazorPages;
 using Web.Domain.Common;
-using Web.Domain.DTO.Common;
 using Web.Facade.Common;
 
 namespace Web.Pages.Common
 {
-    public abstract class ViewPage<TPage, TRepository, TDomain, TView, TData> :
-        UnifiedPage<TPage, TRepository, TDomain, TView, TData>
-        where TPage : PageModel
+    public abstract class ViewPage<TRepository, TDomain, TView, TData> :
+        TitledPage<TRepository, TDomain, TView, TData>
         where TRepository : class, ICrudMethods<TDomain>, ISorting, IFiltering, IPaging
-        where TDomain : IDto<TData>
-        where TData : PeriodEntityData, new()
+        where TDomain : IEntity<TData>
+        where TData : UniqueEntityData, new()
         where TView : PeriodView
     {
+
         protected ViewPage(TRepository r, string title) : base(r, title) { }
 
-        public virtual async Task OnGetIndexAsync(string sortOrder,
+        public async Task OnGetIndexAsync(string sortOrder,
             string id, string currentFilter, string searchString, int? pageIndex,
             string fixedFilter, string fixedValue)
         {
             SelectedId = id;
             await getList(sortOrder, currentFilter, searchString, pageIndex,
                 fixedFilter, fixedValue).ConfigureAwait(true);
+
         }
 
         public virtual IActionResult OnGetCreate(
@@ -39,7 +39,7 @@ namespace Web.Pages.Common
             return Page();
         }
 
-        public virtual async Task<IActionResult> OnPostCreateAsync(
+        public async Task<IActionResult> OnPostCreateAsync(
             string sortOrder,
             string searchString,
             int? pageIndex,
@@ -53,7 +53,7 @@ namespace Web.Pages.Common
         }
 
 
-        public virtual async Task<IActionResult> OnGetDeleteAsync(
+        public async Task<IActionResult> OnGetDeleteAsync(
             string id,
             string sortOrder,
             string searchString,
@@ -66,7 +66,7 @@ namespace Web.Pages.Common
             return Page();
         }
 
-        public virtual async Task<IActionResult> OnPostDeleteAsync(string id, string sortOrder, string searchString,
+        public async Task<IActionResult> OnPostDeleteAsync(string id, string sortOrder, string searchString,
             int pageIndex,
             string fixedFilter, string fixedValue)
         {
@@ -84,7 +84,7 @@ namespace Web.Pages.Common
             return Page();
         }
 
-        public virtual async Task<IActionResult> OnGetEditAsync(
+        public async Task<IActionResult> OnGetEditAsync(
             string id,
             string sortOrder,
             string searchString,
@@ -97,12 +97,14 @@ namespace Web.Pages.Common
             return Page();
         }
 
-        public virtual async Task<IActionResult> OnPostEditAsync(string sortOrder, string searchString, int pageIndex,
+        public async Task<IActionResult> OnPostEditAsync(string sortOrder, string searchString, int pageIndex,
             string fixedFilter, string fixedValue)
         {
             await updateObject(sortOrder, searchString, pageIndex, fixedFilter, fixedValue).ConfigureAwait(true);
 
             return Redirect(IndexUrl.ToString());
         }
+
+
     }
 }

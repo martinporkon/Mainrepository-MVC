@@ -1,6 +1,4 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Web.Domain.Services.Catalogs;
-using Web.Infra.Catalog;
 
 namespace Web.Infra.Common
 {
@@ -8,7 +6,7 @@ namespace Web.Infra.Common
     {
         public void RegisterServices(IServiceCollection s)
         {
-            s.AddHttpClient<ICatalogsService, CatalogRepository>();
+            /*s.AddHttpClient<ICatalogsService, CatalogRepository>();*/
         }
     }
 }

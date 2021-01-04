@@ -1,5 +1,5 @@
 ﻿using System;
-using Web.Facade.Baskets.BasketView;
+using Web.Facade.Basket.Baskets;
 
 namespace Web.Facade.Profiles
 {

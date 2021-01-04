@@ -1,45 +1,45 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
-  <Interface Name="WebMVC.Domain.Common.ICrudMethods&lt;T&gt;">
-    <Position X="1" Y="0.5" Width="2" />
+  <Interface Name="Web.Domain.Common.ICrudMethods&lt;T&gt;">
+    <Position X="0.75" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAYAAAAAAAAAAABAAAAAAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Common\ICrudMethods.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="WebMVC.Domain.Common.ISorting">
-    <Position X="3.25" Y="0.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Common\ISorting.cs</FileName>
-    </TypeIdentifier>
-  </Interface>
-  <Interface Name="WebMVC.Domain.Common.IPaging">
-    <Position X="6.75" Y="0.5" Width="1.5" />
+  <Interface Name="Web.Domain.Common.IPaging">
+    <Position X="2.5" Y="1.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAgAAAAAAAAAAAAAAEAAUAAAAAAAAAAAAEAAAAAA=</HashCode>
       <FileName>Common\IPaging.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="WebMVC.Domain.Common.IFiltering">
-    <Position X="5" Y="0.5" Width="1.5" />
+  <Interface Name="Web.Domain.Common.ISorting">
+    <Position X="4.25" Y="1.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAABAASAAAAA=</HashCode>
-      <FileName>Common\IFiltering.cs</FileName>
+      <HashCode>AAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Common\ISorting.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="WebMVC.Domain.Common.IRepository&lt;T&gt;">
-    <Position X="3.25" Y="4.75" Width="1.5" />
+  <Interface Name="Web.Domain.Common.IRepository&lt;T&gt;" Collapsed="true">
+    <Position X="4" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Common\IRepository.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="WebMVC.Domain.Common.IRepository">
-    <Position X="5.25" Y="5" Width="1.5" />
+  <Interface Name="Web.Domain.Common.IRepository">
+    <Position X="2" Y="4" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
       <FileName>Common\IRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Web.Domain.Common.IFiltering">
+    <Position X="6" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAABAASAAAAA=</HashCode>
+      <FileName>Common\IFiltering.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

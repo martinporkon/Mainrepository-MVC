@@ -6,15 +6,16 @@ using Web.Facade.Common;
 namespace Web.Pages.Common
 {
     public abstract class CrudPage<TRepository, TDomain, TView, TData> :
-        BasePage<TRepository, TDomain, TView, TData>
-        where TRepository : class, ICrudMethods<TDomain>, ISorting, IFiltering, IPaging
-        where TView : PeriodView
+            BasePage<TRepository, TDomain, TView, TData>
+            where TRepository : class, ICrudMethods<TDomain>, ISorting, IFiltering, IPaging
+            where TData : Sooduskorv_MVC.Data.CommonData.UniqueEntityData, new()
+            where TView : PeriodView
     {
+
         protected CrudPage(TRepository r) : base(r) { }
 
         [BindProperty]
         public TView Item { get; set; }
-
         public string ItemId => Item?.GetId() ?? string.Empty;
 
         protected internal async Task<bool> addObject(string fixedFilter, string fixedValue)
@@ -72,8 +73,9 @@ namespace Web.Pages.Common
             await deleteObject(id, fixedFilter, fixedValue).ConfigureAwait(true);
         }
 
-        protected internal abstract TDomain toObject(TView v);
+        protected abstract TDomain toObject(TView v);
 
-        protected internal abstract TView toView(TDomain o);
+        protected abstract TView toView(TDomain o);
+
     }
 }

@@ -21,6 +21,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Common\Quantity\Quantity.Facade\Quantity.Facade.csproj" />
     <ProjectReference Include="..\WebMVC.Infra\Web.Infra.csproj" />
   </ItemGroup>
 

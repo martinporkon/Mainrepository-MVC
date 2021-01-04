@@ -1,18 +1,26 @@
-﻿using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Sooduskorv_MVC.Data.CommonData;
+using System;
 using Web.Domain.Common;
-using Web.Domain.DTO.Common;
 using Web.Facade.Common;
+
 
 namespace Web.Pages.Common
 {
-    public abstract class ViewsPage<TPage, TRepository, TDomain, TView, TData> :
-        ViewPage<TPage, TRepository, TDomain, TView, TData>
-        where TPage : PageModel
+    public abstract class ViewsPage<TRepository, TDomain, TView, TData> :
+        ViewPage<TRepository, TDomain, TView, TData>
         where TRepository : class, ICrudMethods<TDomain>, ISorting, IFiltering, IPaging
-        where TDomain : IDto<TData>
-        where TData : PeriodEntityData, new()
-        where TView : PeriodView// TODO fix this T
+        where TDomain : IEntity<TData>
+        where TData : UniqueEntityData, new()
+        where TView : PeriodView
     {
         protected ViewsPage(TRepository r, string title) : base(r, title) { }
+
+        protected internal Uri createUri(int i)
+        {
+            var uri = CreateUrl.ToString();
+            uri += $"&switchOfCreate={i}";
+
+            return new Uri(uri, UriKind.Relative);
+        }
     }
 }
